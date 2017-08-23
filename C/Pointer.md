@@ -43,10 +43,10 @@ int *p(int x, int y) {
 Notice:
 -------
 
-－ Char pointer to a string without pointing to an char array, its element can not be changed
+- Char pointer to a string without pointing to an char array first, its element can not be changed
 
 
-    ```
+    ```c
     char *p = "hello world";
     *(p + 1) = 'a'; // Invalid, cannot be changed
     ```
