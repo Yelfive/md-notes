@@ -26,14 +26,14 @@ Bash Completion
     **Mac**
 
     > . /usr/local/etc/bash_completion
-    
-        ```bash
-        # add to ~/.bash_profile
-        # to auto start
-        if [ -f $(brew --prefix)/etc/bash_completion ]; then
-            . $(brew --prefix)/etc/bash_completion
-        fi
-        ```
+
+    ```bash
+    # add to ~/.bash_profile
+    # to auto start
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
+    ```
 
 4. Enjoy!
 
