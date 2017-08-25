@@ -14,3 +14,6 @@ TODO
 
 - yaml merge: yii, extensible 
 - PHP Opcode
+
+- service worker
+- Redux
