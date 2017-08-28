@@ -1,5 +1,10 @@
 Redux
 =====
+Redux is as the official says 'a state container'.
+
+`Take action` => `Action dispatch` => `State change` => `View change`
+
+State and View must be in one-to-one corresponding relations, which means, one `state` specifies one `view` and vice versa.
 
 Install
 -------
