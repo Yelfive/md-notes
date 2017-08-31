@@ -17,4 +17,4 @@ crontab -e
 
 - **Linux**
 
-    `\var\log\cron`
+    `/var/log/cron`
