@@ -10,10 +10,9 @@ TODO
 - strace, ptrace, dtrace, ltrace
 
 
-- C, force type changing, struct stuff
+[] C, force type changing, struct stuff
 
-- yaml merge: yii, extensible 
-- PHP Opcode
+[x] PHP Opcode
 
 - service worker
 - Redux

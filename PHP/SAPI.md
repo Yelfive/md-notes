@@ -154,7 +154,15 @@ Appendix: Lifespan
 ```
 
 
+Execute a script
+----------------
 
+Zend engine will will go through 4 phases to execute a script:
+
+1. Scanning: extract tokens from source script
+2. Parsing: translate tokens into expressions
+3. Compilation: compile expressions into opcodes
+4. Execution: execute the opcodes, one at a time
 
 
 

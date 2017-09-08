@@ -96,6 +96,65 @@ Stream edit
 seq
 ```
 
+String Handling
+---------------
+
+Say, we have a string
+
+```bash
+var=abcd_efg_abc
+```
+
+### 1. strip to end
+
+```bash
+${var%string*}
+```
+
+strip everything from the first occurrence of `string` to the end
+
+```bash
+${var%_*} # abcd_efg
+```
+
+### 2. strip to end
+
+```bash
+${var%%string*}
+```
+
+strip everything from the last occurrence of `string` to the end
+
+```bash
+${var%%_*} #abcd
+```
+
+### 3. strip to start
+
+```bash
+${var#*string}
+```
+
+strip everything from the start to the first occurrence of `string`
+
+```bash
+${var#*_} # efg_abc
+```
+
+### 4. strip to start
+
+```bash
+${var##*string}
+```
+
+strip everything from the start to the last occurrence of `string`
+
+```bash
+${var##*_} # efg
+```
+
+
+
 
 
 
