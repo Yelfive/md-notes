@@ -16,3 +16,4 @@ TODO
 
 - service worker
 - Redux
+- https://developers.google.com/v8/
