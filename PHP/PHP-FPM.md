@@ -2,6 +2,7 @@ PHP FPM
 =======
 
 ```conf
-security.limit_extensions=.php .html .js .css
+; allow to execute php with extensions, default to be .php only
+security.limit_extensions=.php .do
 ```
 
