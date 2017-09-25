@@ -20,8 +20,6 @@ strace -p <PID>
 strace -cp <PID>
 ```
 
-
-
 **Example**
 
 ```bash
