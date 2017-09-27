@@ -9,6 +9,7 @@ Bash Completion
 
     **Ubuntu**
 
+    
     > apt-get install -y bash-completion
     
     **Mac**
@@ -40,4 +41,9 @@ Bash Completion
 ### Notice
 
 1. How to custom a completion
+
+Appendix
+--------
+
+docker: https://docs.docker.com/machine/completion/
 

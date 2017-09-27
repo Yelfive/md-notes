@@ -10,5 +10,8 @@ POSIX Regular Expression
            blank    lower    upper
            cntrl    print    xdigit
 
-
+```bash
+grep [[:digit:]]
+grep [[:digit:][:alpha:]]
+```
 
