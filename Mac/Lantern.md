@@ -8,6 +8,7 @@ By pass proxy
 
 
 Setting network proxy
+---------------------
 
 ```bash
 $ networksetup -getproxybypassdomains Wi-Fi
