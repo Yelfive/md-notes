@@ -10,5 +10,14 @@ By pass proxy
 Setting network proxy
 
 ```bash
+$ networksetup -getproxybypassdomains Wi-Fi
+
+*.baidu.com
+*.163.com
+*.qq.com
+*.outsource
+*.alijian.com
+*.cn
+*.liaoxuefeng.com
 
 ```
