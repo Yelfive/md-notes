@@ -10,6 +10,14 @@ By pass proxy
 Setting network proxy
 ---------------------
 
+**Listing services**
+
+```bash
+networksetup -listallnetworkservices
+```
+
+**Getting**
+
 ```bash
 $ networksetup -getproxybypassdomains Wi-Fi
 
@@ -21,4 +29,10 @@ $ networksetup -getproxybypassdomains Wi-Fi
 *.cn
 *.liaoxuefeng.com
 
+```
+
+**Setting**
+
+```bash
+networksetup -setproxybypassdomains networkservice domain1 [domain2] [...]
 ```
