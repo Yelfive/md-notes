@@ -43,3 +43,5 @@ Step 3.
 restart the server
 nginx restart
 
+> NOTE: restart nginx needed when renewed certs
+
