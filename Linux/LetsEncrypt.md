@@ -18,7 +18,7 @@ letsencrypt.org
 
 certbot.eff.org
 
-step 1.
+Step 1.
 -------
 
 ```bash
@@ -37,7 +37,9 @@ Step 2.
 import cert and key on server config file
 like above
 
-3.
+Step 3.
+-------
+
 restart the server
 nginx restart
 
