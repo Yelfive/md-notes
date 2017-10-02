@@ -109,7 +109,7 @@ Note
     + b = Ta
 - 线性映射
     + Ta + Tb = T(a+b)
-    + T(ka) = 
+    + T(ka) = kTa
 
 
 
