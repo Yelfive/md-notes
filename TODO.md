@@ -12,6 +12,8 @@ TODO
 
 - [ ] C, force type changing, struct stuff
 - [x] PHP Opcode
+- [ ] go 
+- [ ] 
 
 - service worker
 - Redux
