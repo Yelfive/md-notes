@@ -17,10 +17,10 @@ Deleting History
 
    git branch -D master
 
-5. Rename the current branch to master
+#### Rename the current branch to master
 
    git branch -m master
 
-6. Finally, force update your repository
+#### Finally, force update your repository
 
    git push -f origin master
