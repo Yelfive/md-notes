@@ -24,3 +24,14 @@ Deleting History
 #### Finally, force update your repository
 
    git push -f origin master
+
+Second
+------
+
+```bash
+rm -rf .git
+git init
+git remote add origin some-site
+git commit -am "initial commit"
+git push -f origin master
+```
