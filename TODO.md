@@ -10,7 +10,7 @@ TODO
 - strace, ptrace, dtrace, ltrace
 
 
-[] C, force type changing, struct stuff
+- [ ] C, force type changing, struct stuff
 
 [x] PHP Opcode
 
