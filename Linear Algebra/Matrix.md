@@ -110,7 +110,7 @@ Note
 - 线性映射: 满足线性运算（加&数乘）
     + Ta + Tb = T(a+b)
     + T(ka) = kTa
-- 线性变换的核: S = {Ta=0|a belongs to V}, V 为线性空间，为线性空间
+- 线性变换的核: S = {a|a belongs to V, Ta=0}, V 为线性空间，为线性空间
 - 
 
 
