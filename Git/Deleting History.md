@@ -1,20 +1,19 @@
 Deleting History
 ================
 
-1. Checkout
+#### Checkout
 
    git checkout --orphan latest_branch
 
-2. Add all the files
+#### Add all the files
 
    git add -A
 
-3. Commit the changes
+#### Commit the changes
 
    git commit -am "commit message"
 
-
-4. Delete the branch
+#### Delete the branch
 
    git branch -D master
 
