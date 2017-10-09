@@ -111,7 +111,7 @@ Note
     + Ta + Tb = T(a+b)
     + T(ka) = kTa
 - 线性变换的核: S = {a | a belongs to V, Ta=0}, V 为线性空间, S 为线性空间
-
+- 线性变换在基下的矩阵
 
 
 Determinant
