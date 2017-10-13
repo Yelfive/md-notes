@@ -24,8 +24,10 @@ git init --bare
 4. Add authorization key
 
 ```bash
-
+cat key.pub >> ~/.ssh/authorized_keys
 ```
+
+> Note: Remember to `chmod 600 ~/.ssh/authorized_keys`
 
 5. Git clone
 
