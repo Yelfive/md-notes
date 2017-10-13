@@ -9,12 +9,14 @@ yum install -y git
 ```
 
 2. Make directory
+-----------------
 
 ```bash
 mkdir -p /srv/git/my-repository.git
 ```
 
 3. Initialize repository
+------------------------
 
 ```bash
 cd /srv/git/my-repository.git
@@ -22,6 +24,7 @@ git init --bare
 ```
 
 4. Add authorization key
+------------------------
 
 ```bash
 cat key.pub >> ~/.ssh/authorized_keys
