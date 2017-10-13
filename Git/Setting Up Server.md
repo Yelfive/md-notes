@@ -39,3 +39,4 @@ cat key.pub >> ~/.ssh/authorized_keys
 git remote set-url  origin ssh://root@mylord.cn:9527/srv/git/outsource/geeqee/smart-home-app.git
 ```
 
+> Clone with protocol `ssh://user@site[:port]/path/to/repository.git`
