@@ -5,7 +5,7 @@ Setting Up Server
 2. Make directory
 3. Initialize repository
 4. Add authorization key
-5. 
+5. Git clone
 
 
 ```bash
