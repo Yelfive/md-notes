@@ -6,7 +6,17 @@ Variable types
 
 **String**
 
-- _bytes_ The serial number for a string to store
+- _bytes_ The serial number for a string to store or transport, in hexadecimal, started with a `b`
+
+```python
+# encode as UTF-8
+'中文'.encode('utf-8');
+b'\xe4\xb8\xad\xe6\x96\x87'
+
+# encode as GBK
+'中文'.encode('gbk');
+b'\xd6\xd0\xce\xc4'
+```
 
 
 **Boolean**
@@ -15,8 +25,6 @@ Variable types
 - False
 
 > Note: Watch for the cases.
-
-****
 
 Operator
 --------
