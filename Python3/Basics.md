@@ -6,7 +6,9 @@ Variable types
 
 **String**
 
-- _bytes_ The serial number for a string to store or transport, in hexadecimal, started with a `b`
+- `bytes` The serial number for a string to store or transport, in hexadecimal, started with a `b`
+- `String.encode(string charset)` To encode the string into computer character as `charset`
+- `String.encode` To change the string from computer characters to human readable characters
 
 ```python
 # encode as UTF-8
