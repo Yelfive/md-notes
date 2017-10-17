@@ -1,6 +1,8 @@
 TODO
 ====
 
+- [ ] Nginx ip restriction
+
 - what's Linux `chroot`
 - what's telnet: visiting running application?
 - mysql betree/hash
