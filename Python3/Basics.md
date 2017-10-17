@@ -47,21 +47,25 @@ string % (variable list)
 
 #### list
 
-Unique-membered list
+Array
+
+- list.insert(index, value)
+- list.append(value)
+- list.pop(int index)
+
 
 ```python
-l = (1,)
-# (1,)
-l = (1, 1, 2)
-# (1, 2)
+l = [1, 2, 3]]
+l[0] # 1
 ```
 
 #### tuple
 
-Similar to list, but the data cannot be changed after defined
+Similar to list, but the data cannot be changed after defined, so no API available
 
 ```python
-
+l = (1, )
+l = (1, 2)
 ```
 
 Operator
