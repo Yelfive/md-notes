@@ -1,6 +1,20 @@
 Basics
 ======
 
+Variable types
+--------------
+
+**String**
+
+**Boolean**
+
+- True
+- False
+
+> Note: Watch for the cases.
+
+****
+
 Operator
 --------
 
