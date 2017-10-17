@@ -4,13 +4,22 @@ Basics
 Variable types
 --------------
 
-**String**
+#### String
 
-- `bytes` The serial number for a string to store or transport, in hexadecimal, started with a `b`
-- `String.encode(string charset)` To encode the string into computer character as `charset`
-- `String.encode` To change the string from computer characters to human readable characters
+**character set**
+
+- `bytes` 
+    - The serial number for a string to store or transport, in hexadecimal, started with a `b`.
+- `String.encode(string charset)` 
+    - To encode the string into computer character as `charset`
+- `String.decode(string charset)`
+    - To change the string from computer characters to human readable characters
+
 
 ```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # encode as UTF-8
 '中文'.encode('utf-8');
 b'\xe4\xb8\xad\xe6\x96\x87'
@@ -20,8 +29,16 @@ b'\xe4\xb8\xad\xe6\x96\x87'
 b'\xd6\xd0\xce\xc4'
 ```
 
+**formatting**
 
-**Boolean**
+```python
+string % (variable list)
+
+# prints `hello, Felix`
+'hello, %s' % ('Felix')
+```
+
+#### Boolean
 
 - True
 - False
