@@ -68,6 +68,17 @@ l = (1, )
 l = (1, 2)
 ```
 
+#### if
+
+```python
+if condition:
+    # do something
+elif condition:
+    # do something
+else:
+    # do something
+```
+
 Operator
 --------
 
