@@ -16,6 +16,7 @@ TODO
 - [x] PHP Opcode
 - [ ] go
 - [ ] redis 集群
+- [ ] build a redis GUI client on MAC
 
 - service worker
 - Redux
