@@ -6,6 +6,9 @@ Variable types
 
 **String**
 
+- _bytes_ The serial number for a string to store
+
+
 **Boolean**
 
 - True
