@@ -45,6 +45,25 @@ string % (variable list)
 
 > Note: Watch for the cases.
 
+#### list
+
+Unique-membered list
+
+```python
+l = (1,)
+# (1,)
+l = (1, 1, 2)
+# (1, 2)
+```
+
+#### tuple
+
+Similar to list, but the data cannot be changed after defined
+
+```python
+
+```
+
 Operator
 --------
 
