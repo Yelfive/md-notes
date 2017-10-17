@@ -1,5 +1,5 @@
 TODO
-===
+====
 
 - what's Linux `chroot`
 - what's telnet: visiting running application?
@@ -13,7 +13,7 @@ TODO
 - [ ] C, force type changing, struct stuff
 - [x] PHP Opcode
 - [ ] go
-- [ ] 
+- [ ] redis 集群
 
 - service worker
 - Redux
