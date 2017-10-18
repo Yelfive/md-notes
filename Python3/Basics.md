@@ -201,10 +201,26 @@ a('x', b = 1, c = 2, d = 3)
 
 Destructing a list, set, tuple or dictionary, to pass to a function
 
+**how**
+
 ```python
-# destruct a list or tuple
+# destruct a list, set, tuple with one asterisk `*`
 *(1,2)
 *set([1, 2, 3])
 *[1,2]
+# destruct a dictionary with two asterisks `**`
 **{'a': 1, 'b': 2}
+```
+
+**call a function**
+
+```python
+func(*list)
+# same as
+func(list[0], list[1], list[2])
+
+dict = {'a': 1, 'b': 2}
+func(**dict)
+# same as
+func(a = 1, b = 2)
 ```
