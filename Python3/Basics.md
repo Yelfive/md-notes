@@ -182,19 +182,21 @@ arguments_variable(data[0], data[1], data[2]) # prints (1, 2, 3)
 
 ```python
 # accept as dict
-def as_dict(**d):
-    print(d) # d is a dictionary
+def as_dict(x, **d):
+    print(x, d) # d is a dictionary
 
-as_dict(x = 1, y = 2) # prints {'x': 1, 'y': 2}
+as_dict('x', x = 1, y = 2) # prints {'x': 1, 'y': 2}
 ```
 
 
 #### named keywords
+
+Accept only the named argument, and 
 
 ```python
 
 def a(x, *, b, c, d):
     print(x, b, c, d)
 
-a(x, {'b': 1, 'c': 2, 'd': 3, 'e': 4}) # e: 4 will be discarded
+a('x', b = 1, c = 2, d = 3)
 ```
