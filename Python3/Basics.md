@@ -155,8 +155,6 @@ l = [1, 3, 5]
 Function
 -----------------
 
-#### Define a function
-
 ```python
 def my_abs(x = 0):
     if x >= 0:
@@ -164,24 +162,38 @@ def my_abs(x = 0):
     else:
         return -x
 
+```
+
+```python
 # accept as tuple
 def arguments_variable(*arguments):
     print(arguments)
 
+data = [1, 2, 3]
+arguments_variable(*data)
+# same as
+arguments_variable(data[0], data[1], data[2])
+```
+
+```python
 # accept as dict
 def as_dict(**d):
-    print(d)
+    print(d) # d is a dictionary
 
 ```
 
-#### Call a function
 
 ```python
 
-data = [1, 2, 3]
-custom_func(*data)
-# same as
-custom_func(data[0], data[1], data[2])
+```
+
+```python
+def my_func(x, y):
+    return x**3 + y
+
+my_func(y = 1, x = 2) # result: 2^3 + 1 = 9
 
 ```
 
+```python
+```
