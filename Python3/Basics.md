@@ -1,10 +1,8 @@
 Basics
 ======
 
-Variable types
---------------
-
-#### String
+String
+------
 
 **character set**
 
@@ -38,16 +36,18 @@ string % (variable list)
 'hello, %s' % ('Felix')
 ```
 
-#### Boolean
+Boolean
+-------
 
 - True
 - False
 
 > Note: Watch for the cases.
 
-#### list
+list
+----
 
-Array
+Similar to array of other languages
 
 - list.insert(index, value)
 - list.append(value)
@@ -59,7 +59,8 @@ l = [1, 2, 3]]
 l[0] # 1
 ```
 
-#### tuple
+tuple
+-----
 
 Similar to list, but the data cannot be changed after defined, so no API available
 
@@ -68,7 +69,13 @@ l = (1, )
 l = (1, 2)
 ```
 
-#### if
+dict
+----
+
+Dictionary
+
+if
+--
 
 ```python
 if condition:
@@ -79,7 +86,8 @@ else:
     # do something
 ```
 
-#### while, for
+while, for
+----------
 
 ```python
 sum = 0
