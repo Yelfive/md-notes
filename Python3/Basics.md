@@ -265,9 +265,18 @@ List comprehensions
 **example**
 
 ```python
-
+>>> [ x*x for x in range(1, 10)]
+[1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```
 
+Generator
+---------
+
+Similar to list comprehensions
+
+```python
+
+```
 
 
 
