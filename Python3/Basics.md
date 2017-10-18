@@ -164,8 +164,13 @@ def my_abs(x = 0):
     else:
         return -x
 
+# accept as tuple
 def arguments_variable(*arguments):
     print(arguments)
+
+# accept as dict
+def as_dict(**d):
+    print(d)
 
 ```
 
