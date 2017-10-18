@@ -165,17 +165,17 @@ my_func(y = 1, x = 2) # result: 2^3 + 1 = 9
 
 ```
 
-#### arguments variable
+#### arbitrary arguments
 
 ```python
 # accept as tuple
-def arguments_variable(*arguments):
+def arbitrary_arguments(*arguments):
     print(arguments)
 
 data = [1, 2, 3]
-arguments_variable(*data)
+arbitrary_arguments(*data)
 # same as
-arguments_variable(data[0], data[1], data[2]) # prints (1, 2, 3)
+arbitrary_arguments(data[0], data[1], data[2]) # prints (1, 2, 3)
 ```
 
 #### keywords
@@ -186,6 +186,7 @@ def as_dict(x, **d):
     print(x, d) # d is a dictionary
 
 as_dict('x', x = 1, y = 2) # prints {'x': 1, 'y': 2}
+as_dict('x', **{'a': 1, 'b': 2})
 ```
 
 #### named keywords
