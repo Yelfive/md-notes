@@ -84,6 +84,14 @@ d = {'a': 1, 'b': 2}
 set
 ---
 
+Similar to list, but stored as dictionary, no-duplicates.
+
+- `add` add a value to set, if it existed already, no effects will be taken
+
+```python
+>>> s = set([1, 2, 3, 4, 4])
+{1, 2, ,3, 4}
+```
 
 if
 --
