@@ -77,6 +77,10 @@ Dictionary, similar to map of other languages
 - `get(key)` retrieve data
 - `pop(key)` get and then remove the key
 
+```python
+d = {'a': 1, 'b': 2}
+```
+
 set
 ---
 
