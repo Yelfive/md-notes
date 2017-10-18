@@ -236,7 +236,7 @@ s[i:j:k]    | slice from i to j(not included) with step k
 ```python
 s = [1,2,3,4]
 print(s[1, 3]) # result: [2, 3]; s[3]=4 is not included
-print(s[1, 3, 2]) # result: 2, 3; s[3]=4 is not included
+print(s[1, 3, 2]) # result: [2]; s[3]=4 is not included; s[2] is not included, for its in the step
 
 s = tuple(s)
 print(s[1, 3]) # ditto
