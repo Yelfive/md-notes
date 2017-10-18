@@ -91,6 +91,9 @@ Similar to list, but stored as dictionary, no-duplicates.
 ```python
 >>> s = set([1, 2, 3, 4, 4])
 {1, 2, ,3, 4}
+
+>>> s.add(4)
+{1, 2, 3, 4}
 ```
 
 if
