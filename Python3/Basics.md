@@ -173,5 +173,10 @@ def arguments_variable(*arguments):
 
 ```python
 
+data = [1, 2, 3]
+custom_func(*data)
+# same as
+custom_func(data[0], data[1], data[2])
+
 ```
 
