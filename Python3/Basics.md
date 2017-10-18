@@ -113,8 +113,8 @@ else:
     # do something
 ```
 
-while, for
-----------
+or
+--
 
 ```python
 sum = 0
@@ -122,6 +122,19 @@ for x in range(101):
     sum = sum + x
 print(sum)
 
+for key in dict
+
+for value in dict.values()
+
+for k, v in dict.items()
+
+for k, v in [[k1, v1,], [k2, v2]]
+```
+
+while 
+------
+
+```python
 sum = 0
 n = 99
 while n > 0:
