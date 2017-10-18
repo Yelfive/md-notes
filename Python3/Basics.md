@@ -155,6 +155,8 @@ l = [1, 3, 5]
 Function
 -----------------
 
+#### common function
+
 ```python
 def my_func(x, y):
     return x**3 + y
@@ -162,6 +164,8 @@ def my_func(x, y):
 my_func(y = 1, x = 2) # result: 2^3 + 1 = 9
 
 ```
+
+#### arguments variable
 
 ```python
 # accept as tuple
