@@ -156,11 +156,10 @@ Function
 -----------------
 
 ```python
-def my_abs(x = 0):
-    if x >= 0:
-        return x
-    else:
-        return -x
+def my_func(x, y):
+    return x**3 + y
+
+my_func(y = 1, x = 2) # result: 2^3 + 1 = 9
 
 ```
 
@@ -172,28 +171,26 @@ def arguments_variable(*arguments):
 data = [1, 2, 3]
 arguments_variable(*data)
 # same as
-arguments_variable(data[0], data[1], data[2])
+arguments_variable(data[0], data[1], data[2]) # prints (1, 2, 3)
 ```
+
+#### keywords
 
 ```python
 # accept as dict
 def as_dict(**d):
     print(d) # d is a dictionary
 
+as_dict(x = 1, y = 2) # prints {'x': 1, 'y': 2}
 ```
 
 
-```python
-
-```
+#### named keywords
 
 ```python
-def my_func(x, y):
-    return x**3 + y
 
-my_func(y = 1, x = 2) # result: 2^3 + 1 = 9
+def a(x, *, b, c, d):
+    print(x, b, c, d)
 
-```
-
-```python
+a(x, {'b': 1, 'c': 2, 'd': 3, 'e': 4}) # e: 4 will be discarded
 ```
