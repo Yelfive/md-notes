@@ -142,15 +142,20 @@ Operator
 
 ** in **
 
-Check if a key exists in list or dict
+Check if a key exists in dict, or a value exists in list
 
 ```python
 d = {'a': None}
-'a' in d # true
+'a' in d # True
+
+l = [1, 3, 5]
+5 in l # True
 ```
 
-Define a function
+Function
 -----------------
+
+#### Define a function
 
 ```python
 def my_abs(x = 0):
@@ -163,3 +168,10 @@ def arguments_variable(*arguments):
     print(arguments)
 
 ```
+
+#### Call a function
+
+```python
+
+```
+
