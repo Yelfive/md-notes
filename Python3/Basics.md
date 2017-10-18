@@ -144,7 +144,7 @@ Define a function
 -----------------
 
 ```python
-def my_abs(x):
+def my_abs(x = 0):
     if x >= 0:
         return x
     else:
