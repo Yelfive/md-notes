@@ -272,10 +272,13 @@ List comprehensions
 Generator
 ---------
 
-Similar to list comprehensions
+Similar to list comprehensions, but with parenthesis instead of brackets
 
 ```python
-
+>>> g = ( xx for in range(1, 10))
+>>> type(g)
+<class 'generator'>
+>>> g.current()
 ```
 
 
