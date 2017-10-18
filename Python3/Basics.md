@@ -44,6 +44,11 @@ Boolean
 
 > Note: Watch for the cases.
 
+None
+----
+
+None for null
+
 list
 ----
 
@@ -133,4 +138,15 @@ Operator
 ```python
 10 // 3
 # result 3, similar to floor(10/3)
+```
+
+Define a function
+-----------------
+
+```python
+def my_abs(x):
+    if x >= 0:
+        return x
+    else:
+        return -x
 ```
