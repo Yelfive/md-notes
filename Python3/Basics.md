@@ -224,3 +224,12 @@ func(**dict)
 # same as
 func(a = 1, b = 2)
 ```
+
+Slice of list/tuple
+-------------------
+
+```python
+
+```
+
+
