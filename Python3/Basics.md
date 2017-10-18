@@ -140,6 +140,15 @@ Operator
 # result 3, similar to floor(10/3)
 ```
 
+** in **
+
+Check if a key exists in list or dict
+
+```python
+d = {'a': None}
+'a' in d # true
+```
+
 Define a function
 -----------------
 
