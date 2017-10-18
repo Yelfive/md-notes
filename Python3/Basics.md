@@ -72,7 +72,7 @@ l = (1, 2)
 dict
 ----
 
-Dictionary
+Dictionary, similar to map of other languages
 
 if
 --
