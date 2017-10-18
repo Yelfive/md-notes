@@ -255,4 +255,19 @@ s = tuple(s)
 print(s[1, 3]) # ditto
 ```
 
+List comprehensions
+-------------------
+
+```python
+[expression for p in data]
+```
+
+**example**
+
+```python
+
+```
+
+
+
 
