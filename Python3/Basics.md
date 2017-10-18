@@ -172,10 +172,7 @@ my_func(y = 1, x = 2) # result: 2^3 + 1 = 9
 def arbitrary_arguments(*arguments):
     print(arguments)
 
-data = [1, 2, 3]
-arbitrary_arguments(*data)
-# same as
-arbitrary_arguments(data[0], data[1], data[2]) # prints (1, 2, 3)
+arbitrary_arguments(1, 2, 3) # prints (1, 2, 3)
 ```
 
 #### keywords
@@ -186,7 +183,6 @@ def as_dict(x, **d):
     print(x, d) # d is a dictionary
 
 as_dict('x', x = 1, y = 2) # prints {'x': 1, 'y': 2}
-as_dict('x', **{'a': 1, 'b': 2})
 ```
 
 #### named keywords
@@ -199,4 +195,16 @@ def a(x, *, b, c, d):
     print(x, b, c, d)
 
 a('x', b = 1, c = 2, d = 3)
+```
+
+#### destructing
+
+Destructing a list, set, tuple or dictionary, to pass to a function
+
+```python
+# destruct a list or tuple
+*(1,2)
+*set([1, 2, 3])
+*[1,2]
+**{'a': 1, 'b': 2}
 ```
