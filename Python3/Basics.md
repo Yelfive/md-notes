@@ -149,4 +149,8 @@ def my_abs(x = 0):
         return x
     else:
         return -x
+
+def arguments_variable(*arguments):
+    print(arguments)
+
 ```
