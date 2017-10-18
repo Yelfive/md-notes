@@ -188,10 +188,9 @@ def as_dict(x, **d):
 as_dict('x', x = 1, y = 2) # prints {'x': 1, 'y': 2}
 ```
 
-
 #### named keywords
 
-Accept only the named argument, and 
+Accept only the named argument after asterisk `*`, and error will be raised if any other argument is passed
 
 ```python
 
