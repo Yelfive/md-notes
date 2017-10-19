@@ -1,8 +1,6 @@
-ES2015(ES6) Basics
-==================
+# ES2015(ES6) Basics
 
-JS complier
------------
+### JS complier
 
 - bable
 
@@ -68,8 +66,7 @@ let obj = {
 ```
 
 
-Symbol
-------
+### Symbol
 
 ```js
 
@@ -129,8 +126,8 @@ retrieve the registered key for the given instance
 - toStringTag
 - unscopables
 
-Set
----
+### Set
+
 
     int size
 
