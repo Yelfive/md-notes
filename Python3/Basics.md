@@ -104,8 +104,7 @@ else:
     # do something
 ```
 
-or
---
+## for
 
 ```python
 sum = 0
@@ -280,14 +279,17 @@ print(s[1, 3]) # ditto
 
 ```python
 def g(max):
-    for(i = 0; i<max; i++):
+    for i in range(1, max+1):
         yield i**2
 
 for value in g(3):
     print(value)
 
-# result: 1 4 9
+# result 1 4 9
 ```
+
+To get the return value of a generator, `try ... except ...` should be used
+
 
 
 
