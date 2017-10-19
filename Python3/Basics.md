@@ -153,7 +153,7 @@ Operator
 # result 3, similar to floor(10/3)
 ```
 
-** in **
+**in**
 
 Check if a key exists in dict, or a value exists in list
 
@@ -163,6 +163,16 @@ d = {'a': None}
 
 l = [1, 3, 5]
 5 in l # True
+```
+
+**value swap**
+
+```python
+a = 1
+b = 2
+a, b = b, a
+
+print('a:%d,b:%d'%(a,b)) # a:2,b:1
 ```
 
 Function
