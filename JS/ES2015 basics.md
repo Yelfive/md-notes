@@ -66,7 +66,7 @@ let obj = {
 ```
 
 
-### Symbol
+## Symbol
 
 ```js
 
@@ -126,7 +126,7 @@ retrieve the registered key for the given instance
 - toStringTag
 - unscopables
 
-### Set
+## Set
 
 
     int size
@@ -140,10 +140,13 @@ retrieve the registered key for the given instance
     values
     entries
     forEach
-WeakSet
+
+## WeakSet
     accepts only objects as elements
     no iteration
-Map
+
+## Map
+
     int size
 
     Map set
@@ -156,10 +159,13 @@ Map
     values
     entries
     forEach
-WeakMap
+
+## WeakMap
     accepts only objects as keys
     no iteration
-Symbol.iterator
+
+## Symbol.iterator
+
     obj = {}
     obj[Symbol.iterator] = function () {
         return {
@@ -179,7 +185,8 @@ Symbol.iterator
         These operation will trigger the iteration, and the {done: true} does not count
     
 
-Proxy
+## Proxy
+
     Set before the object, every query to the object will have to pass the proxy
     1. Object construct
     2. mixed get
@@ -199,7 +206,8 @@ Proxy
         Returns {proxy: proxy, revoke: revoke} // proxy is the same as return from new Proxy
         revoke will prevent the proxy's property from being accessed again
 
-Reflect
+## Reflect
+
     construct(target, args) // to new an instance
     get(target, name, receiver) // get property from target, undefined if none exists
     set(target, name, value, receiver) // set to target a property
@@ -214,7 +222,9 @@ Reflect
     preventExtensions(target) // `Object.preventExtensions` to make an object un-extensible
     ownKeys(target) // combination of `Object.getOwnPropertyNames` and `Object.getOwnPropertySymbols`
     
-Promise
+
+## Promise
+
     Promise a functionality, generally for asynchronized functions, to perform,
     and call the corresponding response callback when it's done
     ``` js
@@ -289,7 +299,7 @@ Promise
         similar to resolve except it rejects promises
 
 
-Generator
+## Generator
     *
         function* generator(){}
     yield
