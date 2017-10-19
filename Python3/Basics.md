@@ -1,8 +1,6 @@
-Basics
-======
+# Basics
 
-String
-------
+## String
 
 **character set**
 
@@ -36,16 +34,14 @@ string % (variable list)
 'hello, %s' % ('Felix')
 ```
 
-Boolean
--------
+## Boolean
 
 - True
 - False
 
 > Note: Watch for the cases.
 
-None
-----
+## None
 
 None for null
 
@@ -248,8 +244,7 @@ func(**dict)
 func(a = 1, b = 2)
 ```
 
-Slice of list/tuple
--------------------
+## Slice of list/tuple
 
 Operation   | Result
 ---         | ---
@@ -265,8 +260,7 @@ s = tuple(s)
 print(s[1, 3]) # ditto
 ```
 
-List comprehensions
--------------------
+## List comprehensions
 
 ```python
 [expression for p in data]
@@ -279,8 +273,7 @@ List comprehensions
 [1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```
 
-Generator
----------
+## Generator
 
 Similar to list comprehensions, but with parenthesis instead of brackets
 
