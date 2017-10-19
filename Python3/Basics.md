@@ -8,10 +8,6 @@
     
     ```
 
-```MathJax
-$$2^2$$
-```
-
 **character set**
 
 - `bytes` 

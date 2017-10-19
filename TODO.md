@@ -17,6 +17,7 @@ TODO
 - [ ] go
 - [ ] redis 集群
 - [ ] build a redis GUI client on MAC
+- [ ] MathJax
 
 - service worker
 - Redux
