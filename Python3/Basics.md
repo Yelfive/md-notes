@@ -45,8 +45,7 @@ string % (variable list)
 
 None for null
 
-list
-----
+## list
 
 Similar to array of other languages
 
@@ -60,8 +59,7 @@ l = [1, 2, 3]]
 l[0] # 1
 ```
 
-tuple
------
+## tuple
 
 Similar to list, but the data cannot be changed after defined, so no API available
 
@@ -70,8 +68,7 @@ l = (1, )
 l = (1, 2)
 ```
 
-dict
-----
+## dict
 
 Dictionary, similar to map of other languages
 
@@ -82,8 +79,7 @@ Dictionary, similar to map of other languages
 d = {'a': 1, 'b': 2}
 ```
 
-set
----
+## set
 
 Similar to list, but stored as dictionary, no-duplicates.
 
@@ -97,8 +93,7 @@ Similar to list, but stored as dictionary, no-duplicates.
 {1, 2, 3, 4}
 ```
 
-if
---
+## if
 
 ```python
 if condition:
@@ -127,8 +122,7 @@ for k, v in dict.items()
 for k, v in [[k1, v1,], [k2, v2]]
 ```
 
-while 
-------
+## while
 
 ```python
 sum = 0
@@ -139,8 +133,7 @@ while n > 0:
 print(sum)
 ```
 
-Operator
---------
+## Operator
 
 **1. `//` floor division **
 
@@ -171,8 +164,7 @@ a, b = b, a
 print('a:%d,b:%d' % (a,b)) # a:2,b:1
 ```
 
-Function
------------------
+## Function
 
 #### common function
 
@@ -275,13 +267,26 @@ print(s[1, 3]) # ditto
 
 ## Generator
 
-Similar to list comprehensions, but with parenthesis instead of brackets
+1. Similar to list comprehensions, but with parenthesis instead of brackets
 
 ```python
 >>> g = ( xx for in range(1, 10))
 >>> type(g)
 <class 'generator'>
 >>> g.current()
+```
+
+2. Similar to a function
+
+```python
+def g(max):
+    for(i = 0; i<max; i++):
+        yield i**2
+
+for value in g(3):
+    print(value)
+
+# result: 1 4 9
 ```
 
 
