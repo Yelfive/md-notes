@@ -268,28 +268,36 @@ print(s[1, 3]) # ditto
 
 1. Similar to list comprehensions, but with parenthesis instead of brackets
 
-```python
->>> g = ( xx for in range(1, 10))
->>> type(g)
-<class 'generator'>
->>> g.current()
-```
+    ```python
+    >>> g = ( xx for in range(1, 10))
+    >>> type(g)
+    <class 'generator'>
+    >>> g.current()
+    ```
 
 2. Similar to a function
 
-```python
-def g(max):
-    for i in range(1, max+1):
-        yield i**2
+    ```python
+    def g(max):
+        for i in range(1, max+1):
+            yield i**2
+        return 'finished'
 
-for value in g(3):
-    print(value)
+    for value in g(3):
+        print(value)
 
-# result 1 4 9
-```
+    # result 1 4 9
+    ```
 
 To get the return value of a generator, `try ... except ...` should be used
 
+```python
+a = g(3)
+try:
+    while True:
+        next(a)
+except StopIteration as e:
+    print(e.value)
 
-
+```
 
