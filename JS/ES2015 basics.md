@@ -4,9 +4,12 @@ ES2015(ES6) Basics
 JS complier
 -----------
 
-bable
+- bable
+
     js compiler to compile written in ES6 into all kinds of versions
-gulp
+
+- gulp
+
     command line tool
 
 
@@ -58,14 +61,16 @@ Number
 Object.defineProperty(object, propertyName, {value: value, enumerable: true/false})
     enumerable: whether it can be iterated (via for ... in, for example)
 
-
+```js
 let obj = {
     [stirng]: (arg) {} //  string: function (arg) {}
 }
+```
 
 
 Symbol
 ------
+
 ```js
 
 let sym = Symbol('foo')
@@ -115,15 +120,18 @@ retrieve the registered key for the given instance
         a instanceof MyClass;// false
         a instanceof Array; // true
         ```
-    match
-    replace
-    search
-    split
-    iterator
-    toPrimitive
-    toStringTag
-    unscopables
+- match
+- replace
+- search
+- split
+- iterator
+- toPrimitive
+- toStringTag
+- unscopables
+
 Set
+---
+
     int size
 
     Set add
