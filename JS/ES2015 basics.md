@@ -1,6 +1,6 @@
 # ES2015(ES6) Basics
 
-### JS complier
+## JS complier
 
 - bable
 
