@@ -2,6 +2,12 @@
 
 ## String
 
+    
+    ```python
+    def a():
+    
+    ```
+
 **character set**
 
 - `bytes` 
