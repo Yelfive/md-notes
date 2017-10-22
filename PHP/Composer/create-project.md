@@ -69,5 +69,5 @@ To setup a developer workable version you should create the project using the so
 controlled code by appending the `--prefer-source` flag.
 
 To install a package from another repository than the default one you
-can pass the '--repository=https://myrepository.org' flag.
+can pass the `--repository=https://myrepository.org` flag.
   

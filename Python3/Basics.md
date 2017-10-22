@@ -2,12 +2,6 @@
 
 ## String
 
-    
-    ```python
-    def a():
-    
-    ```
-
 **character set**
 
 - `bytes` 
@@ -16,7 +10,6 @@
     - To encode the string into computer character as `charset`
 - `String.decode(string charset)`
     - To change the string from computer characters to human readable characters
-
 
 ```python
 #!/usr/bin/env python3
