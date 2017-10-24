@@ -81,6 +81,28 @@ rename user 'username'@'address' to 'new_user@new_address'
 ## Change password
 
 ```mysql
-SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123456');
+SET PASSWORD FOR 'user'@'address' = PASSWORD('password');
 ```
 
+```bash
+mysqladmin -uroot -p123456 password 1234abcd
+```
+
+```mysql
+UPDATE mysql.user SET PASSWORD=PASSWORD('1234abcd') WHERE user = 'root';
+```
+
+## When you forget root password
+
+**1. Stop mysqld: kill all mysqld process**
+
+```bash
+# start mysqld without checking for grants
+mysqld_safe --skip-grant-tables & 
+```
+
+**2. Just change password as MySQL never did have one**
+
+```bash
+mysqladmin -uroot -p'password' password 1234abcd
+```
