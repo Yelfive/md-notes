@@ -46,9 +46,22 @@ grant all privileges on *.* to jack@'localhost' identified by "jack"
 - `all privileges` can be any of above
 - `localhost` is the client address, `%` for all
 
+## Flush Privileges
 
 ```sql
 flush privileges;
 ```
+
+## Show Grants
+
+```mysql
+show grants [for user]
+```
+
+If `[for user]` is omitted, it will be 
+
+
+
+
 
 
