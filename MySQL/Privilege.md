@@ -108,3 +108,8 @@ mysqld_safe --skip-grant-tables &
 ```bash
 mysqladmin -uroot password 'your_passwd_string'
 ```
+
+## Appendix
+
+- [Privileges Provided by MySQL](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html)
+- [mysqld-safe](https://dev.mysql.com/doc/refman/5.7/en/mysqld-safe.html)
