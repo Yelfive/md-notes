@@ -86,7 +86,7 @@ SET PASSWORD FOR 'user'@'address' = PASSWORD('password');
 ```
 
 ```bash
-mysqladmin -uroot -p123456 password 1234abcd
+mysqladmin -u'root' -p'123456' password '1234abcd'
 ```
 
 ```mysql
@@ -95,14 +95,15 @@ UPDATE mysql.user SET PASSWORD=PASSWORD('1234abcd') WHERE user = 'root';
 
 ## When you forget root password
 
-**1. Stop mysqld: kill all mysqld process**
+#### 1. Stop mysqld: kill all mysqld process
+
+#### 2. start mysqld without checking for grants
 
 ```bash
-# start mysqld without checking for grants
 mysqld_safe --skip-grant-tables & 
 ```
 
-**2. Just change password as MySQL never did have one**
+#### 3. Just change password as MySQL never did have one
 
 ```bash
 mysqladmin -uroot password 'your_passwd_string'
