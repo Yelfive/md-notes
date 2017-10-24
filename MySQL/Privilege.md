@@ -55,13 +55,32 @@ flush privileges;
 ## Show Grants
 
 ```mysql
-show grants [for user]
+show grants [for user@address]
 ```
 
-If `[for user]` is omitted, it will be 
+If `[for user]` is omitted, it will be the current user
 
+## Revoke a privilege
 
+```mysql
+revoke delete on *.* from 'user'@'address'
+```
 
+## Delete a user
 
+```mysql
+drop user 'username'@'address';
+```
 
+## Rename
+
+```mysql
+rename user 'username'@'address' to 'new_user@new_address'
+```
+
+## Change password
+
+```mysql
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123456');
+```
 
