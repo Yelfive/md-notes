@@ -104,5 +104,5 @@ mysqld_safe --skip-grant-tables &
 **2. Just change password as MySQL never did have one**
 
 ```bash
-mysqladmin -uroot -p'password' password 1234abcd
+mysqladmin -uroot password 'your_passwd_string'
 ```
