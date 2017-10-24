@@ -1,6 +1,6 @@
 # Privileges
 
-Table 6.2 Permissible Privileges for GRANT and REVOKE
+## Table of Permissible Privileges for GRANT and REVOKE
 
 Privilege | Column    | Context
 --- |--- | ---
@@ -37,6 +37,7 @@ TRIGGER | Trigger_priv | Tables
 UPDATE  | Update_priv | Tables or columns
 USAGE   | Synonym for “no privileges” | Server administration
 
+## Grant privileges
 
 ```mysql
 grant all privileges on *.* to jack@'localhost' identified by "jack"
