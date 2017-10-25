@@ -20,11 +20,7 @@
 
 ## CAP
 
-- `C` Consistency
-- `A` Available
-- `P` Partition tolerance
-
-**CAP theorem(AKA, Brewer's theorem)**
+#### CAP theorem(AKA, Brewer's theorem)
 
 - `C` Consistency
 
@@ -36,7 +32,12 @@
 
 - `P` Partition tolerance
 
+    The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
+
 > Distributed system can never fulfill all the three guarantees.
+
+#### See
+- [WIKI](https://en.wikipedia.org/wiki/CAP_theorem)
 
 ## BASE
 
