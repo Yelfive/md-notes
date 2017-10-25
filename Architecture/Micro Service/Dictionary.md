@@ -26,11 +26,17 @@
 
 **CAP theorem(AKA, Brewer's theorem)**
 
-- `C`: Consistency
+- `C` Consistency
+
+    Every read receives the most recent write or an error
+
 - `A` Available
+
+    Every request receives a (non-error) response – without guarantee that it contains the most recent write
+
 - `P` Partition tolerance
 
-> Distributed system can never fulfill all the three characteristics.
+> Distributed system can never fulfill all the three guarantees.
 
 ## BASE
 
