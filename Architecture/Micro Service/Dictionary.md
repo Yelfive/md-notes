@@ -24,19 +24,22 @@
 
 - `C` Consistency
 
-    Every read receives the most recent write or an error
+    Every read receives the most recent write or an error.
+
+    > Note that, `Consistency` here is quite different from that of [ACID](#ACID)
 
 - `A` Available
 
-    Every request receives a (non-error) response – without guarantee that it contains the most recent write
+    __Every request receives a (non-error) response__ – without guarantee that it contains the most recent write.
 
 - `P` Partition tolerance
 
-    The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
+    __The system continues to operate__ despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.
 
 > Distributed system can never fulfill all the three guarantees.
 
-#### See
+#### See Also
+
 - [WIKI](https://en.wikipedia.org/wiki/CAP_theorem)
 
 ## BASE
