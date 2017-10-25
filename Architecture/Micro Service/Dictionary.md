@@ -2,8 +2,14 @@
 
 ## ACID
 
-- `A` Atomically
+- `A` Atomicity
+    
+    The whole transaction should be considered as a minimum unit, which is atomicity
+
 - `C` Consistency
+    
+    
+
 - `I` Isolation
 - `D` Durability
 
