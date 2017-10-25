@@ -4,11 +4,11 @@
 
 - `A` Atomicity
     
-    The whole transaction should be considered as a minimum unit, which is atomicity
+    The whole transaction should be considered as a minimum unit, which is atomicity, indivisible
 
 - `C` Consistency
-    
-    
+
+    A transaction brings the data from one state to another, without violating all the rules and constrains, including triggers
 
 - `I` Isolation
 - `D` Durability
@@ -25,7 +25,7 @@
 - `A` Available
 - `P` Partition tolerance
 
-> Distributed system can never fulfill all the three 
+> Distributed system can never fulfill all the three characteristics.
 
 ## BASE
 
