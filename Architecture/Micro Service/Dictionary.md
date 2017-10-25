@@ -40,11 +40,11 @@
     
     `tolerance` means to accept the fact that partition happens.
 
-> Distributed system can never fulfill all the three guarantees.
+> **Theorem:** Distributed system can never fulfill all the three guarantees.
 
 No distributed system is safe from network failures, thus network partitioning generally has to be tolerated(`Partition tolerance`).
 
-Then `C` and `A` cannot both be guaranteed, choice should be made.
+Since `P` is taken, `C` and `A` cannot both be guaranteed, choice should be made.
 
 #### See Also
 
