@@ -20,8 +20,6 @@
 
 ## CAP
 
-#### CAP theorem(AKA, Brewer's theorem)
-
 - `C` Consistency
 
     Every read receives the most recent write or an error.
@@ -40,20 +38,27 @@
     
     `tolerance` means to accept the fact that partition happens.
 
-> **Theorem:** Distributed system can never fulfill all the three guarantees.
+#### CAP theorem(AKA, Brewer's theorem)
 
-No distributed system is safe from network failures, thus network partitioning generally has to be tolerated(`Partition tolerance`).
-
-Since `P` is taken, `C` and `A` cannot both be guaranteed, choice should be made.
+> Distributed system can never fulfill all the three guarantees.
+>
+> No distributed system is safe from network failures, thus,
+> network partitioning generally has to be tolerated(`Partition tolerance`).
+>
+> Since `P` is taken, `C` and `A` cannot both be guaranteed,
+> choice should be made.
 
 #### See Also
 
 - [WIKI](https://en.wikipedia.org/wiki/CAP_theorem)
 
-## BASE
+## BASE philosophy
 
-- `BA` Basically Available: available with slight delay
-- `S` Soft state: 
+- `BA` Basically Available
+
+    available with slight delay
+
+- `S` Soft state
 - `E` Eventually Consistent
 
 ## TCC
