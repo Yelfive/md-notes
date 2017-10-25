@@ -87,4 +87,8 @@ Compared to `CRUD`, it divides data manipulation into changing and query
 - `Command` The `CUD` operation of the DB
 - `Query` The `Q` behavior
 
+## Service Registry/Discovery
+
+In order to load balance, services are registered at Service Registry
+
 
