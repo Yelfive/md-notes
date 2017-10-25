@@ -36,8 +36,9 @@
 
     __The system continues to operate__ despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.
 
-    `Partition`, in this context, means network partition(segmentation),
-    while `tolerance` means not to
+    `Partition`, in this context, means network partition(segmentation), which will cause message dropping.
+    
+    `tolerance` means to accept the fact that partition happens.
 
 > Distributed system can never fulfill all the three guarantees.
 
