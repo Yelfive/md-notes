@@ -2,10 +2,10 @@
 
 ## ACID
 
-- `Atomically`
-- `Consistency`
-- `Isolation`
-- `Durability`
+- `A` Atomically
+- `C` Consistency
+- `I` Isolation
+- `D` Durability
 
 ## CAP
 
@@ -35,6 +35,9 @@ Try Confirm Cancel
 
 Message Queue
 
+## SOA
+
+Service-Oriented Architecture
 
 Abbrev  | Description
 ---     | ---
