@@ -82,4 +82,9 @@ Service-Oriented Architecture
 
 Command Query Responsibility Segregation
 
-- `Command` 
+Compared to `CRUD`, it divides data manipulation into changing and query
+
+- `Command` The `CUD` operation of the DB
+- `Query` The `Q` behavior
+
+
