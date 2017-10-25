@@ -78,7 +78,8 @@ Message Queue
 
 Service-Oriented Architecture
 
-Abbrev  | Description
----     | ---
-CAP     | C: Consistency<br> A: Availability<br> P: Partition tolerance
-BASE    | :x:
+## CQRS
+
+Command Query Responsibility Segregation
+
+- `Command` 
