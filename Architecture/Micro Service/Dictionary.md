@@ -2,4 +2,7 @@
 
 Abbrev  | Description
 ---     | ---
-CAP     | Consistency, Availability, Partition tolerance
+CAP     | C: Consistency, Availability, Partition tolerance\
+        | A: Availability
+        | P: Partition tolerance
+BASE    | :x:
