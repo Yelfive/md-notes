@@ -1,5 +1,14 @@
 # Dictionary
 
+## ACID
+
+```text
+Atomically
+Consistency
+Isolation
+Durability
+```
+
 ## CAP
 
 Consistency, Available, Partition tolerance
@@ -23,6 +32,11 @@ P: Partition tolerance
 ## TCC
 
 Try Confirm Cancel
+
+## MQ
+
+Message Queue
+
 
 Abbrev  | Description
 ---     | ---
