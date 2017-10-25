@@ -11,7 +11,12 @@
     A transaction brings the data from one state to another, without violating all the rules and constrains, including triggers
 
 - `I` Isolation
+
+    Isolation is for concurrent transactions(concurrency control). If concurrency happens, it should result in the same state where the transactions is executed sequentially. So, each transaction is isolated with another.
+
 - `D` Durability
+
+    Makes sure state saved after committed.
 
 ## CAP
 
