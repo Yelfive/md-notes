@@ -4,11 +4,11 @@
 
 - `A` Atomicity
     
-    The whole transaction should be considered as a minimum unit, which is atomicity, indivisible
+    The whole transaction should be considered as a minimum unit, which is atomicity, indivisible.
 
 - `C` Consistency
 
-    A transaction brings the data from one state to another, without violating all the rules and constrains, including triggers
+    A transaction brings the data from one state to another, without violating all the rules and constrains, including triggers.
 
 - `I` Isolation
 
@@ -22,7 +22,7 @@
 
 - `C` Consistency
 
-    Every read receives the most recent write or an error.
+    Every read receives the most recent write or an error. Synchronized.
 
     > Note that, `Consistency` here is quite different from that of [ACID](#ACID)
 
