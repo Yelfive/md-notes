@@ -2,26 +2,24 @@
 
 ## ACID
 
-```text
-Atomically
-Consistency
-Isolation
-Durability
-```
+- `Atomically`
+- `Consistency`
+- `Isolation`
+- `Durability`
 
 ## CAP
 
-Consistency, Available, Partition tolerance
+- `C` Consistency
+- `A` Available
+- `P` Partition tolerance
 
 **CAP theorem(AKA, Brewer's theorem)**
 
-> Distributed system can never fulfill all the three 
+- `C`: Consistency
+- `A` Available
+- `P` Partition tolerance
 
-```text
-C: Consistency
-A: Available
-P: Partition tolerance
-```
+> Distributed system can never fulfill all the three 
 
 ## BASE
 
