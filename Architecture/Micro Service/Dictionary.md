@@ -59,7 +59,12 @@
     available with slight delay
 
 - `S` Soft state
+
+    
+
 - `E` Eventually Consistent
+    
+    The same value can be accessed eventually
 
 ## TCC
 
