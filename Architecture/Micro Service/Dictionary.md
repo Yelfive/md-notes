@@ -56,15 +56,15 @@
 
 - `BA` Basically Available
 
-    available with slight delay
+    Available with slight delay, without throw error at the query.
 
 - `S` Soft state
 
-    
+    State that could be changed without notifying.
 
 - `E` Eventually Consistent
     
-    The same value can be accessed eventually
+    The same value can be accessed eventually.
 
 ## TCC
 
