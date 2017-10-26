@@ -15,6 +15,10 @@ A single entry point into a system, encapsulates services to serve the clients.
 
     Which kills calls exceeded specific threshold
 
+- [phystrix](https://github.com/upwork/phystrix) of PHP
+
+    A PHP Circuit Breaker library for fault tolerance
+
 ### Service Invocation
 
 1. Asynchronous messaging-based mechanism
