@@ -6,3 +6,8 @@
 
 - Node.js
 - Nginx plus
+
+### Service Invocation
+
+1. Asynchronous messaging-based mechanism
+2. Synchronous HTTP or Thrift
