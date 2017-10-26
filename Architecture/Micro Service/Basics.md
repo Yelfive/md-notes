@@ -11,3 +11,10 @@
 
 1. Asynchronous messaging-based mechanism
 2. Synchronous HTTP or Thrift
+
+### Service Discovery
+
+### Service Registry
+
+### Handling Partial Failures
+
