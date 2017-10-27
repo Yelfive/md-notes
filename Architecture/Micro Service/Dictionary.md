@@ -95,6 +95,15 @@ Service could have multiple address, and the address changes dynamically for eve
 
 Inter-Process Communication. It describes how micro services talk to each other
 
+#### synchronous
+
+- HTTP RESTful
+
+#### asynchronous, message based
+
+- AMQP
+- STOMP
+
 ## IDL
 
 Interface Definition Language
