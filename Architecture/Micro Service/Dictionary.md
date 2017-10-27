@@ -116,6 +116,7 @@ Interface Definition Language
 
 - [RAML](https://raml.org)： RESTful API Modeling Language
 - [Swagger](https://swagger.io/)
+- [Apache Thrift](https://thrift.apache.org/)
 
 ## API-first approach
 
