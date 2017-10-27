@@ -114,7 +114,7 @@ RabbitMQ, Apache Kafka, Apache ActiveMQ, and NSQ
 
 Interface Definition Language
 
-- [RAML](https://raml.org)
+- [RAML](https://raml.org)： RESTful API Modeling Language
 - [Swagger](https://swagger.io/)
 
 ## API-first approach
