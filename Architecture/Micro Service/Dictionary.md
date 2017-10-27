@@ -91,4 +91,7 @@ Compared to `CRUD`, it divides data manipulation into changing and query
 
 Service could have multiple address, and the address changes dynamically for every call. In order to load balance, services are registered at `Service Registry`. When an API called, the client will retrieve a pair of `ip:port` from the registry, called `Service Discovery`, and using the `ip:port` for the subsequent request.
 
+## IPC
+
+Inter-Process Communication. It describes how micro services talk to each other
 
