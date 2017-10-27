@@ -99,10 +99,14 @@ Inter-Process Communication. It describes how micro services talk to each other
 
 - HTTP RESTful
 
-#### asynchronous, message based
+#### asynchronous, message based Protocol
 
 - AMQP
 - STOMP
+
+#### message system
+
+RabbitMQ, Apache Kafka, Apache ActiveMQ, and NSQ
 
 ## IDL
 
