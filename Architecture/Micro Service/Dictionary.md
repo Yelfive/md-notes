@@ -106,7 +106,7 @@ Inter-Process Communication. It describes how micro services talk to each other
 
 #### message system
 
-**Do they support request/response-based interaction**
+**Do they support request/response-based interaction?**
 
 RabbitMQ, Apache Kafka, Apache ActiveMQ, and NSQ
 
