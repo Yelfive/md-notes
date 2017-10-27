@@ -95,3 +95,10 @@ Service could have multiple address, and the address changes dynamically for eve
 
 Inter-Process Communication. It describes how micro services talk to each other
 
+## IDL
+
+Interface Definition Language
+
+## API-first approach
+
+Defining API before implementing them
