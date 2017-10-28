@@ -131,4 +131,6 @@ Defining API before implementing them
 
 ## Service Registry
 
+A service instance request **Registry** by sending HTTP POST/DELETE request to register/delete its network location. `PUT` to update every 30 seconds.
+
 - [Netflix Eureka](https://github.com/Netflix/eureka)
