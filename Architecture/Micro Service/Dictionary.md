@@ -125,3 +125,10 @@ Interface Definition Language
 
 Defining API before implementing them
 
+## Server-side service discovery
+
+- [Consul](https://www.consul.io)
+
+## Service Registry
+
+- [Netflix Eureka](https://github.com/Netflix/eureka)
