@@ -134,9 +134,15 @@ Defining API before implementing them
 A service instance request **Registry** by sending HTTP POST/DELETE request to register/delete its network location. `PUT` to update every 30 seconds.
 
 - [Netflix Eureka](https://github.com/Netflix/eureka)
-- etcd
-- Consul
-- [Apache ZooKeeper]()
+- [etcd](https://github.com/coreos/etcd)
+
+    A highly available, distributed, consistent, key-value store that is used for shared con guration and service discovery
+
+- [Consul](https://www.consul.io)
+
+     A tool for discovering and con guring services. It provides an API that allows clients to register and discover services. Consul can perform health checks to determine service availability
+
+- [Apache ZooKeeper](http://zookeeper.apache.org/)
 
     A widely used, high-performance coordination service for distributed applications
 
