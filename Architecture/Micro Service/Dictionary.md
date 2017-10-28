@@ -93,7 +93,10 @@ Service could have multiple address, and the address changes dynamically for eve
 
 ## IPC
 
-Inter-Process Communication. It describes how micro services talk to each other
+Inter-Process Communication. It describes how micro services talk to each other.
+
+- binary
+- text: JSON XML
 
 #### synchronous
 
