@@ -30,6 +30,7 @@ A single entry point into a system, encapsulates services to serve the clients.
 
 1. Self-Registry
 2. Registrar
+    - [Registrator](https://github.com/gliderlabs/registrator)
 
 
 
