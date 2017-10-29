@@ -154,3 +154,6 @@ In computing, a materialized view is a database object that contains the **resul
 
 - [WIKI](https://en.wikipedia.org/wiki/Materialized_view)
 
+## DDD
+
+Domain-Driven Design 
