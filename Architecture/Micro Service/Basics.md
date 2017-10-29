@@ -28,3 +28,8 @@ A single entry point into a system, encapsulates services to serve the clients.
 
 ### Service Registry
 
+1. Self-Registry
+2. Registrar
+
+
+
