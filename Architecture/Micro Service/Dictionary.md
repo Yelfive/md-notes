@@ -146,4 +146,11 @@ A service instance request **Registry** by sending HTTP POST/DELETE request to r
 
     A widely used, high-performance coordination service for distributed applications
 
- 
+## Materialized View
+
+In computing, a materialized view is a database object that contains the **results of a query**. For example, it may be a local copy of data located remotely, or may be a subset of the rows and/or columns of a table or join result, or may be a summary using an aggregate function.
+
+#### See also
+
+- [WIKI](https://en.wikipedia.org/wiki/Materialized_view)
+
