@@ -157,3 +157,11 @@ In computing, a materialized view is a database object that contains the **resul
 ## DDD
 
 Domain-Driven Design 
+
+## AMQP
+
+Advanced Message Queuing Protocol
+
+## STOMP
+
+Simple (or Streaming) Text Orientated Messaging Protocol
