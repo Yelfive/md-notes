@@ -30,7 +30,7 @@ Logical agreement and dependence.
 
 ## Context
 
-The setting in which a word or statement appears that determines its meaning. See [[Bounded Context]].
+The setting in which a word or statement appears that determines its meaning. See `Bounded Context`.
 
 ## Conceptual Contour
 
@@ -38,7 +38,7 @@ An underlying consistency of the domain itself, which, if reflected in a model, 
 
 ## Context Map
 
-A representation of the [[Bounded Context]]s involved in a project and the actual relationships between them and their models.
+A representation of the `Bounded Context`s involved in a project and the actual relationships between them and their models.
 
 ## Core Domain
 
@@ -114,7 +114,7 @@ A technique for separating the concerns of a software system, isolating a domain
 
 ## Life Cycle
 
-A sequence of states an object can take on between creation and deletion, typically with constraints to ensure integrity when changing from one state to another. May include migration of an [[Entity]] between systems and different [[Bounded Contexts]].
+A sequence of states an object can take on between creation and deletion, typically with constraints to ensure integrity when changing from one state to another. May include migration of an `Entity` between systems and different `Bounded Contexts`.
 
 ## Model
 
@@ -146,7 +146,7 @@ Any observable change of state resulting from an operation, whether intentional 
 
 ## Side Effect Free Function
 
-See [[Function]].
+See `Function`.
 
 ## Standalone Class
 
@@ -174,7 +174,7 @@ The internal consistency of a model such that each term is unambiguous and no ru
 
 ## Test-Driven Development
 
-TDD is a lightweight programming methodology that emphasizes fast, incremental development and especially writing tests before writing code. Ideally these follow one another in cycles measured in minutes. (see full definition under [[Test-Driven Development]] topic)
+TDD is a lightweight programming methodology that emphasizes fast, incremental development and especially writing tests before writing code. Ideally these follow one another in cycles measured in minutes. (see full definition under `Test-Driven Development` topic)
 
 ## Value Object
 
