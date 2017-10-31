@@ -165,3 +165,12 @@ Advanced Message Queuing Protocol
 ## STOMP
 
 Simple (or Streaming) Text Orientated Messaging Protocol
+
+## BDD
+
+Behavior-Driven Development
+
+## TDD
+
+Test-Driven Development
+
