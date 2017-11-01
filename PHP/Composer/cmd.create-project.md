@@ -2,6 +2,8 @@
 
 ## Usage
 
+You can use Composer to create new projects from an existing package. This is the equivalent of doing a git clone/svn checkout followed by a "composer install" of the vendors.
+
 ```bash
   create-project [options] [--] [<package>] [<directory>] [<version>]
 ```
