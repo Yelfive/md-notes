@@ -3,10 +3,13 @@
 ```json
 {
     "scripts": {
-        "name": ["list or string of php "] 
+        "name": ["list or string of PHP::staticMethod or command line script"],
+        "composer-event": ["executable when event triggered"]
     }
 }
 ```
+
+**See Also** [Composer Event](https://getcomposer.org/doc/articles/scripts.md#event-names)
 
 ## @
 
