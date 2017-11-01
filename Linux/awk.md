@@ -13,6 +13,7 @@ awk -Ffs '/pattern/ {action}' file
 `-F` To set a file separator, which default to be space
 
 ** Example: 'a b:c d'**
+
 ```bash
 > echo 'a b:c d' | awk '{print $1}'
 a
