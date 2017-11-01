@@ -1,5 +1,13 @@
 # scripts(root-only)
 
+```json
+{
+    "scripts": {
+        "name": ["list or string of php "] 
+    }
+}
+```
+
 ## @
 
 - `@scriptName` Calls another composer script
@@ -27,6 +35,16 @@
     ```
 
 - `@php` Executes a PHP script
+
+    > It seems to be acting the same as just `php`
+
+    ```json
+    {
+        "scripts": {
+            "test": ["php scripts.php", "@php scripts.php"]
+        }
+    }
+    ```
 
 ## References
 
