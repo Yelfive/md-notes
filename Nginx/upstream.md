@@ -1,5 +1,4 @@
-Upstream for SLB
----
+# Upstream for SLB
 
 > Server Loading Balance
 
@@ -19,12 +18,11 @@ proxy_next_upstream http_400;
 
 ```
 
-Directives
-===
+## Directives
 
-# upstream
+### upstream
 
-### syntax
+#### syntax
 
 ```nginx
 upstream hello {
@@ -33,17 +31,17 @@ upstream hello {
 }
 ```
 
-### context
+#### context
 
 > upstream
 
-### address
+#### address
 
 - IP address with optional port number
 - domain name with optional port number
 - UNIX-domain socket `unix:`
 
-### parameters
+#### parameters
 
 - `weight = number`
 
@@ -78,10 +76,10 @@ upstream hello {
     
     > Marks the server permanently unavailable
 
-# proxy_next_upstream
+## proxy_next_upstream
 
 ### syntax
-    
+
 ```nginx
 proxy_next_upstream parameters;
 ```
@@ -137,7 +135,7 @@ proxy_next_upstream parameters;
     503         |Service Unavailable
     504         |Gateway Timeout
 
-# proxy_next_upstream_tries
+## proxy_next_upstream_tries
 
 > To specify how many times to try the upstreams, every try counts, including the first one, no matter failed or not
 
