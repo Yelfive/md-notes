@@ -94,9 +94,11 @@ firefox &
 > Who logged into this system, and when
 
 ### whoami
+
 ```shell
 whoami
 ```
+
 > Who am I, the user logged in
 
 ### uname
