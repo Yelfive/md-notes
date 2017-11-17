@@ -29,6 +29,12 @@ $#
 
 ```
 
+Presentation| Description
+---         | ---
+$#          | Number of parameters passed to current script
+$*          | 
+$@          | Same as above
+
 Expression
 ----------
 
