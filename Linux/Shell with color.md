@@ -68,7 +68,7 @@ echo -e something
 | \\\|backslash
 | \a|alert (BEL)
 | \b| backspace
-| \c|produce no further output
+| \c|produce no further output, useful when want to echo something with format
 | \e| escape
 | \f| form feed
 | \n| new line
@@ -76,5 +76,9 @@ echo -e something
 | \t| horizontal tab
 | \v| vertical tab
 
+**prints inline 'hello world' with world being red **
 
-ＴＨＥ　ＥＮＤ
+```bash
+echo -e "hello\c"
+echo -e "\033[31mworld\033[0m"
+```
