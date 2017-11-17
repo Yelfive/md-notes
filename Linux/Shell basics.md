@@ -52,7 +52,7 @@ $?          | Return exit code of the last command: `echo command && echo $?`
     # -h for file
     # -i for interactive
     # -m for monitor mode, which is default to be on when -i set
-    # -B for Brace Expansion
+    # -B for Brace Expansion, `a{b,c}d` for `abd acd`
     ```
 
 Expression
