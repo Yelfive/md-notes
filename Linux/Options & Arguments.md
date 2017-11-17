@@ -51,11 +51,17 @@ This is simply where the value stored
 
 In a loop, `${OPTARG}` means the value for current option
 
-### #{OPTIND}
+### ${OPTIND}
 
 In a loop, `${OPTIND}` means the index of **next value** in `$*` list
 
 ```bash
-test.sh -p project_name
-# index for -p is 2
+test.sh -p project_name -others
+# `$*` is '-p project_name -others'
+# when ${OPTARG} is 'p', ${OPTIND} will be 3
+
+test.sh -pproject_name -others
+# `$*` is '-pproject_name -others'
+# ${OPTIND} will be 2
 ```
+
