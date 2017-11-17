@@ -47,8 +47,12 @@ $?          | Return exit code of the last command: `echo command && echo $?`
     ```
 
     ```sh
-    sh -o test.sh
-    # o
+    sh -i test.sh
+    # himB
+    # -h for file
+    # -i for interactive
+    # -m for monitor mode, which is default to be on when -i set
+    # -B for Brace Expansion
     ```
 
 Expression
