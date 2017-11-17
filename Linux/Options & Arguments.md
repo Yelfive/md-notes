@@ -9,6 +9,7 @@ getopts string_opt_list variable
 ```
 
 ```shell
+# test.sh
 while getopts 'a:b' opt
 do
     case ${opt} in
@@ -32,8 +33,8 @@ done
 
 First argument is the option list, each option is one character.
 
-The `:` after each option means the option has value(in this case, `a` must hold a value), other wise
+The `:` after each option means the option has value(in this case, `a` must own a value), while the ones without the colon
 
-```shell
-while getopts 'a:'
+```bash
+./test.sh -a
 ```
