@@ -38,3 +38,19 @@ The `:` after each option means the option has value(in this case, `a` must own 
 ```bash
 ./test.sh -a hello -b
 ```
+
+### String option list start with colon `:`
+
+This means error tolerant, if the `a:` doesn't provided a value, no error will be raised.
+
+### Variable
+
+This is simply where the value stored
+
+### ${OPTARG}
+
+In a loop, `${OPTARG}` means the value for current option
+
+### #{OPTIND}
+
+In a loop, `${OPTIND}` means the index of the option in `$*` list
