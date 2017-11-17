@@ -53,4 +53,9 @@ In a loop, `${OPTARG}` means the value for current option
 
 ### #{OPTIND}
 
-In a loop, `${OPTIND}` means the index of the option in `$*` list
+In a loop, `${OPTIND}` means the index of **next value** in `$*` list
+
+```bash
+test.sh -p project_name
+# index for -p is 2
+```
