@@ -65,3 +65,18 @@ test.sh -pproject_name -others
 # ${OPTIND} will be 2
 ```
 
+### shift options
+
+To strip all the options, leave the arguments only.
+
+```shell
+shift $((${OPTIND} - 1))
+```
+
+**example**
+
+```bash
+test.sh -p hello world to you
+# 'hello' is value of `-p`
+# `shift $((${OPTIND} - 1))` will result $*='world to you'
+```
