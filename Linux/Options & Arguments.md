@@ -33,8 +33,8 @@ done
 
 First argument is the option list, each option is one character.
 
-The `:` after each option means the option has value(in this case, `a` must own a value), while the ones without the colon
+The `:` after each option means the option has value(in this case, `a` must own a value), while the ones without the colon cannot have a value(`b` in this case)
 
 ```bash
-./test.sh -a
+./test.sh -a hello -b
 ```
