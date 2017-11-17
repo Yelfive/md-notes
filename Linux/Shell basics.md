@@ -42,6 +42,13 @@ $?          | Return exit code of the last command: `echo command && echo $?`
 **$-** 
 
     ```sh
+    #test.sh
+    echo $-
+    ```
+
+    ```sh
+    sh -o test.sh
+    # o
     ```
 
 Expression
