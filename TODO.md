@@ -19,6 +19,7 @@ TODO
 - [ ] build a redis GUI client on MAC
 - [ ] MathJax
 - [ ] HTTP/2
+- [ ] docker stack, docker swap
 
 - service worker
 - Redux
