@@ -199,20 +199,20 @@ Commands
 >
 > `writeConcern` for the exception level <font color="red">**??**</font>
     
-        > db.my_table.save({_id: ObjectId('59427868d0c0629d93071278'), 'hello': 'world to you'})
-        WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
-        >
-        > db.my_table.find()
-        { "_id" : ObjectId("59427868d0c0629d93071278"), "hello" : "world to you" }
-        { "_id" : ObjectId("594278a5d0c0629d93071279"), "hello1" : "world1" }
-        >
-        > db.my_table.save({_id: '123456', 'hello': 'should insert this document'})
-        WriteResult({ "nMatched" : 0, "nUpserted" : 1, "nModified" : 0, "_id" : "123456" })
-        >
-        > db.my_table.find()
-        { "_id" : ObjectId("59427868d0c0629d93071278"), "hello" : "world to you" }
-        { "_id" : ObjectId("594278a5d0c0629d93071279"), "hello1" : "world1" }
-        { "_id" : "123456", "hello" : "should insert this document" }
+    > db.my_table.save({_id: ObjectId('59427868d0c0629d93071278'), 'hello': 'world to you'})
+    WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+    >
+    > db.my_table.find()
+    { "_id" : ObjectId("59427868d0c0629d93071278"), "hello" : "world to you" }
+    { "_id" : ObjectId("594278a5d0c0629d93071279"), "hello1" : "world1" }
+    >
+    > db.my_table.save({_id: '123456', 'hello': 'should insert this document'})
+    WriteResult({ "nMatched" : 0, "nUpserted" : 1, "nModified" : 0, "_id" : "123456" })
+    >
+    > db.my_table.find()
+    { "_id" : ObjectId("59427868d0c0629d93071278"), "hello" : "world to you" }
+    { "_id" : ObjectId("594278a5d0c0629d93071279"), "hello1" : "world1" }
+    { "_id" : "123456", "hello" : "should insert this document" }
 
 - `db.<table>.update(<query>, <update>[, options])`
     
@@ -253,28 +253,21 @@ Operator starts with a dollar sign '$'
 > db.<collection>.find({<field> : {$gt : 100}})
 ```
 
-- $gt
-    > Greater than: `>`
-- $gte
-    > Greater than or equal: `>=` 
-- $lt
-    > Less than: `<`
-- $lte
-    > Less than or equal: `<=`
-- $type
-    > Defining the queried field type
+- `$gt` Greater than: `>`
+- `$gte`  Greater than or equal: `>=` 
+- `$lt` Less than: `<`
+- `$lte` Less than or equal: `<=`
+- `$type` Defining the queried field type
     
-    ```
-    > db.col.find({"title" : {$type : 2}})
-    ```
+```
+> db.col.find({"title" : {$type : 2}})
+```
 
 ## Update Operator 
 
-- $set
-    > set value to a document field
+- `$set` Set value to a document field
     
-    ```
+    ```mongodb
     > db.col.update({'title':'MongoDB 教程'},{$set:{'title':'MongoDB'}})
     WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
     ```
- </table></table></table></table></table></table></table></table>
