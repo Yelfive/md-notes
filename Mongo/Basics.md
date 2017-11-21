@@ -12,14 +12,14 @@
 
 ### 名词对应
 
-|RDMS   |Mongo  |
-|-|-|
-|数据库 |数据库 |
-|表     |集合   |
-|行     |文档   |
-|列     |字段   |
-|表联合 |嵌入文档|
-|主键   |主键（_id）|
+| RDMS   | Mongo|
+| --     | --   |
+|数据库   | 数据库 |
+|表      | 集合   |
+|行      | 文档   |
+|列      | 字段   |
+|表联合   | 嵌入文档|
+|主键    | 主键（_id）|
 
 ---
 
@@ -175,14 +175,14 @@ Commands
         { "_id" : ObjectId("59427868d0c0629d93071278"), "hello" : "world" }
         { "_id" : ObjectId("594278a5d0c0629d93071279"), "hello1" : "world1" }
 
-- db.&lt;table>.findOne()
+- `db.<table>.findOne()`
 
     > Find one record
         
         > db.my_table.findOne()
         { "_id" : ObjectId("59427868d0c0629d93071278"), "hello" : "world" }
 
-- db.&lt;table>.save(&lt;document>[, options])
+- `db.<table>.save(<document>[, options])`
 
     ```
     db.&lt;table>.save(

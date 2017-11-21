@@ -1,11 +1,12 @@
 # Indexes
 
-> db.&lt;collection>.createIndex(&lt;key and index type specification>, [options])
+```mongo
+db.<collection>.createIndex(<key and index type specification>[, options])
+```
 
-Single field
--
+## Single field
 
-Compound Fields
--
 
-    > Index on mulitple fields
+## Compound Fields
+
+> Index on multiple fields
