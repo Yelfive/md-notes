@@ -106,30 +106,32 @@ Connect MongoDB
 Commands
 ---
 
-- use <dbname>
+- `use <dbname>`
     
     > To create a database or to use one
 
         > use my_db
         switched to db my_db
 
-- show dbs
+- `show dbs`
 
     > To show all the database
-    
+
+    ```mongo
         > show dbs
         admin  0.000GB
         local  0.000GB
         test   0.000GB
+    ```
 
-- db.&lt;table>.insert(&lt;document>)
+- `db.<table>.insert(<document>)`
     
     > To insert a document
         
         > db.table.insert({hello: world})
         WriteResult({ "nInserted" : 1 })
         
-- db.dropDatabase()
+- `db.dropDatabase()`
 
     > To drop current database
     > 
@@ -141,8 +143,8 @@ Commands
         > db.dropDatabase()
         { "dropped" : "test", "ok" : 1 }
 
-- show tables
-- show collections
+- `show tables`
+- `show collections`
 
     > Show tables in current database
     
@@ -152,7 +154,7 @@ Commands
         table
         anotherTable
     
-- db.&lt;table>.drop()
+- `db.<table>.drop()`
 
     > Drop a table, returns boolean to indicates success
 
@@ -161,7 +163,7 @@ Commands
         > show tables
         anotherTable
 
-- db.&lt;table>.find()
+- `db.<table>.find()`
 
     > Find all records
 
@@ -184,18 +186,18 @@ Commands
 
 - `db.<table>.save(<document>[, options])`
 
-    ```
-    db.&lt;table>.save(
-        &lth;document>,
+    ```mongo
+    db.<table>.save(
+        <document>,
         {
-            writeConcern: &lt;document>
+            writeConcern: <document>
         }
     )
     ```
 
-    > Insert or update a row, depending on if `_id` given and found in the table. If `_id` given and found, it performs update, or otherwise, an insertion will be perfomed
-    >
-    > `writeConcern` for the exception level <font color="red">**??**</font>
+> Insert or update a row, depending on if `_id` given and found in the table. If `_id` given and found, it performs update, or otherwise, an insertion will be perfomed
+>
+> `writeConcern` for the exception level <font color="red">**??**</font>
     
         > db.my_table.save({_id: ObjectId('59427868d0c0629d93071278'), 'hello': 'world to you'})
         WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
@@ -212,9 +214,9 @@ Commands
         { "_id" : ObjectId("594278a5d0c0629d93071279"), "hello1" : "world1" }
         { "_id" : "123456", "hello" : "should insert this document" }
 
-- db.<table>.update(<query>, <update>[, options])
+- `db.<table>.update(<query>, <update>[, options])`
     
-    ```
+    ```mongodb
     db.<table>.insert(
         <query>,
         <update>,
@@ -227,19 +229,19 @@ Commands
     
     ```
 
-    > <query>
-    > ---
-    > Similar to where of SQL, using [condition operator](#ConditionOperator)
-    >
-    > <update>
-    > ---
-    > 
-    >
-    > optional
-    > ---
-    > - `upsert` default `false`, insert if not found
-    > - `multi` default `false`, whether to update multiple rows or just the first found
-    > - `writeConcern` exception level
+> query
+> ---
+> Similar to where of SQL, using [condition operator](#ConditionOperator)
+>
+> update
+> ---   
+> 
+>
+> optional
+> ---
+> - `upsert` default `false`, insert if not found
+> - `multi` default `false`, whether to update multiple rows or just the first found
+> - `writeConcern` exception level
 
 # Operator
 
