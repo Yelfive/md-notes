@@ -306,7 +306,18 @@ iconv -f from_encoding -t to_encoding [-o output_file] source_file
 ```
 
 
+### read
 
+```bash
+read [options] variable
+echo ${variable}
+```
+
+- `-p` Prompt
+
+    ```bash
+    read -p "Are you sure to do so? [y/n]" confirmed
+    ```
 
 
 
