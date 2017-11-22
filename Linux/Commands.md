@@ -376,6 +376,8 @@ echo ${variable}
 
 - `d` Delimiter
 
+    Reads till the delimiter occurs
+
 - Read file
 
     `cat` a file and pipe(`|`) it to `while read`
