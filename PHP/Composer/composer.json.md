@@ -2,7 +2,7 @@
 
 ## config
 
-### config.prefered-install
+### config.preferred-install
 
 ```json
 {
@@ -33,6 +33,8 @@ Applies more respectively to packages
 
 Asterisk(`*`) to indicate all packages
 
+> Order matters: the installer performs when the first pattern satisfied
+
 ```json
 {
     "preferred-install": {
@@ -41,6 +43,8 @@ Asterisk(`*`) to indicate all packages
     }
 }
 ```
+
+_It reads_
 
 - `fk/*` All packages under vendor `fk` to be installed as `source`
 - `*` All other packages to be installed as `dist`
