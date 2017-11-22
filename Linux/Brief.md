@@ -14,6 +14,13 @@ a = (1 2 3 4)
 a[1] = 22 # set from 2 to 22
 ```
 
+create with space separated values
+
+```bash
+space_separated='a b c d'
+a=(${space_separated})
+```
+
 ### unset
 
 ```bash
@@ -52,6 +59,12 @@ Actually, it works with any space separated value.
 
 ```bash
 echo ${a[@]:from:length}
+```
+
+#### replace
+
+```bash
+
 ```
 
 **See Also** https://www.cnblogs.com/chengmo/archive/2010/09/30/1839632.html

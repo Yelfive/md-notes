@@ -1,17 +1,14 @@
-shell basics
-===
+# shell basics
 
 > bash: Bourne Again SHell
 
-wildcard
---------
+## wildcard
 
 - `*` matches arbitrary number of characters
 - `?` matches single character
 - `[]` matches single character specified inside
 
-Getting parameter from terminal in scripts
-------------------------------------------
+## Getting parameter from terminal in scripts
 
 ```bash
 # exit code from last command
@@ -55,8 +52,7 @@ $?          | Return exit code of the last command: `echo command && echo $?`
     # -B for Brace Expansion, `a{b,c}d` for `abd acd`
     ```
 
-Expression
-----------
+## Expression
 
 > `expression` is actually a command, and the expression will be `true` or `false` depending on its returned exit code
 > 
@@ -73,8 +69,7 @@ same as the following, notice the space between `[` and `expression` and `]`
 [ expression ]
 ```
 
-if
---
+## if
 
 It takes a command as condition, and depends on its exit code to consider as true or false:
 
@@ -87,18 +82,17 @@ if expression
 fi
 ```
 
-read
-----
+## read
 
 > read input from terminal, interactively.
 > And then stores the value in `var`
+
 
 ```bash
 read var
 ```
 
-loop
-----
+## loop
 
 ```bash
 for variable in space_separated_string
