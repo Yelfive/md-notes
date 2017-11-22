@@ -376,7 +376,14 @@ echo ${variable}
 
 - `d` Delimiter
 
-    Reads till the delimiter occurs
+    Reads till the delimiter occurs, and then exit
+
+    ```bash
+    $ read -d e -p 'Filename, end with `e`' filename
+    hello # exits when e typed
+    $ echo ${filename}
+    h
+    ```
 
 - Read file
 
