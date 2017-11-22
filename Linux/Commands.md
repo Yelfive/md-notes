@@ -319,6 +319,8 @@ echo ${variable}
     read -p "Are you sure to do so? [y/n]" confirmed
     ```
 
+- `t` Timeout in seconds
 
+    A timeout for the read operation, after the given timeout, exit code 1 will be returned.
 
 
