@@ -354,3 +354,16 @@ echo ${variable}
     ```bash
     read -s -p 'Enter your password:' password
     ```
+
+- Read file
+
+    ```bash
+    count=1
+    #cat 命令的输出作为read命令的输入,read读到的值放在line中 
+    cat filename | while read line
+    do 
+       echo "${count}:${line}" 
+       count=$(($count + 1))
+    done
+    exit 0
+    ```
