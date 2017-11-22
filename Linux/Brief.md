@@ -64,7 +64,7 @@ echo ${a[@]:from:length}
 #### replace
 
 ```bash
-
+echo ${a[@]/search/replacement}
 ```
 
 **See Also** https://www.cnblogs.com/chengmo/archive/2010/09/30/1839632.html

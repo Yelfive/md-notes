@@ -107,17 +107,14 @@ done
 
 ```
 
-
-Stream edit
------------
+## Stream edit
 
 ```bash
 # stream edit
 seq
 ```
 
-String Handling
----------------
+## String Handling
 
 Say, we have a string
 
