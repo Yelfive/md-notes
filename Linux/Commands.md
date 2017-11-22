@@ -321,7 +321,7 @@ IFS=: read w1 w2
 ```text
   Options, if supplied, have the following meanings:
 -a aname
-     The words are assigned to sequential indices of the array variable aname, starting at 0.  aname is unset before any new values are assigned.  Other name arguments are ignored.
+     The words are assigned to sequential in dices of the array variable aname, starting at 0.  aname is unset before any new values are assigned.  Other name arguments are ignored.
 -d delim
      The first character of delim is used to terminate the input line, rather than newline.
 -e     If  the  standard  input is coming from a terminal, readline (see READLINE above) is used to obtain the line.  Readline uses the current (or default, if line editing was not previously
@@ -343,8 +343,7 @@ IFS=: read w1 w2
      read returns success if input is available on the specified file descriptor, failure otherwise.  The exit status is greater than 128 if the timeout is exceeded.
 -u fd  Read input from file descriptor fd.
 
-If  no  names  are  supplied,  the  line  read is assigned to the variable REPLY.  The return code is zero, unless end-of-file is encountered, read times out (in which case the return code is
-greater than 128), or an invalid file descriptor is supplied as the argument to -u.
+If no names are supplied, the line read is assigned to the variable `REPLY`.  The return code is zero, unless end-of-file is encountered, read times out (in which case the return code is greater than 128), or an invalid file descriptor is supplied as the argument to -u.
 ```
 
 #### options
@@ -359,7 +358,7 @@ greater than 128), or an invalid file descriptor is supplied as the argument to 
 
 - `t` Timeout in seconds
 
-    A timeout for the read operation, after the given timeout, exit code 1 will be returned.
+    A timeout for the read operation, after the given timeout, exit code greater than 0 will be returned.
 
 - `n`  Number of characters
     
