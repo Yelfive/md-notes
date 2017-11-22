@@ -11,8 +11,17 @@ Start of all desktop system - `X Desktop System`
 
 ```bash
 a = (1 2 3 4)
+a[1] = 22 # set from 2 to 22
 ```
 
+### unset
+
+```bash
+# remove variable `a`
+unset a
+# remove second member of `a`
+unset a[1]
+```
 
 ### read
 
@@ -21,7 +30,22 @@ echo ${a[0]} # 1
 echo ${a[1]} # 2
 echo ${a[2]} # 3
 # ...
-echo ${a[@]} # length of array
 ```
+
+#### All members separated by space
+
+```bash
+echo ${a[@]}
+echo ${a[*]}
+```
+
+#### Length of the array
+
+```bash
+echo ${#a[@]}
+echo ${#a[*]}
+```
+
+**See Also** https://www.cnblogs.com/chengmo/archive/2010/09/30/1839632.html
 
 
