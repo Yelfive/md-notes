@@ -358,9 +358,9 @@ echo ${word_2}
     read -s -p 'Enter your password:' password
     ```
 
-- `r` Real
+- `r` Remove
 
-    Read real characters, do not escape them.
+    Removes the backslash processing, unescape them.
 
     When reading from stdin, a `\` can turn input into a multiple lines,
     but with a `-r`, it takes `\` as it is.
