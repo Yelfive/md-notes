@@ -1,5 +1,4 @@
-Setting Up Server
-=================
+# Setting Up Server
 
 1. Install git
 --------------
@@ -12,7 +11,8 @@ yum install -y git
 -----------------
 
 ```bash
-mkdir -p /srv/git/my-repository.git
+mkdir -p /srv/git/my-rep
+ository.git
 ```
 
 3. Initialize repository
