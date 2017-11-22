@@ -357,13 +357,13 @@ echo ${variable}
 
 - Read file
 
+    `cat` a file and pipe(`|`) it to `while read`
+
     ```bash
     count=1
-    #cat 命令的输出作为read命令的输入,read读到的值放在line中 
     cat filename | while read line
     do 
-       echo "${count}:${line}" 
+       echo "${count}: ${line}" 
        count=$(($count + 1))
     done
-    exit 0
     ```
