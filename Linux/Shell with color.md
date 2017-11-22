@@ -54,8 +54,7 @@ php -r "echo \">\033[31mError\033[0m  \""
 输出：
 <font color="red">Error</font>
 
-echo
-----
+## echo
 
 ```shell
 echo -e something
@@ -76,9 +75,10 @@ echo -e something
 | \t| horizontal tab
 | \v| vertical tab
 
-**prints inline 'hello world' with world being red **
+**prints inline 'hello world' with world being red**
 
 ```bash
 echo -e "hello\c"
 echo -e "\033[31mworld\033[0m"
 ```
+
