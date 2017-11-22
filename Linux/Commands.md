@@ -359,7 +359,22 @@ echo ${variable}
 
     Read real characters, do not escape them.
 
-    When reading from stdin, a `\` can use a multiple
+    When reading from stdin, a `\` can turn input into a multiple lines,
+    but with a `-r`, it takes `\` as it is.
+
+    ```bash
+    $ read hello
+    \n
+    $ echo ${hello}
+    n
+    
+    $ read -r hello
+    \n
+    $ echo ${hello}
+    \n
+    ```
+
+- `d` Delimiter
 
 - Read file
 
