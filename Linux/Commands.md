@@ -355,6 +355,12 @@ echo ${variable}
     read -s -p 'Enter your password:' password
     ```
 
+- `r` Real
+
+    Read real characters, do not escape them.
+
+    When reading from stdin, a `\` can use a multiple
+
 - Read file
 
     `cat` a file and pipe(`|`) it to `while read`
