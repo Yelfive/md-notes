@@ -367,3 +367,6 @@ echo ${variable}
        count=$(($count + 1))
     done
     ```
+
+**See Also** http://blog.csdn.net/flowingflying/article/details/5326696
+
