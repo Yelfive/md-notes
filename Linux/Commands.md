@@ -311,7 +311,7 @@ iconv -f from_encoding -t to_encoding [-o output_file] source_file
 Reads words from input, and separated by `$IFS`(with default to be `\n`)
 
 ```bash
-read [options] word_1 word_2 ...
+read [options] word_1 word_2 ... rest
 echo ${word_1}
 echo ${word_2}
 
