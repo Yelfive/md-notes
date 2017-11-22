@@ -319,9 +319,6 @@ IFS=: read w1 w2
 ```
 
 ```text
-  Options, if supplied, have the following meanings:
--a aname
-     The words are assigned to sequential in dices of the array variable aname, starting at 0.  aname is unset before any new values are assigned.  Other name arguments are ignored.
 -d delim
      The first character of delim is used to terminate the input line, rather than newline.
 -e     If  the  standard  input is coming from a terminal, readline (see READLINE above) is used to obtain the line.  Readline uses the current (or default, if line editing was not previously
@@ -347,6 +344,15 @@ If no names are supplied, the line read is assigned to the variable `REPLY`.  Th
 ```
 
 #### options
+
+- `a` Array
+
+    ```bash
+    $ read -a array
+    hello world to you
+    $ echo ${array[3]} ${array[2]} ${array[1]} ${array[0]}
+    you to world hello
+    ```
 
 - `p` Prompt
 
