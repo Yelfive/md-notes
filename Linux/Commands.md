@@ -319,25 +319,16 @@ IFS=: read w1 w2
 ```
 
 ```text
--d delim
-     The first character of delim is used to terminate the input line, rather than newline.
+
 -e     If  the  standard  input is coming from a terminal, readline (see READLINE above) is used to obtain the line.  Readline uses the current (or default, if line editing was not previously
      active) editing settings.
 -i text
      If readline is being used to read the line, text is placed into the editing buffer before editing begins.
--n nchars
-     read returns after reading nchars characters rather than waiting for a complete line of input, but honor a delimiter if fewer than nchars characters are read before the delimiter.
 -N nchars
      read returns after reading exactly nchars characters rather than waiting for a complete line of input, unless EOF is encountered or read times out.  Delimiter characters encountered in
      the input are not treated specially and do not cause read to return until nchars characters are read.
--p prompt
-     Display prompt on standard error, without a trailing newline, before attempting to read any input.  The prompt is displayed only if input is coming from a terminal.
--r     Backslash does not act as an escape character.  The backslash is considered to be part of the line.  In particular, a backslash-newline pair may not be used as a line continuation.
--s     Silent mode.  If input is coming from a terminal, characters are not echoed.
 -t timeout
-     Cause read to time out and return failure if a complete line of input is not read within timeout seconds.  timeout may be a decimal number with a fractional portion following the deci‐
-     mal point.  This option is only effective if read is reading input from a terminal, pipe, or other special file; it has no effect when reading from regular files.   If  timeout  is  0,
-     read returns success if input is available on the specified file descriptor, failure otherwise.  The exit status is greater than 128 if the timeout is exceeded.
+     Cause read to time out and return failure if a complete line of input is not read within timeout seconds.  timeout may be a decimal number with a fractional portion following the decimal point.  This option is only effective if read is reading input from a terminal, pipe, or other special file; it has no effect when reading from regular files.   If  timeout  is  0, read returns success if input is available on the specified file descriptor, failure otherwise.  The exit status is greater than 128 if the timeout is exceeded.
 -u fd  Read input from file descriptor fd.
 
 If no names are supplied, the line read is assigned to the variable `REPLY`.  The return code is zero, unless end-of-file is encountered, read times out (in which case the return code is greater than 128), or an invalid file descriptor is supplied as the argument to -u.
@@ -348,6 +339,12 @@ If no names are supplied, the line read is assigned to the variable `REPLY`.  Th
 - `a` Array
 
     ```bash
+    read -a name
+    ```
+
+     The words are assigned to sequential indices of the array variable `name`, starting at 0. `name` is unset before any new values are assigned. Other name arguments are ignored.
+
+    ```bash
     $ read -a array
     hello world to you
     $ echo ${array[3]} ${array[2]} ${array[1]} ${array[0]}
@@ -356,7 +353,7 @@ If no names are supplied, the line read is assigned to the variable `REPLY`.  Th
 
 - `p` Prompt
 
-    Prompt message for the read
+     Display prompt on standard error, without a trailing newline, before attempting to read any input. The prompt is displayed only if input is coming from a terminal.
 
     ```bash
     read -p "Are you sure to do so? [y/n]" confirmed
@@ -368,7 +365,7 @@ If no names are supplied, the line read is assigned to the variable `REPLY`.  Th
 
 - `n`  Number of characters
     
-    Number of characters to be wished, and exit when the limitation reached.
+    Read returns after reading `n` characters rather than waiting for a complete line of input, but honor a delimiter if fewer than `n` characters are read before the delimiter.
 
     ```bash
     # Wishes for only one character
@@ -396,10 +393,7 @@ If no names are supplied, the line read is assigned to the variable `REPLY`.  Th
 
 - `r` Remove
 
-    Removes the backslash processing, unescape them.
-
-    When reading from stdin, a `\` can turn input into a multiple lines,
-    but with a `-r`, it takes `\` as it is.
+    Backslash does not act as an escape character. The backslash is considered to be part of the line. In particular, a backslash-newline pair may not be used as a line continuation.
 
     ```bash
     $ read hello
@@ -415,7 +409,7 @@ If no names are supplied, the line read is assigned to the variable `REPLY`.  Th
 
 - `d` Delimiter
 
-    Reads till the delimiter occurs, and then exit
+    The first character of delimiter is used to terminate the input line, rather than newline.
 
     ```bash
     $ read -d e -p 'Filename, end with `e`' filename
