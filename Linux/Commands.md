@@ -391,6 +391,8 @@ IFS=: read w1 w2
     h
     ```
 
+- `a` ??
+- `e` ??
 - Read file
 
     `cat` a file and pipe(`|`) it to `while read`
