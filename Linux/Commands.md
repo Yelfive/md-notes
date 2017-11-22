@@ -418,7 +418,6 @@ If no names are supplied, the line read is assigned to the variable `REPLY`.  Th
     h
     ```
 
-- `a` ??
 - `e` ??
 - Read file
 
