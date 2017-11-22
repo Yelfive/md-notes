@@ -325,6 +325,12 @@ echo ${variable}
 
     A timeout for the read operation, after the given timeout, exit code 1 will be returned.
 
-- `n` 
+- `n`  Number of characters
+    
+    Number of characters to be wished, and exit when the limitation reached.
+
+    ```bash
+    read -n 1 'Are you sure? [y/n]' sure
+    ```
 
 
