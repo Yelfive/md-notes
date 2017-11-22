@@ -313,7 +313,9 @@ read [options] variable
 echo ${variable}
 ```
 
-- `-p` Prompt
+#### options
+
+- `p` Prompt
 
     Prompt message for the read
 
@@ -345,5 +347,10 @@ echo ${variable}
     esac
     ```
 
+- `s` Silently
 
+    Input silently, without showing in the terminal, such as password
 
+    ```bash
+    read -s -p 'Enter your password:' password
+    ```
