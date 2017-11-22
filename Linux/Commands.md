@@ -330,7 +330,20 @@ echo ${variable}
     Number of characters to be wished, and exit when the limitation reached.
 
     ```bash
-    read -n 1 'Are you sure? [y/n]' sure
+    # Wishes for only one character
+    read -n 1 'Are you sure? [y/n]' answer
+
+    case ${answer} in
+        y|Y)
+            echo 'You are sure';;
+        n|N)
+            echo 'You are not sure';;
+        ?)
+            echo 'Invalid input'
+            exit
+            ;;
+    esac
     ```
+
 
 
