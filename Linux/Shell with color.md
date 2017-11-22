@@ -61,6 +61,7 @@ echo -e something
 ```
 
 - `-e` escape
+- `-n` Do not print trailing `\n`, same as `echo -e "\c"`
 
 | Escape | Description |
 |--|--|
@@ -81,4 +82,5 @@ echo -e something
 echo -e "hello\c"
 echo -e "\033[31mworld\033[0m"
 ```
+
 
