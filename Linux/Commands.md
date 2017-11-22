@@ -314,6 +314,9 @@ Reads words from input, and separated by `$IFS`(with default to be `\n`)
 read [options] word_1 word_2 ...
 echo ${word_1}
 echo ${word_2}
+
+# Using `:` as field separator
+IFS=: read w1 w2
 ```
 
 #### options
