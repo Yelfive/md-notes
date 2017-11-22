@@ -1,4 +1,4 @@
-# Books I Wishes or read
+# Books I Wish or read
 
 
 - [x] Domain-Driven Design: Tackling Complexity in the Heart of Software（Eric Evans)
