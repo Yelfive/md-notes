@@ -46,6 +46,14 @@ echo ${#a[@]}
 echo ${#a[*]}
 ```
 
+#### slice
+
+Actually, it works with any space separated value.
+
+```bash
+echo ${a[@]:from:length}
+```
+
 **See Also** https://www.cnblogs.com/chengmo/archive/2010/09/30/1839632.html
 
 
