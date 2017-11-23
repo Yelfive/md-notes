@@ -10,6 +10,8 @@ ON table_name
 FOR EACH ROW  SET some=something_else;
 ```
 
+## Create a trigger with existed-event
+
 ## Drop a trigger
 
 ```sql
