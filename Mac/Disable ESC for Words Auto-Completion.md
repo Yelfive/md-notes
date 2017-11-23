@@ -1,5 +1,4 @@
-Disable ESC for Words Auto-Completion 
-===
+# Disable ESC for Words Auto-Completion 
 
 1. Run in terminal
 
