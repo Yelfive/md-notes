@@ -20,6 +20,12 @@ DELIMITER |
 CREATE TRIGGER trigger_name BEFORE INSERT ON table_name FOR EACH ROW
 BEGIN
     UPDATE user SET order_count=order_count+1 WHERE id=NEW.created_by;
+    
+    IF NEW.amount < 0 THEN
+       SET NEW.amount = 0;
+    ELSEIF NEW.amount > 100 THEN
+       SET NEW.amount = 100;
+    END IF;
 END;
 |
 DELIMITER ;
@@ -66,3 +72,4 @@ DROP TRIGGER table_name.trigger_name
 1. Cannot use a `CALL` to procedures that return data to client or those use dynamic SQLs
 2. Cannot begin or end a transaction, except for `ROLLBACK TO SAVEPOINT` which does not end a transaction
 
+    
