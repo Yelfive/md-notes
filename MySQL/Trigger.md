@@ -60,3 +60,9 @@ DROP TRIGGER table_name.trigger_name
 
     1. Represents the old row, event `INSERT` does not have one.
     2. Read-only
+
+## Notice
+
+1. Cannot use a `CALL` to procedures that return data to client or those use dynamic SQLs
+2. Cannot begin or end a transaction, except for `ROLLBACK TO SAVEPOINT` which does not end a transaction
+
