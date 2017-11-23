@@ -18,5 +18,12 @@ DROP TRIGGER table_name.trigger_name
 
 ## Within trigger body
 
-- `NEW` Represents the new row, event `DELETE` does not have one.
-- `OLD` Represents the old row, event `INSERT` does not have one.
+- `NEW`
+
+    1. Represents the new row, event `DELETE` does not have one.
+    2. Can be modified via `SET NEW.col_name=new_value`
+
+- `OLD`
+
+    1. Represents the old row, event `INSERT` does not have one.
+    2. Read-only
