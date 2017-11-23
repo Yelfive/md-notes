@@ -13,12 +13,14 @@ SET something=something_else;
 
 ### BEGIN...END
 
+Used for more complicated trigger statement.
+
 ```sql
-DELIMITER \\
+DELIMITER //
 CREATE TRIGGER trigger_name BEFORE INSERT ON table_name FOR EACH ROW
 BEGIN
-    -- do something here
-END\\
+    UPDATE user SET order_count=order_count+1 WHERE id=NEW.created_by;
+END;//
 DELIMITER ;
 ```
 
