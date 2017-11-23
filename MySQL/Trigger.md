@@ -21,7 +21,8 @@ DROP TRIGGER table_name.trigger_name
 - `NEW`
 
     1. Represents the new row, event `DELETE` does not have one.
-    2. Can be modified via `SET NEW.col_name=new_value`
+    2. Can be modified via `SET NEW.col_name=new_value`.
+    3. Value of trigger `BEFORE`'s `NEW.<AUTO_INCREMENT field>` is 0.
 
 - `OLD`
 
