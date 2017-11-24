@@ -1,5 +1,4 @@
-Change root password
-===
+# Change root password
 
 ##### 1. MySQL Admin
 
