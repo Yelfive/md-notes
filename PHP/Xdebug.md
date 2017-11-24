@@ -20,6 +20,27 @@ xdebug.remote_host = 10.254.254.254
 xdebug.overload_var_dump = Off
 ```
 
+## listen to command line
+
+```bash
+echo alias xdebug=\'export XDEBUG_CONFIG=\"remote_enable=1 remote_mode=req remote_port=9000 remote_host=10.254.254.254 remote_connect_back=0\" PHP_IDE_CONFIG=\"serverName=localhost\"\' >> ~/.bashrc
+
+source ~/.bashrc
+```
+
+then you can just start it by calling
+
+```bash
+xdebug
+```
+
+and then all the PHP `cli` call of this session will be listened
+
+```bash
+export  XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9000 remote_host=10.254.254.254 remote_connect_back=0" \
+        PHP_IDE_CONFIG="serverName=localhost"
+```
+
 ## Appendix
 
 Full configuration saved in `xdebug/xdebug.ini`
