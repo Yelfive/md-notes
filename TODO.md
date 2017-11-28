@@ -20,6 +20,7 @@ TODO
 - [ ] MathJax
 - [ ] HTTP/2
 - [ ] docker stack, docker swarm
+- [ ] To build a daemon keeper script, restart when a daemon exited
 
 - service worker
 - Redux
