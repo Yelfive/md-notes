@@ -31,5 +31,15 @@ PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
-``
+```
+
+### Service fields
+
+- Type
+    
+    Working type, fork means as daemon
+
+- ExecStartPre
+
+    Command before starting nginx
 
