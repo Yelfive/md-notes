@@ -434,3 +434,11 @@ If no names are supplied, the line read is assigned to the variable `REPLY`.  Th
 
 **See Also** http://blog.csdn.net/flowingflying/article/details/5326696
 
+### kill
+
+```bash
+kill [-s signal|-p] [-q sigval] [-a] [--] pid...
+kill -l [signal]
+```
+
+To send signal to process or to list available signal.
