@@ -41,23 +41,26 @@ WantedBy=multi-user.target
 
 - ExecStartPre
 
-    Command before starting nginx
+    Command before starting service
 
 - ExecStart
 
-    Command to start he nginx
+    Command to start the service
 
 - ExecReload
 
-    Command to reload the nginx
+    Command to reload the service
+
+- ExecStop
+
+    Command to stop the service
 
 - KillSignal
 
-    Signal to kill the nginx, SIGQUIT(3)
+    Signal to kill the service, SIGQUIT(3)
 
 - PrivateTmp
 
-    
+    `true` to indicates allocating private temporary space for the service
 
-    
 

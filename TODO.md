@@ -21,6 +21,7 @@ TODO
 - [ ] HTTP/2
 - [ ] docker stack, docker swarm
 - [ ] To build a daemon keeper script, restart when a daemon exited
+- [ ] command: xargs
 
 - service worker
 - Redux
