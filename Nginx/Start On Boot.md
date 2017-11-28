@@ -53,4 +53,4 @@ WantedBy=multi-user.target
 
 - KillSignal
 
-    Signal to kill the nginx, SIGQUIT
+    Signal to kill the nginx, SIGQUIT(3)
