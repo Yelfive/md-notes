@@ -1,6 +1,4 @@
-location
-===
-`location` is parsed and 
+# location
 
 It is important to understand that, by default, Nginx will serve regular expression matches in preference to prefix matches. However, it evaluates prefix locations first, allowing for the administer to override this tendency by specifying locations using the = and ^~ modifiers. 
 
@@ -21,7 +19,7 @@ location modifier uri {
 
 - `=`
     
-    > Exact match
+    Exact match, non-regular
 
         #nginx
         location = / {
@@ -30,15 +28,17 @@ location modifier uri {
 
 - `~`
 
-    > Case sensitive match
+    Case sensitive match
 
 - `~*`
 
-    > Case insensitive match
+    Case insensitive match
 
 - `^~`
 
-    > Terminate non-regular expression match
+    Terminate non-regular expression match
+
+    This works for **non-regular expression** only
 
 #### Example
 ```nginx
