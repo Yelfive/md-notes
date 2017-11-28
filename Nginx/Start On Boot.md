@@ -43,3 +43,14 @@ WantedBy=multi-user.target
 
     Command before starting nginx
 
+- ExecStart
+
+    Command to start he nginx
+
+- ExecReload
+
+    Command to reload the nginx
+
+- KillSignal
+
+    Signal to kill the nginx, SIGQUIT
