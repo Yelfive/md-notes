@@ -10,6 +10,8 @@ location modifier uri {
 }
 ```
 
+`uri` here means string prefix(start of a string) or regular expression, depends on the modifier
+
 #### context
 
 - server
@@ -21,16 +23,22 @@ location modifier uri {
     
     Exact match, non-regular
 
-        #nginx
-        location = / {
-            # match http://www.domain.com
-        }
+    ```conf
+    #nginx
+    location = / {
+        # match http://www.domain.com
+    }
+    ```
 
 - `~`
+
+    **Regular match**
 
     Case sensitive match
 
 - `~*`
+
+    **Regular match**
 
     Case insensitive match
 
@@ -41,7 +49,8 @@ location modifier uri {
     This works for **non-regular expression** only
 
 #### Example
-```nginx
+
+```conf
 location = / {
     #[ configuration A ]
 }
