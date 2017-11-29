@@ -21,7 +21,7 @@ TODO
 - [ ] HTTP/2
 - [ ] docker stack, docker swarm
 - [ ] To build a daemon keeper script, restart when a daemon exited
-- [ ] command: xargs
+- [ ] command: [xargs](http://man.linuxde.net/xargs)
 - [ ] redis 
         - cluster http://redis.cn/topics/transactions.html
         - transaction http://redis.cn/topics/cluster-tutorial.html
