@@ -1,8 +1,6 @@
-awk
-===
+# awk
 
-Basics
-------
+## Basics
 
 Search every line of a `file`, take `action` when `pattern` matches.
 
@@ -21,15 +19,13 @@ a
 a b
 ```
 
-Conversion Format
------------------
+## Conversion Format
 
 - `$0` The matched line
 - `$1` The first field
 - `$n` The n<sup>th</sup> field
 
-Variables
----------
+## Variables
 
 ```
 ARGC               命令行参数个数
@@ -45,10 +41,9 @@ ORS                输出记录分隔符
 RS                 控制记录分隔符
 ```
 
-Patterns
---------
+## Patterns
 
-**BEGIN**
+### BEGIN
 
 Matches the beginning of the **file**, then perform the subsequent `action`
 
@@ -59,7 +54,7 @@ This takes place for the whole file, not for one line
 a b
 ```
 
-**END**
+### END
 
 Matches the end of the *file*, then perform the subsequent `action`
 
@@ -70,8 +65,7 @@ Matches the end of the *file*, then perform the subsequent `action`
 
 This prints out the number of lines, 18 in the example above
 
-Appendix
---------
+## Appendix
 
 - http://www.cnblogs.com/ggjucheng/archive/2013/01/13/2858470.html
 - http://www.gnu.org/software/gawk/manual/gawk.html
