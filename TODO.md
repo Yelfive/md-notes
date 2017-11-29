@@ -25,6 +25,9 @@ TODO
 - [ ] redis 
         - cluster http://redis.cn/topics/transactions.html
         - transaction http://redis.cn/topics/cluster-tutorial.html
+- [ ] JWT JSON Web Token
+        - http://www.jianshu.com/p/168d34aab2e3
+        - https://segmentfault.com/a/1190000005047525
 
 - [ ] service worker
 - [ ] Redux
