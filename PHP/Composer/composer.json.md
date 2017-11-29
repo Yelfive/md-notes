@@ -49,3 +49,17 @@ _It reads_
 - `fk/*` All packages under vendor `fk` to be installed as `source`
 - `*` All other packages to be installed as `dist`
 
+### repositories
+
+Setting repositories to overwrite default
+
+```json
+{
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }   
+    }   
+}
+```
