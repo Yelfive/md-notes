@@ -29,6 +29,13 @@ TODO
         - https://jwt.io/introduction/
         - http://www.jianshu.com/p/168d34aab2e3
         - https://segmentfault.com/a/1190000005047525
+
+## Git
+
+- [ ] git revisions --help
+
+## AI
+
 - [ ] [Behavior Designer](https://www.opsive.com/assets/BehaviorDesigner/)
 - [ ] [Behavior Tree](http://www.aisharing.com/archives/tag/%E8%A1%8C%E4%B8%BA%E6%A0%91)
 

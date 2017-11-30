@@ -15,3 +15,9 @@ git show <INDEX>:path/to/file
 ```
 
 `INDEX` here can be `HEAD`
+
+## See also
+
+```bash
+git revisions --help
+```
