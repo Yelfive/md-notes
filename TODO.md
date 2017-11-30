@@ -30,6 +30,12 @@ TODO
         - http://www.jianshu.com/p/168d34aab2e3
         - https://segmentfault.com/a/1190000005047525
 
+## JS
+
+- [ ] service worker
+- [ ] Redux
+- [ ] JS V8:https://developers.google.com/v8/
+
 ## Git
 
 - [ ] git revisions --help
@@ -38,7 +44,3 @@ TODO
 
 - [ ] [Behavior Designer](https://www.opsive.com/assets/BehaviorDesigner/)
 - [ ] [Behavior Tree](http://www.aisharing.com/archives/tag/%E8%A1%8C%E4%B8%BA%E6%A0%91)
-
-- [ ] service worker
-- [ ] Redux
-- [ ] JS V8:https://developers.google.com/v8/
