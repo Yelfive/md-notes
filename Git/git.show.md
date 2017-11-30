@@ -8,9 +8,10 @@ git show [options] <object>...
 
 ## Examples
 
-### Show Whole file
+### Show Whole File
 
 ```bash
-git show
+git show <INDEX>:path/to/file
 ```
 
+`INDEX` here can be `HEAD`
