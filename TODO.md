@@ -30,6 +30,12 @@ TODO
         - http://www.jianshu.com/p/168d34aab2e3
         - https://segmentfault.com/a/1190000005047525
 
+## PHP
+
+- PEAR, the PHP Extension and Application Repository
+    + https://www.ibm.com/developerworks/cn/linux/sdk/php/pear1/
+    + http://pear.php.net/
+
 ## JS
 
 - [ ] service worker

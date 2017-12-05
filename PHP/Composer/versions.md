@@ -137,8 +137,7 @@ Example: `1.0.*`
 ### Tilde Version Range (~)
 
 The `~` operator is best explained by example: `~1.2` is equivalent to
-`>=1.2 <2.0.0`, while `~1.2.3` is equivalent to `>=1.2.3 <1.3.0`. As you can see
-it is mostly useful for projects respecting [semantic
+`>=1.2 <2.0.0`, while `~1.2.3` is equivalent to `>=1.2.3 <1.3.0`. As you can see it is mostly useful for projects respecting [semantic
 versioning](http://semver.org/). A common usage would be to mark the minimum
 minor version you depend on, like `~1.2` (which allows anything up to, but not
 including, 2.0). Since in theory there should be no backwards compatibility

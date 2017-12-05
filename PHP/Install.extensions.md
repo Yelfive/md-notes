@@ -1,5 +1,4 @@
-Install
-===
+# Install
 
 #### Download
 
