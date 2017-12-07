@@ -27,6 +27,10 @@
 
     **See Also** [Official Documentation](http://opensource.box.com/spout/)
 
+## Hybrid Application
+
+- [MUI](http://dev.dcloud.net.cn/mui/)
+
 ## WireShark
 
 network protocol analyzer
