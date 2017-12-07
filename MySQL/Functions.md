@@ -1,3 +1,3 @@
 # Functions
 
-## FIND_IN_SET
+## FIND_IN_SET(str, strlist)
