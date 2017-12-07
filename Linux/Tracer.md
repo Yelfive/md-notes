@@ -1,8 +1,6 @@
-Tracer
-======
+# Tracer
 
-strace
-------
+## strace
 
 > Show system call trace of a process, see [System Call](./System+Call.md)
 
@@ -76,7 +74,7 @@ which includes all data in both hexadecimal and ASCII format.
 > `-e write=set` Perform  a  full hexadecimal and ASCII dump of all the data written to file descriptors listed in the specified set.  For example, to see all output activity on file descriptors 3 and 5 use -e write=3,5.  Note that this is independent from the normal tracing of the write(2) system call which is controlled by the option -e trace=write.
 
 
-### Appendix
+# Appendix
 
 - [strace.io](https://strace.io/)
 - [sourceforge](https://sourceforge.net/projects/strace/)
