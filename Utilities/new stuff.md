@@ -31,6 +31,10 @@
     
     JS CMS with Markdown
 
+## Packages
+
+- [Chinese To PinYin](https://github.com/overtrue/pinyin)
+
 ## Hybrid Application
 
 - [MUI](http://dev.dcloud.net.cn/mui/)
