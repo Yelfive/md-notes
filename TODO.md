@@ -35,6 +35,7 @@ TODO
 - PEAR, the PHP Extension and Application Repository
     + https://www.ibm.com/developerworks/cn/linux/sdk/php/pear1/
     + http://pear.php.net/
+- Thread Safe / Non Thread Safe PHP
 
 ## JS
 
