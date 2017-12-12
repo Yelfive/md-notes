@@ -14,7 +14,7 @@ composer require [--dev] [--prefer-dist] packages[:@dev]
     },
     "require-dev": {
         "acme/foo": "@dev"
-    },
+    }
 }
 ```
 
