@@ -62,13 +62,15 @@ Commands
     
     To execute command according to `find` result.
 
+    `{}` to stand for each line of the find `result`.
+
     **example:** Copy directory structure:
 
     ```bash
     find docker/mariadb -type d -exec mkdir -p ./environments/dev/{} \;
     ```
-    
-    The tailing `\;` is to escape the semicolon for `exec`, not for the `find` command
+
+    The tailing `\;` is to escape the semicolon for `-exec`, not for the `find` command.
 
 ### locate
 
