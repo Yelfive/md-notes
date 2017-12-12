@@ -58,6 +58,18 @@ Commands
 
     > Find with name
 
++ `-exec`
+    
+    To execute command according to `find` result.
+
+    **example:** Copy directory structure:
+
+    ```bash
+    find docker/mariadb -type d -exec mkdir -p ./environments/dev/{} \;
+    ```
+    
+    The tailing `\;` is to escape the semicolon for `exec`, not for the `find` command
+
 ### locate
 
 > Locate a particular file, similar to find, but much faster.
