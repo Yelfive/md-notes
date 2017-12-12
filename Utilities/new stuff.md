@@ -45,3 +45,7 @@
 network protocol analyzer
 
 - https://www.wireshark.org/
+
+## Service discovery
+
+- [Consul](https://www.consul.io/)
