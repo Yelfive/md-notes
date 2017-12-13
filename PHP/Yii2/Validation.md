@@ -1,6 +1,6 @@
 # Validation
 
-## 自定义验证
+## Overview
 
 6种方式验证，
 5种方式自定义，
@@ -9,18 +9,26 @@
 ## 执行先后顺序
 
 ```php
+<?php
 new CustomValidator,  // Instance of Validator
-['password', 'validatePassword'],     // InlineValidator
-['password', function () {}],     // InlineValidator
-// buit in validators
+[['password'], 'validatePassword'],     // InlineValidator
+[['password'], function () {}],     // InlineValidator/Closure
+[['field'], 'string'] // built in validators
 [['content'], 'app\rules\TextLawful'],
 [['content'], ['class' => 'app\rules\TextLawful', 'property1' => 'value1' [, ...]]],
 ```
 
-## 验证调用
-```text
-     validate->getActiveValidators->getValidators->createValidators->validateAtrributes->validateAttribute->validateValue
-     InlineValidator 在ValidateAttribute时重写
+## 验证调用堆栈
+
+```php
+<?php
+$model->validate()
+-> getActiveValidators
+-> getValidators
+-> createValidators
+-> validateAtrributes
+-> validateAttribute
+-> validateValue
 ```
 
 ### 失败条件
@@ -28,6 +36,7 @@ new CustomValidator,  // Instance of Validator
 是否有错误信息
 
 ```php
+<?php
 # Model::validate
 return !$this-hasErrors();
 ```
@@ -156,8 +165,11 @@ public static function createValidator($type, $model, $attributes, $params = [])
 
     return Yii::createObject($params);
 }
+```
 
-``` InlineValidator
+**InlineValidator**
+
+```php
 
 /**
  * InlineValidator represents a validator which is defined as a method in the object being validated.
@@ -186,7 +198,6 @@ public function validateAttribute($model, $attribute)
     }
     call_user_func($method, $attribute, $this->params);
 }
-
-
+```
 
 
