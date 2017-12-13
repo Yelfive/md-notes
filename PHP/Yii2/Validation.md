@@ -47,7 +47,7 @@ return !$this-hasErrors();
      此外外， return 值不会对有任何作用
      return 值不会影响验证结果
 
-Declare in instance of \yii\db\Model：
+## Declare in instance of \yii\db\Model：
 
 ```php
 public function rules()
@@ -96,6 +96,7 @@ class TextLawful extends \yii\validators\Validator
 ### Inline validator
 
 ```php
+
 ['password', 'validatePassword'],
 
 ['password', function () {}],
@@ -104,9 +105,11 @@ class TextLawful extends \yii\validators\Validator
 
 #### Source code
 
-**\yii\base\Model**
+**\yii\base\Model::createValidators**
 
 ```php
+<?php
+
 /**
  * Creates validator objects based on the validation rules specified in [[rules()]].
  * Unlike [[getValidators()]], each time this method is called, a new list of validators will be returned.
@@ -130,9 +133,10 @@ public function createValidators()
 }
 ```
 
-**Validator**
+**yii\validators\Validator::createValidator**
 
 ```php
+<?php
 
 /**
  * Creates a validator object.
