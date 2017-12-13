@@ -1,5 +1,4 @@
-LetsEncrypt
-===========
+# LetsEncrypt
 
 HTTPS with certbot on nginx
 
@@ -18,8 +17,7 @@ letsencrypt.org
 
 certbot.eff.org
 
-Step 1.
--------
+## Step 1.
 
 ```bash
 certbot certonly --webroot -w /path/to/webroot -d domain.com -w /path/to/another -d domain2.com
@@ -31,14 +29,12 @@ certbot certonly --webroot -w /path/to/webroot -d domain.com -w /path/to/another
 # each `certbot certonly blah blah` will generate one cert and one key
 ```
 
-Step 2.
--------
+## Step 2.
 
 import cert and key on server config file
 like above
 
-Step 3.
--------
+## Step 3.
 
 restart the server
 nginx restart
