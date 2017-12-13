@@ -63,11 +63,13 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/site-packages/requests/packages/urllib3/contrib/pyopenssl.py", line 112, in inject_into_urllib3
     _validate_dependencies_met()
   File "/usr/lib/python2.7/site-packages/requests/packages/urllib3/contrib/pyopenssl.py", line 147, in _validate_dependencies_met
-    raise ImportError("'pyOpenSSL' module missing required functionality. "
+    raise ImportError("'pyOpenSSL' module missing required functionality. ")
 ImportError: 'pyOpenSSL' module missing required functionality. Try upgrading to v0.14 or newer.
 ```
 
 #### solution
+
+Check
 
 ```bash
 pip list 2>/dev/null | grep requests
