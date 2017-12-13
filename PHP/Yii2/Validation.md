@@ -22,6 +22,7 @@ new CustomValidator,  // Instance of Validator
 
 ```php
 <?php
+
 $model->validate()
 -> getActiveValidators
 -> getValidators
@@ -37,19 +38,20 @@ $model->validate()
 
 ```php
 <?php
+
 # Model::validate
 return !$this-hasErrors();
 ```
 
 ### 注意：
 
-      `FilterValidator` 将返回值设为元素新值
-     此外外， return 值不会对有任何作用
-     return 值不会影响验证结果
+`FilterValidator` 将返回值设为元素新值,此外, return 值不会有任何其他作用, 不会影响验证结果
 
 ## Declare in instance of \yii\db\Model：
 
 ```php
+<?php
+
 public function rules()
 {
      return [
@@ -174,6 +176,7 @@ public static function createValidator($type, $model, $attributes, $params = [])
 **InlineValidator**
 
 ```php
+<?php
 
 /**
  * InlineValidator represents a validator which is defined as a method in the object being validated.
