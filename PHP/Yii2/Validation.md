@@ -2,14 +2,13 @@
 
 ## Overview
 
-6种方式验证，
-5种方式自定义，
-1种内置，
+6种方式验证, 5种方式自定义, 1种内置.
 
 ## 执行先后顺序
 
 ```php
 <?php
+
 new CustomValidator,  // Instance of Validator
 [['password'], 'validatePassword'],     // InlineValidator
 [['password'], function () {}],     // InlineValidator/Closure
@@ -39,13 +38,17 @@ $model->validate()
 ```php
 <?php
 
-# Model::validate
-return !$this-hasErrors();
+class yii\base\Model
+{
+    public function validate()
+    {
+        // Other statements
+        return !$this-hasErrors();
+    }
+}
 ```
 
-### 注意：
-
-`FilterValidator` 将返回值设为元素新值,此外, return 值不会有任何其他作用, 不会影响验证结果
+> **注意:** `FilterValidator` 将返回值设为元素新值,此外, return 值不会有任何其他作用, 不会影响验证结果
 
 ## Declare in instance of \yii\db\Model：
 
