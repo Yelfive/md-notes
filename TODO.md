@@ -10,6 +10,7 @@ TODO
 - [ ] difference between `egrep` and `grep`
 - [ ] Linux `sed` stream edit?
 - [ ] strace, ptrace, dtrace, ltrace
+- [ ] human-machine verification like [reCaptcha](https://www.google.com/recaptcha/intro/android.html)
 
 
 - [ ] C, force type changing, struct stuff
