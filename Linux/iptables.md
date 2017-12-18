@@ -39,7 +39,7 @@ option  | description
 -s      | Source IP, to match the incoming IP address
 --sport | Source port, used with `-s` to specify port of source IP
 -d      | Destination IP
--dport  | Port of destination IP
+--dport  | Port of destination IP
 
 **ICMP Types**
 
@@ -149,7 +149,8 @@ iptables -L --line-numbers
 
 ```
 
-# Tables
+## Tables
+
 - nat
 
     > `Network Address Translation`. It should only be used to translate the packet's source field or destination field. Note that, only the first packet in a stream will hit this table. After this, the rest of the packets will automatically have the same action taken on them as the first packet.
