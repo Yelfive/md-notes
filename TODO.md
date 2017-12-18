@@ -11,6 +11,7 @@ TODO
 - [ ] Linux `sed` stream edit?
 - [ ] strace, ptrace, dtrace, ltrace
 - [ ] human-machine verification like [reCaptcha](https://www.google.com/recaptcha/intro/android.html)
+    - https://www.zhihu.com/question/37572783
 
 
 - [ ] C, force type changing, struct stuff
