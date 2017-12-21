@@ -2,7 +2,7 @@
 
 
 
-## #include 
+## include 
 
 ### Usage
 
@@ -11,6 +11,18 @@
 
 // double quotes
 #include "user-lib.h"
+```
+
+1. `<>` to load system library
+2. `""` will check both system library and custom library with specified path
+
+
+## define
+
+### Usage
+
+```c
+#define PI 3.1415926
 ```
 
 ### Example
