@@ -25,13 +25,7 @@ limit_req zone=one nodelay;
     Defines a zone with name "one" in memory to hold the buffer, and the buffer size is 10 megabytes
 
 + rate=1r/s
-    
     1 request per second
-
-    Available units:
-
-    * `r/s`
-    * `r/min`
 
 + nodelay
 
@@ -46,6 +40,19 @@ Context:    http
 ```
 
 Define a request zone, and how it checks the rate(`$binary_remote_addr` means for every IP)
+
+- `key` can contain text, variables, and their combination
+    + `$binary_remote_addr`
+
+- `size` size of zone storage
+
+    > If the zone storage is exhausted, the least recently used state is removed. Even if after that a new state cannot be created, the request is terminated with an [error](#limit_req_status).
+
+    + `m`
+
+- `rate`
+    + `r/s`
+    + `r/min`
 
 **example**
 
