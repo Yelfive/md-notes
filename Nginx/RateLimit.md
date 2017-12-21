@@ -37,4 +37,19 @@ limit_req zone=one nodelay;
 
 ## limit_req_zone
 
-Define a request zone, and how it 
+Define a request zone, and how it checks the rate(`$binary_remote_addr` means for every IP)
+
+## limit_req
+
+```
+Syntax: limit_req zone=name [burst=number] [nodelay];
+Default:    —
+Context:    http, server, location
+```
+
+Apply the limit on request
+
+- `burst` integer value to indicate how many request to delay before error
+- `nodelay` to raise an error `limit_status` when rate is over even `burst`
+
+
