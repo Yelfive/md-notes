@@ -23,7 +23,15 @@
 
 ```c
 #define PI 3.1415926
+#define A "something"
+#define B "else"
+// A will be `somethingelse`
+#define C A B
+// D will be `something else`
+#define D A " " B
 ```
+
+1. Spaces will 
 
 ### Example
 
