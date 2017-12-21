@@ -34,3 +34,7 @@ limit_req zone=one nodelay;
 + nodelay
 
     return `limit_req_status` immediately, instead of waiting for processing. 
+
+## limit_req_zone
+
+Define a request zone, and how it 
