@@ -39,6 +39,8 @@
 
 - [Chinese To PinYin](https://github.com/overtrue/pinyin)
 - [PHP Spider](https://github.com/owner888/phpspider)
+- [monolog/monolog](https://packagist.org/packages/monolog/monolog)
+    Sends your logs to files, sockets, inboxes, databases and various web services
 
 ## Hybrid Application
 
