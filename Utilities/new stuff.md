@@ -55,3 +55,9 @@ network protocol analyzer
 ## Service discovery
 
 - [Consul](https://www.consul.io/)
+
+## Pythons
+
+ - [wxpy](http://wxpy.readthedocs.io/zh/latest/faq.html)
+    Play WeChat with python, using python to handle request/response of WeChat, based on **Web WeChat**
+
