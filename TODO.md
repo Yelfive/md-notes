@@ -1,7 +1,7 @@
 TODO
 ====
 
-- [ ] Nginx ip restriction
+- [x] Nginx ip restriction
 
 - [ ] what's Linux `chroot`
 - [ ] what's telnet: visiting running application?
@@ -12,6 +12,7 @@ TODO
 - [ ] strace, ptrace, dtrace, ltrace
 - [ ] human-machine verification like [reCaptcha](https://www.google.com/recaptcha/intro/android.html)
     - https://www.zhihu.com/question/37572783
+    - recaptcha.net/recaptcha/api.js
 
 
 - [ ] C, force type changing, struct stuff
