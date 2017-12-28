@@ -11,8 +11,16 @@
 
 Create user `username` and store the user:password pair at /path/to/password.db
 
+**htpasswd**
+
 ```bash
 htpasswd -c /path/to/password.db username
+```
+
+**openssl**
+
+```bash
+openssl passwd -crypt 123456 | args -I {} echo username:{} >> /etc/nginx/passwd.db
 ```
 
 ### Nginx conf
