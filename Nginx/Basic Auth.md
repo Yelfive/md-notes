@@ -1,0 +1,7 @@
+# Basic Auth
+
+## Directives
+
+```nginx
+
+```
