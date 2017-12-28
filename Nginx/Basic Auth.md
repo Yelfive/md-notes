@@ -9,15 +9,20 @@
 
 ### Generate password
 
-```bash
-> htpasswd -c /usr/local/nginx/passwd.db username
+Create user `username` and store the user:password pair at /path/to/password.db
 
+```bash
+htpasswd -c /path/to/password.db username
 ```
 
 ### Nginx conf
 
 ```nginx
-
+server {
+    # something
+    auth_basic "prompt when auth required";
+    auth_basic_user_file /path/to/password.db;
+}
 ```
 
 ## Syntax
