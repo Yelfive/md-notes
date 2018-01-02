@@ -55,86 +55,85 @@ rpm -ivh rsync
 
   具体步骤如下：
 
-#### 1. create a configuration file
+#### 1. Create a configuration file
 
 ```bash
 touch /etc/rsyncd.conf
 ```
 
-#### create and grant a secret file(user access)
+
+```conf
+# Distributed under the terms of the GNU General Public License v2
+# Minimal configuration file for rsync daemon
+# See rsync(1) and rsyncd.conf(5) man pages for help
+
+# This line is required by the /etc/init.d/rsyncd script
+pid file = /var/run/rsyncd.pid  
+port = 873
+address = 192.168.1.171 
+#uid = nobody
+#gid = nobody   
+uid = root  
+gid = root 
+
+use chroot = yes 
+read only = yes
+
+#limit access to private LANs
+hosts allow=192.168.1.0/255.255.255.0 10.0.1.0/255.255.255.0 
+hosts deny=*
+
+max connections = 5
+motd file = /etc/rsyncd.motd
+
+#This will give you a separate log file
+#log file = /var/log/rsync.log
+
+#This will log every file transferred - up to 85,000+ per user, per sync
+#transfer logging = yes
+
+log format = %t %a %m %f %b
+syslog facility = local3
+timeout = 300
+
+[rhel4home]  
+path = /home   
+list=yes
+ignore errors
+auth users = root
+secrets file = /etc/rsyncd.secrets 
+comment = This is RHEL 4 data 
+exclude = easylife/  samba/    
+
+[rhel4opt]
+path = /opt
+list=no
+ignore errors
+comment = This is RHEL 4 opt
+auth users = easylife
+secrets file = /etc/rsyncd/rsyncd.secrets
+```
+
+#### Create and grant a secret file(user access)
 
 ```bash
 touch /etc/rsyncd.secrets
 chmod 600 /etc/rsyncd.secrets
 ```
 
-#### 
+#### <font color="red">what's this</font>
 
 ```bash
 touch /etc/rsyncd.motd
 ```
-# chmod 600 /etc/rsyncd/rsyncd.secrets
-# touch /etc/rsyncd.secrets  #创建rsyncd.secrets ，这是用户密码文件。
-# 将rsyncd.secrets这个密码文件的文件属性设为root拥有, 且权限要设为600, 否则无法备份成功!
-# 
 
-  下一就是我们修改rsyncd.conf和rsyncd.secrets和rsyncd.motd文件的时候了。
+下一就是我们修改rsyncd.conf和rsyncd.secrets和rsyncd.motd文件的时候了。
 
-  设定/etc/rsyncd.conf
+设定 /etc/rsyncd.conf
 
-  rsyncd.conf是rsync服务器主要配置文件。我们先来个简单的示例，后面在详细说明各项作用。
+rsyncd.conf是rsync服务器主要配置文件。我们先来个简单的示例，后面在详细说明各项作用。
 
-  比如我们要备份服务器上的/home和/opt，在/home中我想把easylife和samba目录排除在外；
-
-  # Distributed under the terms of the GNU General Public License v2
-  # Minimal configuration file for rsync daemon
-  # See rsync(1) and rsyncd.conf(5) man pages for help
-
-  # This line is required by the /etc/init.d/rsyncd script
-  pid file = /var/run/rsyncd.pid  
-  port = 873
-  address = 192.168.1.171 
-  #uid = nobody
-  #gid = nobody   
-  uid = root  
-  gid = root 
-
-  use chroot = yes 
-  read only = yes
-
-  #limit access to private LANs
-  hosts allow=192.168.1.0/255.255.255.0 10.0.1.0/255.255.255.0 
-  hosts deny=*
-
-  max connections = 5
-  motd file = /etc/rsyncd.motd
-
-  #This will give you a separate log file
-  #log file = /var/log/rsync.log
-
-  #This will log every file transferred - up to 85,000+ per user, per sync
-  #transfer logging = yes
-
-  log format = %t %a %m %f %b
-  syslog facility = local3
-  timeout = 300
-
-  [rhel4home]  
-  path = /home   
-  list=yes
-  ignore errors
-  auth users = root
-  secrets file = /etc/rsyncd.secrets 
-  comment = This is RHEL 4 data 
-  exclude = easylife/  samba/    
-
-  [rhel4opt]
-  path = /opt
-  list=no
-  ignore errors
-  comment = This is RHEL 4 opt
-  auth users = easylife
-  secrets file = /etc/rsyncd/rsyncd.secrets
+比如我们要备份服务器上的/home和/opt，在/home中我想把easylife和samba目录排除在外；
 
   注：关于auth users是必须在服务器上存在的真实的系统用户，如果你想用多个用户以,号隔开，比如auth users = easylife,root
 
@@ -164,7 +163,7 @@ touch /etc/rsyncd.motd
            2002------2009
   ++++++++++++++++++++++++++++++++++++++++++++++
 
-三、rsyncd.conf服务器的配置详解
+### 三、rsyncd.conf服务器的配置详解
 
 A、全局定义
 
@@ -500,12 +499,14 @@ B、一些实例
   Q：为什么我认证失败？
   A：从你的命令行看来：你用的是
 
-  > bash$ rsync -a 144.16.251.213::test test
-  > Password:
-  > @ERROR: auth failed on module test
-  >
-  > I dont understand this. Can somebody explain as to how to acomplish this.
-  > All suggestions are welcome.
+```bash
+> bash$ rsync -a 144.16.251.213::test test
+> Password:
+> @ERROR: auth failed on module test
+>
+> I dont understand this. Can somebody explain as to how to accomplish this.
+> All suggestions are welcome.
+```
 
   应该是没有以你的用户名登陆导致的问题，试试rsync -a max@144.16.251.213::test test
 
