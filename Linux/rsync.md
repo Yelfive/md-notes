@@ -496,19 +496,19 @@ B、一些实例
   Q：绑定端口873失败是怎么回事？
   A：如果你不是以root权限运行这一守护进程的话，因为1024端口以下是特权端口，会出现这样的错误。你可以用--port参数来改变。
 
-  Q：为什么我认证失败？
-  A：从你的命令行看来：你用的是
+Q：为什么我认证失败？
+A：从你的命令行看来：你用的是
 
 ```bash
-> bash$ rsync -a 144.16.251.213::test test
-> Password:
-> @ERROR: auth failed on module test
->
-> I dont understand this. Can somebody explain as to how to accomplish this.
-> All suggestions are welcome.
+> rsync -a 144.16.251.213::test test
+Password:
+@ERROR: auth failed on module test
+
+I don\'t understand this. Can somebody explain as to how to accomplish this.
+All suggestions are welcome.
 ```
 
-  应该是没有以你的用户名登陆导致的问题，试试rsync -a max@144.16.251.213::test test
+  应该是没有以你的用户名登陆导致的问题，试试rsync -a username@144.16.251.213::test test
 
   Q: 出现以下这个讯息, 是怎么一回事?
   @ERROR: auth failed on module xxxxx
