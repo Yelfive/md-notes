@@ -26,7 +26,9 @@ rsync 包括如下的一些特性：
 
 ### 2.1 Installation
 
-软件包安装
+Official Site can be found [here][rsync]
+
+#### 2.1.1 Install binary
 
 ```bash
 # Debian, Ubuntu e.t.c
@@ -39,7 +41,7 @@ rpm -ivh rsync
 
 其它Linux发行版，请用相应的软件包管理方法来安装。
 
-源码包安装
+#### 2.1.2 Install from source
 
 ```bash
 tar xvf  rsync-xxx.tar.gz
