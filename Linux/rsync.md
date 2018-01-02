@@ -538,7 +538,7 @@ All suggestions are welcome.
 
   A: 这通常是您的 rsyncd.conf 中的 path 路径所设的那个目录并不存在所致.请先用 mkdir开设好备份目录.
 
-- [rsync]: https://rsync.samba.org
+[rsync]: https://rsync.samba.org
 
 
 ＴＨＥ　ＥＮＤ
