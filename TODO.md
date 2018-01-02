@@ -2,6 +2,7 @@ TODO
 ====
 
 - [x] Nginx ip restriction
+- [ ] Kubernetes
 
 - [ ] what's Linux `chroot`
 - [ ] what's telnet: visiting running application?
