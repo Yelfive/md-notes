@@ -341,6 +341,7 @@ rsync有六种不同的工作模式：
 - `--progress` 是指显示出详细的进度情况
 - `--delete` To delete those in `DST` but not in `SRC`
 - `--password-file=/password/path/file` This option allows you to provide a password in a file for accessing a remote rsync daemon. Note that this option is only useful when accessing an rsync daemon using the built in transport, not when using a remote shell as the transport. The file must not be world readable. It should contain just the password as a single line
+
 B、一些实例
 
   B1、列出rsync 服务器上的所提供的同步内容；
