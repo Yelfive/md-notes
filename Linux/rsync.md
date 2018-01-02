@@ -1,4 +1,4 @@
-# rsync [Site](https://rsync.samba.org/)
+# rsync
 
 `rsync`, short for `Remote Synchronize`. It compares the differences between files and download or upload to a destination
 
@@ -24,13 +24,9 @@ rsync 包括如下的一些特性：
 
   架设rsync 服务器比较简单，写一个配置文件rsyncd.conf 。文件的书写也是有规则的，我们可以参照rsync.samba.org 上的文档来做。当然我们首先要安装好rsync这个软件才行；
 
-### A、rsync的安装；
+### 2.1 Installation
 
-  获取rsync
-
-  rysnc的官方网站：http://rsync.samba.org/可以从上面得到最新的版本。目前最新版是3.05。当然，因为rsync是一款如此有用的软件，所以很多Linux的发行版本都将它收录在内了。
-
-  软件包安装
+软件包安装
 
 ```bash
 # Debian, Ubuntu e.t.c
@@ -41,32 +37,33 @@ yum install rsync
 rpm -ivh rsync
 ```
 
-  其它Linux发行版，请用相应的软件包管理方法来安装。
+其它Linux发行版，请用相应的软件包管理方法来安装。
 
-  源码包安装
+源码包安装
 
 ```bash
-  tar xvf  rsync-xxx.tar.gz
-  cd rsync-xxx
-  ./configure --prefix=/usr  ;make ;make install
+tar xvf  rsync-xxx.tar.gz
+cd rsync-xxx
+./configure --prefix=/usr
+make
+make install
 ```
 
 > 注：在用源码包编译安装之前，您得安装gcc等编译开具才行；
    
 ### B、配置文件
 
-  rsync的主要有以下三个配置文件rsyncd.conf(主配置文件)、rsyncd.secrets(密码文件)、rsyncd.motd(rysnc服务器信息)
+rsync的主要有以下三个配置文件rsyncd.conf(主配置文件)、rsyncd.secrets(密码文件)、rsyncd.motd(rysnc服务器信息)
 
-  服务器配置文件(/etc/rsyncd.conf)，该文件默认不存在，请创建它。
+服务器配置文件(/etc/rsyncd.conf)，该文件默认不存在，请创建它。
 
-  具体步骤如下：
+具体步骤如下：
 
 #### 1. Create a configuration file
 
 ```bash
 touch /etc/rsyncd.conf
 ```
-
 
 ```conf
 # Distributed under the terms of the GNU General Public License v2
@@ -539,6 +536,7 @@ All suggestions are welcome.
 
   A: 这通常是您的 rsyncd.conf 中的 path 路径所设的那个目录并不存在所致.请先用 mkdir开设好备份目录.
 
+- [rsync]: https://rsync.samba.org
 
 
 ＴＨＥ　ＥＮＤ
