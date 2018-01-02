@@ -1,12 +1,12 @@
 # rsync [Site](https://rsync.samba.org/)
 
+`rsync`, short for `Remote Synchronize`. It compares the differences between files and download or upload to a destination
+
 **Usage**
 
 ```bash
 rsync [OPTION...] SRC... [DEST]
 ```
-
-`rsync`, short for `Remote Synchronize`. It compares the differences between files and download or upload to a destination
 
 ## 一、什么是rsync
 
