@@ -5,7 +5,7 @@
 **Usage**
 
 ```bash
-rsync [OPTION...] SRC... [DEST]
+rsync -ave 'ssh -p 9822' src username@ip:/path/on/server
 ```
 
 ## 一、什么是rsync
