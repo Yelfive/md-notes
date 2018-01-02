@@ -1,6 +1,12 @@
-# rsync
+# rsync [Site](https://rsync.samba.org/)
 
-> rsync 实现网站的备份，文件的同步，不同系统的文件的同步，如果是windows的话，需要windows版本cwrsync
+**Usage**
+
+```bash
+rsync [OPTION...] SRC... [DEST]
+```
+
+`rsync`, short for `Remote Synchronize`. It compares the differences between files and download or upload to a destination
 
 ## 一、什么是rsync
 
