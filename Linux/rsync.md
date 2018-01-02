@@ -68,10 +68,15 @@ touch /etc/rsyncd.secrets
 chmod 600 /etc/rsyncd.secrets
 ```
 
-# touch /etc/rsyncd.secrets  #创建rsyncd.secrets ，这是用户密码文件。
+#### 
+
+```bash
+touch /etc/rsyncd.motd
+```
 # chmod 600 /etc/rsyncd/rsyncd.secrets
+# touch /etc/rsyncd.secrets  #创建rsyncd.secrets ，这是用户密码文件。
 # 将rsyncd.secrets这个密码文件的文件属性设为root拥有, 且权限要设为600, 否则无法备份成功!
-# touch /etc/rsyncd.motd
+# 
 
   下一就是我们修改rsyncd.conf和rsyncd.secrets和rsyncd.motd文件的时候了。
 

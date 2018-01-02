@@ -1,8 +1,8 @@
-TODO
-====
+# TODO
 
-- [x] Nginx ip restriction
+- [x] Nginx IP restriction
 - [ ] Kubernetes
+- [ ] Consul
 
 - [ ] what's Linux `chroot`
 - [ ] what's telnet: visiting running application?
@@ -15,18 +15,16 @@ TODO
     - https://www.zhihu.com/question/37572783
     - recaptcha.net/recaptcha/api.js
 
-
 - [ ] C, force type changing, struct stuff
 - [ ] PHP Opcode
 - [ ] go
-- [ ] redis 集群
 - [ ] build a redis GUI client on MAC
 - [ ] MathJax
 - [ ] HTTP/2
 - [ ] docker stack, docker swarm
 - [ ] To build a daemon keeper script, restart when a daemon exited
 - [ ] command: [xargs](http://man.linuxde.net/xargs)
-- [ ] redis 
+- [ ] redis
         - cluster http://redis.cn/topics/transactions.html
         - transaction http://redis.cn/topics/cluster-tutorial.html
 - [ ] JWT JSON Web Token
