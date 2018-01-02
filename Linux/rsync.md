@@ -320,22 +320,22 @@ rsync有六种不同的工作模式：
 ### Options
 
 - `-r` 是递归
-- `-l` 是链接文件，意思是拷贝链接文件；
-- `-p` 表示保持文件原有权限；
-- `-t` 保持文件原有时间；
-- `-g` 保持文件原有用户组；
-- `-o` 保持文件原有属主；
-- `-D` 相当于块设备文件；
+- `-l` Copy symbol links as symbol links
+- `-p` Keep privileges
+- `-t` Keep time
+- `-g` Keep user group
+- `-o` Keep ownership
+- `-D` As block file
 - `-z, --compress` Compress
 - `-P, --progress` Show progress during transfer
-- `-v` 传输时的进度等信息，和-P有点关系，自己试试。可以看文档；
+- `-v` verbose
 - `-e, --rsh` specify the remote shell to use. i.e `-e ssh` to use ssh as transporter
 
     ```bash
     rsync -e 'ssh -p 5122'
     ```
 
-to use ssh at port 5122 to transfer files
+    to use ssh at port 5122 to transfer files
 
 - `-u` 只进行更新，防止本地新文件被重写，注意两者机器的时钟的同时
 - `--progress` 是指显示出详细的进度情况
