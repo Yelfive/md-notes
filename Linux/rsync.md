@@ -18,7 +18,7 @@ rsync 包括如下的一些特性：
 
   架设rsync 服务器比较简单，写一个配置文件rsyncd.conf 。文件的书写也是有规则的，我们可以参照rsync.samba.org 上的文档来做。当然我们首先要安装好rsync这个软件才行；
 
-A、rsync的安装；
+### A、rsync的安装；
 
   获取rsync
 
@@ -26,19 +26,28 @@ A、rsync的安装；
 
   软件包安装
 
-  # sudo apt-get  install  rsync  注：在debian、ubuntu 等在线安装方法；
-  # yum install rsync    注：Fedora、Redhat 等在线安装方法；
-  # rpm -ivh rsync       注：Fedora、Redhat 等rpm包安装方法；
+```bash
+# Debian, Ubuntu e.t.c
+apt-get install rsync
+# Fedora, RedHat e.t.c
+yum install rsync
+# Fedora, RedHat with rpm
+rpm -ivh rsync
+```
 
   其它Linux发行版，请用相应的软件包管理方法来安装。
 
   源码包安装
 
+```bash
   tar xvf  rsync-xxx.tar.gz
   cd rsync-xxx
-  ./configure --prefix=/usr  ;make ;make install   注：在用源码包编译安装之前，您得安装gcc等编译开具才行；
+  ./configure --prefix=/usr  ;make ;make install
+```
+
+> 注：在用源码包编译安装之前，您得安装gcc等编译开具才行；
    
-B、配置文件
+### B、配置文件
 
   rsync的主要有以下三个配置文件rsyncd.conf(主配置文件)、rsyncd.secrets(密码文件)、rsyncd.motd(rysnc服务器信息)
 
@@ -46,7 +55,14 @@ B、配置文件
 
   具体步骤如下：
 
+#### 1. create a configuration file
+
+```bash
+touch /etc/rsyncd.conf
+```
   #touch /etc/rsyncd.conf  #创建rsyncd.conf，这是rsync服务器的配置文件。
+
+
   #touch /etc/rsyncd.secrets  #创建rsyncd.secrets ，这是用户密码文件。
   #chmod 600 /etc/rsyncd/rsyncd.secrets  #将rsyncd.secrets这个密码文件的文件属性设为root拥有, 且权限要设为600, 否则无法备份成功!
   #touch /etc/rsyncd.motd
