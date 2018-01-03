@@ -7,7 +7,7 @@
 ps aux|grep httpd
 
 
-sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ```
 
 `launchctl` is used to manage `launchd`, while `launchd` manages all the daemon processes, such as apache `httpd`.
