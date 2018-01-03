@@ -61,3 +61,8 @@ network protocol analyzer
  - [wxpy](http://wxpy.readthedocs.io/zh/latest/faq.html)
     Play WeChat with python, using python to handle request/response of WeChat, based on **Web WeChat**
 
+## Server monitoring
+
+- [Zabbix](https://www.zabbix.com/product)
+
+
