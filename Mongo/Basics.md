@@ -244,11 +244,11 @@ Commands
 > - `multi` default `false`, whether to update multiple rows or just the first found
 > - `writeConcern` exception level
 
-# Operator
+## Operator
 
 Operator starts with a dollar sign '$'
 
-## Query  Operator
+### Query  Operator
 
 ```
 > db.<collection>.find({<field> : {$gt : 100}})
