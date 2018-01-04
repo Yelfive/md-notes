@@ -1,5 +1,6 @@
+# MongoDB Basics
 
-### 保留库
+## Reserved Database
 
 - admin
     > 从权限的角度来看，这是"root"数据库。要是将一个用户添加到这个数据库，这个用户自动继承所有数据库的权限。一些特定的服务器端命令也只能从这个数据库运行，比如列出所有的数据库或者关闭服务器。
@@ -18,8 +19,8 @@
 | Table     | Collection   |
 | Row       | Document   |
 | Field/Column      | Column   |
-|表联合   | 嵌入文档|
-|主键    | 主键（_id）|
+| Join   | 嵌入文档|
+| Primary Key    | Primary Key（_id）|
 
 ---
 
