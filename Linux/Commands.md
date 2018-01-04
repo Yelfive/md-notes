@@ -462,6 +462,6 @@ To send signal to process or to list available signal.
 ```bash
 # list process with port 80
 lsof -i :80
-# list 
-lsof -P 
+# list all process with ports
+lsof -i -P 
 ```
