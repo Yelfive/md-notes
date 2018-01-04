@@ -31,7 +31,13 @@ cat key.pub >> ~/.ssh/authorized_keys
 ## 5. git clone
 
 ```bash
-git remote set-url origin ssh://root@mylord.cn:9527/srv/git/outsource/geeqee/smart-home-app.git
+git remote add origin ssh://root@mylord.cn:9527/srv/git/outsource/geeqee/smart-home-app.git
 ```
 
 > Clone with protocol `ssh://user@site[:port]/path/to/repository.git`
+
+If you are at the where the git repositories stores, you can set origin like this(with absolute path)
+
+```bash
+git remote add origin /srv/git/something.git
+```
