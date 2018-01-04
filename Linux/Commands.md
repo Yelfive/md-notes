@@ -456,3 +456,12 @@ kill -l [signal]
 ```
 
 To send signal to process or to list available signal.
+
+### lsof
+
+```bash
+# list process with port 80
+lsof -i :80
+# list 
+lsof -P 
+```
