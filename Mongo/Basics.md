@@ -12,12 +12,12 @@
 
 ### 名词对应
 
-| RDMS   | Mongo|
-| --     | --   |
-|数据库   | 数据库 |
-|表      | 集合   |
-|行      | 文档   |
-|列      | 字段   |
+| RDMS      | Mongo|
+| --        | --   |
+| Database  | Database |
+| Table     | Collection   |
+| Row       | Document   |
+| Field/Column      | Column   |
 |表联合   | 嵌入文档|
 |主键    | 主键（_id）|
 
