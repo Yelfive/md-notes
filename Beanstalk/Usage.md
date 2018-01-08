@@ -198,14 +198,20 @@ The only reply is:
 
 ## Worker Commands
 
-A process that wants to consume jobs from the queue uses "reserve", "delete",
-"release", and "bury". The first worker command, "reserve", looks like this:
+A process that wants to consume jobs from the queue uses `reserve`, `delete`,
+`release`, and `bury`. The first worker command, `reserve`, looks like this:
 
-    reserve\r\n
+### reserve
+
+```beanstalk
+reserve\r\n
+```
 
 Alternatively, you can specify a timeout as follows:
 
-    reserve-with-timeout <seconds>\r\n
+```
+reserve-with-timeout <seconds>\r\n
+```
 
 This will return a newly-reserved job. If no job is available to be reserved,
 beanstalkd will wait to send a response until one becomes available. Once a
@@ -215,7 +221,7 @@ job back into the ready queue. Both the TTR and the actual time left can be
 found in response to the stats-job command.
 
 If more than one job is ready, beanstalkd will choose the one with the
-smallest priority value. Within each priority, it will choose the one that
+**smallest priority** value. Within each priority, it will choose the one that
 was received first.
 
 A timeout value of 0 will cause the server to immediately return either a
@@ -223,18 +229,22 @@ response or TIMED_OUT.  A positive value of timeout will limit the amount of
 time the client will block on the reserve request until a job becomes
 available.
 
-During the TTR of a reserved job, the last second is kept by the server as a
+During the `TTR` of a reserved job, the last second is kept by the server as a
 safety margin, during which the client will not be made to wait for another
 job. If the client issues a reserve command during the safety margin, or if
 the safety margin arrives while the client is waiting on a reserve command,
 the server will respond with:
 
-    DEADLINE_SOON\r\n
+```beanstalk
+DEADLINE_SOON\r\n
+```
 
 This gives the client a chance to delete or release its reserved job before
 the server automatically releases it.
 
-    TIMED_OUT\r\n
+```beanstalk
+TIMED_OUT\r\n
+```
 
 If a non-negative timeout was specified and the timeout exceeded before a job
 became available, or if the client's connection is half-closed, the server
@@ -243,27 +253,33 @@ will respond with TIMED_OUT.
 Otherwise, the only other response to this command is a successful reservation
 in the form of a text line followed by the job body:
 
-    RESERVED <id> <bytes>\r\n
-    <data>\r\n
+```
+RESERVED <id> <bytes>\r\n
+<data>\r\n
+```
 
- - <id> is the job id -- an integer unique to this job in this instance of
+- `<id>` is the job id -- an integer unique to this job in this instance of
    beanstalkd.
 
- - <bytes> is an integer indicating the size of the job body, not including
+- `<bytes>` is an integer indicating the size of the job body, not including
    the trailing "\r\n".
 
- - <data> is the job body -- a sequence of bytes of length <bytes> from the
+- `<data>` is the job body -- a sequence of bytes of length `<bytes>` from the
    previous line. This is a verbatim copy of the bytes that were originally
    sent to the server in the put command for this job.
+
+### delete
 
 The delete command removes a job from the server entirely. It is normally used
 by the client when the job has successfully run to completion. A client can
 delete jobs that it has reserved, ready jobs, delayed jobs, and jobs that are
 buried. The delete command looks like this:
 
-    delete <id>\r\n
+```beanstalk
+delete <id>\r\n
+```
 
- - <id> is the job id to delete.
+- `<id>` is the job id to delete.
 
 The client then waits for one line of response, which may be:
 
