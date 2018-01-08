@@ -11,10 +11,20 @@ were received and sends responses in the same order. All integers in the
 protocol are formatted in decimal and (unless otherwise indicated)
 nonnegative.
 
-Names, in this protocol, are ASCII strings. They may contain letters (A-Z and
-a-z), numerals (0-9), hyphen ("-"), plus ("+"), slash ("/"), semicolon (";"),
-dot ("."), dollar-sign ("$"), underscore ("_"), and parentheses ("(" and ")"),
-but they may not begin with a hyphen. They are terminated by white space
+Names, in this protocol, are ASCII strings. They may contain 
+
+- letters (A-Z and a-z)
+- numerals (0-9)
+- hyphen ("-")
+- plus ("+")
+- slash ("/")
+- semicolon (";")
+- dot (".")
+- dollar-sign ("$")
+- underscore ("_")
+- parentheses ("(" and ")"),
+
+But they **may not begin with a hyphen**. They are terminated by white space
 (either a space char or end of line). Each name must be at least one character
 long.
 
