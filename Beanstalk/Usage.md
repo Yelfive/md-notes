@@ -364,20 +364,28 @@ The reply is one of:
 The peek commands let the client inspect a job in the system. There are four
 variations. All but the first operate only on the currently used tube.
 
-+ "peek <id>\r\n" - return job <id>.
+### peek <id>\r\n
 
-+ "peek-ready\r\n" - return the next ready job.
+return job <id>.
 
-+ "peek-delayed\r\n" - return the delayed job with the shortest delay left.
+### peek-ready\r\n
 
-+ "peek-buried\r\n" - return the next job in the list of buried jobs.
+return the next ready job.
+
+### peek-delayed\r\n
+
+return the delayed job with the shortest delay left.
+
+### peek-buried\r\n
+
+return the next job in the list of buried jobs.
 
     There are two possible responses, either a single line:
 
     - "NOT_FOUND\r\n" if the requested job doesn't exist or there are no jobs in
    the requested state.
 
-Or a line followed by a chunk of data, if the command was successful:
+    Or a line followed by a chunk of data, if the command was successful:
 
         FOUND <id> <bytes>\r\n
         <data>\r\n
