@@ -31,7 +31,7 @@ The protocol contains two kinds of data: text lines and unstructured chunks of d
 - Text lines are used for client commands and server responses. 
 - Chunks are used to transfer job bodies and stats information. Each job body is an opaque sequence of bytes. The server never inspects or modifies a job body and always sends it back in its original form. It is up to the clients to agree on a meaningful interpretation of job bodies.
 
-The client may issue the "quit" command, or simply close the TCP connection when it no longer has use for the server. However, beanstalkd performs very well with a large number of open connections, so it is usually better for the client to keep its connection open and reuse it as much as possible. This also avoids the overhead of establishing new TCP connections.
+The client may issue the `quit` command, or simply close the TCP connection when it no longer has use for the server. However, beanstalkd performs very well with a large number of open connections, so it is usually better for the client to keep its connection open and reuse it as much as possible. This also avoids the overhead of establishing new TCP connections.
 
 If a client violates the protocol (such as by sending a request that is not well-formed or a command that does not exist) or if the server has an error, the server will reply with one of the following error messages:
 
@@ -79,9 +79,9 @@ Here is a picture with more possibilities:
                         `--------> *poof*
 ```
 
-The system has one or more tubes. Each tube consists of a ready queue and a delay queue. Each job spends its entire life in one tube. Consumers can show interest in tubes by sending the "watch" command; they can show disinterest by sending the "ignore" command. This set of interesting tubes is said to be a consumer's "watch list". When a client reserves a job, it may come from any of the tubes in its watch list.
+The system has one or more tubes. Each tube consists of a ready queue and a delay queue. Each job spends its entire life in one tube. Consumers can show interest in tubes by sending the `watch` command; they can show disinterest by sending the `ignore` command. This set of interesting tubes is said to be a consumer's "watch list". When a client reserves a job, it may come from any of the tubes in its watch list.
 
-When a client connects, its watch list is initially just the tube named "default". If it submits jobs without having sent a "use" command, they will live in the tube named "default".
+When a client connects, its watch list is initially just the tube named "default". If it submits jobs without having sent a `use` command, they will live in the tube named "default".
 
 Tubes are created on demand whenever they are referenced. If a tube is empty (that is, it contains no ready, delayed, or buried jobs) and no client refers to it, it will be deleted.
 
@@ -89,7 +89,7 @@ Tubes are created on demand whenever they are referenced. If a tube is empty (th
 
 ### put
 
-The "put" command is for any process that wants to insert a job into the queue. It comprises a command line followed by the job body:
+The `put` command is for any process that wants to insert a job into the queue. It comprises a command line followed by the job body:
 
 ```beanstalk
 put <pri> <delay> <ttr> <bytes>\r\n
@@ -129,7 +129,7 @@ will be put into the tube named "default".
 use <tube>\r\n
 ```
 
-- `<tube>`` is a name at most 200 bytes. It specifies the tube to use. If the tube does not exist, it will be created.
+- `<tube>` is a name at most 200 bytes. It specifies the tube to use. If the tube does not exist, it will be created.
 
 The only reply is:
 
