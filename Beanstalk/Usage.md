@@ -80,8 +80,7 @@ Here is a picture of the typical job lifecycle:
 
 Here is a picture with more possibilities:
 
-
-
+```
    put with delay               release with delay
   ----------------> [DELAYED] <------------.
                         |                   |
@@ -100,7 +99,7 @@ Here is a picture with more possibilities:
                        |
                        |  delete
                         `--------> *poof*
-
+```
 
 The system has one or more tubes. Each tube consists of a ready queue and a
 delay queue. Each job spends its entire life in one tube. Consumers can show
@@ -117,58 +116,59 @@ Tubes are created on demand whenever they are referenced. If a tube is empty
 (that is, it contains no ready, delayed, or buried jobs) and no client refers
 to it, it will be deleted.
 
-Producer Commands
------------------
+## Producer Commands
 
 The "put" command is for any process that wants to insert a job into the queue.
 It comprises a command line followed by the job body:
 
-    put <pri> <delay> <ttr> <bytes>\r\n
-    <data>\r\n
+```beanstalk
+put <pri> <delay> <ttr> <bytes>\r\n
+<data>\r\n
+```
 
 It inserts a job into the client's currently used tube (see the "use" command
 below).
 
- - <pri> is an integer < 2**32. Jobs with smaller priority values will be
+- `<pri>` is an integer < 2**32. Jobs with smaller priority values will be
    scheduled before jobs with larger priorities. The most urgent priority is 0;
    the least urgent priority is 4,294,967,295.
 
- - <delay> is an integer number of seconds to wait before putting the job in
+- `<delay>` is an integer number of seconds to wait before putting the job in
    the ready queue. The job will be in the "delayed" state during this time.
 
- - <ttr> -- time to run -- is an integer number of seconds to allow a worker
+- `<ttr>` -- `time to run` -- is an integer number of seconds to allow a worker
    to run this job. This time is counted from the moment a worker reserves
    this job. If the worker does not delete, release, or bury the job within
-   <ttr> seconds, the job will time out and the server will release the job.
+   `ttr` seconds, the job will time out and the server will release the job.
    The minimum ttr is 1. If the client sends 0, the server will silently
    increase the ttr to 1.
 
- - <bytes> is an integer indicating the size of the job body, not including the
-   trailing "\r\n". This value must be less than max-job-size (default: 2**16).
+- `<bytes>` is an integer indicating the size of the job body, not including the
+   trailing `\r\n`. This value must be less than max-job-size (default: 2**16).
 
- - <data> is the job body -- a sequence of bytes of length <bytes> from the
+- `<data>` is the job body -- a sequence of bytes of length `bytes` from the
    previous line.
 
 After sending the command line and body, the client waits for a reply, which
 may be:
 
- - "INSERTED <id>\r\n" to indicate success.
+- `INSERTED <id>\r\n` to indicate success.
 
-   - <id> is the integer id of the new job
+    - `<id>` is the integer id of the new job
 
- - "BURIED <id>\r\n" if the server ran out of memory trying to grow the
+- `BURIED <id>\r\n` if the server ran out of memory trying to grow the
    priority queue data structure.
 
-   - <id> is the integer id of the new job
+    - `<id>` is the integer id of the new job
 
- - "EXPECTED_CRLF\r\n" The job body must be followed by a CR-LF pair, that is,
-   "\r\n". These two bytes are not counted in the job size given by the client
+- `EXPECTED_CRLF\r\n` The job body must be followed by a CR-LF pair, that is,
+   `\r\n`. These two bytes are not counted in the job size given by the client
    in the put command line.
 
- - "JOB_TOO_BIG\r\n" The client has requested to put a job with a body larger
+- `JOB_TOO_BIG\r\n` The client has requested to put a job with a body larger
    than max-job-size bytes.
 
- - "DRAINING\r\n" This means that the server has been put into "drain mode" and
+- `DRAINING\r\n` This means that the server has been put into "drain mode" and
    is no longer accepting new jobs. The client should try another server or
    disconnect and try again later. To put the server in drain mode, send the
    SIGUSR1 signal to the process.
@@ -177,7 +177,9 @@ The "use" command is for producers. Subsequent put commands will put jobs into
 the tube specified by this command. If no use command has been issued, jobs
 will be put into the tube named "default".
 
-    use <tube>\r\n
+```
+use <tube>\r\n
+```
 
  - <tube> is a name at most 200 bytes. It specifies the tube to use. If the
    tube does not exist, it will be created.
