@@ -2,8 +2,7 @@
 
 = Beanstalk Protocol =
 
-Protocol
---------
+## Protocol
 
 The beanstalk protocol runs over TCP using ASCII encoding. Clients connect,
 send commands and data, wait for responses, and close the connection. For each
@@ -36,20 +35,20 @@ If a client violates the protocol (such as by sending a request that is not
 well-formed or a command that does not exist) or if the server has an error,
 the server will reply with one of the following error messages:
 
- - "OUT_OF_MEMORY\r\n" The server cannot allocate enough memory for the job.
+ - `OUT_OF_MEMORY\r\n` The server cannot allocate enough memory for the job.
    The client should try again later.
 
- - "INTERNAL_ERROR\r\n" This indicates a bug in the server. It should never
+ - `INTERNAL_ERROR\r\n` This indicates a bug in the server. It should never
    happen. If it does happen, please report it at
    http://groups.google.com/group/beanstalk-talk.
 
- - "BAD_FORMAT\r\n" The client sent a command line that was not well-formed.
-   This can happen if the line does not end with \r\n, if non-numeric
+ - `BAD_FORMAT\r\n` The client sent a command line that was not well-formed.
+   This can happen if the line does not end with `\r\n`, if non-numeric
    characters occur where an integer is expected, if the wrong number of
    arguments are present, or if the command line is mal-formed in any other
    way.
 
- - "UNKNOWN_COMMAND\r\n" The client sent a command that the server does not
+ - `UNKNOWN_COMMAND\r\n` The client sent a command that the server does not
    know.
 
 These error responses will not be listed in this document for individual
@@ -61,8 +60,7 @@ As a last resort, if the server has a serious error that prevents it from
 continuing service to the current client, the server will close the
 connection.
 
-Job Lifecycle
--------------
+## Job Lifecycle
 
 A job in beanstalk gets created by a client with the "put" command. During its
 life it can be in one of four states: "ready", "reserved", "delayed", or
@@ -74,10 +72,10 @@ command to delete the job.
 
 Here is a picture of the typical job lifecycle:
 
-
+```text
    put            reserve               delete
   -----> [READY] ---------> [RESERVED] --------> *poof*
-
+```
 
 
 Here is a picture with more possibilities:
