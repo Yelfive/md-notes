@@ -126,21 +126,19 @@ will be put into the tube named "default".
 use <tube>\r\n
 ```
 
-- <tube> is a name at most 200 bytes. It specifies the tube to use. If the
-   tube does not exist, it will be created.
+- `<tube>`` is a name at most 200 bytes. It specifies the tube to use. If the tube does not exist, it will be created.
 
 The only reply is:
 
-```text
-    USING <tube>\r\n
+```beanstalk
+USING <tube>\r\n
 ```
 
 - `<tube>` is the name of the tube now being used.
 
 ## Worker Commands
 
-A process that wants to consume jobs from the queue uses `reserve`, `delete`,
-`release`, and `bury`. The first worker command, `reserve`, looks like this:
+A process that wants to consume jobs from the queue uses `reserve`, `delete`, `release`, and `bury`. The first worker command, `reserve`, looks like this:
 
 ### reserve
 
@@ -154,67 +152,42 @@ Alternatively, you can specify a timeout as follows:
 reserve-with-timeout <seconds>\r\n
 ```
 
-This will return a newly-reserved job. If no job is available to be reserved,
-beanstalkd will wait to send a response until one becomes available. Once a
-job is reserved for the client, the client has limited time to run (TTR) the
-job before the job times out. When the job times out, the server will put the
-job back into the ready queue. Both the TTR and the actual time left can be
-found in response to the stats-job command.
+This will return a newly-reserved job. If no job is available to be reserved, beanstalkd will wait to send a response until one becomes available. Once a job is reserved for the client, the client has limited time to run (TTR) the job before the job times out. When the job times out, the server will put the job back into the ready queue. Both the TTR and the actual time left can be found in response to the stats-job command.
 
-If more than one job is ready, beanstalkd will choose the one with the
-**smallest priority** value. Within each priority, it will choose the one that
-was received first.
+If more than one job is ready, beanstalkd will choose the one with the **smallest priority** value. Within each priority, it will choose the one that was received first.
 
-A timeout value of 0 will cause the server to immediately return either a
-response or TIMED_OUT.  A positive value of timeout will limit the amount of
-time the client will block on the reserve request until a job becomes
-available.
+A timeout value of 0 will cause the server to immediately return either a response or TIMED_OUT.  A positive value of timeout will limit the amount of time the client will block on the reserve request until a job becomes available.
 
-During the `TTR` of a reserved job, the last second is kept by the server as a
-safety margin, during which the client will not be made to wait for another
-job. If the client issues a reserve command during the safety margin, or if
-the safety margin arrives while the client is waiting on a reserve command,
-the server will respond with:
+During the `TTR` of a reserved job, the last second is kept by the server as a safety margin, during which the client will not be made to wait for another job. If the client issues a reserve command during the safety margin, or if the safety margin arrives while the client is waiting on a reserve command, the server will respond with:
 
 ```beanstalk
 DEADLINE_SOON\r\n
 ```
 
-This gives the client a chance to delete or release its reserved job before
-the server automatically releases it.
+This gives the client a chance to delete or release its reserved job before the server automatically releases it.
 
 ```beanstalk
 TIMED_OUT\r\n
 ```
 
-If a non-negative timeout was specified and the timeout exceeded before a job
-became available, or if the client's connection is half-closed, the server
-will respond with TIMED_OUT.
+If a non-negative timeout was specified and the timeout exceeded before a job became available, or if the client's connection is half-closed, the server will respond with TIMED_OUT.
 
-Otherwise, the only other response to this command is a successful reservation
-in the form of a text line followed by the job body:
+Otherwise, the only other response to this command is a successful reservation in the form of a text line followed by the job body:
 
 ```
 RESERVED <id> <bytes>\r\n
 <data>\r\n
 ```
 
-- `<id>` is the job id -- an integer unique to this job in this instance of
-   beanstalkd.
+- `<id>` is the job id -- an integer unique to this job in this instance of    beanstalkd.
 
-- `<bytes>` is an integer indicating the size of the job body, not including
-   the trailing "\r\n".
+- `<bytes>` is an integer indicating the size of the job body, not including the trailing "\r\n".
 
-- `<data>` is the job body -- a sequence of bytes of length `<bytes>` from the
-   previous line. This is a verbatim copy of the bytes that were originally
-   sent to the server in the put command for this job.
+- `<data>` is the job body -- a sequence of bytes of length `<bytes>` from the previous line. This is a verbatim copy of the bytes that were originally sent to the server in the put command for this job.
 
 ### delete
 
-The delete command removes a job from the server entirely. It is normally used
-by the client when the job has successfully run to completion. A client can
-delete jobs that it has reserved, ready jobs, delayed jobs, and jobs that are
-buried. The delete command looks like this:
+The delete command removes a job from the server entirely. It is normally used by the client when the job has successfully run to completion. A client can delete jobs that it has reserved, ready jobs, delayed jobs, and jobs that are buried. The delete command looks like this:
 
 ```beanstalk
 delete <id>\r\n
@@ -224,43 +197,32 @@ delete <id>\r\n
 
 The client then waits for one line of response, which may be:
 
- - "DELETED\r\n" to indicate success.
+- `DELETED\r\n` to indicate success.
 
- - "NOT_FOUND\r\n" if the job does not exist or is not either reserved by the
-   client, ready, or buried. This could happen if the job timed out before the
-   client sent the delete command.
+- `NOT_FOUND\r\n` if the job does not exist or is not either reserved by the client, ready, or buried. This could happen if the job timed out before the client sent the delete command.
 
 ### release
 
-The release command puts a reserved job back into the ready queue (and marks
-its state as "ready") to be run by any client. It is normally used when the job
-fails because of a transitory error. It looks like this:
+The release command puts a reserved job back into the ready queue (and marks its state as "ready") to be run by any client. It is normally used when the job fails because of a transitory error. It looks like this:
 
 ```beanstalk
 release <id> <pri> <delay>\r\n
 ```
 
 - `<id>` is the job id to release.
-
 - `<pri>` is a new priority to assign to the job.
-
-- `<delay>` is an integer number of seconds to wait before putting the job in
-the ready queue. The job will be in the "delayed" state during this time.
+- `<delay>` is an integer number of seconds to wait before putting the job in the ready queue. The job will be in the "delayed" state during this time.
 
 The client expects one line of response, which may be:
 
 - `RELEASED\r\n` to indicate success.
-
 - `BURIED\r\n` if the server ran out of memory trying to grow the priority
 queue data structure.
-
 - `NOT_FOUND\r\n` if the job does not exist or is not reserved by the client.
 
 ### bury
 
-The bury command puts a job into the "buried" state. Buried jobs are put into a
-FIFO linked list and will not be touched by the server again until a client
-kicks them with the "kick" command.
+The bury command puts a job into the "buried" state. Buried jobs are put into FIFO linked list and will not be touched by the server again until a client kicks them with the "kick" command.
 
 The bury command looks like this:
 
@@ -269,23 +231,16 @@ bury <id> <pri>\r\n
 ```
 
 - `<id>` is the job id to release.
-
 - `<pri>` is a new priority to assign to the job.
 
 There are two possible responses:
 
 - `BURIED\r\n` to indicate success.
-
 - `NOT_FOUND\r\n` if the job does not exist or is not reserved by the client.
 
 ### touch
 
-The `touch` command allows a worker to request more time to work on a job.
-This is useful for jobs that potentially take a long time, but you still want
-the benefits of a TTR pulling a job away from an unresponsive worker.  A worker
-may periodically tell the server that it's still alive and processing a job
-(e.g. it may do this on DEADLINE_SOON). The command postpones the auto
-release of a reserved job until TTR seconds from when the command is issued.
+The `touch` command allows a worker to request more time to work on a job. This is useful for jobs that potentially take a long time, but you still want the benefits of a TTR pulling a job away from an unresponsive worker.  A worker may periodically tell the server that it's still alive and processing a job (e.g. it may do this on DEADLINE_SOON). The command postpones the auto release of a reserved job until TTR seconds from when the command is issued.
 
 The touch command looks like this:
 
@@ -298,22 +253,17 @@ touch <id>\r\n
 There are two possible responses:
 
 - `TOUCHED\r\n` to indicate success.
-
 - `NOT_FOUND\r\n` if the job does not exist or is not reserved by the client.
 
 ### watch
 
-The `watch` command adds the named tube to the watch list for the current
-connection. A reserve command will take a job from any of the tubes in the
-watch list. For each new connection, the watch list initially consists of one
-tube, named `default`.
+The `watch` command adds the named tube to the watch list for the current connection. A reserve command will take a job from any of the tubes in the watch list. For each new connection, the watch list initially consists of one tube, named `default`.
 
 ```beanstalk
 watch <tube>\r\n
 ```
 
-- `<tube>` is a name at most 200 bytes. It specifies a tube to add to the watch
-   list. If the tube doesn't exist, it will be created.
+- `<tube>` is a name at most 200 bytes. It specifies a tube to add to the watch list. If the tube doesn't exist, it will be created.
 
 The reply is:
 
@@ -325,8 +275,7 @@ WATCHING <count>\r\n
 
 ### ignore
 
-The `ignore` command is for consumers. It removes the named tube from the
-watch list for the current connection.
+The `ignore` command is for consumers. It removes the named tube from the watch list for the current connection.
 
 ```beanstalk
 ignore <tube>\r\n
@@ -338,8 +287,7 @@ The reply is one of:
 
     - `<count>` is the integer number of tubes currently in the watch list.
 
-- `NOT_IGNORED\r\n` if the client attempts to ignore the only tube in its
-watch list.
+- `NOT_IGNORED\r\n` if the client attempts to ignore the only tube in its watch list.
 
 ---
 
@@ -347,21 +295,16 @@ watch list.
 
 ### peek
 
-The peek commands let the client inspect a job in the system. There are four
-variations. All but the first operate only on the currently used tube.
+The peek commands let the client inspect a job in the system. There are four variations. All but the first operate only on the currently used tube.
 
 - `peek <id>\r\n` return job `<id>`.
-
 - `peek-ready\r\n` return the next ready job.
-
 - `peek-delayed\r\n` return the delayed job with the shortest delay left.
-
 - `peek-buried\r\n` return the next job in the list of buried jobs.
 
     There are two possible responses:
 
     - `NOT_FOUND\r\n` a single line if the requested job doesn't exist or there are no jobs in the requested state.
-
     - Or a line followed by a chunk of data, if the command was successful:
 
     ```
@@ -375,16 +318,13 @@ variations. All but the first operate only on the currently used tube.
 
 ### kick
 
-The kick command applies only to the currently used tube. It moves jobs into
-the ready queue. If there are any buried jobs, it will only kick buried jobs.
-Otherwise it will kick delayed jobs. It looks like:
+The kick command applies only to the currently used tube. It moves jobs into the ready queue. If there are any buried jobs, it will only kick buried jobs. Otherwise it will kick delayed jobs. It looks like:
 
 ```beanstalk
 kick <bound>\r\n
 ```
 
-- `<bound>` is an integer upper bound on the number of jobs to kick. The server
-   will kick no more than `<bound>` jobs.
+- `<bound>` is an integer upper bound on the number of jobs to kick. The server will kick no more than `<bound>` jobs.
 
 The response is of the form:
 
@@ -396,9 +336,7 @@ KICKED <count>\r\n
 
 ### kick-job
 
-The kick-job command is a variant of kick that operates with a single job
-identified by its job id. If the given job id exists and is in a buried or
-delayed state, it will be moved to the ready queue of the the same tube where it currently belongs. The syntax is:
+The kick-job command is a variant of kick that operates with a single job identified by its job id. If the given job id exists and is in a buried or delayed state, it will be moved to the ready queue of the the same tube where it currently belongs. The syntax is:
 
 ```beanstalk
 kick-job <id>\r\n
@@ -409,13 +347,11 @@ kick-job <id>\r\n
 The response is one of:
 
 - `NOT_FOUND\r\n` if the job does not exist or is not in a kickable state. This can also happen upon internal errors.
-
 - `KICKED\r\n` when the operation succeeded.
 
 ### stats-job
 
-The stats-job command gives statistical information about the specified job if
-it exists. Its form is:
+The stats-job command gives statistical information about the specified job if it exists. Its form is:
 
 ```beanstalk
 stats-job <id>\r\n
@@ -426,11 +362,9 @@ stats-job <id>\r\n
 The response is one of:
 
 - `NOT_FOUND\r\n` if the job does not exist.
-
 - `OK <bytes>\r\n<data>\r\n`
 
     - `<bytes>` is the size of the following data section in bytes.
-
     - `<data>` is a sequence of bytes of length `<bytes>` from the previous line. It is a **YAML** file with statistical information represented a dictionary.
     The stats-job data is a **YAML** file representing a single dictionary of strings to scalars. It contains these keys:
 
