@@ -404,73 +404,72 @@ watch list.
 
 ## Other Commands
 
+### peek
+
 The peek commands let the client inspect a job in the system. There are four
 variations. All but the first operate only on the currently used tube.
 
-### peek <id>\r\n
+- `peek <id>\r\n` return job `<id>`.
 
-return job <id>.
+- `peek-ready\r\n` return the next ready job.
 
-### peek-ready\r\n
+- `peek-delayed\r\n` return the delayed job with the shortest delay left.
 
-return the next ready job.
+- `peek-buried\r\n` return the next job in the list of buried jobs.
 
-### peek-delayed\r\n
+    There are two possible responses:
 
-return the delayed job with the shortest delay left.
+    - `NOT_FOUND\r\n` a single line if the requested job doesn't exist or there are no jobs in the requested state.
 
-### peek-buried\r\n
+    - Or a line followed by a chunk of data, if the command was successful:
 
-return the next job in the list of buried jobs.
+    ```
+    FOUND <id> <bytes>\r\n
+    <data>\r\n
+    ```
 
-    There are two possible responses, either a single line:
+    - `<id>` is the job id.
+    - `<bytes>` is an integer indicating the size of the job body, not including the trailing `\r\n`.
+    - `<data>` is the job body -- a sequence of bytes of length `<bytes>` from the previous line.
 
-    - "NOT_FOUND\r\n" if the requested job doesn't exist or there are no jobs in
-   the requested state.
-
-    Or a line followed by a chunk of data, if the command was successful:
-
-        FOUND <id> <bytes>\r\n
-        <data>\r\n
-
- - <id> is the job id.
-
- - <bytes> is an integer indicating the size of the job body, not including
-   the trailing "\r\n".
-
- - <data> is the job body -- a sequence of bytes of length <bytes> from the
-   previous line.
+### kick
 
 The kick command applies only to the currently used tube. It moves jobs into
 the ready queue. If there are any buried jobs, it will only kick buried jobs.
 Otherwise it will kick delayed jobs. It looks like:
 
-    kick <bound>\r\n
+```beanstalk
+kick <bound>\r\n
+```
 
- - <bound> is an integer upper bound on the number of jobs to kick. The server
-   will kick no more than <bound> jobs.
+- `<bound>` is an integer upper bound on the number of jobs to kick. The server
+   will kick no more than `<bound>` jobs.
 
 The response is of the form:
 
-    KICKED <count>\r\n
+```beanstalk
+KICKED <count>\r\n
+```
 
- - <count> is an integer indicating the number of jobs actually kicked.
+- `<count>` is an integer indicating the number of jobs actually kicked.
+
+### kick-job
 
 The kick-job command is a variant of kick that operates with a single job
 identified by its job id. If the given job id exists and is in a buried or
-delayed state, it will be moved to the ready queue of the the same tube where it
-currently belongs. The syntax is:
+delayed state, it will be moved to the ready queue of the the same tube where it currently belongs. The syntax is:
 
-    kick-job <id>\r\n
+```beanstalk
+kick-job <id>\r\n
+```
 
- - <id> is the job id to kick.
+- `<id>` is the job id to kick.
 
 The response is one of:
 
- - "NOT_FOUND\r\n" if the job does not exist or is not in a kickable state. This
-   can also happen upon internal errors.
+ - `NOT_FOUND\r\n` if the job does not exist or is not in a kickable state. This can also happen upon internal errors.
 
- - "KICKED\r\n" when the operation succeeded.
+ - `KICKED\r\n` when the operation succeeded.
 
 The stats-job command gives statistical information about the specified job if
 it exists. Its form is:
