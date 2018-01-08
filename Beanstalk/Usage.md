@@ -289,27 +289,33 @@ The client then waits for one line of response, which may be:
    client, ready, or buried. This could happen if the job timed out before the
    client sent the delete command.
 
+### release
+
 The release command puts a reserved job back into the ready queue (and marks
 its state as "ready") to be run by any client. It is normally used when the job
 fails because of a transitory error. It looks like this:
 
-    release <id> <pri> <delay>\r\n
+```beanstalk
+release <id> <pri> <delay>\r\n
+```
 
- - <id> is the job id to release.
+- `<id>` is the job id to release.
 
- - <pri> is a new priority to assign to the job.
+- `<pri>` is a new priority to assign to the job.
 
- - <delay> is an integer number of seconds to wait before putting the job in
-   the ready queue. The job will be in the "delayed" state during this time.
+- `<delay>` is an integer number of seconds to wait before putting the job in
+the ready queue. The job will be in the "delayed" state during this time.
 
 The client expects one line of response, which may be:
 
- - "RELEASED\r\n" to indicate success.
+- `RELEASED\r\n` to indicate success.
 
- - "BURIED\r\n" if the server ran out of memory trying to grow the priority
-   queue data structure.
+- `BURIED\r\n` if the server ran out of memory trying to grow the priority
+queue data structure.
 
- - "NOT_FOUND\r\n" if the job does not exist or is not reserved by the client.
+- `NOT_FOUND\r\n` if the job does not exist or is not reserved by the client.
+
+### bury
 
 The bury command puts a job into the "buried" state. Buried jobs are put into a
 FIFO linked list and will not be touched by the server again until a client
@@ -317,19 +323,23 @@ kicks them with the "kick" command.
 
 The bury command looks like this:
 
-    bury <id> <pri>\r\n
+```beanstalk
+bury <id> <pri>\r\n
+```
 
- - <id> is the job id to release.
+- `<id>` is the job id to release.
 
- - <pri> is a new priority to assign to the job.
+- `<pri>` is a new priority to assign to the job.
 
 There are two possible responses:
 
- - "BURIED\r\n" to indicate success.
+- `BURIED\r\n` to indicate success.
 
- - "NOT_FOUND\r\n" if the job does not exist or is not reserved by the client.
+- `NOT_FOUND\r\n` if the job does not exist or is not reserved by the client.
 
-The "touch" command allows a worker to request more time to work on a job.
+### touch
+
+The `touch` command allows a worker to request more time to work on a job.
 This is useful for jobs that potentially take a long time, but you still want
 the benefits of a TTR pulling a job away from an unresponsive worker.  A worker
 may periodically tell the server that it's still alive and processing a job
@@ -338,45 +348,57 @@ release of a reserved job until TTR seconds from when the command is issued.
 
 The touch command looks like this:
 
-    touch <id>\r\n
+```beanstalk
+touch <id>\r\n
+```
 
- - <id> is the ID of a job reserved by the current connection.
+- `<id>` is the ID of a job reserved by the current connection.
 
 There are two possible responses:
 
- - "TOUCHED\r\n" to indicate success.
+- `TOUCHED\r\n` to indicate success.
 
- - "NOT_FOUND\r\n" if the job does not exist or is not reserved by the client.
+- `NOT_FOUND\r\n` if the job does not exist or is not reserved by the client.
 
-The "watch" command adds the named tube to the watch list for the current
+### watch
+
+The `watch` command adds the named tube to the watch list for the current
 connection. A reserve command will take a job from any of the tubes in the
 watch list. For each new connection, the watch list initially consists of one
-tube, named "default".
+tube, named `default`.
 
-    watch <tube>\r\n
+```beanstalk
+watch <tube>\r\n
+```
 
- - <tube> is a name at most 200 bytes. It specifies a tube to add to the watch
+- `<tube>` is a name at most 200 bytes. It specifies a tube to add to the watch
    list. If the tube doesn't exist, it will be created.
 
 The reply is:
 
-    WATCHING <count>\r\n
+```
+WATCHING <count>\r\n
+```
 
- - <count> is the integer number of tubes currently in the watch list.
+- `<count>` is the integer number of tubes currently in the watch list.
 
-The "ignore" command is for consumers. It removes the named tube from the
+### ignore
+
+The `ignore` command is for consumers. It removes the named tube from the
 watch list for the current connection.
 
-    ignore <tube>\r\n
+```beanstalk
+ignore <tube>\r\n
+```
 
 The reply is one of:
 
- - "WATCHING <count>\r\n" to indicate success.
+- `WATCHING <count>\r\n` to indicate success.
 
-   - <count> is the integer number of tubes currently in the watch list.
+    - `<count>` is the integer number of tubes currently in the watch list.
 
- - "NOT_IGNORED\r\n" if the client attempts to ignore the only tube in its
-   watch list.
+- `NOT_IGNORED\r\n` if the client attempts to ignore the only tube in its
+watch list.
 
 ---
 
