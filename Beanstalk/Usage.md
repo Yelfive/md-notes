@@ -26,7 +26,10 @@ Names, in this protocol, are ASCII strings. They may contain
 
 But they **may not begin with a hyphen**. They are terminated by white space (either a space char or end of line). Each name must be at least one character long.
 
-The protocol contains two kinds of data: text lines and unstructured chunks of data. Text lines are used for client commands and server responses. Chunks are used to transfer job bodies and stats information. Each job body is an opaque sequence of bytes. The server never inspects or modifies a job body and always sends it back in its original form. It is up to the clients to agree on a meaningful interpretation of job bodies.
+The protocol contains two kinds of data: text lines and unstructured chunks of data. 
+
+- Text lines are used for client commands and server responses. 
+- Chunks are used to transfer job bodies and stats information. Each job body is an opaque sequence of bytes. The server never inspects or modifies a job body and always sends it back in its original form. It is up to the clients to agree on a meaningful interpretation of job bodies.
 
 The client may issue the "quit" command, or simply close the TCP connection when it no longer has use for the server. However, beanstalkd performs very well with a large number of open connections, so it is usually better for the client to keep its connection open and reuse it as much as possible. This also avoids the overhead of establishing new TCP connections.
 
