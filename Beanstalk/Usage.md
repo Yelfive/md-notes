@@ -4,7 +4,7 @@
 
 ## Protocol
 
-The beanstalk protocol runs over **TCP** using **ASCII** encoding. Clients connect,send commands and data, wait for responses, and close the connection. For each connection, the server processes commands serially in the order in which they were received and sends responses in the same order. All integers in the protocol are formatted in decimal and (unless otherwise indicated)
+The beanstalk protocol runs over **TCP** using **ASCII** encoding. Clients connect,send commands and data, wait for responses, and close the connection. For each connection, __the server processes commands serially in the order in which they were received and sends responses in the same order__. All integers in the protocol are formatted in decimal and (unless otherwise indicated)
 nonnegative. 
 
 Names, in this protocol, are ASCII strings. They may contain 
