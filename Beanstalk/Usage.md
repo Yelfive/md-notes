@@ -467,122 +467,89 @@ kick-job <id>\r\n
 
 The response is one of:
 
- - `NOT_FOUND\r\n` if the job does not exist or is not in a kickable state. This can also happen upon internal errors.
+- `NOT_FOUND\r\n` if the job does not exist or is not in a kickable state. This can also happen upon internal errors.
 
- - `KICKED\r\n` when the operation succeeded.
+- `KICKED\r\n` when the operation succeeded.
+
+### stats-job
 
 The stats-job command gives statistical information about the specified job if
 it exists. Its form is:
 
-    stats-job <id>\r\n
+```beanstalk
+stats-job <id>\r\n
+```
 
- - <id> is a job id.
+- `<id>` is a job id.
 
 The response is one of:
 
- - "NOT_FOUND\r\n" if the job does not exist.
+- `NOT_FOUND\r\n` if the job does not exist.
 
- - "OK <bytes>\r\n<data>\r\n"
+- `OK <bytes>\r\n<data>\r\n`
 
-   - <bytes> is the size of the following data section in bytes.
+    - `<bytes>` is the size of the following data section in bytes.
 
-   - <data> is a sequence of bytes of length <bytes> from the previous line. It
-     is a YAML file with statistical information represented a dictionary.
+    - `<data>` is a sequence of bytes of length `<bytes>` from the previous line. It is a **YAML** file with statistical information represented a dictionary.
+    The stats-job data is a **YAML** file representing a single dictionary of strings to scalars. It contains these keys:
 
-The stats-job data is a YAML file representing a single dictionary of strings
-to scalars. It contains these keys:
+        + `id` is the job id
 
- - "id" is the job id
+        + `tube` is the name of the tube that contains this job
 
- - "tube" is the name of the tube that contains this job
+        + `state` is `ready` or `delayed` or `reserved` or `buried`
 
- - "state" is "ready" or "delayed" or "reserved" or "buried"
+        + `pri` is the priority value set by the put, release, or bury commands.
 
- - "pri" is the priority value set by the put, release, or bury commands.
+        + `age` is the time in seconds since the put command that created this job.
 
- - "age" is the time in seconds since the put command that created this job.
+        + `delay` is the integer number of seconds to wait before putting this job in
+        the ready queue.
 
- - "delay" is the integer number of seconds to wait before putting this job in
-   the ready queue.
+        + `ttr` -- time to run -- is the integer number of seconds a worker is
+        allowed to run this job.
 
- - "ttr" -- time to run -- is the integer number of seconds a worker is
-   allowed to run this job.
+        + "time-left" is the number of seconds left until the server puts this job
+        into the ready queue. This number is only meaningful if the job is
+        reserved or delayed. If the job is reserved and this amount of time
+        elapses before its state changes, it is considered to have timed out.
 
- - "time-left" is the number of seconds left until the server puts this job
-   into the ready queue. This number is only meaningful if the job is
-   reserved or delayed. If the job is reserved and this amount of time
-   elapses before its state changes, it is considered to have timed out.
+        + `file` is the number of the earliest binlog file containing this job.
+        If -b wasn't used, this will be 0.
 
- - "file" is the number of the earliest binlog file containing this job.
-   If -b wasn't used, this will be 0.
+        + `reserves` is the number of times this job has been reserved.
 
- - "reserves" is the number of times this job has been reserved.
+        + `timeouts` is the number of times this job has timed out during a
+        reservation.
 
- - "timeouts" is the number of times this job has timed out during a
-   reservation.
+        + `releases` is the number of times a client has released this job from a
+        reservation.
 
- - "releases" is the number of times a client has released this job from a
-   reservation.
+        + `buries` is the number of times this job has been buried.
 
- - "buries" is the number of times this job has been buried.
+        + `kicks` is the number of times this job has been kicked.
 
- - "kicks" is the number of times this job has been kicked.
+### stats-tube
 
 The stats-tube command gives statistical information about the specified tube
 if it exists. Its form is:
 
-    stats-tube <tube>\r\n
+```beanstalk
+stats-tube <tube>\r\n
+```
 
- - <tube> is a name at most 200 bytes. Stats will be returned for this tube.
+- `<tube>` is a name at most 200 bytes. Stats will be returned for this tube.
 
 The response is one of:
 
- - "NOT_FOUND\r\n" if the tube does not exist.
+- `NOT_FOUND\r\n` if the tube does not exist.
 
- - "OK <bytes>\r\n<data>\r\n"
+- `OK <bytes>\r\n<data>\r\n`
 
-   - <bytes> is the size of the following data section in bytes.
+    - `<bytes>` is the size of the following data section in bytes.
 
-   - <data> is a sequence of bytes of length <bytes> from the previous line. It
-     is a YAML file with statistical information represented a dictionary.
-
-The stats-tube data is a YAML file representing a single dictionary of strings
-to scalars. It contains these keys:
-
- - "name" is the tube's name.
-
- - "current-jobs-urgent" is the number of ready jobs with priority < 1024 in
-   this tube.
-
- - "current-jobs-ready" is the number of jobs in the ready queue in this tube.
-
- - "current-jobs-reserved" is the number of jobs reserved by all clients in
-   this tube.
-
- - "current-jobs-delayed" is the number of delayed jobs in this tube.
-
- - "current-jobs-buried" is the number of buried jobs in this tube.
-
- - "total-jobs" is the cumulative count of jobs created in this tube in
-   the current beanstalkd process.
-
- - "current-using" is the number of open connections that are currently
-   using this tube.
-
- - "current-waiting" is the number of open connections that have issued a
-   reserve command while watching this tube but not yet received a response.
-
- - "current-watching" is the number of open connections that are currently
-   watching this tube.
-
- - "pause" is the number of seconds the tube has been paused for.
-
- - "cmd-delete" is the cumulative number of delete commands for this tube
-
- - "cmd-pause-tube" is the cumulative number of pause-tube commands for this
-   tube.
-
- - "pause-time-left" is the number of seconds until the tube is un-paused.
+    - `<data>` is a sequence of bytes of length `<bytes>` from the previous line. It is a **YAML** file with statistical information represented a dictionary.
+    The stats-tube data is a YAML file representing a single dictionary of strings to scalars. It contains these keys:
 
 The stats command gives statistical information about the system as a whole.
 Its form is:
