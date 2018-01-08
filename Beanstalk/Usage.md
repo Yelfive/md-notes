@@ -587,119 +587,140 @@ The stats data for the system is a YAML file representing a single dictionary
 of strings to scalars. Entries described as "cumulative" are reset when the
 beanstalkd process starts; they are not stored on disk with the `-b` flag.
 
- - "current-jobs-urgent" is the number of ready jobs with priority < 1024.
- - "current-jobs-ready" is the number of jobs in the ready queue.
- - "current-jobs-reserved" is the number of jobs reserved by all clients.
- - "current-jobs-delayed" is the number of delayed jobs.
- - "current-jobs-buried" is the number of buried jobs.
- - "cmd-put" is the cumulative number of put commands.
- - "cmd-peek" is the cumulative number of peek commands.
- - "cmd-peek-ready" is the cumulative number of peek-ready commands.
- - "cmd-peek-delayed" is the cumulative number of peek-delayed commands.
- - "cmd-peek-buried" is the cumulative number of peek-buried commands.
- - "cmd-reserve" is the cumulative number of reserve commands.
- - "cmd-use" is the cumulative number of use commands.
- - "cmd-watch" is the cumulative number of watch commands.
- - "cmd-ignore" is the cumulative number of ignore commands.
- - "cmd-delete" is the cumulative number of delete commands.
- - "cmd-release" is the cumulative number of release commands.
- - "cmd-bury" is the cumulative number of bury commands.
- - "cmd-kick" is the cumulative number of kick commands.
- - "cmd-stats" is the cumulative number of stats commands.
- - "cmd-stats-job" is the cumulative number of stats-job commands.
- - "cmd-stats-tube" is the cumulative number of stats-tube commands.
- - "cmd-list-tubes" is the cumulative number of list-tubes commands.
- - "cmd-list-tube-used" is the cumulative number of list-tube-used commands.
- - "cmd-list-tubes-watched" is the cumulative number of list-tubes-watched commands.
- - "cmd-pause-tube" is the cumulative number of pause-tube commands.
- - "job-timeouts" is the cumulative count of times a job has timed out.
- - "total-jobs" is the cumulative count of jobs created.
- - "max-job-size" is the maximum number of bytes in a job.
- - "current-tubes" is the number of currently-existing tubes.
- - "current-connections" is the number of currently open connections.
- - "current-producers" is the number of open connections that have each
-   issued at least one put command.
- - "current-workers" is the number of open connections that have each issued
-   at least one reserve command.
- - "current-waiting" is the number of open connections that have issued a
-   reserve command but not yet received a response.
- - "total-connections" is the cumulative count of connections.
- - "pid" is the process id of the server.
- - "version" is the version string of the server.
- - "rusage-utime" is the cumulative user CPU time of this process in seconds
-   and microseconds.
- - "rusage-stime" is the cumulative system CPU time of this process in
-   seconds and microseconds.
- - "uptime" is the number of seconds since this server process started running.
- - "binlog-oldest-index" is the index of the oldest binlog file needed to
-   store the current jobs.
- - "binlog-current-index" is the index of the current binlog file being
-   written to. If binlog is not active this value will be 0.
- - "binlog-max-size" is the maximum size in bytes a binlog file is allowed
-   to get before a new binlog file is opened.
- - "binlog-records-written" is the cumulative number of records written
-   to the binlog.
- - "binlog-records-migrated" is the cumulative number of records written
-   as part of compaction.
- - "id" is a random id string for this server process, generated when each
-   beanstalkd process starts.
- - "hostname" the hostname of the machine as determined by uname.
+    + `current-jobs-urgent` is the number of ready jobs with priority < 1024.
+    + `current-jobs-ready` is the number of jobs in the ready queue.
+    + `current-jobs-reserved` is the number of jobs reserved by all clients.
+    + `current-jobs-delayed` is the number of delayed jobs.
+    + `current-jobs-buried` is the number of buried jobs.
+    + `cmd-put` is the cumulative number of put commands.
+    + `cmd-peek` is the cumulative number of peek commands.
+    + `cmd-peek-ready` is the cumulative number of peek-ready commands.
+    + `cmd-peek-delayed` is the cumulative number of peek-delayed commands.
+    + `cmd-peek-buried` is the cumulative number of peek-buried commands.
+    + `cmd-reserve` is the cumulative number of reserve commands.
+    + `cmd-use` is the cumulative number of use commands.
+    + `cmd-watch` is the cumulative number of watch commands.
+    + `cmd-ignore` is the cumulative number of ignore commands.
+    + `cmd-delete` is the cumulative number of delete commands.
+    + `cmd-release` is the cumulative number of release commands.
+    + `cmd-bury` is the cumulative number of bury commands.
+    + `cmd-kick` is the cumulative number of kick commands.
+    + `cmd-stats` is the cumulative number of stats commands.
+    + `cmd-stats-job` is the cumulative number of stats-job commands.
+    + `cmd-stats-tube` is the cumulative number of stats-tube commands.
+    + `cmd-list-tubes` is the cumulative number of list-tubes commands.
+    + `cmd-list-tube-used` is the cumulative number of list-tube-used commands.
+    + `cmd-list-tubes-watched` is the cumulative number of list-tubes-watched commands.
+    + `cmd-pause-tube` is the cumulative number of pause-tube commands.
+    + `job-timeouts` is the cumulative count of times a job has timed out.
+    + `total-jobs` is the cumulative count of jobs created.
+    + `max-job-size` is the maximum number of bytes in a job.
+    + `current-tubes` is the number of currently-existing tubes.
+    + `current-connections` is the number of currently open connections.
+    + `current-producers` is the number of open connections that have each
+    issued at least one put command.
+    + `current-workers` is the number of open connections that have each issued
+    at least one reserve command.
+    + `current-waiting` is the number of open connections that have issued a
+    reserve command but not yet received a response.
+    + `total-connections` is the cumulative count of connections.
+    + `pid` is the process id of the server.
+    + `version` is the version string of the server.
+    + `rusage-utime` is the cumulative user CPU time of this process in seconds
+    and microseconds.
+    + `rusage-stime` is the cumulative system CPU time of this process in
+    seconds and microseconds.
+    + `uptime` is the number of seconds since this server process started running.
+    + `binlog-oldest-index` is the index of the oldest binlog file needed to
+    store the current jobs.
+    + `binlog-current-index` is the index of the current binlog file being
+    written to. If binlog is not active this value will be 0.
+    + `binlog-max-size` is the maximum size in bytes a binlog file is allowed
+    to get before a new binlog file is opened.
+    + `binlog-records-written` is the cumulative number of records written
+    to the binlog.
+    + `binlog-records-migrated` is the cumulative number of records written
+    as part of compaction.
+    + `id` is a random id string for this server process, generated when each
+    beanstalkd process starts.
+    + `hostname` the hostname of the machine as determined by uname.
+
+### list-tubes
 
 The list-tubes command returns a list of all existing tubes. Its form is:
 
-    list-tubes\r\n
+```beanstalk
+list-tubes\r\n
+```
 
 The response is:
 
-    OK <bytes>\r\n
-    <data>\r\n
+```beanstalk
+OK <bytes>\r\n
+<data>\r\n
+```
 
- - <bytes> is the size of the following data section in bytes.
+- `<bytes>` is the size of the following data section in bytes.
 
- - <data> is a sequence of bytes of length <bytes> from the previous line. It
-   is a YAML file containing all tube names as a list of strings.
+- `<data>` is a sequence of bytes of length `<bytes>` from the previous line. It is a YAML file containing all tube names as a list of strings.
 
-The list-tube-used command returns the tube currently being used by the
-client. Its form is:
+### list-tube-used
 
-    list-tube-used\r\n
+The `list-tube-used` command returns the tube currently being used by the client. Its form is:
 
-The response is:
-
-    USING <tube>\r\n
-
- - <tube> is the name of the tube being used.
-
-The list-tubes-watched command returns a list tubes currently being watched by
-the client. Its form is:
-
-    list-tubes-watched\r\n
+```beanstalk
+list-tube-used\r\n
+```
 
 The response is:
 
-    OK <bytes>\r\n
-    <data>\r\n
+```beanstalk
+USING <tube>\r\n
+```
+ 
+- `<tube>` is the name of the tube being used.
 
- - <bytes> is the size of the following data section in bytes.
+### list-tubes-watched
 
- - <data> is a sequence of bytes of length <bytes> from the previous line. It
-   is a YAML file containing watched tube names as a list of strings.
+The `list-tubes-watched` command returns a list tubes currently being watched by the client. Its form is:
+
+```beanstalk
+list-tubes-watched\r\n
+```
+
+The response is:
+
+```beanstalk
+OK <bytes>\r\n
+<data>\r\n
+```
+
+- `<bytes>` is the size of the following data section in bytes.
+
+- `<data>` is a sequence of bytes of length `<bytes>` from the previous line. It is a YAML file containing watched tube names as a list of strings.
+
+### quit
 
 The quit command simply closes the connection. Its form is:
 
-    quit\r\n
+```beanstalk
+quit\r\n
+```
+
+### pause-tube
 
 The pause-tube command can delay any new job being reserved for a given time. Its form is:
 
-    pause-tube <tube-name> <delay>\r\n
+```beanstalk
+pause-tube <tube-name> <delay>\r\n
+```
 
- - <tube> is the tube to pause
+- `<tube>` is the tube to pause
 
- - <delay> is an integer number of seconds < 2**32 to wait before reserving any more
-   jobs from the queue
+- `<delay>` is an integer number of seconds < 2**32 to wait before reserving any more jobs from the queue
 
 There are two possible responses:
 
- - "PAUSED\r\n" to indicate success.
+- `PAUSED\r\n` to indicate success.
 
- - "NOT_FOUND\r\n" if the tube does not exist.
+- `NOT_FOUND\r\n` if the tube does not exist.
