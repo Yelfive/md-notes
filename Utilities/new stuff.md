@@ -65,4 +65,7 @@ network protocol analyzer
 
 - [Zabbix](https://www.zabbix.com/product)
 
+## JS Packages
 
+- [showdown - Markdown compiler](https://www.npmjs.com/package/showdown)
+- [highlight - Code block highlighting](https://www.npmjs.com/package/highlight.js)
