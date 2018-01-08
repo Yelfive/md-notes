@@ -118,6 +118,8 @@ to it, it will be deleted.
 
 ## Producer Commands
 
+### put
+
 The "put" command is for any process that wants to insert a job into the queue.
 It comprises a command line followed by the job body:
 
@@ -173,25 +175,28 @@ may be:
    disconnect and try again later. To put the server in drain mode, send the
    SIGUSR1 signal to the process.
 
+### use
+
 The "use" command is for producers. Subsequent put commands will put jobs into
 the tube specified by this command. If no use command has been issued, jobs
 will be put into the tube named "default".
 
-```
+```beanstalk
 use <tube>\r\n
 ```
 
- - <tube> is a name at most 200 bytes. It specifies the tube to use. If the
+- <tube> is a name at most 200 bytes. It specifies the tube to use. If the
    tube does not exist, it will be created.
 
 The only reply is:
 
+```text
     USING <tube>\r\n
+```
 
- - <tube> is the name of the tube now being used.
+- `<tube>` is the name of the tube now being used.
 
-Worker Commands
----------------
+## Worker Commands
 
 A process that wants to consume jobs from the queue uses "reserve", "delete",
 "release", and "bury". The first worker command, "reserve", looks like this:
