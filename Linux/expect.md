@@ -61,8 +61,8 @@ Stores current standard output
 ```bash
 #!/usr/bin/env expect
 
-send "All input: <$expect_out(buffer)> \n"
-send "Matched:  <$expect_out(0,string)>\n"
+send "All expected input: <$expect_out(buffer)> \n"
+send "Matched expect:  <$expect_out(0,string)>\n"
 ```
 
 ### expect eof/EOF
