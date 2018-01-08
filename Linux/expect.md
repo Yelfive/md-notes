@@ -38,7 +38,7 @@ EOF
 
 ### $expect_out
 
-see expect.$expect_out[$expect_out]
+see [expect.$expect_out](#expect_out_1)
 
 ## set
 
@@ -55,6 +55,15 @@ set timeout 20
 ## expect
 
 ### $expect_out
+
+Stores current standard output 
+
+```bash
+#!/usr/bin/env expect
+
+send "All input: <$expect_out(buffer)> \n"
+send "Matched:  <$expect_out(0,string)>\n"
+```
 
 ### expect eof/EOF
 
