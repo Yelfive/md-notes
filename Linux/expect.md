@@ -34,7 +34,21 @@ EOF
 - `send` Sending a reply to the spawned script or program
 - `interact` Allowing to interact with the script or program
 
+## Variables
+
+### $expect_out
+
+see expect.$expect_out[$expect_out]
+
 ## set
+
+### set timeout
+
+Default timeout for expect is 10s, and this can be customized by
+
+```bash
+set timeout 20
+```
 
 ## spawn
 
