@@ -306,14 +306,14 @@ The peek commands let the client inspect a job in the system. There are four var
     - `NOT_FOUND\r\n` a single line if the requested job doesn't exist or there are no jobs in the requested state.
     - Or a line followed by a chunk of data, if the command was successful:
 
-    ```
-    FOUND <id> <bytes>\r\n
-    <data>\r\n
-    ```
+        ```
+        FOUND <id> <bytes>\r\n
+        <data>\r\n
+        ```
 
-    - `<id>` is the job id.
-    - `<bytes>` is an integer indicating the size of the job body, not including the trailing `\r\n`.
-    - `<data>` is the job body -- a sequence of bytes of length `<bytes>` from the previous line.
+        + `<id>` is the job id.
+        + `<bytes>` is an integer indicating the size of the job body, not including the trailing `\r\n`.
+        + `<data>` is the job body -- a sequence of bytes of length `<bytes>` from the previous line.
 
 ### kick
 

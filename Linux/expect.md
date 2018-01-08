@@ -26,7 +26,9 @@ expect eof
 EOF
 ```
 
-## 
+## Keywords
+
+- `spawn` Start a script or program
 
 ## expect eof/EOF
 
