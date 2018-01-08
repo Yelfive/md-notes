@@ -29,7 +29,20 @@ EOF
 ## Keywords
 
 - `spawn` Start a script or program
+- `expect` Waiting for program output until timeout
+- `send` Sending a reply to the spawned script or program
+- `interact` Allowing to interact with the script or program
 
-## expect eof/EOF
+## spawn
+
+## expect
+
+### $expect_out
+
+### expect eof/EOF
 
 Print until the end of connection
+
+## send
+
+## interact
