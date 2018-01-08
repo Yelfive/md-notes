@@ -13,72 +13,37 @@ nonnegative.
 
 Names, in this protocol, are ASCII strings. They may contain 
 
-- letters (A-Z and a-z)
-- numerals (0-9)
-- hyphen ("-")
-- plus ("+")
-- slash ("/")
-- semicolon (";")
-- dot (".")
-- dollar-sign ("$")
-- underscore ("_")
-- parentheses ("(" and ")"),
+- letters (`A-Z` and `a-z`)
+- numerals (`0-9`)
+- hyphen (`-`)
+- plus (`+`)
+- slash (`/`)
+- semicolon (`;`)
+- dot (`.`)
+- dollar-sign (`$`)
+- underscore (`_`)
+- parentheses (`(` and `)`)
 
-But they **may not begin with a hyphen**. They are terminated by white space
-(either a space char or end of line). Each name must be at least one character
-long.
+But they **may not begin with a hyphen**. They are terminated by white space (either a space char or end of line). Each name must be at least one character long.
 
-The protocol contains two kinds of data: text lines and unstructured chunks of
-data. Text lines are used for client commands and server responses. Chunks are
-used to transfer job bodies and stats information. Each job body is an opaque
-sequence of bytes. The server never inspects or modifies a job body and always
-sends it back in its original form. It is up to the clients to agree on a
-meaningful interpretation of job bodies.
+The protocol contains two kinds of data: text lines and unstructured chunks of data. Text lines are used for client commands and server responses. Chunks are used to transfer job bodies and stats information. Each job body is an opaque sequence of bytes. The server never inspects or modifies a job body and always sends it back in its original form. It is up to the clients to agree on a meaningful interpretation of job bodies.
 
-The client may issue the "quit" command, or simply close the TCP connection
-when it no longer has use for the server. However, beanstalkd performs very
-well with a large number of open connections, so it is usually better for the
-client to keep its connection open and reuse it as much as possible. This also
-avoids the overhead of establishing new TCP connections.
+The client may issue the "quit" command, or simply close the TCP connection when it no longer has use for the server. However, beanstalkd performs very well with a large number of open connections, so it is usually better for the client to keep its connection open and reuse it as much as possible. This also avoids the overhead of establishing new TCP connections.
 
-If a client violates the protocol (such as by sending a request that is not
-well-formed or a command that does not exist) or if the server has an error,
-the server will reply with one of the following error messages:
+If a client violates the protocol (such as by sending a request that is not well-formed or a command that does not exist) or if the server has an error, the server will reply with one of the following error messages:
 
- - `OUT_OF_MEMORY\r\n` The server cannot allocate enough memory for the job.
-   The client should try again later.
+- `OUT_OF_MEMORY\r\n` The server cannot allocate enough memory for the job.    The client should try again later.
+- `INTERNAL_ERROR\r\n` This indicates a bug in the server. It should never    happen. If it does happen, please report it at http://groups.google.com/group/beanstalk-talk.
+- `BAD_FORMAT\r\n` The client sent a command line that was not well-formed. This can happen if the line does not end with `\r\n`, if non-numeric characters occur where an integer is expected, if the wrong number of arguments are present, or if the command line is mal-formed in any other  way. 
+- `UNKNOWN_COMMAND\r\n` The client sent a command that the server does not know.
 
- - `INTERNAL_ERROR\r\n` This indicates a bug in the server. It should never
-   happen. If it does happen, please report it at
-   http://groups.google.com/group/beanstalk-talk.
+These error responses will not be listed in this document for individual commands in the following sections, but they are implicitly included in the description of all commands. Clients should be prepared to receive an error response after any command.
 
- - `BAD_FORMAT\r\n` The client sent a command line that was not well-formed.
-   This can happen if the line does not end with `\r\n`, if non-numeric
-   characters occur where an integer is expected, if the wrong number of
-   arguments are present, or if the command line is mal-formed in any other
-   way.
-
- - `UNKNOWN_COMMAND\r\n` The client sent a command that the server does not
-   know.
-
-These error responses will not be listed in this document for individual
-commands in the following sections, but they are implicitly included in the
-description of all commands. Clients should be prepared to receive an error
-response after any command.
-
-As a last resort, if the server has a serious error that prevents it from
-continuing service to the current client, the server will close the
-connection.
+As a last resort, if the server has a serious error that prevents it from continuing service to the current client, the server will close the connection.
 
 ## Job Lifecycle
 
-A job in beanstalk gets created by a client with the "put" command. During its
-life it can be in one of four states: "ready", "reserved", "delayed", or
-"buried". After the put command, a job typically starts out ready. It waits in
-the ready queue until a worker comes along and runs the "reserve" command. If
-this job is next in the queue, it will be reserved for the worker. The worker
-will execute the job; when it is finished the worker will send a "delete"
-command to delete the job.
+A job in beanstalk gets created by a client with the "put" command. During its life it can be in one of four states: "ready", "reserved", "delayed", or "buried". After the put command, a job typically starts out ready. It waits in the ready queue until a worker comes along and runs the "reserve" command. If this job is next in the queue, it will be reserved for the worker. The worker will execute the job; when it is finished the worker will send a "delete" command to delete the job.
 
 Here is a picture of the typical job lifecycle:
 
@@ -111,55 +76,30 @@ Here is a picture with more possibilities:
                         `--------> *poof*
 ```
 
-The system has one or more tubes. Each tube consists of a ready queue and a
-delay queue. Each job spends its entire life in one tube. Consumers can show
-interest in tubes by sending the "watch" command; they can show disinterest by
-sending the "ignore" command. This set of interesting tubes is said to be a
-consumer's "watch list". When a client reserves a job, it may come from any of
-the tubes in its watch list.
+The system has one or more tubes. Each tube consists of a ready queue and a delay queue. Each job spends its entire life in one tube. Consumers can show interest in tubes by sending the "watch" command; they can show disinterest by sending the "ignore" command. This set of interesting tubes is said to be a consumer's "watch list". When a client reserves a job, it may come from any of the tubes in its watch list.
 
-When a client connects, its watch list is initially just the tube named
-"default". If it submits jobs without having sent a "use" command, they will
-live in the tube named "default".
+When a client connects, its watch list is initially just the tube named "default". If it submits jobs without having sent a "use" command, they will live in the tube named "default".
 
-Tubes are created on demand whenever they are referenced. If a tube is empty
-(that is, it contains no ready, delayed, or buried jobs) and no client refers
-to it, it will be deleted.
+Tubes are created on demand whenever they are referenced. If a tube is empty (that is, it contains no ready, delayed, or buried jobs) and no client refers to it, it will be deleted.
 
 ## Producer Commands
 
 ### put
 
-The "put" command is for any process that wants to insert a job into the queue.
-It comprises a command line followed by the job body:
+The "put" command is for any process that wants to insert a job into the queue. It comprises a command line followed by the job body:
 
 ```beanstalk
 put <pri> <delay> <ttr> <bytes>\r\n
 <data>\r\n
 ```
 
-It inserts a job into the client's currently used tube (see the "use" command
-below).
+It inserts a job into the client's currently used tube (see the "use" command below).
 
-- `<pri>` is an integer < 2**32. Jobs with smaller priority values will be
-   scheduled before jobs with larger priorities. The most urgent priority is 0;
-   the least urgent priority is 4,294,967,295.
-
-- `<delay>` is an integer number of seconds to wait before putting the job in
-   the ready queue. The job will be in the "delayed" state during this time.
-
-- `<ttr>` -- `time to run` -- is an integer number of seconds to allow a worker
-   to run this job. This time is counted from the moment a worker reserves
-   this job. If the worker does not delete, release, or bury the job within
-   `ttr` seconds, the job will time out and the server will release the job.
-   The minimum ttr is 1. If the client sends 0, the server will silently
-   increase the ttr to 1.
-
-- `<bytes>` is an integer indicating the size of the job body, not including the
-   trailing `\r\n`. This value must be less than max-job-size (default: 2**16).
-
-- `<data>` is the job body -- a sequence of bytes of length `bytes` from the
-   previous line.
+- `<pri>` is an integer < 2**32. Jobs with smaller priority values will be    scheduled before jobs with larger priorities. The most urgent priority is 0; the least urgent priority is 4,294,967,295.
+- `<delay>` is an integer number of seconds to wait before putting the job in the ready queue. The job will be in the "delayed" state during this time.
+- `<ttr>` -- `time to run` -- is an integer number of seconds to allow a workerto run this job. This time is counted from the moment a worker reserves this job. If the worker does not delete, release, or bury the job within `ttr` seconds, the job will time out and the server will release the job. The minimum ttr is 1. If the client sends 0, the server will silently increase the `ttr` to 1.
+- `<bytes>` is an integer indicating the size of the job body, not including the trailing `\r\n`. This value must be less than max-job-size (default: 2**16).
+- `<data>` is the job body -- a sequence of bytes of length `bytes` from the previous line.
 
 After sending the command line and body, the client waits for a reply, which
 may be:
@@ -168,22 +108,13 @@ may be:
 
     - `<id>` is the integer id of the new job
 
-- `BURIED <id>\r\n` if the server ran out of memory trying to grow the
-   priority queue data structure.
+- `BURIED <id>\r\n` if the server ran out of memory trying to grow the priority queue data structure.
 
     - `<id>` is the integer id of the new job
 
-- `EXPECTED_CRLF\r\n` The job body must be followed by a CR-LF pair, that is,
-   `\r\n`. These two bytes are not counted in the job size given by the client
-   in the put command line.
-
-- `JOB_TOO_BIG\r\n` The client has requested to put a job with a body larger
-   than max-job-size bytes.
-
-- `DRAINING\r\n` This means that the server has been put into "drain mode" and
-   is no longer accepting new jobs. The client should try another server or
-   disconnect and try again later. To put the server in drain mode, send the
-   SIGUSR1 signal to the process.
+- `EXPECTED_CRLF\r\n` The job body must be followed by a CR-LF pair, that is, `\r\n`. These two bytes are not counted in the job size given by the client in the put command line.
+- `JOB_TOO_BIG\r\n` The client has requested to put a job with a body larger than max-job-size bytes.
+- `DRAINING\r\n` This means that the server has been put into "drain mode" and is no longer accepting new jobs. The client should try another server or disconnect and try again later. To put the server in drain mode, send the SIGUSR1 signal to the process.
 
 ### use
 
