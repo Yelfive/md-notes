@@ -369,45 +369,27 @@ The response is one of:
     The stats-job data is a **YAML** file representing a single dictionary of strings to scalars. It contains these keys:
 
         + `id` is the job id
-
         + `tube` is the name of the tube that contains this job
-
         + `state` is `ready` or `delayed` or `reserved` or `buried`
-
         + `pri` is the priority value set by the put, release, or bury commands.
-
         + `age` is the time in seconds since the put command that created this job.
-
-        + `delay` is the integer number of seconds to wait before putting this job in
-        the ready queue.
-
+        + `delay` is the integer number of seconds to wait before putting this job in the ready queue.
         + `ttr` -- time to run -- is the integer number of seconds a worker is
         allowed to run this job.
-
-        + "time-left" is the number of seconds left until the server puts this job
-        into the ready queue. This number is only meaningful if the job is
+        + "time-left" is the number of seconds left until the server puts this job into the ready queue. This number is only meaningful if the job is
         reserved or delayed. If the job is reserved and this amount of time
         elapses before its state changes, it is considered to have timed out.
-
         + `file` is the number of the earliest binlog file containing this job.
         If -b wasn't used, this will be 0.
-
         + `reserves` is the number of times this job has been reserved.
-
-        + `timeouts` is the number of times this job has timed out during a
-        reservation.
-
-        + `releases` is the number of times a client has released this job from a
-        reservation.
-
+        + `timeouts` is the number of times this job has timed out during a reservation.
+        + `releases` is the number of times a client has released this job from a reservation.
         + `buries` is the number of times this job has been buried.
-
         + `kicks` is the number of times this job has been kicked.
 
 ### stats-tube
 
-The stats-tube command gives statistical information about the specified tube
-if it exists. Its form is:
+The stats-tube command gives statistical information about the specified tube if it exists. Its form is:
 
 ```beanstalk
 stats-tube <tube>\r\n
@@ -418,11 +400,9 @@ stats-tube <tube>\r\n
 The response is one of:
 
 - `NOT_FOUND\r\n` if the tube does not exist.
-
 - `OK <bytes>\r\n<data>\r\n`
 
     - `<bytes>` is the size of the following data section in bytes.
-
     - `<data>` is a sequence of bytes of length `<bytes>` from the previous line. It is a **YAML** file with statistical information represented a dictionary.
     The stats-tube data is a YAML file representing a single dictionary of strings to scalars. It contains these keys:
         + `name` is the tube's name.
@@ -536,7 +516,6 @@ OK <bytes>\r\n
 ```
 
 - `<bytes>` is the size of the following data section in bytes.
-
 - `<data>` is a sequence of bytes of length `<bytes>` from the previous line. It is a YAML file containing all tube names as a list of strings.
 
 ### list-tube-used
@@ -571,7 +550,6 @@ OK <bytes>\r\n
 ```
 
 - `<bytes>` is the size of the following data section in bytes.
-
 - `<data>` is a sequence of bytes of length `<bytes>` from the previous line. It is a YAML file containing watched tube names as a list of strings.
 
 ### quit
@@ -591,11 +569,9 @@ pause-tube <tube-name> <delay>\r\n
 ```
 
 - `<tube>` is the tube to pause
-
 - `<delay>` is an integer number of seconds < 2**32 to wait before reserving any more jobs from the queue
 
 There are two possible responses:
 
 - `PAUSED\r\n` to indicate success.
-
 - `NOT_FOUND\r\n` if the tube does not exist.
