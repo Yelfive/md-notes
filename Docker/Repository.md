@@ -26,7 +26,7 @@ $ docker pull registry.docker-cn.com/library/ubuntu:16.04
 $ docker --registry-mirror=https://registry.docker-cn.com daemon
 ```
 
-为了永久性保留更改，您可以修改 /etc/docker/daemon.json 文件并添加上 registry-mirrors 键值。
+为了永久性保留更改，您可以修改 `/etc/docker/daemon.json` 文件并添加上 registry-mirrors 键值。
 
 ```json
 {
