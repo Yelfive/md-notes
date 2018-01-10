@@ -40,3 +40,6 @@ preg_replace($pattern， $repalcement, $subject);
 $pattern 中 '/(\w)\\1/'      \\1 代表 第一个 匹配子模式，\\11代表第11个，(\\1)1代表第一个子模式后跟1
 $replacement 中           \\1 代表 1 ; $1 代表1 ; ${11}代表11
 
+## Appendix
+
+- [PHP.net](http://php.net/manual/en/reference.pcre.pattern.syntax.php)
