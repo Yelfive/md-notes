@@ -1,8 +1,8 @@
 # Regular Expression
 
-## Assertions
+## [Assertions](http://php.net/manual/en/regexp.reference.assertions.php)
 
-> An assertion is a test on the characters following or preceding the current matching point that does not actually consume any characters. The simple assertions coded as `\b, \B, \A, \Z, \z, ^ and $` are described in [escape sequences](http://php.net/manual/en/regexp.reference.escape.php). More complicated assertions are coded as sub-patterns. There are two kinds: those that look ahead of the current position in the subject string, and those that look behind it.
+> An assertion is a test on the characters following or preceding the current matching point that does not actually consume any characters. The simple assertions coded as `\b, \B, \A, \Z, \z, ^ and $` are described in [escape sequences](http://php.net/manual/en/regexp.reference.escape.php). More complicated assertions are coded as sub-patterns. There are two kinds: those that _look ahead_ of the current position in the subject string, and those that _look behind_ it.
 
 ### \b \B
 
@@ -10,6 +10,14 @@
 1. Does not represent any visible or invisible character
 2. `\b` asserts the exact position to be a boundary, e.g. a\b", to assert boundary between a and "
 3. `\B` assets the exact position not to be a boundary. e.g. a\Bb to asset no boundary between a and b
+
+### Lookahead ones
+
+Which is placed after a string
+
+#### 1. `(?=` Positive assertion
+
+#### 2. `(?!` Negative assertion
 
 ## Cancel sub-mode
 
