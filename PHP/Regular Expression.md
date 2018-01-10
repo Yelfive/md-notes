@@ -15,8 +15,12 @@
 
 ## Not to match
 
+### empty allowed
+
+No `string` contained, 
+
 ```
-(?!aaa)       // 不是aaa, 包含空；[^aaa] 不为aaa且不为空
+(?!string)       // 不是aaa, 包含空；[^aaa] 不为aaa且不为空
 ```
 
 ### Match for Chinese characters
