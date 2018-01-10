@@ -1,6 +1,10 @@
 # Regular Expression
 
-## \b \B
+## Assertions
+
+> An assertion is a test on the characters following or preceding the current matching point that does not actually consume any characters. The simple assertions coded as `\b, \B, \A, \Z, \z, ^ and $` are described in [escape sequences](http://php.net/manual/en/regexp.reference.escape.php). More complicated assertions are coded as sub-patterns. There are two kinds: those that look ahead of the current position in the subject string, and those that look behind it.
+
+### \b \B
 
 0. Boundary means two close characters must be one \w while another \W
 1. Does not represent any visible or invisible character
