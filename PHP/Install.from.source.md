@@ -22,8 +22,15 @@ cd php-7.1.13
 --with-libxml-dir \
 --enable-intl \
 --enable-mbstring \
---with-mysql \
---enable-pcnt \
-
+--with-mysqli \
+--with-pdo-mysql \
+--enable-pcntl \
+--enable-zip \
+--with-pear
 ```
 
+### 2.1 Dependencies
+
+```bash
+yum install -y libcurl-devel libxml2-devel libicu-devel
+```
