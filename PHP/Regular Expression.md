@@ -13,11 +13,23 @@
 
 ### Lookahead ones
 
-Which is placed after a string, it means, find the string that is (not) pended by the sub-pattern
+Which is placed after a string, it means, find the string that is (not) pended by the sub-pattern.
 
 #### 1. `(?=` Positive assertion
 
+```
+foo(?=bar)
+```
+
+Matches `foo` that is followed by `bar`, however `bar` is not a part of the match.
+
 #### 2. `(?!` Negative assertion
+
+```
+foo(?!bar)
+```
+
+Matches `foo` that is not followed by `bar`
 
 ## Cancel sub-mode
 
@@ -25,7 +37,7 @@ Which is placed after a string, it means, find the string that is (not) pended b
 (?:\w)        //?:开头，表示取消子模式
 ```
 
-## Not to match
+## <font color="red">  Not to match </font>
 
 ### empty allowed
 
