@@ -33,14 +33,23 @@ Matches `foo` that is not followed by `bar`
 
 ### Lookbehind ones
 
-Placed before a sub-pattern, test a string if 
+Placed before a sub-pattern, test a string if this sub-pattern does (or not) have an **lookbehind assertion** preceded it.
 
 #### 1. `(?<=` Positive assertion
 
 ```
+(?<=foo)bar
 ```
 
+Matches the `bar` preceded with a `foo`, but `foo` is not included in the match.
+
 #### 2. `(?<!` Negative assertion
+
+```
+(?<!foo)bar
+```
+
+Matches the `bar` that is **not** preceded with a `foo`.
 
 ## Cancel sub-mode
 
