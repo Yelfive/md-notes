@@ -31,6 +31,12 @@ foo(?!bar)
 
 Matches `foo` that is not followed by `bar`
 
+### Lookbehind ones
+
+#### 1. `(?<=` Positive assertion
+
+#### 2. `(?<!` Negative assertion
+
 ## Cancel sub-mode
 
 ```
