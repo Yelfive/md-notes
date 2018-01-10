@@ -13,7 +13,7 @@
 
 ### Lookahead ones
 
-Which is placed after a string
+Which is placed after a string, it means, find the string that is (not) pended by the sub-pattern
 
 #### 1. `(?=` Positive assertion
 
