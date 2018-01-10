@@ -26,8 +26,9 @@ cd php-7.1.13
 --with-pdo-mysql \
 --enable-pcntl \
 --enable-zip \
---with-openssl-dir \
---with-pear
+--with-openssl \
+--with-pear \
+--with-zlib
 ```
 
 ### 2.1 Dependencies
