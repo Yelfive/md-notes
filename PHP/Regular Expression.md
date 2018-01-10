@@ -13,7 +13,7 @@
 
 ### Lookahead ones
 
-Which is placed after a sub-pattern, it means, find the sub-pattern that is (not) appended by this sub-pattern.
+Placed after a sub-pattern, to test if **lookahead assertion** appended this sub-pattern.
 
 #### 1. `(?=` Positive assertion
 
@@ -33,7 +33,8 @@ Matches `foo` that is not followed by `bar`
 
 ### Lookbehind ones
 
-Placed before a sub-pattern, test a string if this sub-pattern does (or not) have an **lookbehind assertion** preceded it.
+Placed before a sub-pattern,
+to test if **lookbehind assertion** preceded sub-pattern.
 
 #### 1. `(?<=` Positive assertion
 
