@@ -58,16 +58,6 @@ Matches the `bar` that is **not** preceded with a `foo`.
 (?:\w)        //?:开头，表示取消子模式
 ```
 
-## <font color="red">  Not to match </font>
-
-### empty allowed
-
-No `string` contained, 
-
-```
-(?!string)       // 不是aaa, 包含空；[^aaa] 不为aaa且不为空
-```
-
 ### Match for Chinese characters
 
 ```
