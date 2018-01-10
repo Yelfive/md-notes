@@ -13,7 +13,7 @@
 
 ### Lookahead ones
 
-Which is placed after a string, it means, find the string that is (not) pended by the sub-pattern.
+Which is placed after a sub-pattern, it means, find the sub-pattern that is (not) appended by this sub-pattern.
 
 #### 1. `(?=` Positive assertion
 
@@ -33,7 +33,12 @@ Matches `foo` that is not followed by `bar`
 
 ### Lookbehind ones
 
+Placed before a sub-pattern, test a string if 
+
 #### 1. `(?<=` Positive assertion
+
+```
+```
 
 #### 2. `(?<!` Negative assertion
 
