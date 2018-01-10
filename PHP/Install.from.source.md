@@ -1,5 +1,7 @@
 # Install from source
 
+This article is based on `PHP 7.1.13`, may differs from versions
+
 ## 1. download
 
 ```bash
@@ -16,6 +18,12 @@ cd php-7.1.13
 --prefix=/usr/local \
 --with-config-file-path=/usr/local/etc/php \
 --with-config-file-scan-dir=/usr/local/etc/php/conf.d \
+--with-curl \
+--with-libxml-dir \
+--enable-intl \
+--enable-mbstring \
+--with-mysql \
+--enable-pcnt \
 
 ```
 
