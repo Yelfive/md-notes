@@ -56,7 +56,7 @@ set timeout 20
 
 ### $expect_out
 
-Stores current standard output 
+An array contains the results of the previous `expect`
 
 ```bash
 #!/usr/bin/env expect
