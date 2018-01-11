@@ -61,7 +61,7 @@ expect pattern {
 }
 ```
 
-2. 
+2.
 ```expect
 expect {
     pattern_1 action_1
@@ -70,7 +70,6 @@ expect {
 ```
 
 3.
-
 ```expect
 expect pattern
 action
@@ -99,5 +98,7 @@ send "Matched expect:  <$expect_out(0,string)>\n"
 Print until the end of connection
 
 ## send
+
+## send_user
 
 ## interact
