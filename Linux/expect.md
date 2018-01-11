@@ -102,3 +102,21 @@ Print until the end of connection
 ## send_user
 
 ## interact
+
+1. simply `interact` to return the control to user
+```expect
+interact
+```
+
+2. interact with abbreviation
+```expect
+interact {
+    "yii" {
+        send "sudo docker-compose exec phpfpm yii"
+    }
+    "~~d" {
+        send [exec date]
+    }
+}
+```
+
