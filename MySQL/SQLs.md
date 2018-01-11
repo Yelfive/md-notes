@@ -1,5 +1,4 @@
-SQLs
-====
+# SQLs
 
 ```sql
 set unique_checks = 0
