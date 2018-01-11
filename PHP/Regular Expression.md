@@ -36,15 +36,15 @@ Matches `foo` that is not followed by `bar`
 Placed before a sub-pattern,
 to test if **lookbehind assertion** preceded sub-pattern.
 
-#### 1. `(?<=` Positive assertion
+1. `(?<=` Positive assertion
 
-```
-(?<=foo)bar
-```
+    ```
+    (?<=foo)bar
+    ```
 
 Matches the `bar` preceded with a `foo`, but `foo` is not included in the match.
 
-#### 2. `(?<!` Negative assertion
+2. `(?<!` Negative assertion
 
 ```
 (?<!foo)bar
