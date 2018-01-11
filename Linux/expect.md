@@ -46,13 +46,42 @@ see [expect.$expect_out](#expect_out_1)
 
 Default timeout for expect is 10s, and this can be customized by
 
-```bash
+```expect
 set timeout 20
 ```
 
 ## spawn
 
 ## expect
+
+1.
+```expect
+expect pattern {
+    action
+}
+```
+
+2. 
+```expect
+expect {
+    pattern_1 action_1
+    pattern_2 action_2
+}
+```
+
+3.
+
+```expect
+expect pattern
+action
+```
+
+wildcard(`*`) can be used
+
+```expect
+# this expects string starts with `a`
+expect "a*\r"
+```
 
 ### $expect_out
 
