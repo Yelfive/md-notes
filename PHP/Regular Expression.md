@@ -11,27 +11,27 @@
 2. `\b` asserts the exact position to be a boundary, e.g. a\b", to assert boundary between a and "
 3. `\B` assets the exact position not to be a boundary. e.g. a\Bb to asset no boundary between a and b
 
-### Lookahead ones
+### Lookahead Assertions
 
 Placed after a sub-pattern, to test if **lookahead assertion** appended this sub-pattern.
 
-#### 1. `(?=` Positive assertion
+1. `(?=` Positive assertion
 
-```
-foo(?=bar)
-```
+    ```
+    foo(?=bar)
+    ```
 
-Matches `foo` that is followed by `bar`, however `bar` is not a part of the match.
+    Matches `foo` that is followed by `bar`, however `bar` is not a part of the match.
 
-#### 2. `(?!` Negative assertion
+2. `(?!` Negative assertion
 
-```
-foo(?!bar)
-```
+    ```
+    foo(?!bar)
+    ```
 
-Matches `foo` that is not followed by `bar`
+    Matches `foo` that is not followed by `bar`
 
-### Lookbehind ones
+### Lookbehind Assertions
 
 Placed before a sub-pattern,
 to test if **lookbehind assertion** preceded sub-pattern.
@@ -42,15 +42,15 @@ to test if **lookbehind assertion** preceded sub-pattern.
     (?<=foo)bar
     ```
 
-Matches the `bar` preceded with a `foo`, but `foo` is not included in the match.
+    Matches the `bar` preceded with a `foo`, but `foo` is not included in the match.
 
 2. `(?<!` Negative assertion
 
-```
-(?<!foo)bar
-```
+    ```
+    (?<!foo)bar
+    ```
 
-Matches the `bar` that is **not** preceded with a `foo`.
+    Matches the `bar` that is **not** preceded with a `foo`.
 
 ## Cancel sub-mode
 
