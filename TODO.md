@@ -1,5 +1,7 @@
 # TODO
 
+- [ ] VS Code extension for markdown, development
+
 - [x] Nginx IP restriction
 - [ ] Kubernetes
 - [ ] Consul
