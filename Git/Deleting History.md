@@ -1,32 +1,44 @@
-Deleting History
-================
+# Deleting History
 
-#### Checkout
+## First method
 
-   git checkout --orphan latest_branch
+#### 1. Checkout
 
-#### Add all the files
+```bash
+git checkout --orphan latest_branch
+```
 
-   git add -A
+#### 2. Add all the files
 
-#### Commit the changes
+```bash
+git add -A
+```
 
-   git commit -am "commit message"
+#### 3. Commit the changes
 
-#### Delete the branch
+```bash
+git commit -am "commit message"
+```
 
-   git branch -D master
+#### 4. Delete the branch
 
-#### Rename the current branch to master
+```bash
+git branch -D master
+```
 
-   git branch -m master
+#### 5. Rename the current branch to master
 
-#### Finally, force update your repository
+```bash
+git branch -m master
+```
 
-   git push -f origin master
+#### 6. Finally, force update your repository
 
-Second
-------
+```bash
+git push -f origin master
+```
+
+## Second method
 
 ```bash
 rm -rf .git
