@@ -19,9 +19,13 @@ set pi 3.1415926
 
 - escape character `\`
 
-    To represent a character literally
+    Similar to `C`, except  `\0` here dose no present the `null`
 
     ```tcl
     set money \$1000
     ```
 
+- comment start with `#`
+- semicolon `;` act same as `C`
+
+    
