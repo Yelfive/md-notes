@@ -11,7 +11,7 @@ Start of all desktop system - `X Desktop System`
 
 ```bash
 a=(1 2 3 4)
-a[1] = 22 # set from 2 to 22
+a[1]=22 # set from 2 to 22
 ```
 
 create with space separated values
