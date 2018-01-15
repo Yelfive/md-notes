@@ -1,6 +1,6 @@
 # Headers
 
-## X-Forwarded-Proto
+## X-Forwarded-Proto([see also][nginx-proxy])
 
 When reverse-proxied, this header is used to store the origin protocol. Such as when the client started as `https` but proxied as `http`, this header can tell the server it started as `https`.
 
@@ -9,13 +9,13 @@ GET / HTTP/1.1
 X-Forwarded-Proto: https
 ```
 
-## X-Forwarded-For
+## X-Forwarded-For([see also][nginx-proxy])
 
 Stores the proxy it passed trough.
 
 ```http
 GET / HTTP/1.1
-X-Forwarded-For: 192.168.1.2,192.168.1.3
+X-Forwarded-For: 192.168.1.2, 192.168.1.3
 ```
 
 **Nginx**
@@ -29,3 +29,5 @@ server name {
 }
 ```
 
+
+[nginx-proxy]: https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/
