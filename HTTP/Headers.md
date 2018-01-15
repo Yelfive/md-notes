@@ -8,3 +8,24 @@ When reverse-proxied, this header is used to store the origin protocol. Such as 
 GET / HTTP/1.1
 X-Forwarded-Proto: https
 ```
+
+## X-Forwarded-For
+
+Stores the proxy it passed trough.
+
+```http
+GET / HTTP/1.1
+X-Forwarded-For: 192.168.1.2,192.168.1.3
+```
+
+**Nginx**
+
+```nginx
+server name {
+    location / {
+        proxy_pass http://example.com;
+        proxy_set_header X-Forwarded-For $proxy_x_add_forwarded_for;
+    }
+}
+```
+
