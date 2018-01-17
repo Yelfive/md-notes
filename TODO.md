@@ -1,7 +1,17 @@
 # TODO
 
-- [ ] VS Code extension for markdown, development
+
+<font color="red">
+## Important
+
 - [ ] encapsulate the PHPUnit like Laravel, except mine should be based on curl not the framework
+- [ ] bash `expect`
+</font>
+
+## Normal
+
+- [ ] VS Code extension for markdown, development
+
 
 - [ ] Tcl Tool Command Language
 - [x] Nginx IP restriction
