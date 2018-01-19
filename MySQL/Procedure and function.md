@@ -2,23 +2,34 @@
 
 ## Syntax
 
+### procedure
+
 ```mysql
 CREATE
     [DEFINER = { user | CURRENT_USER }]
     PROCEDURE sp_name ([proc_parameter[,...]])
     [characteristic ...] routine_body
 
+proc_parameter:
+    [ IN | OUT | INOUT ] param_name type
+```
+
+### function
+
+```mysql
 CREATE
     [DEFINER = { user | CURRENT_USER }]
     FUNCTION sp_name ([func_parameter[,...]])
     RETURNS type
     [characteristic ...] routine_body
 
-proc_parameter:
-    [ IN | OUT | INOUT ] param_name type
-
 func_parameter:
     param_name type
+```
+
+### common properties
+
+```mysql
 
 type:
     Any valid MySQL data type
