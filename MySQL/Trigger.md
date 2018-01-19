@@ -1,7 +1,5 @@
 # Trigger
 
-
-
 ```sql
 CREATE
     [DEFINER = { user | CURRENT_USER }]
@@ -89,5 +87,9 @@ DROP TRIGGER table_name.trigger_name
 
 1. Cannot use a `CALL` to procedures that return data to client or those use dynamic SQLs
 2. Cannot begin or end a transaction, except for `ROLLBACK TO SAVEPOINT` which does not end a transaction
+
+## Appendix
+
+- [dev.mysql.com](https://dev.mysql.com/doc/refman/5.7/en/create-trigger.html)
 
     
