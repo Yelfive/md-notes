@@ -45,3 +45,10 @@ select CAST('1' + '1' AS INT) AS result
     ```sql
     CONVERT(expression USING transcoding_name)
     ```
+
+    **example**
+
+    ```sql
+    CONVERT('string' USING utf8)
+    ```
+
