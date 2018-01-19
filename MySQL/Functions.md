@@ -33,8 +33,15 @@ select CAST('1' + '1' AS INT) AS result
 
 ## CONVERT
 
-```sql
-# equivalent to `CAST(expression AS type)`
-CONVERT(expression, type)
+1. Cast a value as a certain type
 
-```
+    ```sql
+    # equivalent to `CAST(expression AS type)`
+    CONVERT(expression, type)
+    ```
+
+2. Converts data between different character sets
+
+    ```sql
+    CONVERT(expression USING transcoding_name)
+    ```
