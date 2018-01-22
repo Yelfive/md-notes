@@ -28,11 +28,12 @@ cd php-7.1.13
 --enable-zip \
 --with-openssl \
 --with-pear \
---with-zlib
+--with-zlib \
+--with-gd
 ```
 
 ### 2.1 Dependencies
 
 ```bash
-yum install -y libcurl-devel libxml2-devel libicu-devel
+yum install -y libcurl-devel libxml2-devel libicu-devel libpng-devel
 ```
