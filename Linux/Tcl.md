@@ -28,4 +28,12 @@ set pi 3.1415926
 - comment start with `#`
 - semicolon `;` act same as `C`
 
+## \[]
+
+executes a command and returns its value
+
+```tcl
+# prints the current process id
+echo The pid is [pid]
+```
     
