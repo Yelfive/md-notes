@@ -36,4 +36,13 @@ executes a command and returns its value
 # prints the current process id
 echo The pid is [pid]
 ```
+
+## expr
+
+Evaluates an expression.
+
+```tcl
+echo The answer is [expr 1 + 2]
+```
+
     
