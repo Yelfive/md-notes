@@ -30,7 +30,7 @@ set pi 3.1415926
 
 ## \[]
 
-executes a command and returns its value
+Brackets executes a command and returns its value
 
 ```tcl
 # prints the current process id
@@ -45,4 +45,15 @@ Evaluates an expression.
 echo The answer is [expr 1 + 2]
 ```
 
-    
+## {}
+
+Braces defers everything inside, meaning they see things inside literally without substitution.
+
+```tcl
+puts {[set a]}
+# [set a]
+
+puts [set a]
+# can't read "a": no such variable
+```
+
