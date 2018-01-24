@@ -29,7 +29,7 @@ set pi 3.1415926
 - comment start with `#`
 - semicolon `;` act same as `C`
 
-## \[]
+## \[ ]
 
 Brackets executes a command and returns its value
 
@@ -46,7 +46,7 @@ Evaluates an expression.
 echo The answer is [expr 1 + 2]
 ```
 
-## {}
+## { }
 
 Braces defers everything inside, meaning they see things inside literally without substitution.
 
