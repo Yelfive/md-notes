@@ -107,9 +107,27 @@ for {set a 10} {$a>0} {set a [expr $a - 1]} {puts "current value"; puts $a}
 
 ### if
 
-1. No line feed 
-2. 
+1. No line feed before `elseif` or `else`
+2. `elseif` and `else` are optional
 
 ```tcl
-if test command elseif test command else test command
+if test command ?elseif test command? ?else test command?
+```
+
+**example**
+
+```tcl
+if $a<1 {
+    puts "less than 1"
+} elseif $a<10 {
+    puts "less than 10"
+} else {
+    puts "greater than or equal to 10"
+}
+```
+
+### switch
+
+```tcl
+switch ?switches? string pattern body ... ?default body?
 ```
