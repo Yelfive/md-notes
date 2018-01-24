@@ -48,7 +48,7 @@ echo The answer is [expr 1 + 2]
 
 ## braces { }
 
-Braces defers everything inside, meaning they see things inside literally without substitution.
+Braces defers everything inside, meaning they see things inside literally without substitution, lick single quotes in `shell` or `PHP`.
 
 ```tcl
 puts {[set a]}
