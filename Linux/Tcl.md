@@ -65,12 +65,13 @@ puts [set a]
 `while` is command requires two arguments, the first argument is the expression, it evaluates every loop, executes the second argument when it returns other than 0.
 
 ```tcl
-wile {expression} {body}
+wile test command
 
-set count = 10
+set count 10
 while {$count > 0}
 {
     puts $count
+    set count [expr count - 1]
 }
 ```
 
