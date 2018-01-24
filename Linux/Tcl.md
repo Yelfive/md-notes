@@ -68,12 +68,13 @@ puts [set a]
 wile test command
 
 set count 10
-while {$count > 0}
-{
+while {$count > 0} {
     puts $count
-    set count [expr count - 1]
+    set count [expr $count - 1]
 }
 ```
+
+> Command `while` takes two arguments, the second argument `command`, 
 
 ### for
 
