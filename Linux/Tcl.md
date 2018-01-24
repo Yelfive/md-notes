@@ -107,4 +107,6 @@ for {set a 10} {$a>0} {set a [expr $a - 1]} {puts "current value"; puts $a}
 
 ### if
 
-s
+```tcl
+if test command
+```
