@@ -58,7 +58,24 @@ puts [set a]
 # can't read "a": no such variable
 ```
 
-## loop control
+## everything is command
+
+### incr
+
+```tcl
+incr variable ?increment?
+```
+
+```tcl
+set a 1
+#1
+incr a
+# 2
+incr a 2
+# 4
+incr a -1
+# 3
+```
 
 ### while
 
@@ -74,7 +91,7 @@ while {$count > 0} {
 }
 ```
 
-> Command `while` takes two arguments, but the line-feed `\n` (as well as )character terminates a command, so the second argument `command` (such as the start brace `{`) should be in the same line as while.
+> Command `while` takes two arguments, but the line-feed `\n` (as well as semicolon `;`)character terminates a command, so the second argument `command` (such as the start brace `{`) should be in the same line as while.
 
 ### for
 
@@ -88,3 +105,6 @@ for start test next command
 for {set a 10} {$a>0} {set a [expr $a - 1]} {puts "current value"; puts $a}
 ```
 
+### if
+
+s
