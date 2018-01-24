@@ -74,7 +74,7 @@ while {$count > 0} {
 }
 ```
 
-> Command `while` takes two arguments, but the line-feed `\n` character terminates a command, so the second argument `command` (such as the start brace `{`) should be in the same line as while.
+> Command `while` takes two arguments, but the line-feed `\n` (as well as )character terminates a command, so the second argument `command` (such as the start brace `{`) should be in the same line as while.
 
 ### for
 
@@ -85,6 +85,6 @@ for start test next command
 ```
 
 ```tcl
-for set a 1 {$a<10} set a [expr a - 1] {puts $a}
+for {set a 10} {$a>0} {set a [expr $a - 1]} {puts "current value"; puts $a}
 ```
 
