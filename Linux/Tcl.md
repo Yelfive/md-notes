@@ -58,3 +58,12 @@ puts [set a]
 # can't read "a": no such variable
 ```
 
+## loop control
+
+### while
+
+`while` is command requires two arguments, the first argument is the 
+
+```tcl
+wile {expression} {body}
+```
