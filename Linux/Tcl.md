@@ -62,8 +62,23 @@ puts [set a]
 
 ### while
 
-`while` is command requires two arguments, the first argument is the 
+`while` is command requires two arguments, the first argument is the expression, it evaluates every loop, executes the second argument when it returns other than 0.
 
 ```tcl
 wile {expression} {body}
+
+set count = 10
+while {$count > 0}
+{
+    puts $count
+}
 ```
+
+### for
+
+takes 4 command
+
+```tcl
+for start expression next {body}
+```
+
