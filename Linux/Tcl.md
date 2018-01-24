@@ -81,6 +81,10 @@ while {$count > 0} {
 takes 4 command
 
 ```tcl
-for start expression next {body}
+for start test next command
+```
+
+```tcl
+for set a 1 {$a<10} set a [expr a - 1] {puts $a}
 ```
 
