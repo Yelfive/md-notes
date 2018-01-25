@@ -58,7 +58,7 @@ puts [set a]
 # can't read "a": no such variable
 ```
 
-## everything is command
+## Everything is command
 
 ### incr
 
@@ -177,4 +177,15 @@ To set a variable as global
 ```tcl
 global variableName ?variableName?
 ```
+
+### source
+
+Similar to `source` of shell, and recognize the `~` as user's home directory.
+
+**Syntax**
+
+```tcl
+source file.tcl
+```
+
 
