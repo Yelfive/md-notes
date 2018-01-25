@@ -175,6 +175,6 @@ exit 0
 To set a variable as global
 
 ```tcl
-
+global variableName ?variableName?
 ```
 
