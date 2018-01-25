@@ -35,13 +35,15 @@ Used for more complicated trigger statement.
 DELIMITER |
 CREATE TRIGGER trigger_name BEFORE INSERT ON table_name FOR EACH ROW
 BEGIN
+    DECLARE amount INT;
     UPDATE user SET order_count=order_count+1 WHERE id=NEW.created_by;
     
     IF NEW.amount < 0 THEN
-       SET NEW.amount = 0;
+       SET amount = 0;
     ELSEIF NEW.amount > 100 THEN
-       SET NEW.amount = 100;
+       SET amount = 100;
     END IF;
+    SET NEW.amount = amount;
 END;
 |
 DELIMITER ;
