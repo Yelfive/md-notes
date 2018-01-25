@@ -142,7 +142,8 @@ switch -- $count 1 {
 
 ### proc
 
-Create a function, called `procedure` in TCL
+1. Create a function, called `procedure` in TCL
+2. Command `return` returns the value gives it
 
 ```tcl
 proc name args body
@@ -153,9 +154,8 @@ proc name args body
 ```tcl
 proc fib {one two n} {
     for {set i 0} {$i<$n} {incr i} {
-        set sum [expr one + two]
-        set one $two
-        set two $sum
+        set two [expr $one + $two]
+        set one [expr $two - $one]
     }
     return $two
 }
