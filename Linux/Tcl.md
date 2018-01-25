@@ -151,7 +151,14 @@ proc name args body
 **example**
 
 ```tcl
-
+proc fib {one two n} {
+    for {set i 0} {$i<$n} {incr i} {
+        set sum [expr one + two]
+        set one $two
+        set two $sum
+    }
+    return $two
+}
 ```
 
 
