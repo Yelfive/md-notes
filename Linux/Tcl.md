@@ -164,12 +164,19 @@ proc fib {one two n} {
 
 #### arbitrary arguments
 
-Special argument `args`
+Special argument `args` hold all the remaining arguments.
 
 ```tcl
-proc sum {args} {
-    
+proc sum {title args} {
+    foreach i $args {
+        incr sum $i
+    }
+    puts $title
+    puts $sum
 }
+sum "The sum of 5 integers" 1 2 3 4 5
+# The sum of 5 integers
+# 15
 ```
 
 ### exit
