@@ -143,7 +143,8 @@ switch -- $count 1 {
 ### proc
 
 1. Create a function, called `procedure` in TCL
-2. Command `return` returns the value gives it
+1. If no `return` provided, whatever returned from the last command in the procedure will be returned.
+1. Command `return` returns the value gives it
 
 ```tcl
 proc name args body
@@ -160,5 +161,9 @@ proc fib {one two n} {
     return $two
 }
 ```
+
+### exit
+
+Same as `exit` in shell, or PHP
 
 
