@@ -172,4 +172,9 @@ exit 0
 
 ### global
 
+To set a variable as global
+
+```tcl
+
+```
 
