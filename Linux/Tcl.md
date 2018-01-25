@@ -166,4 +166,10 @@ proc fib {one two n} {
 
 Same as `exit` in shell, or PHP
 
+```tcl
+exit 0
+```
+
+### global
+
 
