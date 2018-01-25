@@ -131,3 +131,12 @@ if $a<1 {
 ```tcl
 switch ?switches? string pattern body ... ?default body?
 ```
+
+```tcl
+switch -- $count 1 {
+    puts One
+} 2 {
+    puts Two
+}
+```
+
