@@ -188,4 +188,22 @@ Similar to `source` of shell, and recognize the `~` as user's home directory.
 source file.tcl
 ```
 
+## Language properties
+
+### list 
+
+A list is similar to shell
+
+```tcl
+set a "one two three"
+llength a
+# 3
+```
+
+like in shell
+
+```bash
+a="one two three"
+${#a[@]}
+```
 
