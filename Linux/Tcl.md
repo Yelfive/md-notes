@@ -140,3 +140,18 @@ switch -- $count 1 {
 }
 ```
 
+### proc
+
+Create a function, called `procedure` in TCL
+
+```tcl
+proc name args body
+```
+
+**example**
+
+```tcl
+
+```
+
+
