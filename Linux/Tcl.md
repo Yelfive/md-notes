@@ -162,6 +162,16 @@ proc fib {one two n} {
 }
 ```
 
+#### arbitrary arguments
+
+Special argument `args`
+
+```tcl
+proc sum {args} {
+    
+}
+```
+
 ### exit
 
 Same as `exit` in shell, or PHP
@@ -195,8 +205,9 @@ foreach varList list ?varList list ...? command
 ```
 
 ```tcl
-foreach a "a b c" $b "c d e"{
+foreach a "a b c" b "c d e"{
     puts $a
+    puts $b`
 }
 ```
 
