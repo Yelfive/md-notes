@@ -190,20 +190,17 @@ source file.tcl
 
 ## Language properties
 
-### list 
-
-A list is similar to shell
+### list
 
 ```tcl
 set a "one two three"
-llength a
+llength $a
 # 3
 ```
 
-like in shell
+All list manipulation commands start with a `l`
 
-```bash
-a="one two three"
-${#a[@]}
-```
-
+- `llength` Length of the list
+- `lindex` Retrieve a value in a list with index started from 0
+- `lrange` Retrieve a range of values in a list
+- 
