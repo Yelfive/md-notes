@@ -188,6 +188,18 @@ Similar to `source` of shell, and recognize the `~` as user's home directory.
 source file.tcl
 ```
 
+### foreach
+
+```tcl
+foreach varList list ?varList list ...? command
+```
+
+```tcl
+foreach a "a b c" $b "c d e"{
+    puts $a
+}
+```
+
 ## Language properties
 
 ### list
