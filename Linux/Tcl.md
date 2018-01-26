@@ -363,8 +363,9 @@ append string $string_list
 ```
 
 ```tcl
-set paragraph ""
-
 append paragraph This is a paragraph
+Thisisaparagraph
 ```
 
+
+## Arrays
