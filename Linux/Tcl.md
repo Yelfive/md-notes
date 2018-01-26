@@ -212,9 +212,9 @@ foreach varList list ?varList list ...? command
 ```
 
 ```tcl
-foreach a "a b c" b "c d e"{
-    puts $a
-    puts $b`
+foreach first "a b c" second "c d e"{
+    puts $first
+    puts $second
 }
 ```
 
@@ -456,3 +456,6 @@ info level -1
 
 Current script name, like `__FILE__` of PHP
 
+## unset
+
+## catch
