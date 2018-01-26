@@ -533,3 +533,19 @@ test a
 puts $a
 # 2
 ```
+
+#### passing array
+
+```tcl
+set age(lily) 18
+set age(tom) 20
+
+proc tell_age {age} {
+    upvar age ages
+    foreach name [array names ages] {
+        puts "[string toupper $name] has age of $ages($name)"
+    }
+}
+
+tell_age age
+```
