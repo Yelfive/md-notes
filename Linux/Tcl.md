@@ -289,6 +289,22 @@ All list manipulation commands start with a `l`
 
 - `scan`
     
-    Similar to `scanf` of C
+    Scan a string into variables
+
+    ```tcl
+    scan $string "%format" variable list...
+    ```
+
+    ```tcl
+    scan "a b c" "%c%c%c" first second third
+
+    puts $first
+    # a
+    puts $second
+    # b
+    puts $third
+    # c
+    ```
+
 
 
