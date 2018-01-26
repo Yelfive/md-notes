@@ -421,7 +421,7 @@ Commands defined via command `proc`
 
 Command stack level.
 
-If no `depth` given, it returns the depth of current command, or else it returns the `command name` and `arguments` of the stack.
+If no `depth` given, it returns the depth of current command, or else it returns the `command name` and `arguments` of the stack in list
 
 `?depth?` is a negative integer.
 
@@ -430,7 +430,10 @@ info level ?depth?
 ```
 
 ```tcl
+info level 0
+# calling of current command
+# cmd1 arg1 arg2 arg3 ...
 info level -1
-info level -2
+# cmd2 arg1 arg2 arg3 ...
 ```
 
