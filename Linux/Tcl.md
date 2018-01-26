@@ -230,6 +230,13 @@ llength $a
 
 All list manipulation commands start with a `l`
 
+- `list` create a list
+    
+    ```tcl
+    list a b c
+    # a b c
+    ```
+
 - `llength` Length of the list
 - `lindex` Retrieve a value in a list with index started from 0
 - `lrange` Retrieve a range of values in a list
