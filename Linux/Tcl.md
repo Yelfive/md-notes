@@ -257,3 +257,7 @@ All list manipulation commands start with a `l`
 - `lrange` Retrieve a range of values in a list
 - `lappend`
 - `linsert`
+- `lreplace`
+- `lsearch`
+- `lsort`
+- 
