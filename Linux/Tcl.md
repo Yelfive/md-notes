@@ -379,6 +379,20 @@ set "a(arbitrary string)" some_value
 puts $a(arbitrary string)
 ```
 
+### size
+
+```tcl
+array size array_name
+```
+
+### names
+
+Keys of the array, like `array_keys` of PHP
+
+```tcl
+array names array_name
+```
+
 ## info
 
 ### exists
@@ -437,4 +451,8 @@ info level -1
 # calling of previous command
 # cmd2 arg1 arg2 arg3 ...
 ```
+
+### script
+
+Current script name, like `__FILE__` of PHP
 
