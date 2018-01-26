@@ -371,6 +371,22 @@ Thisisaparagraph
 ## Arrays
 
 ```tcl
-set a(arbitrary string) some_value
+set key "arbitrary string"
+set a($key) some_value
+puts $a(arbitrary string)
+
+set "a(arbitrary string)" some_value
+puts $a(arbitrary string)
 ```
+
+## info
+
+### exists
+
+Returns 0 if variable not exists and 1 if does.
+
+```tcl
+info exists varaible_name
+```
+
 
