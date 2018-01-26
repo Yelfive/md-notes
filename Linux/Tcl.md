@@ -417,3 +417,20 @@ All commands
 
 Commands defined via command `proc`
 
+### level
+
+Command stack level.
+
+If no `depth` given, it returns the depth of current command, or else it returns the `command name` and `arguments` of the stack.
+
+`?depth?` is a negative integer.
+
+```tcl
+info level ?depth?
+```
+
+```tcl
+info level -1
+info level -2
+```
+
