@@ -409,3 +409,11 @@ Returns list of global variables.
 
 Returns list of all variables, local and global.
 
+### commands
+
+All commands
+
+### procs
+
+Commands defined via command `proc`
+
