@@ -509,8 +509,16 @@ upvar ?level? otherVar localVar ?otherVar localVar ...?
 
 - `level`
 
-    1. 
-    1. Integer precedes a `#` meaning absolute level, e.g. `#0` meaning the global
+    1. Integer describe the number of levels up the procedure call stack.
+    2. Integer precedes a `#` meaning absolute level, e.g. `#0` meaning the global.
+
+- `otherVar`
+
+    Variable name or value of the upper level
+
+- `localVar`
+
+    Variable name used locally
 
 **example**
 
