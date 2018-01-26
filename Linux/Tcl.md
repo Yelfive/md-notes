@@ -308,5 +308,28 @@ All list manipulation commands start with a `l`
 
 ### The `string` command
 
+#### string compare
 
+Returns 1, 0, -1 respectively when the first string is greater than, equal to, less than the second string.
+
+```tcl
+string compare $str1 $str2
+```
+
+#### string match
+
+```tcl
+string match pattern $string
+```
+
+**pattern** can contain
+
+- `*` for any number of characters
+- `?` for any single character
+
+#### string first
+
+```tcl
+string first $needle $haystack
+```
 
