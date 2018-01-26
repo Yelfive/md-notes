@@ -260,4 +260,26 @@ All list manipulation commands start with a `l`
 - `lreplace`
 - `lsearch`
 - `lsort`
-- 
+    + `-integer`
+    + `-real`
+    + `-decreasing`
+
+### String manipulating
+
+- `split`
+
+    split a string into a list
+
+    ```sql
+    split $string separator
+    ```
+
+- `join`
+
+    join a list into a string
+
+    ```tcl
+    join $list delimiter
+    ```
+
+
