@@ -282,4 +282,13 @@ All list manipulation commands start with a `l`
     join $list delimiter
     ```
 
+- `format`
+    
+    Similar to `printf` of C and PHP
+
+
+- `scan`
+    
+    Similar to `scanf` of C
+
 
