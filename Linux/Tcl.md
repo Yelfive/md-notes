@@ -235,10 +235,25 @@ All list manipulation commands start with a `l`
     ```tcl
     list a b c
     # a b c
+    llength [list a b c]
+    # 3
     ```
 
 - `llength` Length of the list
+
+    ```tcl
+    llength $list
+    ```
+
 - `lindex` Retrieve a value in a list with index started from 0
+
+    ```tcl
+    lindex $list index
+
+    lindex [ a b c] 0
+    # a
+    ```
+
 - `lrange` Retrieve a range of values in a list
 - `lappend`
 - `linsert`
