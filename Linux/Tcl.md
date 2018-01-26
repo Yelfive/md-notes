@@ -233,4 +233,5 @@ All list manipulation commands start with a `l`
 - `llength` Length of the list
 - `lindex` Retrieve a value in a list with index started from 0
 - `lrange` Retrieve a range of values in a list
-- 
+- `lappend`
+- `linsert`
