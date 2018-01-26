@@ -329,7 +329,29 @@ string match pattern $string
 
 #### string first
 
+Returns the first occurrence of the `$needle` in `$haystack`, `-1` if not found.
+
 ```tcl
 string first $needle $haystack
 ```
 
+#### string last
+
+Similar to `string first`
+
+#### string length
+
+#### string index
+
+Retrieve a character from given `index`.
+
+```tcl
+string index $string index
+```
+
+#### string range
+
+#### string tolower
+#### string toupper
+#### trimleft
+####
