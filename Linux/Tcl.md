@@ -478,3 +478,14 @@ catch {cmd some arguments} returned_value
 set returned_value
 ```
 
+### Variable `errorInfo`
+
+Global variable contains the last error information.
+
+### Raising an error with command `error`
+
+```tcl
+error "some message"
+```
+
+
