@@ -237,6 +237,11 @@ All list manipulation commands start with a `l`
     # a b c
     llength [list a b c]
     # 3
+
+    list "a b c"
+    # {a b c}
+    llength [ list "a b c"]
+    # 1
     ```
 
 - `llength` Length of the list
