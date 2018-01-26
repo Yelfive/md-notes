@@ -459,3 +459,20 @@ Current script name, like `__FILE__` of PHP
 ## unset
 
 ## catch
+
+1. Take its first argument and executes it, if error occurs, 1 will be returned, otherwise 0.
+2. The `resultVaraibleName` contains either script's result or error message
+
+
+```tcl
+catch script ?resultVariableName? ?optionVarName?
+```
+
+**example**
+
+```tcl
+catch {cmd some arguments} returned_value
+
+set returned_value
+```
+
