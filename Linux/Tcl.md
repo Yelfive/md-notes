@@ -389,4 +389,23 @@ Returns 0 if variable not exists and 1 if does.
 info exists varaible_name
 ```
 
+### locals
+
+Returns list of local variables
+
+```tcl
+info locals pattern
+```
+
+```tcl
+info locals mail*
+```
+
+### globals
+
+Returns list of global variables.
+
+### vars
+
+Returns list of all variables, local and global.
 
