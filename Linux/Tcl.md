@@ -353,5 +353,18 @@ string index $string index
 
 #### string tolower
 #### string toupper
-#### trimleft
-####
+#### string trimleft
+#### string trimright
+
+### append
+
+```tcl
+append string $string_list
+```
+
+```tcl
+set paragraph ""
+
+append paragraph This is a paragraph
+```
+
