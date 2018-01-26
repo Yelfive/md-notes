@@ -306,5 +306,7 @@ All list manipulation commands start with a `l`
     # c
     ```
 
+### The `string` command
+
 
 
