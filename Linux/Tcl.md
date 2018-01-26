@@ -434,6 +434,7 @@ info level 0
 # calling of current command
 # cmd1 arg1 arg2 arg3 ...
 info level -1
+# calling of previous command
 # cmd2 arg1 arg2 arg3 ...
 ```
 
