@@ -504,14 +504,19 @@ Same as other languages.
 Bind variable to another variable.
 
 ```tcl
-upvar $variable another
+upvar ?level? otherVar localVar ?otherVar localVar ...?
 ```
+
+- `level`
+
+    1. 
+    1. Integer precedes a `#` meaning absolute level, e.g. `#0` meaning the global
 
 **example**
 
 ```tcl
 proc test {a} {
-    upvar $a b
+    upvar a b
     set b 2
 }
 
