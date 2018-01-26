@@ -369,3 +369,8 @@ Thisisaparagraph
 
 
 ## Arrays
+
+```tcl
+set a(arbitrary string) some_value
+```
+
