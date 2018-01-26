@@ -495,4 +495,28 @@ error "some message"
 
 ## eval
 
+Same as other languages.
 
+## Passing by reference
+
+### upvar
+
+Bind variable to another variable.
+
+```tcl
+upvar $variable another
+```
+
+**example**
+
+```tcl
+proc test {a} {
+    upvar $a b
+    set b 2
+}
+
+set a 1
+test a
+puts $a
+# 2
+```
