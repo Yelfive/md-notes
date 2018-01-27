@@ -549,3 +549,9 @@ proc tell_age {age} {
 
 tell_age age
 ```
+
+## File handling
+
+- `stdin`
+- `stdout`
+- `stderr`
