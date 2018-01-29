@@ -602,3 +602,10 @@ Print Current Directory
 #### file extentsion
 
 #### file rootname
+
+Opposite to `file extension`, returns everything but file extension.
+
+#### file test
+
+- `file exists`
+- `file isdirectory`
