@@ -617,6 +617,21 @@ Opposite to `file extension`, returns everything but file extension.
 #### file informations
 
 - `file size`
-- `file atime` Last accessed timestamp
+- `file atime` Last accessed timestamp(10 digits)
+- `file type`
+    + `file`
+    + `directory`
+    + `charaterSpecial`
+    + `blockSpecial`
+    + `link`
+    + `socket`
+- `file readlink` Returns the linked filename
+- `file stat`
+
+    Reads inode of `filename` into `varName`
+
+    ```tcl
+    file stat filename varName
+    ```
 
 
