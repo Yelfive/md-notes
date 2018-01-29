@@ -69,7 +69,7 @@ ab*c
 (ab)*   #(in ERE)
 ```
 
-### `\+` <sub style="color:grey">_BRE_</sub> or `+` <sub>_ERE_</sub>
+### `\+` <sub style="color:grey">_BRE_</sub> or `+` <sub style="color:grey">_ERE_</sub>
 
 Matches the preceding element one or more times. For example,
 
@@ -87,12 +87,56 @@ ab+c    # (in ERE)
 [xyz]+  # (in ERE)
 ```
 
-BRE: \?<br/>ERE: ? | Matches the preceding element one or zero times. For example, ab\?c (in BRE) or ab?c (in ERE) matches either "ac" or "abc", while \(ab\)\? (in BRE) or (ab)? (in ERE) matches "" or "ab".
-BRE: \|<br/>ERE: | | Matches the preceding element or the following element. For example, abc\|def (in BRE) or abc|def (in ERE) matches either "abc" or "def".
-BRE: \{m,n\}<br/>ERE: {m,n} | Matches the preceding element at least m and not more than n times. For example, a\{3,5\} (in BRE) or a{3,5} (in ERE) matches only "aaa", "aaaa", and "aaaaa".
-BRE: \{m\}<br/>ERE: {m} | Matches the preceding element exactly m times.
-BRE: \{m,\}<br/>ERE: {m,} | Matches the preceding element at least m times.
-BRE: \{,n\}<br/>ERE: {,n} | Matches the preceding element not more than n times. For example, ba\{,2\}b (in BRE) or ba{,2}b (in ERE) matches only "bb", "bab", and "baab".
+### BRE: `\?` or ERE: `?`
+
+Matches the preceding element one or zero times. For example,
+```bash
+# matches either "ac" or "abc"
+ab\?c   # (in BRE) or 
+ab?c    # (in ERE)
+
+# matches "" or "ab"
+\(ab\)\?    # (in BRE) or 
+(ab)?       # (in ERE)
+```
+
+### BRE: `\|` ERE: `|`
+
+Matches the preceding element or the following element. For example,
+
+```bash
+# matches either "abc" or "def".
+abc\|def    # (in BRE) or 
+abc|def     # (in ERE)
+```
+
+### BRE: `\{m,n\}` ERE: `{m,n}`
+
+Matches the preceding element at least m and not more than n times. For example,
+
+```bash
+# matches only "aaa", "aaaa", and "aaaaa".
+a\{3,5\}    # (in BRE) or
+a{3,5}      # (in ERE)
+```
+
+### BRE: \{m\} ERE: {m}
+
+Matches the preceding element exactly m times.
+
+### BRE: \{m,\} ERE: {m,}
+
+Matches the preceding element at least m times.
+
+### BRE: \{,n\} ERE: {,n}
+
+Matches the preceding element not more than n times. For example,
+
+```bash
+# matches only "bb", "bab", and "baab".
+ba\{,2\}b   # (in BRE) or
+ba{,2}b     # (in ERE)
+```
 
 ### character class
 
