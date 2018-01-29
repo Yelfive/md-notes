@@ -653,3 +653,5 @@ Opposite to `file extension`, returns everything but file extension.
     - `size`
 
 - `file lstat` Returns information about symbolic link itself.
+
+
