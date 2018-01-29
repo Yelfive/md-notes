@@ -139,7 +139,7 @@ ba\{,2\}b   # (in BRE) or
 ba{,2}b     # (in ERE)
 ```
 
-### character class
+### Character Classes
 
 > POSIX character classes can only be used within bracket expressions such as `[[:upper:]]` to match all upper cases
 
@@ -167,4 +167,5 @@ grep [[:digit:][:alpha:]] path/to/file
 
 ## Appendix
 
-- [WiKiBooks](https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions)
+- [WIKIBooks](https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions)
+- [WIKIPedia](https://en.wikipedia.org/wiki/Regular_expression)
