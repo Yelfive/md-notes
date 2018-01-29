@@ -609,4 +609,14 @@ Opposite to `file extension`, returns everything but file extension.
 
 - `file exists`
 - `file isdirectory`
-- ``
+- `file isfile`
+- `file owned`
+- `file readable`
+- `file writable`
+
+#### file informations
+
+- `file size`
+- `file atime` Last accessed timestamp
+
+
