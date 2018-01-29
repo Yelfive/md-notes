@@ -633,5 +633,16 @@ Opposite to `file extension`, returns everything but file extension.
     ```tcl
     file stat filename varName
     ```
-
+    
+    - atime
+    - ctime
+    - mtime
+    - `type`
+    - uid
+    - gid
+    - ino
+    - mode
+    - nlink
+    - dev
+    - size
 
