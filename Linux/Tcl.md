@@ -576,6 +576,7 @@ glob ?switches? name ?name ...?
 - `[]` A range of character(s)
 - `{}` A choice of strings
 - `\` Literally a character
+- `/path/to/pattern` Matches from the root directory 
 
 **example**
 
@@ -583,4 +584,9 @@ glob ?switches? name ?name ...?
 # returns a list of all files ends with `.php`
 glob *.php
 ```
+
+### cd
+
+Changing Directory
+
 
