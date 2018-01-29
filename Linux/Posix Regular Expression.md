@@ -12,11 +12,11 @@ Most advanced programming language(such as PHP) follows Perl, however Linux bash
 
 Precedes some special characters with slash
 
-- `\(\)`
-- `\+`
-- `\?`
-- `\|`
-- `\{\}`
+1. `\(\)`
+2. `\+`
+3. `\?`
+4. `\|`
+5. `\{\}`
 
 ## 2. Extended Regular Expression
 
