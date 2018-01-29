@@ -10,6 +10,13 @@ Most advanced programming language(such as PHP) follows Perl, however Linux bash
 
 ## 1. Basic Regular Expression
 
+Precedes some special characters with slash
+
+- `\(\)`
+- `\+`
+- `\?`
+- `\|`
+
 ## 2. Extended Regular Expression
 
 ### `.`
@@ -39,7 +46,7 @@ Matches the starting position within the string. In line-based tools, it matches
 
 Matches the ending position of the string or the position just before a string-ending newline. In line-based tools, it matches the ending position of any line.
 
-### BRE: `\( \)` ERE: `( )`
+### `\( \)` <sub>_BRE_</sub> or `( )` <sub>_ERE_</sub>
 
 Defines a marked subexpression. The string matched within the parentheses can be recalled later (see the next entry, \n). A marked subexpression is also called a block or capturing group.
 
@@ -62,19 +69,24 @@ ab*c
 (ab)*   #(in ERE)
 ```
 
-### BRE: `\+` ERE: `+`
+### `\+` <sub style="color:grey">_BRE_</sub> or `+` <sub>_ERE_</sub>
 
 Matches the preceding element one or more times. For example,
 
 ```bash
 #matches "abc", "abbbc", etc., but not "ac"
-ab\+c # (in BRE)
-ab+c # (in ERE)
+ab\+c   # (in BRE)
+ab+c    # (in ERE)
+
+# matches "ab", "abab", "ababab", and so on.
+\(ab\)\+    # (in BRE)
+(ab)+       # (in ERE)
 
 # matches "x", "y", "z", "zx", "zyx", "xyzzy", and so on.
-\(ab\)\+    # (in BRE)
-(ab)+       # (in ERE) matches "ab", "abab", "ababab", and so on.
-[xyz]\+ (in BRE) or [xyz]+ (in ERE)
+[xyz]\+ # (in BRE) or
+[xyz]+  # (in ERE)
+```
+
 BRE: \?<br/>ERE: ? | Matches the preceding element one or zero times. For example, ab\?c (in BRE) or ab?c (in ERE) matches either "ac" or "abc", while \(ab\)\? (in BRE) or (ab)? (in ERE) matches "" or "ab".
 BRE: \|<br/>ERE: | | Matches the preceding element or the following element. For example, abc\|def (in BRE) or abc|def (in ERE) matches either "abc" or "def".
 BRE: \{m,n\}<br/>ERE: {m,n} | Matches the preceding element at least m and not more than n times. For example, a\{3,5\} (in BRE) or a{3,5} (in ERE) matches only "aaa", "aaaa", and "aaaaa".
