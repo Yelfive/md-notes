@@ -16,6 +16,7 @@ Precedes some special characters with slash
 - `\+`
 - `\?`
 - `\|`
+- `\{\}`
 
 ## 2. Extended Regular Expression
 
@@ -46,7 +47,7 @@ Matches the starting position within the string. In line-based tools, it matches
 
 Matches the ending position of the string or the position just before a string-ending newline. In line-based tools, it matches the ending position of any line.
 
-### `\( \)` <sub>_BRE_</sub> or `( )` <sub>_ERE_</sub>
+### BRE `\( \)` or ERE `( )`
 
 Defines a marked subexpression. The string matched within the parentheses can be recalled later (see the next entry, \n). A marked subexpression is also called a block or capturing group.
 
@@ -69,7 +70,7 @@ ab*c
 (ab)*   #(in ERE)
 ```
 
-### `\+` <sub style="color:grey">_BRE_</sub> or `+` <sub style="color:grey">_ERE_</sub>
+### BRE `\+` or ERE `+`
 
 Matches the preceding element one or more times. For example,
 
@@ -100,7 +101,7 @@ ab?c    # (in ERE)
 (ab)?       # (in ERE)
 ```
 
-### BRE: `\|` ERE: `|`
+### BRE: `\|` or ERE: `|`
 
 Matches the preceding element or the following element. For example,
 
@@ -110,7 +111,7 @@ abc\|def    # (in BRE) or
 abc|def     # (in ERE)
 ```
 
-### BRE: `\{m,n\}` ERE: `{m,n}`
+### BRE: `\{m,n\}` or ERE: `{m,n}`
 
 Matches the preceding element at least m and not more than n times. For example,
 
@@ -120,15 +121,15 @@ a\{3,5\}    # (in BRE) or
 a{3,5}      # (in ERE)
 ```
 
-### BRE: \{m\} ERE: {m}
+### BRE: `\{m\}` or ERE: `{m}`
 
 Matches the preceding element exactly m times.
 
-### BRE: \{m,\} ERE: {m,}
+### BRE: `\{m,\}` or ERE: `{m,}`
 
 Matches the preceding element at least m times.
 
-### BRE: \{,n\} ERE: {,n}
+### BRE: `\{,n\}` or ERE: `{,n}`
 
 Matches the preceding element not more than n times. For example,
 
