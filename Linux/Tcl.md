@@ -563,13 +563,18 @@ tell_age age
 glob ?switches? name ?name ...?
 ```
 
+#### special characters
+
 - `*` Any number of characters
 - `?` Any single character
-- ``
+- `[]` A range of character(s)
+- `{}` A choice of strings
+- `\` Literally a character
 
 **example**
 
 ```tcl
+# returns a list of all files ends with `.php`
 glob *.php
 ```
 
