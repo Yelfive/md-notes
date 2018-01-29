@@ -4,13 +4,23 @@ Regular expressions follow two standards: **Perl** and **POSIX**
 
 Most advanced programming language(such as PHP) follows Perl, however Linux bash follows the **POSIX** standard. And they are described as follows:
 
-## 1. Basic Regular Expression, or Basic RegEx, shorten as BREs
+1. Basic Regular Expression, or Basic RegEx, shorten as BREs
+2. Extended Regular Expression, or Extended RegEx, shorten as EREs
+3. Perl Regular Expression, or Perl RegEx, shorten as PREs
 
-## 2. Extended Regular Expression, or Extended RegEx, shorten as EREs
+## 1. Basic Regular Expression
+
+## 2. Extended Regular Expression
 
 ### `.`
 
-Matches any single character (many applications exclude newlines, and exactly which characters are considered newlines is flavor, character encoding, and platform specific, but it is safe to assume that the line feed character is included). Within POSIX bracket expressions, the dot character matches a literal dot. For example, a.c matches "abc", etc., but [a.c] matches only "a", ".", or "c".
+Matches any single character (many applications exclude newlines, and exactly which characters are considered newlines is flavor, character encoding, and platform specific, but it is safe to assume that the line feed character is included). Within POSIX bracket expressions, the dot character matches a literal dot. For example,
+```bash
+# matches "abc", etc.
+a.c
+# but matches only "a", ".", or "c".
+[a.c]
+```
 
 ### `[ ]` 
 
@@ -71,7 +81,7 @@ name    | meaning   | name  | meaning   | name  | meaning
 *alnum*   | Alphabet or numeric characters | *digit* | Numeric characters| *punct* | Punctuations
 alpha   | Alphabet characters   | graph | 
 
-## 3. Perl Regular Expression, or Perl RegEx, shorten as PREs
+## 3. Perl Regular Expression
 
 ```bash
 [:alnum:]
