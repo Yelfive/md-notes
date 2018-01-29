@@ -141,8 +141,10 @@ ba{,2}b     # (in ERE)
 
 ### character class
 
-POSIX   | class similar to      | meaning
----     | ---                   | ---
+> POSIX character classes can only be used within bracket expressions such as `[[:upper:]]` to match all upper cases
+
+POSIX Class | Similar to        | Meaning that
+---         | ---               | ---
 [:upper:]   | [A-Z]             | uppercase letters
 [:lower:]   | [a-z]             | lowercase letters
 [:alpha:]   | [[:upper:][:lower:]]    | upper- and lowercase letters
