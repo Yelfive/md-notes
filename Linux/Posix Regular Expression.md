@@ -159,8 +159,8 @@ POSIX   | class similar to      | meaning
 **example**
 
 ```bash
-grep [[:digit:]]
-grep [[:digit:][:alpha:]]
+grep [[:digit:]] path/to/file
+grep [[:digit:][:alpha:]] path/to/file
 ```
 
 ## Appendix
