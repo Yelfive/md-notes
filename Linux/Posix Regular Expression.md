@@ -10,9 +10,10 @@ Most advanced programming language(such as PHP) follows Perl, however Linux bash
 
 ### character class
 
-name    | meaning   | name  | meaning
----     |---        |---    |---    
-alnum   | Alphabet or numeric   Characters | digit | Numeric characters
+name    | meaning   | name  | meaning   | name  | meaning
+---     |---        |---    |---        | ---   | ---
+*alnum*   | Alphabet or numeric characters | *digit* | Numeric characters| *punct* | Punctuations
+alpha   | Alphabet characters   | graph | 
 
 ## 3. Perl Regular Expression, or Perl RegEx, shorten as PREs
 
