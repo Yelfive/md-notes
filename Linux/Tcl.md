@@ -557,6 +557,12 @@ tell_age age
 - `stderr`
 
 ### open
+
+#### character precedes the filename
+
+- `~` Home directory of _current user_
+- `~user` Home directory of _user_
+
 ### glob
 
 ```tcl
