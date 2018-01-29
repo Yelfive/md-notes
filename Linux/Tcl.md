@@ -634,15 +634,22 @@ Opposite to `file extension`, returns everything but file extension.
     file stat filename varName
     ```
     
-    - atime
-    - ctime
-    - mtime
-    - `type`
-    - uid
-    - gid
-    - ino
-    - mode
-    - nlink
-    - dev
-    - size
+    **contains**
 
+    > Only `type` returns string same as `file type`, the rest return integers.
+    > 
+    > If the file is a symbolic link, `file stat` returns the information of the file it points to.
+
+    - `atime`
+    - `ctime`
+    - `mtime`
+    - `type`
+    - `uid`
+    - `gid`
+    - `ino`
+    - `mode`
+    - `nlink`
+    - `dev`
+    - `size`
+
+- `file lstat` Returns information about symbolic link itself.
