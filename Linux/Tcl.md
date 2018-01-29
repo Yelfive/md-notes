@@ -609,3 +609,4 @@ Opposite to `file extension`, returns everything but file extension.
 
 - `file exists`
 - `file isdirectory`
+- ``
