@@ -141,21 +141,22 @@ ba{,2}b     # (in ERE)
 
 ### character class
 
-name    | meaning   | name  | meaning   | name  | meaning
----     |---        |---    |---        | ---   | ---
-*alnum*   | Alphabet or numeric characters | *digit* | Numeric characters| *punct* | Punctuations
-alpha   | Alphabet characters   | graph | 
+POSIX   | class similar to      | meaning
+---     | ---                   | ---
+[:upper:]   | [A-Z]             | uppercase letters
+[:lower:]   | [a-z]             | lowercase letters
+[:alpha:]   | [[:upper:][:lower:]]    | upper- and lowercase letters
+[:alnum:]   | [[:alpha:][:digit:]]    | digits, upper- and lowercase letters
+[:digit:]   | [0-9]             | digits
+[:xdigit:]  | [0-9A-Fa-f]       | hexadecimal digits
+[:punct:]   | [.,!?:…]          | punctuation
+[:blank:]   | [ \t]             | space and TAB characters only
+[:space:]   | [ \t\n\r\f\v]     | blank (whitespace) characters
+[:cntrl:]   |                   | control characters
+[:graph:]   | [^ \t\n\r\f\v]    | printed characters
+[:print:]   | [^\t\n\r\f\v]     | printed characters and space
 
-## 3. Perl Regular Expression
-
-```bash
-[:alnum:]
-```
-
-           alnum    digit    punct
-           alpha    graph    space
-           blank    lower    upper
-           cntrl    print    xdigit
+**example**
 
 ```bash
 grep [[:digit:]]
