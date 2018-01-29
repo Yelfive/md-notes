@@ -555,3 +555,21 @@ tell_age age
 - `stdin`
 - `stdout`
 - `stderr`
+
+### open
+### glob
+
+```tcl
+glob ?switches? name ?name ...?
+```
+
+- `*` Any number of characters
+- `?` Any single character
+- ``
+
+**example**
+
+```tcl
+glob *.php
+```
+
