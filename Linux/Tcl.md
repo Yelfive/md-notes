@@ -565,6 +565,8 @@ tell_age age
 
 ### glob
 
+Returns a list of files matches pattern(s), error if none matches.
+
 ```tcl
 glob ?switches? name ?name ...?
 ```
@@ -589,4 +591,14 @@ glob *.php
 
 Changing Directory
 
+### pwd
 
+Print Current Directory
+
+### file
+
+#### file dirname
+
+#### file extentsion
+
+#### file rootname
