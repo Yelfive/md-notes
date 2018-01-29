@@ -31,3 +31,6 @@ grep [[:digit:]]
 grep [[:digit:][:alpha:]]
 ```
 
+## Appendix
+
+- [WiKiBooks](https://en.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions)
