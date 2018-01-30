@@ -35,6 +35,7 @@ server name {
 ## WWW-Authenticate
 
 ```http
+HTTP/1.1 401 Unauthorized
 WWW-Authenticate: <type> realm=<realm>, <charset>
 ```
 
@@ -49,12 +50,18 @@ When a resource needs user's authentication, this header should be returned, def
 **example**
 
 ```http
+HTTP/1.1 401 Unauthorized
 WWW-Authenticate: Basic realm="Access to the staging site", charset="UTF-8"
 ```
+
+**Refers**
+
+- [Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate)
 
 ## Authentication
 
 ```http
+GET / HTTP/1.1
 Authentication: <type> <credential>
 ```
 
@@ -63,6 +70,10 @@ When a client receives a `WWW-Authenticate` header with status `401`, it should 
 **example**
 
 ```http
+GET / HTTP/1.1
 Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
 ```
 
+**Refers**
+
+- [Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
