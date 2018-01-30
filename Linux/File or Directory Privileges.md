@@ -1,6 +1,12 @@
 # File or Directory Privileges
 
 文件、文件夹
+
+```bash
+> ls -l
+drwxr-xr-x. 2 root root 4096 Jan 30 11:47 some-filename
+```
+
 权限角色
     第一位表示文件类型，-表示文件，d表示目录
     2-4位表示文件所有者的权限，u权限
