@@ -16,7 +16,7 @@ vim /etc/sudoers
 
 ## Editing
 
-```visudo
+```bash
 # Edit the following
 root ALL=(ALL) ALL
 user machine=commands
