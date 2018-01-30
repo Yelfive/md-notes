@@ -1,11 +1,10 @@
-File System
-===
+# File System
 
 ```bash
 mount [-trw] disk directory
 ```
 
-# On System Start Up
+## On System Start Up
 
 ```
 > cat /etc/fstab
@@ -13,7 +12,7 @@ mount [-trw] disk directory
 # <file system> <mount point>   <type>  <options>   <dump>  <pass>
 ```
 
-# Install a disk
+## Install a disk
 
 ### 1. fdisk
 
@@ -37,7 +36,7 @@ mount [-trw] disk directory
 mount /dev/sdb1 /data
 ```
 
-# Install a swap partition
+## Install a swap partition
 
 ### 1. fdisk
 
@@ -57,7 +56,7 @@ mkswap /dev/sdb2
 swapon /dev/sdb2
 ```
 
-# RAID & LVM
+## RAID & LVM
 
 ### RAID
 
@@ -67,7 +66,7 @@ Binds multiple hard disks together to present as a single hard disk to user or L
 
 Takes multiple independent hard disks as a "volume group", volume group can be divided into several logic volumes. This can be useful when one partition is not large enough, and wanna add some space.
 
-# File Types
+## File Types
 
 > `ls -l` to list the files in specified directory, with its file type 
 
