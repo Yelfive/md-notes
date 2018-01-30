@@ -7,7 +7,7 @@ Redirect
 
 > Input is generally always from keyboard
 
-**1. <**
+#### 1. <
 
 > Redirect a file to a bash, same as `bash file`, not usually used
 
@@ -17,12 +17,12 @@ Redirect
 cat < some_file
 ```
 
-**2. << **
+#### 2. <<
 
-> The content will be regarded as a file content, same as do something with the file contains such content
-> 
-> 1. here document: `<<EOF`, inside which bash calling is allowed, and the output is taken as the embed string
-> 2. now document: `<<'EOF'`(quote the identifier with either single or double quotes), inside which all characters will be taken as plain text
+The content will be regarded as a file content, same as do something with the file contains such content
+ 
+1. here document: `<<EOF`, inside which bash calling is allowed, and the output is taken as the embed string
+2. now document: `<<'EOF'`(quote the identifier with either single or double quotes), inside which all characters will be taken as plain text
 
 ```bash
 # here document

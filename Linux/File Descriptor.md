@@ -13,25 +13,26 @@ The system defined three descriptors already:
 Command `exec` can be used to define a descriptor
 
 ```bash
-exec 3> path/to/filename
+exec 3>path/to/filename
 ```
 
 And the descriptor follow these rules:
 
 1. Descriptor is an integer
 2. Descriptor is allowed from `3` to what `ulimit -n` allows
-3. **Notice**
-    - No space after descriptor(`3` in this case), or else, the `exec` will take the `3 > path/to/file` as the files to be executed.
-    - Space after redirection operator `>`
+3. **Notice:** There's no space after descriptor(`3` in this case), otherwise, the `exec` will take the `3 > path/to/file` as the files to be executed. **Descriptor is always with redirection.**
 
 After definition, it is available to access the file `path/to/filename` with this descriptor:
 
 ```bash
-echo something >&3 # Notice no space between `>` and `&`
-cat path/to/filename # you will see whatever you echoed to the descriptor
+echo something >&3      # Notice no space between `>` and `&`
+cat path/to/filename    # you will see whatever you echoed to the descriptor
+```
 
-# also, read like this
-cat n <&3
+The descriptors are file handlers, so should not be accessed like file, but with redirection:
+
+```
+cat <&3
 ```
 
 ## [Redirection Operator](/Redirect.md)
