@@ -72,7 +72,7 @@ The privileges `rwx` for directories differs from that of files
 
 ## umask
 
-Mask of directory is defines the default privilege when a file/directory is 
+Mask of directory is defines the default privilege when a file/directory is created inside. It takes a 
 权限掩码有4个八进制的数字组成，讲现有的权限减掉权限掩码后，即可产生此文件建立
     时的默认权限。
     一般来说，新建文件的默认值是0666，新建目录的默认值是0777，如果将全线掩码设置
