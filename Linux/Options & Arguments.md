@@ -41,6 +41,10 @@ The `:` after each option means the option has value(in this case, `a` must own 
 
 ### String option list start with colon `:`
 
+```bash
+':a:b'
+```
+
 This means error tolerant, if the `a:` doesn't provided a value, no error will be raised.
 
 ### Variable

@@ -1,5 +1,4 @@
-PS
-==
+# Command `ps`
 
 ```bash
 ps aux
@@ -7,13 +6,12 @@ ps aux
 
 - `-a` all
 
--U
---
+## -U
 
 Display the processes belonging to the specified real user IDs.
 
--x
---
+## -x
+
 When displaying processes matched by other options, include processes which do not have a controlling terminal.  This is the opposite of the `-X` option.  If both `-X` and `-x` are specified in the same command, then ps will use the one which was specified last.
 
 ```
