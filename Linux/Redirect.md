@@ -43,7 +43,9 @@ NOW
 
 ### stdin/stdout/stderr
 
-devices locates at `/dev/fd/`
+Devices locates at `/dev/fd/`
+
+> When redirecting to file descriptor(e.g. stdin 0, stdout 1, stderr 2), the descriptor should immediately appending the redirection operator(`>`, `>>`), otherwise error `syntax error near unexpected token `&'` will raise.
 
 ## Example
 
@@ -54,6 +56,4 @@ ls -l &1>file.txt 2>&1
 It redirects standard output to `file.txt`, and redirects standard error to standard output, which is also redirected to `file.txt` .
 
 The `2>&1` should be behind standard output redirection(`&1>file.txt`), otherwise, when error occurs from previous command(`ls -l` in this example), it will have no idea to redirect errors to `file.txt`
-
-> When redirecting to file descriptor(e.g. stdin 0, stdout 1, stderr 2), 
 
