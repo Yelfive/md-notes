@@ -14,7 +14,7 @@ Display the processes belonging to the specified real user IDs.
 
 When displaying processes matched by other options, include processes which do not have a controlling terminal.  This is the opposite of the `-X` option.  If both `-X` and `-x` are specified in the same command, then ps will use the one which was specified last.
 
-```
+```text
 root@59c79b4bb81f:/var/www/html/ali/yaoyue# ps x
   PID TTY      STAT   TIME COMMAND
     1 ?        Ss     0:25 php-fpm: master process (/usr/local/etc/php-fpm.conf)
@@ -28,6 +28,4 @@ root@59c79b4bb81f:/var/www/html/ali/yaoyue# ps x
 ```
 -U      Display the processes belonging to the specified real user IDs.
 -u      Display the processes belonging to the specified usernames.
-
-
 ```
