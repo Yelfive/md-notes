@@ -4,9 +4,9 @@ File descriptor using an integer to represent the handler of a file or device.
 
 The system defined three descriptors already:
 
-- `0` stdin
-- `1` stdout
-- `2` stderr
+- `0` Standard input or stdin, usually the keyboard
+- `1` Standard output or stdout, usually the screen
+- `2` Standard error or stderr, usually the screen
 
 ## Define a descriptor
 
@@ -21,8 +21,8 @@ And the descriptor follow these rules:
 1. Descriptor is an integer
 2. Descriptor is allowed from `3` to what `ulimit -n` allows
 3. **Notice**
-    3.1 No space after descriptor, `3` in this case
-    3.2 Space after redirection operator `>`
+    - No space after descriptor(`3` in this case), or else, the `exec` will take the `3 > path/to/file` as the files to be executed.
+    - Space after redirection operator `>`
 
 After definition, it is available to access the file `path/to/filename` with this descriptor:
 
@@ -53,4 +53,5 @@ Anything redirects to this device will just vanish.
 
 ```bash
 echo something>/dev/null
+# Nothing comes after
 ```
