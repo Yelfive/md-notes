@@ -1,5 +1,7 @@
 # File or Directory Privileges
 
+## Overview
+
 ```bash
 > ls -l
 drwxr-xr-x. 2 root root 4096 Jan 30 11:47 some-file
@@ -11,7 +13,7 @@ drwxr-xr-x. 2 root root 4096 Jan 30 11:47 some-file
 - 8-10 characters for the privilege of others, a.k.a `o`
 - 2-10 is also known as `a`(for all)
 
-## mode bits
+## Mode Bits
 
 There three basic privileges indicated by integer:
 
@@ -80,7 +82,7 @@ umask [-p] [-S] [mode]
 
 > The user file-creation mask is set to mode.  If mode begins with a digit, it is interpreted as an octal number; otherwise it is interpreted as a symbolic mode mask similar to that accepted by chmod(1).   If  mode  is  omitted,  the  current value of the mask is printed.  The `-S` option causes the mask to be printed in symbolic form; the default output is an octal number.  If the `-p` option is supplied, and mode is omitted, the output is in a form that may be reused as input.  The return status is 0 if the mode was successfully changed or if no mode argument was supplied, and false otherwise.
 
-This can be get by calling
+This can be get by calling the following command and be set likewise.
 
 ```bash
 umask
@@ -96,33 +98,27 @@ umask -pS
 # umask -S u=rwx,g=rx,o=rx
 ```
 
-and be set with likewise.
-
-
 Generally speaking, the default privilege when creating: 
 
-- for file it's `0666` 
-- for directory it's `0777`
+- a file it's `0666` 
+- a directory it's `0777`
 
 and when you create a file or a directory, it will have the privilege with `file's default` minus the corresponding `mask`.
 
 **For example**
 
-If the 
-When you create a file the privilege will be
+If the `umask` gets `0002`.
 
+When you create a **file** the privilege will be
+
+```bash
+# -rw-r--r--
+0666 - 0022 = 0644
 ```
-0666 - 
+
+When you create a **directory**, the privilege will be
+
+```bash
+# drwxr-xr-x
+0777 - 0022 = 0755
 ```
-
-权限掩码有4个八进制的数字组成，讲现有的权限减掉权限掩码后，即可产生此文件建立
-    时的默认权限。
-    一般来说，新建文件的默认值是0666，新建目录的默认值是0777，如果将全线掩码设置
-    为0002，则每个新建文件的默认权限为0666-0002=0664，而目录的默认权限则为775。
-    可以直接输入umask命令来检查目前的默认权限掩码，或输入"umask 权限掩码"来指定默
-    认权限掩码。
-    用umask的方式指定默认权限掩码，可以避免添加访问权限过大的文件或目录。
-
-
-
-ＴＨＥ　ＥＮＤ
