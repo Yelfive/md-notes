@@ -107,18 +107,18 @@ and when you create a file or a directory, it will have the privilege with `file
 
 **For example**
 
-If the `umask` gets `0002`.
+If the `umask` returns `0022`.
 
-When you create a **file** the privilege will be
+1. When you create a **file** the privilege will be
 
-```bash
-# -rw-r--r--
-0666 - 0022 = 0644
-```
+    ```bash
+    # -rw-r--r--
+    0666 - 0022 = 0644
+    ```
 
-When you create a **directory**, the privilege will be
+2. When you create a **directory**, the privilege will be
 
-```bash
-# drwxr-xr-x
-0777 - 0022 = 0755
-```
+    ```bash
+    # drwxr-xr-x
+    0777 - 0022 = 0755
+    ```
