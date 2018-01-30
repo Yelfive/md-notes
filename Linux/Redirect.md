@@ -1,15 +1,14 @@
-Redirect
-===
+# Redirect
 
 > Redirect includes input, output and pipe
 
-### input redirect
+## Input redirection
 
-> Input is generally always from keyboard
+Input usually from keyboard or pipe(`|`)
 
-#### 1. <
+### 1. <
 
-> Redirect a file to a bash, same as `bash file`, not usually used
+Redirect a file to a bash, same as `bash file`, rarely used.
 
 ```bash
 # same as 
@@ -17,12 +16,12 @@ Redirect
 cat < some_file
 ```
 
-#### 2. <<
+### 2. <<
 
-The content will be regarded as a file content, same as do something with the file contains such content
+The content will be regarded as a file content, same as do something with the file contains such content.
  
-1. here document: `<<EOF`, inside which bash calling is allowed, and the output is taken as the embed string
-2. now document: `<<'EOF'`(quote the identifier with either single or double quotes), inside which all characters will be taken as plain text
+1. **here document**: `<<EOF`, inside which bash calling is allowed, and the output is taken as the embed string
+2. **now document**: `<<'EOF'`(quote the identifier with either single or double quotes), inside which all characters will be taken as plain text
 
 ```bash
 # here document
@@ -41,11 +40,16 @@ NOW
 
 > Notice: There could be space(s) between redirect token and document delimiter
 
-### stdin/stdout/stderr
+## Output redirection
+
+### 1. >
+### 2. >>
+
+## stdin/stdout/stderr
 
 Devices locates at `/dev/fd/`
 
-> When redirecting to file descriptor(e.g. stdin 0, stdout 1, stderr 2), the descriptor should immediately appending the redirection operator(`>`, `>>`), otherwise error `syntax error near unexpected token `&'` will raise.
+When redirecting to file descriptor(e.g. stdin 0, stdout 1, stderr 2), the descriptor should **immediately** appending the redirection operator(`>`, `>>`), otherwise error `syntax error near unexpected token '&'` will raise.
 
 ## Example
 
