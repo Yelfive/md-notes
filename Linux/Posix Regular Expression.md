@@ -4,9 +4,9 @@ Regular expressions follow two standards: **Perl** and **POSIX**
 
 Most advanced programming language(such as PHP) follows Perl, however Linux bash follows the **POSIX** standard. And they are described as follows:
 
-1. Basic Regular Expression, or Basic RegEx, shorten as BREs
-2. Extended Regular Expression, or Extended RegEx, shorten as EREs
-3. Perl Regular Expression, or Perl RegEx, shorten as PREs
+1. Basic Regular Expression, or Basic RegEx, shorten as BRE
+2. Extended Regular Expression, or Extended RegEx, shorten as ERE
+3. Perl Regular Expression, or Perl RegEx, shorten as PRE
 
 ## 1. Basic Regular Expression
 
