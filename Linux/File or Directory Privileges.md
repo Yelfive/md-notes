@@ -74,12 +74,36 @@ The privileges `rwx` for directories differs from that of files
 
 Mask of directory is defines the default privilege when a file/directory is created inside. It is made of a number of 4 digits.
 
-Generally speaking, the default privilege: 
+This can be get by calling
+
+```bash
+umask
+# 0022
+```
+
+and be set with
+
+```bash
+umask [-p] [-S] [mode]
+```
+
+> The user file-creation mask is set to mode.  If mode begins with a digit, it is interpreted as an octal number; otherwise it is interpreted as a symbolic mode mask similar to that accepted by chmod(1).   If  mode  is  omitted,  the  current value of the mask is printed.  The -S option causes the mask to be printed in symbolic form; the default output is an octal number.  If the -p option is supplied, and mode is omitted, the output is in a form that may be reused as input.  The return status is 0 if the mode was successfully changed or if no mode argument was supplied, and false otherwise.
+
+Generally speaking, the default privilege when creating: 
 
 - for file it's `0666` 
 - for directory it's `0777`
 
-and when you create a file or a directory, it will have the privilege with `file's default` minus ``
+and when you create a file or a directory, it will have the privilege with `file's default` minus the corresponding `mask`.
+
+**For example**
+
+If the 
+When you create a file the privilege will be
+
+```
+0666 - 
+```
 
 权限掩码有4个八进制的数字组成，讲现有的权限减掉权限掩码后，即可产生此文件建立
     时的默认权限。
