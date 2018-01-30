@@ -52,12 +52,14 @@ chmod u+w,g+r,o+x filename
 
 The privileges `rwx` for directories differs from that of files
 
-- `r` Readable, 
-    目录权限的修改和文件权限修改不同，只是四种权限代表的含义如下：
-    r：可列出目录中的内容
-    w：可在目录中创建、删除和修改文件
-    x：可以使用cd命令切换到此目录
-    -：没有任何此目录的访问权限
+- `r` Readable, allows to list the files inside, e.g. with `ls` command
+- `w` Writable, allows to create, modify, delete files inside.
+- `x` Executable, allows to use `cd` to this directory
+- `-` No privilege at all
+- `s`
+    + 
+- `t`
+    ```
     s:
           文件(set uid)：4，任何人访问，都以拥有者角色访问
           目录(set gid)：2，任何人访问，都以所有组角色访问
@@ -66,8 +68,12 @@ The privileges `rwx` for directories differs from that of files
     注意：目录可以使用通配符"*"来表示目录中的所有文件，如将/test目录中的所有文件
     的权限设置为任何人都可以读写
         chmod 666 /test/*
-指定文件的默认权限掩码-----umask
-    权限掩码有4个八进制的数字组成，讲现有的权限减掉权限掩码后，即可产生此文件建立
+    ```
+
+## umask
+
+Mask of directory is defines the default privilege when a file/directory is 
+权限掩码有4个八进制的数字组成，讲现有的权限减掉权限掩码后，即可产生此文件建立
     时的默认权限。
     一般来说，新建文件的默认值是0666，新建目录的默认值是0777，如果将全线掩码设置
     为0002，则每个新建文件的默认权限为0666-0002=0664，而目录的默认权限则为775。
