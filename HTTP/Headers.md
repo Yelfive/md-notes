@@ -31,3 +31,22 @@ server name {
 
 
 [nginx-proxy]: https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/
+
+## WWW-Authenticate and Authentication
+
+```http
+WWW-Authenticate: <type> realm=<realm>, <charset>
+```
+
+When a resource needs user's authentication, this header should be returned, defining the authentication type should be used.
+
+- type
+    The authentication type, defined ones: `Basic`
+- realm
+- charset
+
+
+```http
+Authentication: <type> <credential>
+```
+
