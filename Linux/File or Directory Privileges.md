@@ -13,7 +13,11 @@ drwxr-xr-x. 2 root root 4096 Jan 30 11:47 some-file
 
 ## mode bits
 
+There three basic privileges indicated by integer:
 
+1. `4` readable, binary `0B100`, a.k.a `r`
+2. `2` writable, binary `0B010`, a.k.a `w`
+3. `1` executable, binary `0B001`, a.k.a `x`
 
 ## chmod
 
@@ -41,25 +45,14 @@ For example
 # plus execute privilege to others
 chmod u+w,g+r,o+x filename
 ```
-
-用文本表示法修改权限
-    文本表示法用4个字母表示不同的用户：
-    u：所有者
-    g：组成员
-    o：其他成员
-    a：所有人
-    权限仍用r、w和x表示
-    和数字表示法不同，文本表示法不仅可以重新指定权限，也可以在原来权限的基础上
-    增加或减少权限，如下：
-    =：重新制定权限
-    -：对目前的设置减少权限
-    +：对目前的设置增加权限
-    例子：讲上述例子中，所有者加上执行权限，组成员减少执行权限，其他成员设置为
-    执行权限，执行以下命令
-    chmod u+x,g-x,o=x test
    
-    注意：逗号前后不能有空格
-目录权限
+> Note there should not be space after comma(`,`), otherwise the privilege parts after the space will be taken by `chmod` as file names
+
+### Privilege of Directory
+
+The privileges `rwx` for directories differs from that of files
+
+- `r` Readable, 
     目录权限的修改和文件权限修改不同，只是四种权限代表的含义如下：
     r：可列出目录中的内容
     w：可在目录中创建、删除和修改文件
