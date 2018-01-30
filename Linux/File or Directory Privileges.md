@@ -11,6 +11,10 @@ drwxr-xr-x. 2 root root 4096 Jan 30 11:47 some-file
 - 8-10 characters for the privilege of others, a.k.a `o`
 - 2-10 is also known as `a`(for all)
 
+## mode bits
+
+
+
 ## chmod
 
 Change file mode bits(privilege)
@@ -21,6 +25,22 @@ Change file mode bits(privilege)
 2. `g` for user group
 3. `o` for others
 4. `a` for all above
+
+And as to set the privileges, there are three operators:
+
+1. `=` Set the precise privilege
+2. `-` Minus the given privilege (of specified role)
+3. `+` Plus the given privilege (of specified role)
+
+For example 
+
+```bash
+# change mode bits,
+# plus write privilege to owner
+# plus read privilege to group
+# plus execute privilege to others
+chmod u+w,g+r,o+x filename
+```
 
 用文本表示法修改权限
     文本表示法用4个字母表示不同的用户：
