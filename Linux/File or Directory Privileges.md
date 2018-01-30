@@ -5,17 +5,23 @@
 drwxr-xr-x. 2 root root 4096 Jan 30 11:47 some-file
 ```
 
-- The first character(`d`) means the type of the file, `d` for directory, `-` for file
-- 2-4 chars for the privilege of owner, a.k.a `u`
-- 5-7 chars fro the privilege of group, a.k.a `g`
+- The first character(`d`) means the file type, `d` for directory, `-` for file
+- 2-4 characters for the privilege of owner, a.k.a `u`
+- 5-7 characters for the privilege of group, a.k.a `g`
 - 8-10 characters for the privilege of others, a.k.a `o`
 - 2-10 is also known as `a`(for all)
-权限角色
-    第一位表示文件类型，-表示文件，d表示目录
-    2-4位表示文件所有者的权限，u权限
-    5-7位表示文件所有者所属组成员的权限，g权限
-    8-10位表示所有者所属组之外的用户的权限，o权限   
-    2-10位的权限总和有时称为a权限
+
+## chmod
+
+Change file mode bits(privilege)
+
+`chmod` accepts 4 types of roles:
+
+1. `u` for user, owner
+2. `g` for user group
+3. `o` for others
+4. `a` for all above
+
 用文本表示法修改权限
     文本表示法用4个字母表示不同的用户：
     u：所有者
