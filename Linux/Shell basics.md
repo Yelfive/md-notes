@@ -92,7 +92,7 @@ fi
 read var
 ```
 
-## loop
+## loop with for/while
 
 ```bash
 for variable in space_separated_string

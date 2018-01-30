@@ -42,8 +42,7 @@ Bash Completion
 
 1. How to custom a completion
 
-Appendix
---------
+## Appendix
 
 docker: https://docs.docker.com/machine/completion/
 
