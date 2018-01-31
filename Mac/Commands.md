@@ -15,6 +15,8 @@
 
 ## open
 
+Open terminal in specified directory
+
 ```bash
 open -a Terminal path/to/directory
 ```
