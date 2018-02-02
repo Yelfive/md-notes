@@ -56,6 +56,10 @@ network protocol analyzer
 
 - [Consul](https://www.consul.io/)
 
+## OpenCV
+
+[Open source Computer Vision](https://opencv.org/)
+
 ## Pythons
 
  - [wxpy](http://wxpy.readthedocs.io/zh/latest/faq.html)
