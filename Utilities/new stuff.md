@@ -33,7 +33,7 @@
 
 ## Utilities
 
-- [Adminer] https://www.adminer.org/
+- [Adminer](https://www.adminer.org/) PHP DBMS
 
 ## Packages
 
