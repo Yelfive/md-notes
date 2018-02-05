@@ -38,6 +38,7 @@ function callback($level, message, $file, $line, $context){
 
 ```php
 <?php
+# signature
 trigger_error(string $msg[, int $error_type]);
 ```
 
@@ -58,9 +59,11 @@ try {
 - `try`
     First of all, compiler executes `try` block
 - `catch`
-    This block will be executed when any exception occurs
+    This block will be executed when any exception, as long as it's the defined one `catch (Exception $e)`, occurs
 - `finally`
     No matter what happens(exception or not, return or not, exception inside or not), this block will be executed
+
+    **Especially,** this block will be executed no matter what happened inside 
 
 ## Appendix
 
