@@ -42,6 +42,7 @@
 - [monolog/monolog](https://packagist.org/packages/monolog/monolog)
     Sends your logs to files, sockets, inboxes, databases and various web services
 - [lyAdmin](http://lyadmin.lingyun.net/)
+    Light weight backend template
 
 ## Hybrid Application
 
