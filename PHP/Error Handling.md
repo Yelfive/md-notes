@@ -46,19 +46,16 @@ trigger_error(string $msg[, int $error_type]);
 
 ```php
 try {
-
-} catch {
-
+} catch (Exception $e) {
+    // statement handling the exception
 } finally {
-    
+    // statements execute anyway
 }
 ```
 
 ## Appendix
 
 ### Error Types
-
-
 
 Value   | Constant | Description Note
 --- | --- | ---
