@@ -63,7 +63,7 @@ try {
 - `finally`
     No matter what happens(exception or not, return or not, exception inside or not), this block will be executed
 
-    **Especially,** this block will be executed no matter what happened inside `try` and `catch` code block, even when it `return`ed in `try` block.
+    **Especially,** this block will be executed no matter what happened inside `try` and `catch` code block, even when it `return` in `try` block.
 
 ## Appendix
 
