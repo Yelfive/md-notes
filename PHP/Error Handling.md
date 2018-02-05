@@ -54,7 +54,7 @@ try {
 ```
 
 - `try`
-    + 
+    1st compiler executes `try` block
 - `catch`
 - `finally`
 
