@@ -45,18 +45,22 @@ trigger_error(string $msg[, int $error_type]);
 ## Exceptions
 
 ```php
+<?php
 try {
+    // statements to accomplish a job
 } catch (Exception $e) {
-    // statement handling the exception
+    // statements handling the exception
 } finally {
     // statements execute anyway
 }
 ```
 
 - `try`
-    1st compiler executes `try` block
+    First of all, compiler executes `try` block
 - `catch`
+    This block will be executed when any exception occurs
 - `finally`
+    No matter what happens(exception or not, return or not, exception inside or not), this block will be executed
 
 ## Appendix
 
