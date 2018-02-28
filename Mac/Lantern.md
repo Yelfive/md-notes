@@ -1,14 +1,12 @@
-Lantern
-=======
+# Lantern
 
+## By pass proxy
 
-By pass proxy
--------------
+```text
 *.baidu.com, *.163.com, *.qq.com, *.outsource, *.alijian.com,*.cn,*liaoxuefeng.com
+```
 
-
-Setting network proxy
----------------------
+## Setting network proxy
 
 **Listing services**
 
