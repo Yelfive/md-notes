@@ -21,3 +21,10 @@ If you just call `sudo killall httpd`, the `httpd` will be started by `launchd` 
 - [What Is `launchd`, and Why Is It Running on My Mac?](https://www.howtogeek.com/319048/what-is-launchd-and-why-is-it-running-on-my-mac/)
 - [`launchd`](http://www.launchd.info/)
 - [`launchctl`'s Manual Page ](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/launchctl.1.html)
+
+## WiFi disconnected
+
+```bash
+cd /Library/Preferences/SystemConfiguration
+
+```
