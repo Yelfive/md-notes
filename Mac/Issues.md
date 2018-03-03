@@ -26,5 +26,5 @@ If you just call `sudo killall httpd`, the `httpd` will be started by `launchd` 
 
 ```bash
 cd /Library/Preferences/SystemConfiguration
-
+sudo rm -rf NetworkInterfaces.plist com.apple.airport.preferences.plist com.apple.network.eapolclient.configuration.plist preferences.plist
 ```
