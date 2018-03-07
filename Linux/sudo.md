@@ -103,6 +103,29 @@ you can then using these two commands prefix with `sudo` as normal ones
 
 No password will be asked for.
 
+## Notice
+
+### 1. Setting for sudo does not work
+
+There may be another setting overwrites your setting bellow:
+
+```sudoers
+felix   ALL=(ALL:ALL) NOPASSWD: /usr/bin/docker
+%sudo   ALL=(ALL:ALL) ALL
+```
+if the `felix` is also in group `sudo`, then the previous setting will not take effects.
+
+### 2. If you happen to lock yourself out of `sudo`, worry not
+
+Enter recovery mode to modify the `/etc/sudoers`
+
+In Ubuntu, 
+
+1. press and hold the <kbd>shift</kbd> untill in the start up menu
+2. choose recovery mode
+3. run `mount -o rw,remount /` to make the file system writeable
+4. working on the `/etc/sudoers` file
+
 ## Appendix
 
 - [sudoers的深入介绍与用户权限控制](https://segmentfault.com/a/1190000007394449)
