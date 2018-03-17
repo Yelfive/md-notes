@@ -1,5 +1,4 @@
-Commands
-===
+# Commands
 
 > Bashes accepts input with wildcard character
 > 
@@ -465,3 +464,20 @@ lsof -i :80
 # list all process with ports
 lsof -i -P 
 ```
+
+### sed
+
+- sed 's/search/replace' file
+    
+    perform a substitution
+
+    ```bash
+    ```
+
+- sed -n '{start,end}p' file
+
+    show lines of file from start to end
+
+    ```bash
+    phpize -v | sed -n '2,2p'
+    ```
