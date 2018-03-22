@@ -34,6 +34,14 @@ cd php-7.1.13
 
 ### 2.1 Dependencies
 
+#### CentOS
+
 ```bash
 yum install -y libcurl-devel libxml2-devel libicu-devel libpng-devel libreadline-devel
+```
+
+#### Ubuntu
+
+```bash
+sudo apt-get install -y libcurl-dev libxml2-dev libicu-dev libpng-dev libreadline-dev
 ```
