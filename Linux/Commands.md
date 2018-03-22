@@ -469,9 +469,10 @@ lsof -i -P
 
 - sed 's/search/replace' file
     
-    perform a substitution
+    Perform a **s**ubstitution
 
     ```bash
+    cat .env | sed 's/PASSWORD/PASSWOD=xxx'
     ```
 
 - sed -n '{start,end}p' file
