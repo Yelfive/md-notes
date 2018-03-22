@@ -29,7 +29,8 @@ cd php-7.1.13
 --with-openssl \
 --with-pear \
 --with-zlib \
---with-gd
+--with-gd \
+--with-readline
 ```
 
 ### 2.1 Dependencies
@@ -45,3 +46,9 @@ yum install -y libcurl-devel libxml2-devel libicu-devel libpng-devel libreadline
 ```bash
 sudo apt-get install -y libcurl-dev libxml2-dev libicu-dev libpng-dev libreadline-dev
 ```
+
+## Appendix
+
+name    | description
+---     | ---
+--with-readline | 
