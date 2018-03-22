@@ -51,4 +51,5 @@ sudo apt-get install -y libcurl-dev libxml2-dev libicu-dev libpng-dev libreadlin
 
 name    | description
 ---     | ---
---with-readline | 
+--with-readline | Allow `php -a` to enable interactive mode
+
