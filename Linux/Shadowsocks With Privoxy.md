@@ -19,6 +19,7 @@ listen-address 127.0.0.1:8118
 forward-socks5 / 127.0.0.1:1080 .
 ```
 
+## Terminal
 
 ```bash
 # Set http(s) proxy to point to Privoxy
