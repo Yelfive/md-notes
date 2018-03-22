@@ -35,5 +35,5 @@ cd php-7.1.13
 ### 2.1 Dependencies
 
 ```bash
-yum install -y libcurl-devel libxml2-devel libicu-devel libpng-devel
+yum install -y libcurl-devel libxml2-devel libicu-devel libpng-devel libreadline-devel
 ```
