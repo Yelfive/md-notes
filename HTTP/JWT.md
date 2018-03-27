@@ -12,4 +12,8 @@ ssh-keygen -b 4096 -f ./jwt
 
 $privateKey = file_get_contents('jwt');
 
+$resource = openssl_pkey_get_private($privateKey);
+$detail = openssl_pkey_get_details($resource);
+
+return $detail['key'];
 ```
