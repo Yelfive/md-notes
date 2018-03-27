@@ -26,10 +26,15 @@
 ```json
 {
     "repositories": {
-        
+        "fk/exceptions": {
+            "type": "path",
+            "url": "path/to/fk-exceptions"
+        }
     }
 }
 ```
+
+- The `type: path` defines the 
 
 ## Appendix
 
