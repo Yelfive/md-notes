@@ -34,7 +34,7 @@
 }
 ```
 
-- The `type: path` defines the 
+- The `type: path` defines the the package name same as the key `fk/exceptions` should be loaded from locally.
 
 ## Appendix
 
