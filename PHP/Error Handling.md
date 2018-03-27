@@ -65,6 +65,20 @@ try {
 
     **Especially,** this block will be executed no matter what happened inside `try` and `catch` code block, even when it `return` in `try` or `catch` block. However, if the is return in these, the script will stop running after the finally executed.
 
+```php
+try {
+    throw new Exception();
+} catch (Exception $e) {
+    echo 1;
+    return;
+} finally {
+    echo 2;
+}
+
+echo 3;
+```
+
+
 ## Appendix
 
 ### Error Types
