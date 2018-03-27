@@ -2,10 +2,13 @@
 
 ## RS256: RSA with public and private keys
 
+### Generate private key
+
 ```bash
 ssh-keygen -b 4096 -f ./jwt
 ```
 
+### Generate corresponding public key
 
 ```php
 <?php
