@@ -21,7 +21,7 @@
 }
 ```
 
-## 1. Modify `/composer.json`
+## 2. Modify `/composer.json`
 
 ```json
 {
@@ -46,6 +46,10 @@
         }
     }
     ```
+
+## Note
+
+1. The key of the `repositories` should be the package name
 
 ## Appendix
 
