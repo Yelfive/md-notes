@@ -35,6 +35,8 @@
 ```
 
 - The `type: path` defines the the package name same as the key `fk/exceptions` should be loaded from locally.
+- The `url` is the local path, either absolute or relative is ok.
+- The composer use `symlinks` as default option to not copy the files under the package, and can be overwritten
 
 ## Appendix
 
