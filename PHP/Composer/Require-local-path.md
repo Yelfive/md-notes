@@ -36,7 +36,16 @@
 
 - The `type: path` defines the the package name same as the key `fk/exceptions` should be loaded from locally.
 - The `url` is the local path, either absolute or relative is ok.
-- The composer use `symlinks` as default option to not copy the files under the package, and can be overwritten
+- The composer use `symlinks` as default option to not copy the files under the package, and can be overwritten(which copies the package to `vendor/`)
+    ```json
+    {
+        "type": "path",
+        "url": "path/to/package"
+        "options" {
+            "symlink": false
+        }
+    }
+    ```
 
 ## Appendix
 
