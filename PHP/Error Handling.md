@@ -65,7 +65,10 @@ try {
 
     **Especially,** this block will be executed no matter what happened inside `try` and `catch` code block, even when it `return` in `try` or `catch` block. However, if the is return in these, the script will stop running after the finally executed.
 
+**example**
+
 ```php
+<?php
 try {
     throw new Exception();
 } catch (Exception $e) {
@@ -76,6 +79,9 @@ try {
 }
 
 echo 3;
+
+# output
+# 12, no 3
 ```
 
 
