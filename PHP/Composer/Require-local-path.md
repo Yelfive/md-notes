@@ -6,14 +6,28 @@
 + fk/exceptions/
 |
 +-- composer.json
+|
++-- src/
+```
+
+```json
+{
+    "name": "fk/exceptions",
+    "autoload": {
+        "psr-4": {
+            "fk\\exceptions\\": "./src"
+        }
+    }
+}
 ```
 
 ## 1. Modify `/composer.json`
 
 ```json
 {
-    "repositories": [
-    ]
+    "repositories": {
+        
+    }
 }
 ```
 
