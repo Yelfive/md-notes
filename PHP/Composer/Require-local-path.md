@@ -1,5 +1,13 @@
 # Require Local Path
 
+## 1. Modify `/composer.json`
+
+```json
+{
+    "repositories": [
+    ]
+}
+```
 
 ## Appendix
 
