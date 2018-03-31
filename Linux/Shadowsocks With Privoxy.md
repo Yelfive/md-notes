@@ -20,6 +20,8 @@ sudo apt-get install -y shadowsocks-qt5
 
 # start qt5
 sudo ss-qt5
+# or
+sudo ssserver -p 443 -k testpass -m aes-256-cfb --user nobody -d start
 ```
 
 ## Privoxy
