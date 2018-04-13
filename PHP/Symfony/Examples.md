@@ -1,17 +1,22 @@
 # Examples
 
-```php
-src/AppBundle/Entity/FortuneCookieRepository.php
 
+## Query for one specific field's value
+
+```php
 <?php
 
-public function countNumberPrintedForCategory(Category $category)
+class AppBundle/Entity/FortuneCookieRepository
 {
-    return $this->createQueryBuilder('fc')
-        ->andWhere('fc.category = :category')
-        ->setParameter('category', $category)
-        ->select('SUM(fc.numberPrinted) as fortunesPrinted')
-        ->getQuery()
-        ->getSingleScalarResult();
+
+    public function countNumberPrintedForCategory(Category $category)
+    {
+        return $this->createQueryBuilder('fc')
+            ->andWhere('fc.category = :category')
+            ->setParameter('category', $category)
+            ->select('SUM(fc.numberPrinted) as fortunesPrinted')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }
 ```
