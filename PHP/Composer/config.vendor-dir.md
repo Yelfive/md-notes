@@ -3,6 +3,10 @@
 Directory of vendor installed in. This is default to be `vendor` of current directory
 
 ```text
-+project
-  `-- vendor 
+project
+  +
+  +- vendor
+        +- fk
+            +
+            +- pay 
 ```
