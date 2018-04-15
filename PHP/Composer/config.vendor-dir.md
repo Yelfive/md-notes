@@ -5,10 +5,8 @@ Directory of vendor installed in. This is default to be `vendor` of current dire
 ```text
 project
 |
-|-- vendor
-    |
++-- vendor
     +-- fk
-         |
          +- pay 
 ```
 
@@ -19,4 +17,7 @@ When you set it as `../vendor` the directories will be structured like:
 +-- project
 |
 +-- vendor
+    +-- fk
+        +--pay
+
 ```
