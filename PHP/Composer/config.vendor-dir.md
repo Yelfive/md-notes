@@ -11,3 +11,12 @@ project
          |
          +- pay 
 ```
+
+When you set it as `../vendor` the directories will be structured like:
+
+```text
+/
++-- project
+|
++-- vendor
+```
