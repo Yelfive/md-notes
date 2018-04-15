@@ -21,3 +21,13 @@ When you set it as `../vendor` the directories will be structured like:
         +--pay
 
 ```
+
+## example
+
+```json
+{
+    "config": {
+        "vendor-dir": "../vendor"
+    }
+}
+```
