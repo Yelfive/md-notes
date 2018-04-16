@@ -53,7 +53,7 @@ echo ${#a[@]}
 echo ${#a[*]}
 ```
 
-#### slice
+### slice
 
 Actually, it works with any space separated value.
 
@@ -61,7 +61,7 @@ Actually, it works with any space separated value.
 echo ${a[@]:from:length}
 ```
 
-#### replace
+### replace
 
 ```bash
 echo ${a[@]/search/replacement}
