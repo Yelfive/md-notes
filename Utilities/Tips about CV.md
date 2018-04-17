@@ -1,9 +1,9 @@
-# Tips about resume
+# Tips about CV
 
 - 所在 部门
 - 团队人数
 - 汇报对象
-- 岗位指着
+- 岗位职责
 - 业绩表现
 
 - 针对公司准备简历
