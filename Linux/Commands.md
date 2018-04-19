@@ -482,3 +482,12 @@ lsof -i -P
     ```bash
     phpize -v | sed -n '2,2p'
     ```
+
+### paste
+
+Merge lines of files
+
+```bash
+echo -e "1\n2\n3\n" | paste -sd+
+# 1+2+3
+```
