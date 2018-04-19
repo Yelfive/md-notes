@@ -500,3 +500,11 @@ An arbitrary precision calculator language
 echo 1+2+3 | bc
 # output: 6
 ```
+
+### pstree
+
+To show tree structure of processes and threads
+
+```bash
+pstree -p <pid>
+```
