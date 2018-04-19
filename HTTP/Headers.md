@@ -58,11 +58,11 @@ WWW-Authenticate: Basic realm="Access to the staging site", charset="UTF-8"
 
 - [Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate)
 
-## Authentication
+## Authorization
 
 ```http
 GET / HTTP/1.1
-Authentication: <type> <credential>
+Authorization: <type> <credential>
 ```
 
 When a client receives a `WWW-Authenticate` header with status `401`, it should prepare it's authentication and resend the previous request with this in header `Authentication`
