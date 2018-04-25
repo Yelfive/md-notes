@@ -53,7 +53,13 @@ When more than one XML file is used together, there's a chance of name collision
 
 ### CDATA: Character DATA
 
-Data that should not be parsed;
+Data that should not be parsed.
+
+```
+<?xml version="1.0" ?>
+<root>
+
+```
 
 ## 2. DTD
 
