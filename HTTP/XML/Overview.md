@@ -18,6 +18,9 @@
 </note> 
 ```
 
+1. Value of attributes must be quote(`name="Felix"`)
+1. Comment with `<!-- Comment goes here -->` like HTML
+
 ### Namespace
 
 When more than one XML file is used together, there's a chance of name collision
