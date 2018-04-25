@@ -60,6 +60,8 @@ Same as namespace, but the prefix can be omitted.
 <?xml version="1.0">
 
 <person xmlns="http://www.mylord.cn/person">
+    <name>Felix</name>
+    <sex>Male</sex>
 </person>
 ```
 
@@ -210,4 +212,8 @@ Like `&nbsp;` is the entity of a space, the Entity of XML can be defined in `DTD
 
 ## 3. XSD XML Schema Definition
 
-XML Schema is meant to replace DTD
+XML Schema is designed to replace DTD
+
+```xml
+
+```
