@@ -72,13 +72,17 @@ Declaration using of the definition in `DOCTYPE`
 
 ### 2. DTD
 
+#### Element
+
 ```dtd
 <!ELEMENT %element name% (#PCDATA|to|from|header|message)*>
 <!ELEMENT %element name% EMPTY>
 <!ELEMENT %element name% ANY>
 ```
 
-```dtd
+#### Attribute
 
+```dtd
+<!ATTLIST element_name attribute_name type default_value>
 ```
 
