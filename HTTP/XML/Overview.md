@@ -114,3 +114,8 @@ The `default` can be one of the following:
 - `#IMPLIED` Attribute is not required
 - `#FIXED value` Value of which is fixed to `value`
 
+#### Entity
+
+Like `&nbsp;` is the entity of a space, the Entity of XML can be defined in `DTD`
+
+
