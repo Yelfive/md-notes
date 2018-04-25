@@ -78,7 +78,7 @@ Declaration using of the definition in `DOCTYPE`
 
 ```dtd
 <!DOCTYPE Company [
-
+    
 ]>
 ```
 
