@@ -106,14 +106,7 @@ Declaration using of the definition in `DOCTYPE`
   <body>Don't forget the meeting!</body>
 </note>
 ```
-
-### 3. XSD
-
-## Syntax
-
-### 1. XML
-
-### 2. DTD
+2. DTD
 
 ```dtd
 <!DOCTYPE root_element [elements_definition]>
