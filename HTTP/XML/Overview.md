@@ -141,6 +141,6 @@ Like `&nbsp;` is the entity of a space, the Entity of XML can be defined in `DTD
 ```xml
 <?xml version="1.0" charset="utf-8"?>
 
-<note>&copyright;</note>
+<company>&copyright;</company>
 ```
 
