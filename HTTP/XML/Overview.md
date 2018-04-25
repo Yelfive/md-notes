@@ -100,6 +100,6 @@ Declaration using of the definition in `DOCTYPE`
 The `default` can be one of the following:
 
 - `a specified value` Default value of the the attribute
-- `#REQUIRED`   属性值是必需的
-- `#IMPLIED`    属性不是必需的
-- `#FIXED value`    属性值是固定的
+- `#REQUIRED` Attribute is required
+- `#IMPLIED` Attribute is not required
+- `#FIXED value` Value of which is fixed with `value`
