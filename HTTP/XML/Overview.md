@@ -58,7 +58,8 @@ Data that should not be parsed.
 ```
 <?xml version="1.0" ?>
 <root>
-
+    <![CDATA[real data lies here]]>
+</root>
 ```
 
 ## 2. DTD
