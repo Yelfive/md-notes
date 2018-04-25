@@ -67,7 +67,7 @@ It **wraps** data between `<![DATA[` and `]]>`.
 
 ### PCDATA: Parsed Character Data
 
-
+Normal string without CDATA wrap.
 
 ## 2. DTD
 
