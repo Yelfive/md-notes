@@ -48,7 +48,7 @@ When more than one XML file is used together, there's a chance of name collision
     <p:sex>Male</p:sex>
 </p:person>
 ```
-
+1. Namespace defines the prefix of a 
 1. `xmlns` does not mean anything except for unique identification.
 
 ## 2. DTD
