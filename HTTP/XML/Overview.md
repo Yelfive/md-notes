@@ -53,9 +53,9 @@ When more than one XML file is used together, there's a chance of name collision
 
 ### CDATA: Character DATA
 
-Data that should not be parsed.
+Data that should not be parsed, even if it contains `>` or `&`. Data remains as is
 
-```
+```xml
 <?xml version="1.0" ?>
 <root>
     <![CDATA[real data lies here]]>
