@@ -220,6 +220,8 @@ XML Schema is designed to replace DTD
 <schema
 xsi:schemaLocation="http://www.mylord.cn root.xsd"
 >
-<!-- Some content -->
-</root>
+<!-- Some  -->
+</schema>
 ```
+
+1. `<schema>` as the root of the XML
