@@ -10,6 +10,16 @@
 
 ### 1. XML
 
+```xml
+<?xml version="1.0"?>
+<note>
+    <to>George</to>
+    <from>John</from>
+    <heading>Reminder</heading>
+    <body>Don't forget the meeting!</body>
+</note> 
+```
+
 ### 2. DTD
 
 Define the structure of a XML in `note.dtd`
@@ -17,17 +27,17 @@ Define the structure of a XML in `note.dtd`
 ```xml
 <?xml version="1.0"?>
 <!DOCTYPE note [
-  <!ELEMENT note (to,from,heading,body)>
-  <!ELEMENT to      (#PCDATA)>
-  <!ELEMENT from    (#PCDATA)>
-  <!ELEMENT heading (#PCDATA)>
-  <!ELEMENT body    (#PCDATA)>
+    <!ELEMENT note (to,from,heading,body)>
+    <!ELEMENT to      (#PCDATA)>
+    <!ELEMENT from    (#PCDATA)>
+    <!ELEMENT heading (#PCDATA)>
+    <!ELEMENT body    (#PCDATA)>
 ]>
 <note>
-  <to>George</to>
-  <from>John</from>
-  <heading>Reminder</heading>
-  <body>Don't forget the meeting!</body>
+    <to>George</to>
+    <from>John</from>
+    <heading>Reminder</heading>
+    <body>Don't forget the meeting!</body>
 </note>
 ```
 
