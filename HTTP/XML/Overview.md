@@ -96,3 +96,10 @@ Declaration using of the definition in `DOCTYPE`
 ```xml
 <square width="100"/>
 ```
+
+The `default_value` can be one of the following:
+
+- `值`   属性的默认值
+- `#REQUIRED`   属性值是必需的
+- `#IMPLIED`    属性不是必需的
+- `#FIXED value`    属性值是固定的
