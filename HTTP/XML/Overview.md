@@ -54,7 +54,9 @@ When more than one XML file is used together, there's a chance of name collision
 
 ### CDATA: Character DATA
 
-Data that should not be parsed, even if it contains `>` or `&`. Data remains as is
+Data that should not be parsed, even if it contains `>` or `&`. Data remains as is.
+
+It **wraps** data between `<![DATA[` and `]]>`.
 
 ```xml
 <?xml version="1.0" ?>
@@ -62,6 +64,10 @@ Data that should not be parsed, even if it contains `>` or `&`. Data remains as 
     <![CDATA[real data lies here]]>
 </root>
 ```
+
+### PCDATA: Parsed Character Data
+
+
 
 ## 2. DTD
 
