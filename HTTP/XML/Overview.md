@@ -215,5 +215,11 @@ Like `&nbsp;` is the entity of a space, the Entity of XML can be defined in `DTD
 XML Schema is designed to replace DTD
 
 ```xml
+<?xml version="1.0" ?>
 
+<root
+
+>
+
+</root>
 ```
