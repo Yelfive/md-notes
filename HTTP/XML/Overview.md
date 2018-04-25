@@ -51,6 +51,10 @@ When more than one XML file is used together, there's a chance of name collision
 1. Namespace defines the prefix of a XML's name(`p:person`).
 1. `xmlns` does not mean anything except for unique identification.
 
+### CDATA: Character DATA
+
+Data that should not be parsed;
+
 ## 2. DTD
 
 Define the structure of a XML in `note.dtd`
