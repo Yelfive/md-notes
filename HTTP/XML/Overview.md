@@ -12,9 +12,9 @@
 
 ### 2. DTD
 
-Define the structure of a XML
+Define the structure of a XML in `note.dtd`
 
-```dtd
+```xml
 <?xml version="1.0"?>
 <!DOCTYPE note [
   <!ELEMENT note (to,from,heading,body)>
@@ -31,8 +31,17 @@ Define the structure of a XML
 </note>
 ```
 
-```xml
+Declaration using of the definition in `DOCTYPE`
 
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE note SYSTEM "note.dtd">
+<note>
+<to>George</to>
+<from>John</from>
+<heading>Reminder</heading>
+<body>Don't forget the meeting!</body>
+</note> 
 ```
 
 ### 3. XSD
