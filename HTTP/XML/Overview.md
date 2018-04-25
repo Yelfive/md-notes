@@ -101,7 +101,9 @@ Declaration using of the definition in `DOCTYPE`
 
 Type of the attribute, comes in form of the following
 
-- 
+- `CDATA`
+- `PCDATA`
+- `(option 1| option 2| ...)` Value of attribute is restricted to one of the list
 
 **`default`**
 
