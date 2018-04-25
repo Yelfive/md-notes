@@ -131,3 +131,13 @@ Like `&nbsp;` is the entity of a space, the Entity of XML can be defined in `DTD
 ```dtd
 <!ENTITY entity_name SYSTEM "URI/URL">
 ```
+
+**example**
+
+```dtd
+<!ENTITY copyright "@Copyright ">
+```
+
+```xml
+```
+
