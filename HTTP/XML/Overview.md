@@ -46,11 +46,11 @@ Declaration using of the definition in `DOCTYPE`
 ```xml
 <?xml version="1.0" ?>
 <!DOCTYPE note SYSTEM "note.dtd">
-<note>
-<to>George</to>
-<from>John</from>
-<heading>Reminder</heading>
-<body>Don't forget the meeting!</body>
+    <note>
+    <to>George</to>
+    <from>John</from>
+    <heading>Reminder</heading>
+    <body>Don't forget the meeting!</body>
 </note> 
 ```
 
