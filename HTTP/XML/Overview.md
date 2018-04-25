@@ -83,7 +83,7 @@ Declaration using of the definition in `DOCTYPE`
 #### Attribute
 
 ```dtd
-<!ATTLIST element_name attribute_name type default_value>
+<!ATTLIST element_name attribute_name type default>
 ```
 
 **example**
@@ -97,9 +97,9 @@ Declaration using of the definition in `DOCTYPE`
 <square width="100"/>
 ```
 
-The `default_value` can be one of the following:
+The `default` can be one of the following:
 
-- `值`   属性的默认值
+- `a specified value` Default value of the the attribute
 - `#REQUIRED`   属性值是必需的
 - `#IMPLIED`    属性不是必需的
 - `#FIXED value`    属性值是固定的
