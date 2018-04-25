@@ -18,6 +18,10 @@
 </note> 
 ```
 
+### Namespace
+
+<?xml version="1.0">
+
 ## 2. DTD
 
 Define the structure of a XML in `note.dtd`
@@ -154,6 +158,6 @@ Like `&nbsp;` is the entity of a space, the Entity of XML can be defined in `DTD
 <company>&copyright;</company>
 ```
 
-### XSD XML Schema Definition
+## 3. XSD XML Schema Definition
 
 XML Schema is meant to replace DTD
