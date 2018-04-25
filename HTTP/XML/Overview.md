@@ -20,6 +20,7 @@
 
 ### Namespace
 
+When more than one XML file is used together, there's a chance of name collision
 <?xml version="1.0">
 
 ## 2. DTD
