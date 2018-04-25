@@ -6,9 +6,7 @@
 - CDATA Character Data, Data that will be treat literally, without parsing, corresponding to `PCDATA`
 - PCDATA Parsed Character Data, Data that should be parsed
 
-## Examples
-
-### 1. XML
+## 1. XML
 
 ```xml
 <?xml version="1.0"?>
@@ -20,7 +18,7 @@
 </note> 
 ```
 
-### 2. DTD
+## 2. DTD
 
 Define the structure of a XML in `note.dtd`
 
