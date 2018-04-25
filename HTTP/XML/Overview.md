@@ -73,6 +73,12 @@ Declaration using of the definition in `DOCTYPE`
 ### 2. DTD
 
 ```dtd
-<!ELEMENT note (#PCDATA|to|from|header|message)*>
+<!ELEMENT %element name% (#PCDATA|to|from|header|message)*>
+<!ELEMENT %element name% EMPTY>
+<!ELEMENT %element name% ANY>
+```
+
+```dtd
+
 ```
 
