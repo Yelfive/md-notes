@@ -118,4 +118,9 @@ The `default` can be one of the following:
 
 Like `&nbsp;` is the entity of a space, the Entity of XML can be defined in `DTD`
 
+#### syntax
 
+```dtd
+<!ENTITY entity_name "entity_value">
+<!ENTITY entity_name SYSTEM "URI/URL">
+```
