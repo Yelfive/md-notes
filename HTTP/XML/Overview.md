@@ -55,3 +55,14 @@ Declaration using of the definition in `DOCTYPE`
 ```
 
 ### 3. XSD
+
+## Syntax
+
+### 1. XML
+
+### 2. DTD
+
+```xml
+<!ELEMENT note (#PCDATA|to|from|header|message)*>
+```
+
