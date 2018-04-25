@@ -48,6 +48,7 @@ When more than one XML file is used together, there's a chance of name collision
     <p:sex>Male</p:sex>
 </p:person>
 ```
+
 1. Namespace defines the prefix of a XML's name(`p:person`).
 1. `xmlns` does not mean anything except for unique identification.
 
@@ -87,7 +88,7 @@ Declaration using of the definition in `DOCTYPE`
 </note> 
 ```
 
-**Or mix them together in XML**
+**Or mix them together in XML** like this
 
 ```xml
 <?xml version="1.0"?>
