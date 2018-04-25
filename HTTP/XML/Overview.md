@@ -97,6 +97,12 @@ Declaration using of the definition in `DOCTYPE`
 <square width="100"/>
 ```
 
+**`type`**
+
+Type of the attribute
+
+**`default`**
+
 The `default` can be one of the following:
 
 - `value` Default `value` of the the attribute
