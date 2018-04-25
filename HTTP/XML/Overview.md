@@ -45,8 +45,24 @@ Declaration using of the definition in `DOCTYPE`
 </note> 
 ```
 
-**Or mix them together**
+**Or mix them together in XML**
 
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE note [
+  <!ELEMENT note (to,from,heading,body)>
+  <!ELEMENT to      (#PCDATA)>
+  <!ELEMENT from    (#PCDATA)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT body    (#PCDATA)>
+]>
+<note>
+  <to>George</to>
+  <from>John</from>
+  <heading>Reminder</heading>
+  <body>Don't forget the meeting!</body>
+</note>
+```
 
 ### 3. XSD
 
