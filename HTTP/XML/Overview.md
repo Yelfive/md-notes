@@ -43,11 +43,13 @@ When more than one XML file is used together, there's a chance of name collision
 
 ```xml
 <?xml version="1.0">
-<p:person xmlns="http://www.mylord.cn/person">
+<p:person xmlns:h="http://www.mylord.cn/person">
     <p:name>Felix</p:name>
     <p:sex>Male</p:sex>
 </p:person>
 ```
+
+1. `xmlns` does not mean anything except for unique identification.
 
 ## 2. DTD
 
