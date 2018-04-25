@@ -40,8 +40,12 @@ It changes XML into HTML
 ### Namespace
 
 When more than one XML file is used together, there's a chance of name collision
-<?xml version="1.0">
 
+```xml
+<?xml version="1.0">
+<r:root xmlns="http://www.mylord.cn/root.xml">
+</r:root>
+```
 
 ## 2. DTD
 
