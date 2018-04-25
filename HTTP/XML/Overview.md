@@ -217,11 +217,12 @@ XML Schema is designed to replace DTD
 ```xml
 <?xml version="1.0" ?>
 
-<schema
+<xs:schema
+
 xsi:schemaLocation="http://www.mylord.cn root.xsd"
 >
 <!-- Some  -->
-</schema>
+</xs:schema>
 ```
 
-1. `<schema>` as the root of the XML
+1. `<schema>` as the root element of the XML.
