@@ -33,10 +33,15 @@ note {background-color: red;}
 1. Comment with `<!-- Comment goes here -->` like HTML.
 1. System Windows using `CRLF` for new lines while Unix alike using `LF`.
 
+### XSLT eXtensible Stylesheet Language Transformations
+
+It changes XML into HTML
+
 ### Namespace
 
 When more than one XML file is used together, there's a chance of name collision
 <?xml version="1.0">
+
 
 ## 2. DTD
 
