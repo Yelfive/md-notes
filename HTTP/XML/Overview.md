@@ -217,9 +217,9 @@ XML Schema is designed to replace DTD
 ```xml
 <?xml version="1.0" ?>
 
-<root
-
+<schema
+xsi:schemaLocation="http://www.mylord.cn root.xsd"
 >
-
+<!-- Some content -->
 </root>
 ```
