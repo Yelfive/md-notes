@@ -52,6 +52,17 @@ When more than one XML file is used together, there's a chance of name collision
 1. Namespace defines the prefix of a XML's name(`p:person`).
 1. `xmlns` does not mean anything except for unique identification.
 
+### Default namespace
+
+Same as namespace, but the prefix can be omitted.
+
+```xml
+<?xml version="1.0">
+
+<person xmlns="http://www.mylord.cn/person">
+</person>
+```
+
 ### CDATA: Character DATA
 
 Data that should not be parsed, even if it contains `>` or `&`. Data remains as is.
