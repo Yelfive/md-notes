@@ -8,19 +8,23 @@
 
 ## 1. XML
 
+**main.css**
+
+```css
+note {background-color: red;}
+```
+
+**xml**
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="cd_catalog.css"?>
+<?xml-stylesheet type="text/css" href="main.css"?>
 <note>
     <to>George</to>
     <from>John</from>
     <heading>Reminder</heading>
     <body>Don't forget the meeting!</body>
 </note> 
-```
-
-```css
-note {background-color: red;}
 ```
 
 1. Root node is required, e.g. `<note>` from above.
