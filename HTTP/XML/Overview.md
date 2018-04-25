@@ -86,3 +86,13 @@ Declaration using of the definition in `DOCTYPE`
 <!ATTLIST element_name attribute_name type default_value>
 ```
 
+**example**
+
+```dtd
+<!ELEMENT square EMPTY>
+<!ATTLIST square width CDATA "0">
+```
+
+```xml
+<square width="100"/>
+```
