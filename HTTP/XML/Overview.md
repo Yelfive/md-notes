@@ -9,7 +9,7 @@
 ## 1. XML
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <note>
     <to>George</to>
     <from>John</from>
