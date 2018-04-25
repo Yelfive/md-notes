@@ -88,7 +88,7 @@ Declaration using of the definition in `DOCTYPE`
 </note> 
 ```
 
-**Or mix them together in XML** like this
+**Or mix them together in XML** like the following
 
 ```xml
 <?xml version="1.0"?>
