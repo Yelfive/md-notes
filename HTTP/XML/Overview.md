@@ -72,6 +72,16 @@ Declaration using of the definition in `DOCTYPE`
 
 ### 2. DTD
 
+```dtd
+<!DOCTYPE root_element [elements_definition]>
+```
+
+```dtd
+<!DOCTYPE Company [
+
+]>
+```
+
 #### Element
 
 ```dtd
