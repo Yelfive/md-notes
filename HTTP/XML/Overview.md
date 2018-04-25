@@ -218,7 +218,9 @@ XML Schema is designed to replace DTD
 <?xml version="1.0" ?>
 
 <xs:schema
-
+xmlns:xs="http://www.mylord.cn/schema"
+targetNamespace=""
+xmlns="http://www.mylord.cn"
 xsi:schemaLocation="http://www.mylord.cn root.xsd"
 >
 <!-- Some  -->
@@ -226,3 +228,4 @@ xsi:schemaLocation="http://www.mylord.cn root.xsd"
 ```
 
 1. `<schema>` as the root element of the XML.
+1. `targetNamespace`
