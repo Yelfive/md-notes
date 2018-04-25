@@ -19,6 +19,10 @@
 </note> 
 ```
 
+```css
+note {background-color: red;}
+```
+
 1. Root node is required, e.g. `<note>` from above.
 1. CSS style can be used to tell browser how to display this xml.
 1. Value of attributes must be quote(`name="Felix"`), and try using node instead of attributes.
