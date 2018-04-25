@@ -24,7 +24,7 @@
 
 Define the structure of a XML in `note.dtd`
 
-```xml
+```dtd
 <?xml version="1.0"?>
 <!DOCTYPE note [
     <!ELEMENT note (to,from,heading,body)>
@@ -44,7 +44,7 @@ Define the structure of a XML in `note.dtd`
 Declaration using of the definition in `DOCTYPE`
 
 ```xml
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!DOCTYPE note SYSTEM "note.dtd">
 <note>
 <to>George</to>
@@ -62,7 +62,7 @@ Declaration using of the definition in `DOCTYPE`
 
 ### 2. DTD
 
-```xml
+```dtd
 <!ELEMENT note (#PCDATA|to|from|header|message)*>
 ```
 
