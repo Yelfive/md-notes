@@ -20,6 +20,7 @@
 ```
 
 1. Root node is required, e.g. `<note>` from above.
+1. CSS style can be used to tell browser how to display this xml.
 1. Value of attributes must be quote(`name="Felix"`), and try using node instead of attributes.
 1. Comment with `<!-- Comment goes here -->` like HTML.
 1. System Windows using `CRLF` for new lines while Unix alike using `LF`.
