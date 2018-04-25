@@ -120,7 +120,14 @@ Like `&nbsp;` is the entity of a space, the Entity of XML can be defined in `DTD
 
 #### syntax
 
+*Define an entity*
+
 ```dtd
 <!ENTITY entity_name "entity_value">
+```
+
+*Define an entity using external `dtd`*
+
+```dtd
 <!ENTITY entity_name SYSTEM "URI/URL">
 ```
