@@ -25,20 +25,11 @@
 Define the structure of a XML in `note.dtd`
 
 ```dtd
-<?xml version="1.0"?>
-<!DOCTYPE note [
-    <!ELEMENT note (to,from,heading,body)>
-    <!ELEMENT to      (#PCDATA)>
-    <!ELEMENT from    (#PCDATA)>
-    <!ELEMENT heading (#PCDATA)>
-    <!ELEMENT body    (#PCDATA)>
-]>
-<note>
-    <to>George</to>
-    <from>John</from>
-    <heading>Reminder</heading>
-    <body>Don't forget the meeting!</body>
-</note>
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to      (#PCDATA)>
+<!ELEMENT from    (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body    (#PCDATA)>
 ```
 
 Declaration using of the definition in `DOCTYPE`
@@ -53,6 +44,9 @@ Declaration using of the definition in `DOCTYPE`
     <body>Don't forget the meeting!</body>
 </note> 
 ```
+
+**Or mix them together**
+
 
 ### 3. XSD
 
