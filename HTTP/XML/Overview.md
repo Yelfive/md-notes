@@ -107,8 +107,6 @@ Declaration using of the definition in `DOCTYPE`
 </note>
 ```
 
-## 2. DTD
-
 ```dtd
 <!DOCTYPE root_element [elements_definition]>
 ```
