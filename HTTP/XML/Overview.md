@@ -99,7 +99,8 @@ Declaration using of the definition in `DOCTYPE`
 
 The `default` can be one of the following:
 
-- `a specified value` Default value of the the attribute
+- `value` Default `value` of the the attribute
 - `#REQUIRED` Attribute is required
 - `#IMPLIED` Attribute is not required
-- `#FIXED value` Value of which is fixed with `value`
+- `#FIXED value` Value of which is fixed to `value`
+
