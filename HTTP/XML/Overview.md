@@ -10,6 +10,7 @@
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="cd_catalog.css"?>
 <note>
     <to>George</to>
     <from>John</from>
