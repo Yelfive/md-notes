@@ -99,7 +99,9 @@ Declaration using of the definition in `DOCTYPE`
 
 **`type`**
 
-Type of the attribute
+Type of the attribute, comes in form of the following
+
+- 
 
 **`default`**
 
