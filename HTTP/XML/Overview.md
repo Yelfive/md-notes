@@ -227,5 +227,5 @@ xsi:schemaLocation="http://www.mylord.cn root.xsd"
 </xs:schema>
 ```
 
-1. `<schema>` as the root element of the XML.
-1. `targetNamespace`
+1. `<schema>` as the root element of the XML Schema.
+1. `targetNamespace` 
