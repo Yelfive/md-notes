@@ -508,3 +508,13 @@ To show tree structure of processes and threads
 ```bash
 pstree -p <pid>
 ```
+
+### date
+
+Set or format a date.
+
+#### format a date
+
+```bash
+ date "+%Y-%m-%d %H:%M:%S"
+```
