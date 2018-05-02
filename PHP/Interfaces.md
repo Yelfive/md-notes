@@ -23,7 +23,16 @@ class SomeJsonObject implements JsonSerializable
 {
     public function jsonSerialize()
     {
-        return 'aaa';
+        /*
+         * Case 1
+         */
+         return 'Some scalar/null';
     }
 }
+
+$obj = new SomeJsonObject();
+
+echo json_encode($obj);
+// Case 1: "'Some scalar/null'"
+// Case 2: 
 ```
