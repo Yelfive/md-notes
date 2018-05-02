@@ -3,7 +3,8 @@
 ## JsonSerializable 
 
 Custom serialized data when using `json_encode()`,
-the returned value is with type of *mixed* and will be recursively 
+the returned value is with type of *mixed* and
+will be recursively json serialized.
 
 ```php
 <?php
@@ -12,3 +13,4 @@ interface JsonSerializable {
     }
 }
 ```
+### examples
