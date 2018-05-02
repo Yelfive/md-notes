@@ -34,7 +34,7 @@ class SomeJsonObject implements JsonSerializable
 
 $obj = new SomeJsonObject();
 
-echo json_encode($obj);
-// Case 1: "'Some scalar/null'", returns scalar or null
-// Case 2: [1, 2, 3], returns json_encode(array/object)
+echo json_encode(['value' => $obj]);
+// Case 1: {"value": "Some scalar/null"}, returns scalar or null
+// Case 2: {"value": [1, 2, 3]}, returns json_encode(array/object)
 ```
