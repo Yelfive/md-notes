@@ -23,10 +23,10 @@ class SomeJsonObject implements JsonSerializable
 {
     public function jsonSerialize()
     {
-        /*
-         * Case 1
-         */
-         return 'Some scalar/null';
+        // Case 1: return scalar of null
+        return 'Some scalar/null';
+
+         // Case 2
     }
 }
 
