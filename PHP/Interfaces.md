@@ -27,7 +27,7 @@ class SomeJsonObject implements JsonSerializable
         return 'Some scalar/null';
 
          // Case 2: return array/object
-         // json_encode();
+         // json_encode([1, 2, 3]);
          return [1, 2, 3];
     }
 }
