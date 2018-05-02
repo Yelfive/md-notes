@@ -21,6 +21,9 @@ interface JsonSerializable {
 
 class SomeJsonObject implements JsonSerializable
 {
-    
+    public function jsonSerialize()
+    {
+        return 'aaa';
+    }
 }
 ```
