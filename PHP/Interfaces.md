@@ -45,3 +45,16 @@ This is the base class of all iterable
 
 > Abstract base interface that cannot be implemented alone. Instead it must be implemented by either IteratorAggregate or Iterator.
 
+### Iterator
+
+```php
+<?ph>
+interface Iterator extends Traversable {
+    /* Methods */
+    abstract public mixed current ( void )
+    abstract public scalar key ( void )
+    abstract public void next ( void )
+    abstract public void rewind ( void )
+    abstract public bool valid ( void )
+}
+```
