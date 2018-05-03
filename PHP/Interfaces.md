@@ -84,7 +84,6 @@ class MyIterator implements IteratorAggregate
     public function getIterator()
     {
         Array
-
     }
 }
 ```
