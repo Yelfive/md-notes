@@ -39,13 +39,13 @@ echo json_encode(['value' => $obj]);
 // Case 2: {"value": [1, 2, 3]}, returns json_encode(array/object)
 ```
 
-### Traversable
+## Traversable
 
 This is the base class of all iterable
 
 > Abstract base interface that cannot be implemented alone. Instead it must be implemented by either IteratorAggregate or Iterator.
 
-### Iterator
+## Iterator
 
 Can be used by `foreach`
 
@@ -62,7 +62,9 @@ interface Iterator extends Traversable
 }
 ```
 
-### IteratorAggregate
+## IteratorAggregate
+
+To create an iterator that can be used externally.
 
 ```php
 <?php
@@ -72,4 +74,10 @@ interface IteratorAggregate extends Traversable
     /* Methods */
     abstract public Traversable getIterator ( void )
 }
+```
+
+### example
+
+```php
+
 ```
