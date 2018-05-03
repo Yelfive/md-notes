@@ -41,3 +41,7 @@ echo json_encode(['value' => $obj]);
 
 ### Traversable
 
+This is the base class of all iterable
+
+> Abstract base interface that cannot be implemented alone. Instead it must be implemented by either IteratorAggregate or Iterator.
+
