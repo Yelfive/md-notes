@@ -79,5 +79,12 @@ interface IteratorAggregate extends Traversable
 ### example
 
 ```php
+class MyIterator implements IteratorAggregate
+{
+    public function getIterator()
+    {
+        Array
 
+    }
+}
 ```
