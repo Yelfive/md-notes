@@ -47,8 +47,10 @@ This is the base class of all iterable
 
 ### Iterator
 
+Can be used by `foreach`
+
 ```php
-<?ph>
+<?php
 interface Iterator extends Traversable {
     /* Methods */
     abstract public mixed current ( void )
@@ -58,3 +60,7 @@ interface Iterator extends Traversable {
     abstract public bool valid ( void )
 }
 ```
+
+### IteratorAggregate
+
+```php
