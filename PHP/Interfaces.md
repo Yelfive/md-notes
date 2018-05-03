@@ -51,7 +51,8 @@ Can be used by `foreach`
 
 ```php
 <?php
-interface Iterator extends Traversable {
+interface Iterator extends Traversable
+{
     /* Methods */
     abstract public mixed current ( void )
     abstract public scalar key ( void )
@@ -64,3 +65,11 @@ interface Iterator extends Traversable {
 ### IteratorAggregate
 
 ```php
+<?php
+
+interface IteratorAggregate extends Traversable
+{
+    /* Methods */
+    abstract public Traversable getIterator ( void )
+}
+```
