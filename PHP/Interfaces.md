@@ -64,7 +64,10 @@ interface Iterator extends Traversable
 
 ### sub-interfaces
 
-- 
+- `ArrayIterator`
+
+    This iterator allows to unset and modify values and keys while iterating over Arrays and Objects.
+
 
 ## IteratorAggregate
 
