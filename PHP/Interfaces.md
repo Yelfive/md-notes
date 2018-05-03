@@ -66,6 +66,8 @@ interface Iterator extends Traversable
 
 To create an iterator that can be used externally.
 
+It returns an instance of an object implementing Iterator or Traversable.
+
 ```php
 <?php
 
@@ -83,7 +85,7 @@ class MyIterator implements IteratorAggregate
 {
     public function getIterator()
     {
-        Array
+        // some object implements Iterator
     }
 }
 ```
