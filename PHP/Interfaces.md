@@ -96,3 +96,9 @@ class MyIterator implements IteratorAggregate
     }
 }
 ```
+
+## Throwable
+## ArrayAccess
+## Serializable
+## Closure
+## Generator
