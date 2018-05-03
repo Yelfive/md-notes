@@ -62,6 +62,10 @@ interface Iterator extends Traversable
 }
 ```
 
+### sub-interfaces
+
+- 
+
 ## IteratorAggregate
 
 To create an iterator that can be used externally.
