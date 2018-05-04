@@ -13,7 +13,7 @@
 ## Search Engine
 
 - ElasticSearch
-
+- Algolia
 
 ## Frameworks
 
@@ -28,7 +28,7 @@
     **See Also** [Official Documentation](http://opensource.box.com/spout/)
 
 - [Gatsby](https://www.gatsbyjs.org/)
-    
+
     JS CMS with Markdown
 
 ## Utilities
@@ -65,8 +65,11 @@ network protocol analyzer
 ## Pythons
 
  - [wxpy](http://wxpy.readthedocs.io/zh/latest/faq.html)
+
     Play WeChat with python, using python to handle request/response of WeChat, based on **Web WeChat**
+
 - [Scrapy](https://scrapy.org/)
+
     Python spider
 
 ## Server monitoring
@@ -75,7 +78,7 @@ network protocol analyzer
 
 ## JS Packages
 
-**Markdown**
+### Markdown
 
 - [showdown](https://www.npmjs.com/package/showdown) - Markdown compiler
 - [highlight](https://www.npmjs.com/package/highlight.js) - Code block highlighting
