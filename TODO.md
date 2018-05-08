@@ -11,7 +11,10 @@
 
 </font>
 
-- [] Behavior Driven Developing 
+- [ ] Behavior Driven Developing
+        - https://www.shiyanlou.com/questions/2211
+        - [PHPSpec](http://www.phpspec.net/en/latest/manual/getting-started.html)
+        - [behat](http://docs.behat.org/en/v2.5/#quick-intro)
 - [ ] H5游戏引擎（cocos2d-js，Egret，Layabox，phaser）
 - [ ] ssl, openssl_* of PHP, RSA
 
