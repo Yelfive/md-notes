@@ -170,10 +170,5 @@ strip everything from the start to the last occurrence of `string`
 ${var##*_} # efg
 ```
 
-
-
-
-
-
-
+## Read from stdin
 
