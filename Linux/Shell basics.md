@@ -170,7 +170,7 @@ strip everything from the start to the last occurrence of `string`
 ${var##*_} # efg
 ```
 
-## Read from stdin
+## Read from `stdin`
 
 ```bash
 while read line
@@ -179,3 +179,10 @@ do
 done
 ```
 
+Similar to PHP as:
+
+```php
+<?php
+$string = fgets(STDIN);
+var_dump($string);
+```
