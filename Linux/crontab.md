@@ -23,3 +23,15 @@ crontab -e
 - **Linux**
 
     `/var/log/cron`
+
+## Examples
+
+### restart lighthttpd every hour during 23:00 to 07:00 of the next day
+
+```bash
+0 23-7/1 * * * /usr/local/etc/rc.d/lighttpd restart
+```
+
+## See Also
+
+- [CSDN crontab 定时写法整理](https://blog.csdn.net/bsf5521/article/details/76522222)
