@@ -1,13 +1,12 @@
-crontab
-===
+# crontab
 
-> Execute a script with interval, crontab checks task every one minute 
+> Execute a script with interval, crontab checks task every one minute.
 
 ```bash
 crontab -e
 ```
 
-```
+```text
 # inside crontab
 *   *   *   *   * command
 分  时  日  月   周 command
