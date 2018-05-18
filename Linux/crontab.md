@@ -23,6 +23,7 @@ Individually it means
 - `day` 1~31
 - `month` 1~12
 - `week` 0~6, sunday~saturday
+- `command` The command column should always be absolute path of command, not shortened.
 
 ## Execution log
 
