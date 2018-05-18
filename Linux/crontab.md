@@ -8,11 +8,15 @@
 crontab -e
 ```
 
+After running the command, you will get the following format
+
 ```text
 # inside crontab
 *   *   *   *   * command
 分  时  日  月   周 command
 ```
+
+Individually it means
 
 - `minute` 0~59
 - `hour` 0~23
