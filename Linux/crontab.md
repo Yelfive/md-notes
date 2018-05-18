@@ -25,6 +25,11 @@ Individually it means
 - `week` 0~6, sunday~saturday
 - `command` The command column should always be absolute path of command, not shortened.
 
+    ```bash
+    # instead of just `ls -l`
+    /usr/bin/ls -l
+    ```
+
 ## Execution log
 
 ### Linux
