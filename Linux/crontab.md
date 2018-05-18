@@ -26,7 +26,7 @@ Individually it means
 
 ## Execution log
 
-- **Linux**
+### Linux
 
     `/var/log/cron`
 
