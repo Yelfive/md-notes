@@ -67,7 +67,7 @@ ab*c
 [xyz]*
 
 # matches "", "ab", "abab", "ababab", and so on.
-\(ab\)* #(in BRE) or 
+\(ab\)* #(in BRE) or
 (ab)*   #(in ERE)
 ```
 
