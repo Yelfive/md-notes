@@ -77,7 +77,7 @@
 # find in current directory with options:
 # `-d 1` depth 1, only the children not the grand
 # `-not -regex` path not matching `./.git` or `./mylord`
-# `-exec` execute command with 
+# `-exec` execute command, ending with a quoted semicolon(to distinguish that of find)
 find . -d 1 -not -regex './\(.git\)' -not -regex './mylord' -exec mv {} mylord ';'
 ```
 
