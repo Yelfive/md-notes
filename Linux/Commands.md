@@ -75,8 +75,9 @@
 
 ```bash
 # find in current directory with options:
-# depth 1, only children not grand
-# -not -regex 
+# `-d 1` depth 1, only the children not the grand
+# `-not -regex` path not matching `./.git` or `./mylord`
+# `-exec` execute command with 
 find . -d 1 -not -regex './\(.git\)' -not -regex './mylord' -exec mv {} mylord ';'
 ```
 
