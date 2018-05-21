@@ -30,7 +30,7 @@
 
 #### expression options
 
-+ `-type` 
++ `-type`
 
     > Find particular type of files
 
@@ -42,11 +42,11 @@
     * `l` link
 
 + `-atime`
-    
+
     > last access time, `+n` means more than n days, `-n` means less than n days
 
     ```bash
-    find / -atime +10 # find files with last access time over ten days    
+    find / -atime +10 # find files with last access time over ten days
     ```
 
 + `-mtime`
