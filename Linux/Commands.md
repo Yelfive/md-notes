@@ -342,9 +342,7 @@ IFS=: read w1 w2
 ```
 
 ```text
-
--e     If  the  standard  input is coming from a terminal, readline (see READLINE above) is used to obtain the line.  Readline uses the current (or default, if line editing was not previously
-     active) editing settings.
+-e   If the  standard  input is coming from a terminal, readline (see READLINE above) is used to obtain the       line. Readline uses the current (or default, if line editing was not previously active) editing settings.
 -i text
      If readline is being used to read the line, text is placed into the editing buffer before editing begins.
 -N nchars
