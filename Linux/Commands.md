@@ -71,6 +71,15 @@
 
     The tailing `\;` is to escape the semicolon for `-exec`, not for the `find` command.
 
+#### examples
+
+```bash
+# find in current directory with options:
+# depth 1, only children not grand
+# -not -regex 
+find . -d 1 -not -regex './\(.git\)' -not -regex './mylord' -exec mv {} mylord ';'
+```
+
 ### locate
 
 > Locate a particular file, similar to find, but much faster.
