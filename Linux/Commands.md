@@ -28,7 +28,7 @@
 
 > find [option] [path] [expression]
 
-**expression options**
+#### expression options
 
 + `-type` 
 
