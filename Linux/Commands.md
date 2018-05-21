@@ -30,18 +30,18 @@
 
 #### expression options
 
-+ `-type`
+- `-type`
 
     > Find particular type of files
 
-    * `b` block device
-    * `c` character device
-    * `d` directory
-    * `f` file
-    * `p` pipe
-    * `l` link
+    - `b` block device
+    - `c` character device
+    - `d` directory
+    - `f` file
+    - `p` pipe
+    - `l` link
 
-+ `-atime`
+- `-atime`
 
     > last access time, `+n` means more than n days, `-n` means less than n days
 
@@ -49,16 +49,16 @@
     find / -atime +10 # find files with last access time over ten days
     ```
 
-+ `-mtime`
+- `-mtime`
 
     > Last modified time, `+-n` same as `-atime`
 
-+ `-name`
+- `-name`
 
     > Find with name
 
-+ `-exec`
-    
+- `-exec`
+
     To execute command according to `find` result.
 
     `{}` to stand for each line of the find `result`.
