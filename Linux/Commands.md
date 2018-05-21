@@ -86,7 +86,7 @@ find . -d 1 -not -regex './\(.git\)' -not -regex './mylord' -exec mv {} mylord '
 > Locate a particular file, similar to find, but much faster.
 >
 > It uses a database to store all file names, and search it from the database.
-> 
+>
 > The updating is done automatically at background, however, it can also be done by calling `updatedb`, which will take some time
 
 ### updatedb
