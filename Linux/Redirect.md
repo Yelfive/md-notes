@@ -11,7 +11,7 @@ Input usually from keyboard or pipe(`|`)
 Redirect a file to a bash, same as `bash file`, rarely used.
 
 ```bash
-# same as 
+# same as
 # cat some_file
 cat < some_file
 ```
@@ -19,7 +19,7 @@ cat < some_file
 ### 2. <<
 
 The content will be regarded as a file content, same as do something with the file contains such content.
- 
+
 1. **here document**: `<<EOF`, inside which bash calling is allowed, and the output is taken as the embed string
 2. **now document**: `<<'EOF'`(quote the identifier with either single or double quotes), inside which all characters will be taken as plain text
 
@@ -61,3 +61,10 @@ It redirects standard output to `file.txt`, and redirects standard error to stan
 
 The `2>&1` should be behind standard output redirection(`&1>file.txt`), otherwise, when error occurs from previous command(`ls -l` in this example), it will have no idea to redirect errors to `file.txt`
 
+### BASH
+
+```bash
+#!/usr/bin/env bash
+
+stdin=`cat $1`
+```
