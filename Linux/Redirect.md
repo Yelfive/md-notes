@@ -61,7 +61,9 @@ It redirects standard output to `file.txt`, and redirects standard error to stan
 
 The `2>&1` should be behind standard output redirection(`&1>file.txt`), otherwise, when error occurs from previous command(`ls -l` in this example), it will have no idea to redirect errors to `file.txt`
 
-### BASH
+### BASH script
+
+**script**:
 
 ```bash
 #!/usr/bin/env bash
