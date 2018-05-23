@@ -42,7 +42,6 @@ function callback($level, message, $file, $line, $context){
 trigger_error(string $msg[, int $error_type]);
 ```
 
-
 ## Exceptions
 
 ```php
