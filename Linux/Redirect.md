@@ -77,4 +77,16 @@ echo -e "\033[0m"
 
 ```bash
 echo 123 | ./test.sh
+# put out green colored "123"
 ```
+
+### PHP script
+
+**script `tset.php`**
+```php
+<?php
+
+echo fgets(STDIN);
+```
+
+
