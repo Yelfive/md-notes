@@ -71,13 +71,13 @@ test.sh -pproject_name -others
 
 ### shift options
 
-To strip all the options, leave the arguments only.
+To strip all the options, leave the **arguments** only.
 
 ```shell
 shift $((${OPTIND} - 1))
 ```
 
-**example**
+## Example
 
 ```bash
 test.sh -p hello world to you
