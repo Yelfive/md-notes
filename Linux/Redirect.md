@@ -82,11 +82,17 @@ echo 123 | ./test.sh
 
 ### PHP script
 
-**script `tset.php`**
+**script `test.php`**:
+
 ```php
 <?php
 
 echo fgets(STDIN);
 ```
 
+**usage**:
 
+```bash
+echo 123 | php test.php
+# output "123"
+```
