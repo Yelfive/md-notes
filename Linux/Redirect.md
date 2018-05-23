@@ -85,6 +85,7 @@ echo 123 | ./test.sh
 **script `test.php`**:
 
 ```php
+#!/usr/bin/env php
 <?php
 
 echo fgets(STDIN);
@@ -94,5 +95,8 @@ echo fgets(STDIN);
 
 ```bash
 echo 123 | php test.php
-# output "123"
+# or
+echo 123 | ./test.php
+
+# both output "123"
 ```
