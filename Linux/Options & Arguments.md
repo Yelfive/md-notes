@@ -13,7 +13,7 @@ getopts string_opt_list variable
 while getopts 'a:b' opt
 do
     case ${opt} in
-        a) 
+        a)
             # do something like
             echo $OPTARG
             ;;
