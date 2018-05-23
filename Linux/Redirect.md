@@ -63,10 +63,18 @@ The `2>&1` should be behind standard output redirection(`&1>file.txt`), otherwis
 
 ### BASH script
 
-**script**:
+**script `test.sh`**:
 
 ```bash
 #!/usr/bin/env bash
 
-stdin=`cat $1`
+echo -e "\033[32m"
+cat $1
+echo -e "\033[0m"
+```
+
+**usage**:
+
+```bash
+echo 123 | ./test.sh
 ```
