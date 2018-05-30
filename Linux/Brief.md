@@ -64,7 +64,7 @@ echo ${a[@]:from:length}
 echo ${*:from:length}
 ```
 
-- `from` Start offset, included.
+- `from` Start offset, started from 1, included in result.
 
 **example**:
 
