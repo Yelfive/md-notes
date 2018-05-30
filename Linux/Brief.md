@@ -62,6 +62,14 @@ Actually, it works with any space separated value.
 echo ${a[@]:from:length}
 ```
 
+**example**:
+
+```bash
+a='a b c'
+echo ${a[*]:1} # a b c
+echo ${a[*]:2:1} # b
+```
+
 #### example
 
 ### replace
