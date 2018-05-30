@@ -60,6 +60,8 @@ Actually, it works with any space separated value.
 
 ```bash
 echo ${a[@]:from:length}
+# script arguments:
+echo ${*:from:length}
 ```
 
 **example**:
