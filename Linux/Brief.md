@@ -62,6 +62,8 @@ Actually, it works with any space separated value.
 echo ${a[@]:from:length}
 ```
 
+#### example
+
 ### replace
 
 ```bash
