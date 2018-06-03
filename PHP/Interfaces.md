@@ -47,6 +47,8 @@ This is the base class of all iterable
 
 ## Iterator
 
+> See also: [http://php.net/manual/en/class.iteratoriterator.php](http://php.net/manual/en/class.iteratoriterator.php)
+
 Can be used by `foreach`
 
 ```php
@@ -67,7 +69,6 @@ interface Iterator extends Traversable
 - `ArrayIterator`
 
     This iterator allows to unset and modify values and keys while iterating over Arrays and Objects.
-
 
 ## IteratorAggregate
 
