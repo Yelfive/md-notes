@@ -13,3 +13,7 @@
 - `HTTP_HOST` The requested host.
     I.e. the URI host in browser url input box.
     _when you type `http://www.baidu.com` it's `www.baidu.com`_
+
+## See Also
+
+- [PHP $_SERVER](http://php.net/manual/zh/reserved.variables.server.php)
