@@ -1,12 +1,14 @@
 # $_SERVER
 
-- `SERVER_NAME` The configured server name of in http server such as Nginx conf.
+- `SERVER_NAME` The first configured server name of in http server such as Nginx conf.
 
     ```nginx
     server {
-        server_name localhost;
+        server_name localhost example.com;
     }
     ```
+
+    And you will always get localhost.
 
 - `HTTP_HOST` The requested host.
     I.e. the URI host in browser url input box.
