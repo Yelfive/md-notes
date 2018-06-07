@@ -2,5 +2,5 @@
 
 ## Debug
 
-- `CURLOPT_VERBOSE` Show verbose infomation about the request, 
-- `CURLOPT_STDERR`
+- `CURLOPT_VERBOSE` Show verbose information about the request, default to `stderr`
+- `CURLOPT_STDERR` Set to redirect the `CURLOPT_VERBOSE` result
