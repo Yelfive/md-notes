@@ -27,6 +27,8 @@ do
             exit 1;;
     esac
 done
+
+shift $((${OPTIND} - 1))
 ```
 
 ### String option list: 'a:b'
