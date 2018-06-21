@@ -14,15 +14,17 @@ Print the input of specified line range.
 
 #### examples
 
-from start string to end string
+1. from start **string** to **end string**
 
-```bash
-sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' file.txt
-```
+    ```bash
+    sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' file.txt
+    ```
 
-```bash
-sed -n '<start_line_number>,<end_line_number>p' file.txt
-```
+1. from start **line** to end line
+
+    ```bash
+    sed -n '<start_line_number>,<end_line_number>p' file.txt
+    ```
 
 ## See Also
 
