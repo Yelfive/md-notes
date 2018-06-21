@@ -6,6 +6,14 @@
 sed SCRIPT INPUTFILE...
 ```
 
+## commands
+
+### p
+
+```bash
+sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p'
+```
+
 ## See Also
 
 - [sed,a stream editor][gun]
