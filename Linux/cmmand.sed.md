@@ -10,5 +10,4 @@ sed SCRIPT INPUTFILE...
 
 - [sed,a stream editor][gun]
 
-
 [gun]: https://www.gnu.org/software/sed/manual/sed.html
