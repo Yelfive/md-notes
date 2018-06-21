@@ -10,7 +10,11 @@ sed SCRIPT INPUTFILE...
 
 ### p
 
-Print 
+Print the input of specified line range.
+
+#### examples
+
+from start string to end string
 
 ```bash
 sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' file.txt
