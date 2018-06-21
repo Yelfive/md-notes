@@ -2,7 +2,7 @@
 
 ## Chinese
 
-- `GBK` 
+- `GBK`
     - Two bytes
     - Each byte ranges in ASCII between `161, 254`
 - `UTF-16`
