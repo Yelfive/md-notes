@@ -6,12 +6,18 @@
 sed SCRIPT INPUTFILE...
 ```
 
-## commands
+## Commands
 
 ### p
 
+Print 
+
 ```bash
-sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p'
+sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' file.txt
+```
+
+```bash
+sed -n '<start_line_number>,<end_line_number>p' file.txt
 ```
 
 ## See Also
