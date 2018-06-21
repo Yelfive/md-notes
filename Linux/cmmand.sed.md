@@ -14,7 +14,7 @@ Print the input of specified line range.
 
 #### examples
 
-1. from start **string** to **end string**
+1. from start **string** to end string
 
     ```bash
     sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' file.txt
