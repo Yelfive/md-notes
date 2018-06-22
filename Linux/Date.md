@@ -28,3 +28,9 @@ Some date server:
 # write time to hardware clock
 hwclock -w
 ```
+
+## format ouput
+
+```bash
+date "+%Y-%m-%d %H:%M:%S"
+```
