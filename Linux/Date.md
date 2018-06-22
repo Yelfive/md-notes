@@ -1,18 +1,18 @@
-Date
-===
+# Date
 
-### date -s
+## date -s
 
 ```bash
 # bash -s 'unix time'
 bash -s "2017-01-01"
 ```
 
-### Synchronize with network
+## Synchronize with network
 
 ```bash
 ntpdate time.nist.gov
 ```
+
 Some date server:
 
 - time.nist.gov
@@ -22,7 +22,7 @@ Some date server:
 - 2.asia.pool.ntp.org
 - 3.asia.pool.ntp.org
 
-### hwclock
+## hwclock
 
 ```bash
 # write time to hardware clock
