@@ -1,16 +1,22 @@
 # Commands
 
+## Overview
+
+### wildcard
+
 > Bashes accepts input with wildcard character
-> 
+>
 > - `*` matches arbitrary number of characters
 > - `?` matches any single character
 > - `[]` matches single character specified inside
+
+## Commands detail
 
 ### cat
 
 > cat [options] file [file...]
 
-**options**
+**options**:
 
 - `n`  show line number
 
