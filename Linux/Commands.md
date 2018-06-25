@@ -22,9 +22,9 @@
 
 ### less
 
-+ `/` to search for a pattern
-+ ` `(space) to go to next page
-+ `b` to go to previous page
+- `/` to search for a pattern
+- ` `(space) to go to next page
+- `b` to go to previous page
 
 ### grep
 
