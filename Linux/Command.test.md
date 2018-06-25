@@ -89,6 +89,10 @@ With Bash, you can shorten this type of construct. The compact equivalent of the
 [ "$(whoami)" != 'root' ] && ( echo you are using a non-privileged account; exit 1 )
 ```
 
+## keyword `!`
+
+When `!` is preceded commands, it reverse the exit code.
+
 ## See Also
 
 - [Introduction to if][if]
