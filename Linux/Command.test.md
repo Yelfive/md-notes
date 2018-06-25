@@ -18,11 +18,11 @@ if TEST-COMMANDS; then CONSEQUENT-COMMANDS; fi
 
 The `TEST-COMMAND list` is executed, and if its return status is zero, the `CONSEQUENT-COMMANDS` list is executed. The return status of `TEST-COMMAND list` is the exit status of the last command executed, or zero if no condition tested true.
 
-The `TEST-COMMAND` often involves numerical or string comparison tests, but it can also be any command that returns a status of zero when it succeeds and some other status when it fails. Unary expressions are often used to examine the status of a file. If the _FILE_ argument to one of the primaries is of the form _/dev/fd/N_, then file descriptor "N" is checked. **_stdin_, _stdout_ and _stderr_ and their respective file descriptors may also be used for FILE tests.**
+The `TEST-COMMAND` often involves numerical or string comparison tests, but it can also be any command that returns a status of zero when it succeeds and some other status when it fails. Unary expressions are often used to examine the status of a file. If the _FILE_ argument(Table 1) to one of the primaries is of the form _/dev/fd/N_, then file descriptor "N" is checked. **_stdin_, _stdout_ and _stderr_ and their respective file descriptors may also be used for FILE tests.**
 
 ## Expression
 
-### table 1. Primary expressions
+### Table 1. Primary expressions
 
 Primary    | Meaning
 ---         | ---
