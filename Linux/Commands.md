@@ -526,3 +526,9 @@ Set or format a date.
 ```bash
  date "+%Y-%m-%d %H:%M:%S"
 ```
+
+### wc
+
+```bash
+wc file
+```
