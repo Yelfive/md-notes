@@ -529,8 +529,10 @@ Set or format a date.
 
 ### wc
 
+Word Count.
+
 ```bash
-wc filename
+wc [options] filename
 ```
 
 ```text
