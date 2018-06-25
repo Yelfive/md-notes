@@ -2,14 +2,19 @@
 
 ## Abstract
 
-This is more like a rewrite version of online [Introduction to if][if].
+This is more like a rewrite version of online [Introduction to if][if], from HTML format into markdown format.
+
+It explains the usage of command `if` and the `test` expression
 
 ## General
+
 At times you need to specify different courses of action to be taken in a shell script, depending on the success or failure of a command. The if construction allows you to specify such conditions.
 
 The most compact syntax of the if command is:
 
+```bash
 if TEST-COMMANDS; then CONSEQUENT-COMMANDS; fi
+```
 
 The TEST-COMMAND list is executed, and if its return status is zero, the CONSEQUENT-COMMANDS list is executed. The return status is the exit status of the last command executed, or zero if no condition tested true.
 
