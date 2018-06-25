@@ -55,7 +55,7 @@ $?          | Return exit code of the last command: `echo command && echo $?`
 ## Expression
 
 > `expression` is actually a command, and the expression will be `true` or `false` depending on its returned exit code
-> 
+>
 > - 0: true
 > - !0: false
 
