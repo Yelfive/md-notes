@@ -92,5 +92,7 @@ With Bash, you can shorten this type of construct. The compact equivalent of the
 ## See Also
 
 - [Introduction to if][if]
+- [Condition statements][condition]
 
 [if]: http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
+[condition]: http://tldp.org/LDP/Bash-Beginners-Guide/html/chap_07.html
