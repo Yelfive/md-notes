@@ -2,7 +2,9 @@
 
 ## Expression
 
-Primarhy    | Meaning
+### table 1. Primary expressions
+
+Primary    | Meaning
 ---         | ---
 [ -a FILE ] | True if FILE exists.
 [ -b FILE ] | True if FILE exists and is a block-special file.
