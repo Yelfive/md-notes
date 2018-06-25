@@ -72,6 +72,23 @@ Operation       | Effect
 [ EXPR1 -a EXPR2 ] | True if both EXPR1 and EXPR2 are true.
 [ EXPR1 -o EXPR2 ] | True if either EXPR1 or EXPR2 is true.
 
+### Examples
+
+An example of comparing strings for testing the user ID:
+
+```bash
+if [ "$(whoami)" != 'root' ]; then
+        echo "You have no permission to run $0 as non-root user."
+        exit 1;
+fi
+```
+
+With Bash, you can shorten this type of construct. The compact equivalent of the above test is as follows:
+
+```bash
+[ "$(whoami)" != 'root' ] && ( echo you are using a non-privileged account; exit 1 )
+```
+
 ## See Also
 
 - [Introduction to if][if]
