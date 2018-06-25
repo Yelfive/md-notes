@@ -1,5 +1,19 @@
 # test and expressions
 
+## Abstract
+
+This is 
+
+## General
+At times you need to specify different courses of action to be taken in a shell script, depending on the success or failure of a command. The if construction allows you to specify such conditions.
+
+The most compact syntax of the if command is:
+
+if TEST-COMMANDS; then CONSEQUENT-COMMANDS; fi
+
+The TEST-COMMAND list is executed, and if its return status is zero, the CONSEQUENT-COMMANDS list is executed. The return status is the exit status of the last command executed, or zero if no condition tested true.
+
+The TEST-COMMAND often involves numerical or string comparison tests, but it can also be any command that returns a status of zero when it succeeds and some other status when it fails. Unary expressions are often used to examine the status of a file. If the FILE argument to one of the primaries is of the form /dev/fd/N, then file descriptor "N" is checked. stdin, stdout and stderr and their respective file descriptors may also be used for tests.
 ## Expression
 
 ### table 1. Primary expressions
