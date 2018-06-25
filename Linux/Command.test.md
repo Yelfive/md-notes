@@ -32,7 +32,7 @@ Primary    | Meaning
 [ FILE1 -ef FILE2 ] | True if FILE1 and FILE2 refer to the same device and inode numbers.
 [ -o OPTIONNAME ] | True if shell option "OPTIONNAME" is enabled.
 [ -z STRING ] | True of the length if "STRING" is zero.
-[ -n STRING ] or [ STRING ]	| True if the length of "STRING" is non-zero.
+[ -n STRING ] or [ STRING ] | True if the length of "STRING" is non-zero.
 [ STRING1 == STRING2 ] | True if the strings are equal. "=" may be used instead of "==" for strict POSIX compliance.
 [ STRING1 != STRING2 ] | True if the strings are not equal.
 [ STRING1 < STRING2 ] | True if "STRING1" sorts before "STRING2" lexicographically in the current locale.
@@ -42,8 +42,12 @@ Primary    | Meaning
 ### Table 2. Combining expressions
 
 Operation   | Effect
----        | ---
-[ ! EXPR ]	True if EXPR is false.
-[ ( EXPR ) ]	Returns the value of EXPR. This may be used to override the normal precedence of operators.
-[ EXPR1 -a EXPR2 ]	True if both EXPR1 and EXPR2 are true.
-[ EXPR1 -o EXPR2 ]	True if either EXPR1 or EXPR2 is true.
+---         | ---
+[ ! EXPR ]  | True if EXPR is false.
+[ ( EXPR ) ]    | Returns the value of EXPR. This may be used to override the normal precedence of operators.
+[ EXPR1 -a EXPR2 ] | True if both EXPR1 and EXPR2 are true.
+[ EXPR1 -o EXPR2 ] | True if either EXPR1 or EXPR2 is true.
+
+## See Also
+
+- [Introduction to if](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
