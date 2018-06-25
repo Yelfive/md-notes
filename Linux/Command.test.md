@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This is 
+This is more like a rewrite version of online [Introduction to if][if].
 
 ## General
 At times you need to specify different courses of action to be taken in a shell script, depending on the success or failure of a command. The if construction allows you to specify such conditions.
@@ -64,4 +64,6 @@ Operation       | Effect
 
 ## See Also
 
-- [Introduction to if](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
+- [Introduction to if][if]
+
+[if]: http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
