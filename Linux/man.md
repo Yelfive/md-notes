@@ -1,5 +1,7 @@
 # Manual
 
+```bash
+
 > man cmd
 
 cmd(1), cmd(2)
@@ -74,8 +76,7 @@ The standard sections of the manual include:
        in this section terminate with an exit status that indicates whether
        the command succeeded or failed.  See [intro(1)][1] for more information.
 
-Appendix:
----------
+## Appendix
 
 - [User Commands][1]
 - [System Calls][2]
@@ -96,7 +97,3 @@ Appendix:
 [8]: http://man7.org/linux/man-pages/man2/intro.8.html
 
 [macro]: http://man7.org/linux/man-pages/man7/feature_test_macros.7.html
-
-
-
-
