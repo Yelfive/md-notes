@@ -93,6 +93,10 @@ With Bash, you can shorten this type of construct. The compact equivalent of the
 
 When `!` is preceded commands, it reverse the exit code.
 
+```bash
+! command
+```
+
 ## See Also
 
 - [Introduction to if][if]
