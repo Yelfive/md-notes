@@ -87,7 +87,6 @@ fi
 > read input from terminal, interactively.
 > And then stores the value in `var`
 
-
 ```bash
 read var
 ```
