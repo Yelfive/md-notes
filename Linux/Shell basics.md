@@ -69,6 +69,8 @@ same as the following, notice the space between `[` and `expression` and `]`
 [ expression ]
 ```
 
+
+
 ## if
 
 It takes a command as condition, and depends on its exit code to consider as true or false:
