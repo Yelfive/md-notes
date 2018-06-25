@@ -97,6 +97,9 @@ When `!` is preceded commands, it reverse the exit code.
 ! command
 ```
 
+- `command` exit with non-zero, the above statement returns zero.
+- `command` exit with zero, the above statement returns 1.
+
 ## See Also
 
 - [Introduction to if][if]
