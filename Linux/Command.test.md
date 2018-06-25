@@ -61,6 +61,8 @@ Primary    | Meaning
 
 ### Table 2. Combining expressions
 
+Expressions may be combined using the following operators, listed in decreasing order of precedence.
+
 Operation       | Effect
 ---             | ---
 [ ! EXPR ]      | True if EXPR is false.
