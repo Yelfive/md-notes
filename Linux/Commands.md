@@ -538,3 +538,7 @@ wc [options] filename
 ```text
 <newline count>  <word count>  <byte count>
 ```
+
+- `<newline count>` The count of CRLF.
+- `<world count>` Words separated by blank.
+- `<byte count>` Byte count.
