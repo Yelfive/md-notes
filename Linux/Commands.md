@@ -530,5 +530,9 @@ Set or format a date.
 ### wc
 
 ```bash
-wc file
+wc filename
+```
+
+```text
+<newline count>  <word count>  <byte count>
 ```
