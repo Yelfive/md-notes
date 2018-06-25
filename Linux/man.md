@@ -1,7 +1,4 @@
-Manual
-======
-
-```
+# Manual
 
 > man cmd
 
