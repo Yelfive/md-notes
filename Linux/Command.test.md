@@ -63,7 +63,7 @@ Primary    | Meaning
 
 Expressions may be combined using the following operators, listed in decreasing order of precedence.
 
-The `[` (or `test`) built-in evaluates conditional expressions using a set of rules based on the number of arguments. More information about this subject can be found in the Bash documentation. Just like the if is closed with fi, the _opening square bracket_(`[`) should be closed(with `]`) after the conditions have been listed.
+The `[` (or `test`) built-in evaluates conditional expressions **using a set of rules based on the number of arguments**. More information about this subject can be found in the Bash documentation. Just like the `if` is closed with `fi`, the _opening square bracket_(`[`) should be closed(with `]`) after the conditions have been listed.
 
 Operation       | Effect
 ---             | ---
