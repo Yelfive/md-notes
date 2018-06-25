@@ -39,3 +39,11 @@ Primary    | Meaning
 [ STRING1 > STRING2 ] | True if "STRING1" sorts after "STRING2" lexicographically in the current locale.
 [ ARG1 OP ARG2 ] | "OP" is one of -eq, -ne, -lt, -le, -gt or -ge. These arithmetic binary operators return true if "ARG1" is equal to, not equal to, less than, less than or equal to, greater than, or greater than or equal to "ARG2", respectively. "ARG1" and "ARG2" are integers.
 
+### Table 2. Combining expressions
+
+Operation   | Effect
+---        | ---
+[ ! EXPR ]	True if EXPR is false.
+[ ( EXPR ) ]	Returns the value of EXPR. This may be used to override the normal precedence of operators.
+[ EXPR1 -a EXPR2 ]	True if both EXPR1 and EXPR2 are true.
+[ EXPR1 -o EXPR2 ]	True if either EXPR1 or EXPR2 is true.
