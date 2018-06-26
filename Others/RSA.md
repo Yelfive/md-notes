@@ -8,9 +8,17 @@
 
 Encrypt and decrypt with same key(password).
 
+- AES
+- Blowfish
+- DES
+- Twofish
+- IDEA
+
 ## asymmetric encryption
 
 Encrypt and decrypt with different keys: _public key_ and _private key_
+
+- RSA
 
 ### Message Encryption and Decryption
 
