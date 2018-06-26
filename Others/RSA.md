@@ -4,6 +4,14 @@
 
 - [ ] what's PEM formatted key
 
+## symmetric encryption
+
+Encrypt and decrypt with same key(password).
+
+## asymmetric encryption
+
+Encrypt and decrypt with different keys: _public key_ and _private key_
+
 ### Message Encryption and Decryption
 
 1. public key
