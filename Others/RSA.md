@@ -20,7 +20,10 @@ Encrypt and decrypt with same key(password).
 
 - `Blowfish` Replacement of `DES`.
 - `Twofish` Successor of `Blowfish`
-- IDEA
+- `IDEA`
+
+```php
+```
 
 ## asymmetric encryption
 
@@ -47,3 +50,4 @@ Encrypt and decrypt with different keys: _public key_ and _private key_
 ## See Alson
 
 - [RSA(cryptosystem)](https://en.wikipedia.org/wiki/RSA_(cryptosystem)))
+- [5 Common Encryption Algorithms and the Unbreakables of the Future](https://blog.storagecraft.com/5-common-encryption-algorithms/)
