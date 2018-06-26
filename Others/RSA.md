@@ -22,7 +22,11 @@ Encrypt and decrypt with same key(password).
 - `Twofish` Successor of `Blowfish`
 - `IDEA`
 
+**code snippets**:
+
 ```php
+$key = 'random password';
+openssl_encrypt('hello world', 'AES-128-CBC', $key);
 ```
 
 ## asymmetric encryption
