@@ -25,8 +25,12 @@ Encrypt and decrypt with same key(password).
 **code snippets**:
 
 ```php
+$data = 'hello world';
 $key = 'random password';
-openssl_encrypt('hello world', 'AES-128-CBC', $key);
+$algorithm = 'AES-128-CBC';
+
+$encrypted = openssl_encrypt($data, $algorithm, $key);
+$decrypted = openssl_decrypt($encrypted, $algorithm, $key)
 ```
 
 ## asymmetric encryption
