@@ -12,7 +12,7 @@ Encrypt and decrypt with same key(password).
 - `Triple DES` Replacement of `DES`.
 - `AES` Advanced Encryption Standard, commonly used and recommended.
 - `Blowfish` Replacement of `DES`.
-- Twofish
+- `Twofish` Successor of `Blowfish`
 - IDEA
 
 ## asymmetric encryption
