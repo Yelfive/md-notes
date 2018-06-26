@@ -8,9 +8,10 @@
 
 Encrypt and decrypt with same key(password).
 
-- AES
-- Blowfish
-- DES
+- `DES` Data Encryption Standard.
+- `Triple DES` Replacement of `DES`.
+- `AES` Advanced Encryption Standard, commonly used and recommended.
+- `Blowfish` Replacement of `DES`.
 - Twofish
 - IDEA
 
