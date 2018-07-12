@@ -33,6 +33,10 @@
 
     JS CMS with Markdown
 
+- [mPDF](https://github.com/mpdf/mpdf.github.io)
+
+    PDF reader/writer, also able to export as html
+
 ## Utilities
 
 - [Adminer](https://www.adminer.org/) PHP DBMS
