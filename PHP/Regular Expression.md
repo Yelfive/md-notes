@@ -38,7 +38,7 @@ to test if **lookbehind assertion** preceded sub-pattern.
 
 1. `(?<=` Positive assertion
 
-    ```
+    ```text
     (?<=foo)bar
     ```
 
@@ -46,7 +46,7 @@ to test if **lookbehind assertion** preceded sub-pattern.
 
 2. `(?<!` Negative assertion
 
-    ```
+    ```text
     (?<!foo)bar
     ```
 
