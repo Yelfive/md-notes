@@ -27,6 +27,10 @@ UPDATE/DELETE a table.field when another table.filed is updated/deleted
 
 namespace App\Entity;
 
+class User
+{
+}
+
 class Comment
 {
     /**
@@ -46,7 +50,11 @@ cascade={"persist", "remove"}
 - `persist`
 
     To persist the associations when `EntityManager::persist` is called.
+
 - `remove`
+
+    Delete a user and all its associative comments.
+
 - `merge`
 - `detach`
 - `refresh`
