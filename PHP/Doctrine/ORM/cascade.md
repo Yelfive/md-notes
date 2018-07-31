@@ -39,12 +39,16 @@ class Comment
 
 ### cascade candidates
 
+```doctrine
+cascade={"persist", "remove"}
+```
+
 - `persist`
 - `remove`
 - `merge`
 - `detach`
 - `refresh`
-- `all` All of above
+- `all` All of the above
 
 ## See Also
 
