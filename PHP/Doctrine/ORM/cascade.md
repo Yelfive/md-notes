@@ -44,6 +44,8 @@ cascade={"persist", "remove"}
 ```
 
 - `persist`
+
+    When user is set `persist`, a comment
 - `remove`
 - `merge`
 - `detach`
@@ -53,3 +55,4 @@ cascade={"persist", "remove"}
 ## See Also
 
 - [MySQL: Using Foreign Key Constraints](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html)
+- [Dotrine: Working with Associations](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/working-with-associations.html)
