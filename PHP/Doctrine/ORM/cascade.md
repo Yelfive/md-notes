@@ -37,7 +37,14 @@ class Comment
 }
 ```
 
+### cascade candidates
 
+- `persist`
+- `remove`
+- `merge`
+- `detach`
+- `refresh`
+- `all` All of above
 
 ## See Also
 
