@@ -62,6 +62,11 @@ cascade={"persist", "remove"}
     $em->flush();
     ```
 
+    Cascade here is performed in memory, thus a events can be triggered.
+    
+    To avoid the in memory behavior, which might consumes large memory usage, `onDelete="CASCADE"`
+    should be used with `@JoinColumn`
+
 - `merge`
 - `detach`
 - `refresh`
