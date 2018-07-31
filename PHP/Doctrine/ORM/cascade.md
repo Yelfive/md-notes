@@ -16,7 +16,7 @@ class Comment
 
 ```
 
-Cascade 
+Cascade in DBS means to do something 
 
 ## SQL:2011 Spec
 
