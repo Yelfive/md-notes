@@ -45,7 +45,7 @@ cascade={"persist", "remove"}
 
 - `persist`
 
-    When user is set `persist`, a comment
+    To persist the associations when `EntityManager::persist` is called.
 - `remove`
 - `merge`
 - `detach`
