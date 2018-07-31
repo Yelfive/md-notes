@@ -16,7 +16,9 @@ class Comment
 
 ```
 
-Cascade in DBS means to do something 
+Cascade in DBS means to do something along with some action.
+
+Such as to "UPDATE/DELETE a table.field when another table.filed is updated/deleted"
 
 ## SQL:2011 Spec
 
