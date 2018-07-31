@@ -55,6 +55,13 @@ cascade={"persist", "remove"}
 
     Delete a user and all its associative comments.
 
+    ```php
+    // All comments will be deleted along with the user
+    $user = $em->find(1);
+    $em->remove($user);
+    $em->flush();
+    ```
+
 - `merge`
 - `detach`
 - `refresh`
