@@ -30,8 +30,8 @@ Such as to "UPDATE/DELETE a table.field when another table.filed is updated/dele
 
 `ON DELETE RESTRICT`: it is prohibited to delete a row of the referenced table if that row has any matching rows in the referencing table.
 
-`ON DELETE NO ACTION` (the default): there is no referential delete action; the referential constraint only specifies a constraint check.
+`ON DELETE NO ACTION` (the default): there is no referential delete action; the referential constraint only specifies a constraint check, which in _MySQL_ equals to `ON DELETE RESTRICT`
 
 ## See Also
 
-- [MySQL Foreign Key](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html)
+- [MySQL: Using Foreign Key Constraints](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html)
