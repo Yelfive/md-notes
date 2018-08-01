@@ -27,7 +27,7 @@ class Product
 /** @Entity */
 class Feature
 {
-    // ...
+    // ...d
     /**
      * Many Features have One Product.
      * @ManyToOne(targetEntity="Product", inversedBy="features")
