@@ -42,8 +42,8 @@ We could also use appendChild to add a new element into the Shadow Root, or in t
 
 If we add this Custom Element to a document and open Chrome Dev Tools, we’ll get something like this:
 
+## Shadow Root in Chrome Dev Tools
 
-Shadow Root in Chrome Dev Tools
 We can see the element has an open Shadow Root with the paragraph element within. But what does this get us?
 
 Because we have added the component template to a sub-DOM tree we get a certain level of encapsulation. If we added the following CSS to the main document head:
@@ -75,7 +75,8 @@ With these simple concepts component authors can create an encapsulated context 
 
 The Shadow DOM has many more features to offer, if you’d like to learn more I’d recommend reading Shadow DOM v1: Self-Contained Web Components.
 
-Open Mode
+## Open Mode
+
 Now we are clear on how the Shadow DOM works in terms of its encapsulation we can move on to look at the differences between the open and closed modes.
 
 The above example used the open mode which offers a decent level of encapsulation already, so what could closed mode possibility provide in addition? Not much actually.
@@ -167,7 +168,8 @@ Element.prototype.attachShadow = function () {
 
 This will hijack the native attachShadow method and force every attachShadow call to always create an open Shadow Root — leaving your supposedly closed Shadow Root open for manipulation.
 
-Conclusion
+## Conclusion
+
 The closed mode of Shadow DOM has a single benefit which is to provide component authors with control over how the Shadow Root of their component is exposed (if at all) to the outside world.
 
 Given that it’s incredibly easy to work around paranoid component authors hiding their Shadow Roots its probably not worth the effort.
