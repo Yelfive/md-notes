@@ -48,6 +48,7 @@ We can see the element has an open Shadow Root with the paragraph element within
 
 Because we have added the component template to a sub-DOM tree we get a certain level of encapsulation. If we added the following CSS to the main document head:
 
+```html
 <head>
     <meta charset="UTF-8">
     <title>Blog Post</title>
@@ -58,12 +59,16 @@ Because we have added the component template to a sub-DOM tree we get a certain 
         }
     </style>
 </head>
-Because the paragraph element within our component is in the Shadow Root it won’t inherit this style.
+```
 
+Because the paragraph element within our component is in the Shadow Root it won’t inherit this style.
 
 Additionally if we executed the following JavaScript on the main document object:
 
+```js
 document.querySelector("p") // null
+```
+
 The result would be null because the Shadow Root won’t be queried providing the desired encapsulation.
 
 With these simple concepts component authors can create an encapsulated context for their component ensuring they have control over the style and can be confident that ambient JavaScript won’t accidentally break their component.
@@ -79,8 +84,10 @@ When you create an open Shadow Root with this.attachShadow({ mode: “open” })
 
 In the example above we did this from within the Custom Element class definition in the connectedCallback. The shadowRoot is available on the element instance so we can just as easily access it externally from the main application.
 
+```js
 const $myWebComponent = document.querySelector("my-web-component");
 $myWebComponent.shadowRoot.querySelector("p").innerText = "Modified!";
+```
 
 With open mode a components Shadow Root is easy to update externally
 Closed Mode
@@ -88,16 +95,19 @@ The closed mode of Shadow DOM is an interesting feature in that it is the cause 
 
 The closed mode of Shadow DOM provides the same encapsulation as the open mode but additionally allows the component author to hide access to the ShadowRoot, but not really — let me explain.
 
-As we’ve just seen with open mode, once attachShadow has been called a reference to the elements shadow root is available on the shadowRoot property. This is not the case with closed mode: you’ll find that attachShadow returns null.
+As we’ve just seen with open mode, once attachShadow has been called a reference to the elements shadow root is available on the shadowRoot property. This is not the case with closed mode: you’ll find that attachShadow returns `null`.
 
+```js
 let $element = document.createElement("div");
 $element.attachShadow({ mode: "closed" });
 $element.shadowRoot // null
+```
 
 The shadowRoot property always returns null if using closed mode of Shadow DOM
 So what does this mean for Web Components?
 Because you can’t use the shadowRoot property to access and manipulate the Shadow Root of the element you’ll need to manually store a reference to the Shadow Root yourself.
 
+```js
 class MyWebComponent extends HTMLElement {
     constructor() {
         super();
@@ -110,19 +120,27 @@ class MyWebComponent extends HTMLElement {
     }
 }
 window.customElements.define("my-web-component", MyWebComponent);
+```
+
 The only difference here is that the component author has control over how the Shadow Root is exposed on the element:
 
+```js
 const $myWebComponent = document.querySelector("my-web-component");
 $myWebComponent.shadowRoot // null
 $myWebComponent._root // shadow-root (closed)
+```
+
 This might be considered a benefit as in JavaScript, good developer etiquette dictates that a variable prefixed with an underscore “should be left well alone”. But there is nothing really stopping anyone doing the following given the above example.
 
+```js
 const $myWebComponent = document.querySelector("my-web-component");
 $myWebComponent._root.querySelector("p").innerText = "Modified!";
+```
 
 The so called “private” variable ain’t stopping nobody
 Of course you could take it one step further and wrap the Custom Element definition in a closure to prevent the reference to the Shadow Root from being accessible:
 
+```js
 (function(){
     const _shadows = new WeakMap();
     class MyWebComponent extends HTMLElement {
@@ -145,6 +163,8 @@ Element.prototype._attachShadow = Element.prototype.attachShadow;
 Element.prototype.attachShadow = function () {
     return this._attachShadow( { mode: "open" } );
 };
+```
+
 This will hijack the native attachShadow method and force every attachShadow call to always create an open Shadow Root — leaving your supposedly closed Shadow Root open for manipulation.
 
 Conclusion
