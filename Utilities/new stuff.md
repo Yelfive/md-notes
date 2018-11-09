@@ -23,7 +23,7 @@
 
     E-Commercial PHP framework based on Symfony
 
-- [Magento]
+- [Magento](https://magento.com/)
 
 - [Spout](https://github.com/box/spout)
 
