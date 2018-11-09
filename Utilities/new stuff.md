@@ -90,3 +90,4 @@ network protocol analyzer
 
 - [showdown](https://www.npmjs.com/package/showdown) - Markdown compiler
 - [highlight](https://www.npmjs.com/package/highlight.js) - Code block highlighting
+- [LaTex](https://www.latex-project.org/)
