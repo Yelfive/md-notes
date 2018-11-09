@@ -23,6 +23,8 @@
 
     E-Commercial PHP framework based on Symfony
 
+- [Magento]
+
 - [Spout](https://github.com/box/spout)
 
     Spout is a PHP library to read and write spreadsheet files (CSV, XLSX and ODS), in a fast and scalable way. Contrary to other file readers or writers, it is capable of processing very large files while keeping the memory usage really low. Excel reader
