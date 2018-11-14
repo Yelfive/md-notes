@@ -5,3 +5,14 @@
 ```bash
 ssh -tp port username@ip 'cd /path/to/directory'
 ```
+
+## Configure
+
+reside in file `~/.ssh/config`
+
+```conf
+Host github.com
+    User git
+    Hostname github.com
+    Port 22
+```
