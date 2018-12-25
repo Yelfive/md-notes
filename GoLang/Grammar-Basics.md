@@ -24,6 +24,11 @@ const (
 
 ```go
 func getClosure() func(func_list) (return_types) {
-    // do something
+    func (x int, y int) int {
+        return x + y
+    }
+}
+func (x int, y int) int {
+    return x + y
 }
 ```
