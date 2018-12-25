@@ -9,3 +9,12 @@ const (
     B = "hello"
 )
 ```
+
+### iota
+
+```go
+const (
+    a = iota // a: 0
+    b = iota // b: 1
+)
+```
