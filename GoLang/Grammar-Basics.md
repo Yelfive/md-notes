@@ -19,3 +19,10 @@ const (
     C        // `c = iota` c: 2
 )
 ```
+
+## Closure
+
+```go
+func getClosure() func(func_list) (return_types) {
+    // do somthing
+}
