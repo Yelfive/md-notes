@@ -14,7 +14,8 @@ const (
 
 ```go
 const (
-    a = iota // a: 0
-    b = iota // b: 1
+    A = iota // a: 0
+    B = iota // b: 1
+    C        // `c = iota` c: 2
 )
 ```
