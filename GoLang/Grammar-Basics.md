@@ -24,5 +24,6 @@ const (
 
 ```go
 func getClosure() func(func_list) (return_types) {
-    // do somthing
+    // do something
 }
+```
