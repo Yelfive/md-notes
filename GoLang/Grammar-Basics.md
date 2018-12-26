@@ -82,6 +82,19 @@ BookInfo["price"] = "Priceless"
 
 ```go
 type name interface {
-    method_name return_type
+    methodName return_type
 }
+```
+
+## implements a interface
+
+```go
+type StructureName struct {
+    // variables
+}
+
+func (StructureVariableName StructureName) methodName() return_type {
+    // do something
+}
+// then 
 ```
