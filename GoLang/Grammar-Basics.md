@@ -98,3 +98,32 @@ func (StructureVariableName StructureName) methodName() return_type {
 }
 // Then the interface `Name` is implemented by `StructureVariableName`
 ```
+
+**Note**: Interfaces must be defined and implemented outside functions
+
+### Example
+
+```go
+package main
+
+import "fmt"
+
+type Phone interface {
+	call()
+}
+
+type NokiaPhone struct {
+	name string
+}
+
+func (nokiaPhone NokiaPhone) call() {
+	nokiaPhone.name = "Nokia"
+	fmt.Printf("Hello, I'm %s\n", nokiaPhone.name)
+}
+
+func main() {
+	var phone Phone
+	phone = new(NokiaPhone)
+	phone.call() // prints: Hello, I'm Nokia
+}
+```
