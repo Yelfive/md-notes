@@ -81,7 +81,7 @@ BookInfo["price"] = "Priceless"
 ## define a interface
 
 ```go
-type name interface {
+type Name interface {
     methodName return_type
 }
 ```
@@ -96,5 +96,5 @@ type StructureName struct {
 func (StructureVariableName StructureName) methodName() return_type {
     // do something
 }
-// then 
+// Then the interface `Name` is implemented by `StructureVariableName`
 ```
