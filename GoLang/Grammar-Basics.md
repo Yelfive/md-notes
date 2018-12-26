@@ -68,4 +68,10 @@ slice_name := make([] int, length, capacity)
 
 ```go
 var map_name map[key_type]value_type
+
+// Example
+var bookInfo map[string] string
+
+bookInfo["author"] = "Felix"
+BookInfo["price"] = "Priceless"
 ```
