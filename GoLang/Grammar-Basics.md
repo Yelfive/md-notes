@@ -47,3 +47,13 @@ var balance = [5] int {1, 2, 3, 4, 5}
 // Without specifying size
 var balance = [...] int {1, 2, 3, 4, 5}
 ```
+
+## Slice
+
+A size variable array, can be enlarged or extended by `append` copied by `copy`
+
+```
+
+```
+
+## Map
