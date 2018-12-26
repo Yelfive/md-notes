@@ -52,8 +52,14 @@ var balance = [...] int {1, 2, 3, 4, 5}
 
 A size variable array, can be enlarged or extended by `append` copied by `copy`
 
-```
+### definition
 
+```go
+// By define a size-less array
+var slice_name [] element_type
+
+// By `make`
+slice_name := make([] int, length, capacity)
 ```
 
 ## Map
