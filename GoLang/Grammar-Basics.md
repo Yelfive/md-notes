@@ -63,3 +63,9 @@ slice_name := make([] int, length, capacity)
 ```
 
 ## Map
+
+### definition
+
+```go
+var map_name map[key_type]value_type
+```
