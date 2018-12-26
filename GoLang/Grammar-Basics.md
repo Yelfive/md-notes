@@ -75,3 +75,13 @@ var bookInfo map[string] string
 bookInfo["author"] = "Felix"
 BookInfo["price"] = "Priceless"
 ```
+
+## Interface
+
+## define a interface
+
+```go
+type name interface {
+    method_name return_type
+}
+```
