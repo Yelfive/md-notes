@@ -40,6 +40,9 @@ var variable_name [size] type
 
 var variable_name = [size]type{elements list}
 
+// Without initial values
 var balance [5] int
+// With initial values
 var balance = [5] int {1, 2, 3, 4, 5}
+var balance = [...] int {1, 2, 3, 4, 5}
 ```
