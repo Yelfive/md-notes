@@ -89,14 +89,16 @@ type Name interface {
 ## implements a interface
 
 ```go
+// Define a structure
 type StructureName struct {
     // variables
 }
 
+// Implements the interface to the `StructureName`
 func (StructureVariableName StructureName) methodName() return_type {
     // do something
 }
-// Then the interface `Name` is implemented by `StructureVariableName`
+// Then the interface `Name` is implemented by `StructureName`
 ```
 
 **Note**: Interfaces must be defined and implemented outside functions
