@@ -111,21 +111,21 @@ package main
 import "fmt"
 
 type Phone interface {
-	call()
+    call()
 }
 
 type NokiaPhone struct {
-	name string
+    name string
 }
 
 func (nokiaPhone NokiaPhone) call() {
-	nokiaPhone.name = "Nokia"
-	fmt.Printf("Hello, I'm %s\n", nokiaPhone.name)
+    nokiaPhone.name = "Nokia"
+    fmt.Printf("Hello, I'm %s\n", nokiaPhone.name)
 }
 
 func main() {
-	var phone Phone
-	phone = new(NokiaPhone)
-	phone.call() // prints: Hello, I'm Nokia
+    var phone Phone
+    phone = new(NokiaPhone)
+    phone.call() // prints: Hello, I'm Nokia
 }
 ```
