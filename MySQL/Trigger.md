@@ -37,7 +37,7 @@ CREATE TRIGGER trigger_name BEFORE INSERT ON table_name FOR EACH ROW
 BEGIN
     DECLARE amount INT;
     UPDATE user SET order_count=order_count+1 WHERE id=NEW.created_by;
-    
+
     IF NEW.amount < 0 THEN
        SET amount = 0;
     ELSEIF NEW.amount > 100 THEN
@@ -62,7 +62,7 @@ on table_name
 FOR EACH ROW
 -- Here --
 FOLLOWS|PRECEDES
-existed_triiger_name
+existed_trigger_name
 SET something=something_else
 ```
 
@@ -93,5 +93,3 @@ DROP TRIGGER table_name.trigger_name
 ## Appendix
 
 - [dev.mysql.com](https://dev.mysql.com/doc/refman/5.7/en/create-trigger.html)
-
-    

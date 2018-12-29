@@ -27,6 +27,3 @@ flush privileges;
 ```
 
 Then to step [2. Set](#2-Set) or [3. Update](#3-Update)
-
-
-
