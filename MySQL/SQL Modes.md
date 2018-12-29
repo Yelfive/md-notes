@@ -45,8 +45,6 @@ sql_mode = STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_B
 
     With `NO_ENGINE_SUBSTITUTION` **enabled**, an error occurs and the table is not created or altered if the desired engine is unavailable.
 
-
-
 ## Appendix
 
 - [MySQL](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html)
