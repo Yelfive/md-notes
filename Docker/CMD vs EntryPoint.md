@@ -15,7 +15,7 @@ When there's no `entrypoint`, the executable `CMD` will takes its role.
 
 When there is `entrypoint`, `CMD` is the default value for it.
 
-On the command line, anything after `exec <image>` will overwrite the `CMD`, takes its place as arguments of `entrypoint` 
+On the command line, anything after `exec <image>` will overwrite the `CMD`, takes its place as arguments of `entrypoint`
 
 ## For example
 
