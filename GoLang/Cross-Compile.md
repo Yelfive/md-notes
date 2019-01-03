@@ -13,4 +13,4 @@ windows | 386 / amd64       | >= Windows 2000
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build hello.go
 ```
 
-- `CGO_ENABLED`
+- `CGO_ENABLED` Enables C compiler
