@@ -3,7 +3,7 @@
 ##### 1. MySQL Admin
 
 ```bash
-mysqladmin -u root -p password 
+mysqladmin -u root -p password
 ```
 
 ##### 2. Set
