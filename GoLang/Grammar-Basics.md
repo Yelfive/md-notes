@@ -132,6 +132,8 @@ func main() {
 
 ## panic
 
+`panic` will print out error message and goroutine traces then exit with a none-zero status code.
+
 ### syntax
 
 ```go
