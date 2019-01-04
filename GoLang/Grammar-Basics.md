@@ -134,6 +134,8 @@ func main() {
 
 `panic` will print out error message and goroutine traces then exit with a none-zero status code.
 
+It similar to PHP's throw exception, which output an error message and a runtime trace.
+
 ### syntax
 
 ```go
