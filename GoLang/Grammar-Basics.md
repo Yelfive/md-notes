@@ -129,3 +129,18 @@ func main() {
     phone.call() // prints: Hello, I'm Nokia
 }
 ```
+
+## panic
+
+### syntax
+
+```go
+panic(interface{})
+```
+
+### example
+
+```go
+panic("something goes wrong")
+panic(errors.New("something goes wrong"))
+```
