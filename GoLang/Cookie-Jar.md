@@ -15,9 +15,11 @@ type Jar struct {
 ## Usage
 
 ```go
-jar = cookiejar.New(nil)
+jar := cookiejar.New(nil)
 
-client = &http.Client{
+client := &http.Client{
     Jar: jar
 }
+
+client.Get(uri)
 ```
