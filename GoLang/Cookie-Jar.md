@@ -33,4 +33,4 @@ jar.Cookie()
 
 ## See also
 
-- url.Parse(rawUrl string)
+- `url.Parse(rawUrl string) *url.Url`
