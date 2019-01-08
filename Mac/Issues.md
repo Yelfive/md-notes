@@ -27,3 +27,9 @@ If you just call `sudo killall httpd`, the `httpd` will be started by `launchd` 
 cd /Library/Preferences/SystemConfiguration
 sudo rm -rf NetworkInterfaces.plist com.apple.airport.preferences.plist com.apple.network.eapolclient.configuration.plist preferences.plist
 ```
+
+## Allow apps download from Anywhere
+
+```bash
+sudo spctl --master-disable
+```
