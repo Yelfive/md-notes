@@ -27,3 +27,10 @@ According to IEEE standard, and the actual specification is variable according t
 4. 附录 词汇表、分析模型、待定问题列表
 5. 索引
 ```
+
+## Reader
+
+1. Software Engineer
+2. Test Engineer
+3. UI
+4. Product Manager
