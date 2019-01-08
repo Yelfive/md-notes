@@ -1,6 +1,6 @@
 # Software Requirements Specification
 
-According to IEEE standard
+According to IEEE standard, and the actual specification is variable according to the fact.
 
 ```txt
 1. 引言
@@ -24,8 +24,6 @@ According to IEEE standard
     e. 设计约束:软件支持环境、报表、数据命名等
     f. 软件质量属性(可维护性、可靠性、可用性、安全性等)
     g. 其他需求
-  这一节是文档中最实质性的部分，由于在机构组织的实践中存在极大
-   的变数，对这一节定义的标准结构可以进行增删。
 4. 附录 词汇表、分析模型、待定问题列表
 5. 索引
 ```
