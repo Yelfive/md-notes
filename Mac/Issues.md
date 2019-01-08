@@ -6,7 +6,6 @@
 # sudo killall httpd
 ps aux|grep httpd
 
-
 sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ```
 
