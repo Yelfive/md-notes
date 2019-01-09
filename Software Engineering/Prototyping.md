@@ -1,6 +1,6 @@
 # Prototyping
 
-## Why
+## What for
 
 _What's prototype for?_
 
