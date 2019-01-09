@@ -1,5 +1,7 @@
 # Software Requirements Specification
 
+`PRD` Product Requirements Document
+
 According to IEEE standard, and the actual specification is variable according to the fact.
 
 ```txt
