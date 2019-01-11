@@ -24,8 +24,7 @@ root@59c79b4bb81f:/var/www/html/ali/yaoyue# ps x
  1990 ?        R+     0:00 ps x
 ```
 
-
-```
+```text
 -U      Display the processes belonging to the specified real user IDs.
 -u      Display the processes belonging to the specified usernames.
 ```
