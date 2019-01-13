@@ -30,8 +30,10 @@ Right click on the created blank image, click `Get Info`, get the `Mount point`
 #### 2. Running in terminal with the `Mount point`
 
 ```bash
-sudo tmutil setdestination /Volumes/<name of the volume>
+sudo tmutil setdestination <Mount point>
 ```
+
+### Good to go
 
 ## Appendix
 
