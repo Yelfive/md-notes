@@ -19,6 +19,15 @@ Using <kbd>Command + K</kbd> in `Finder` to connect to the windows shared direct
 7. `Partition` as `Single Partition - GUID Partition Map`
 8. `Image Format` must be `sparse disk image`
 
+### Copy the mount to the Windows' shared directory
+
+### Mount
+
+#### 1. Getting Mount Point
+
+Right click on the created blank image, click `Get Info`, get the `Mount point`
+
+#### 2. Running in terminal with the `Mount point`
 
 ```bash
 sudo tmutil setdestination /Volumes/<name of the volume>
