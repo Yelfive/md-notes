@@ -10,9 +10,11 @@ Using <kbd>Command + K</kbd> in `Finder` to connect to the windows shared direct
 
 ### 3. Create a blank image
 
-1. Open `Disk Utility`
-2. Using `Command + N` to open creating dialog
-3. 
+1. Open `Disk Utility`.
+2. Using `Command + N` to open creating dialog.
+3. `Save As` is the name of image file on the disk.
+4. `Name` is the name displayed after mounted.
+5. `Format` must be `Mac OS Extended(Journaled)
 
 ```bash
 sudo tmutil setdestination /Volumes/<name of the volume>
