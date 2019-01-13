@@ -8,6 +8,12 @@
 
 Using <kbd>Command + K</kbd> in `Finder` to connect to the windows shared directory.
 
+### 3. Create a blank image
+
+1. Open `Disk Utility`
+2. Using `Command + N` to open creating dialog
+3. 
+
 ```bash
 sudo tmutil setdestination /Volumes/<name of the volume>
 ```
