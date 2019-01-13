@@ -8,6 +8,12 @@
 
 Using <kbd>Command + K</kbd> in `Finder` to connect to the windows shared directory.
 
+e.g.
+
+```text
+smb://ip/director
+```
+
 ### 3. Create a blank image
 
 1. Open `Disk Utility`.
