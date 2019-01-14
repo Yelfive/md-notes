@@ -27,7 +27,7 @@ smb://ip/directory
 
 ### Copy the mount to the Windows' shared directory
 
-### Mount
+### 4. Mount
 
 #### 1. Getting Mount Point
 
@@ -39,7 +39,17 @@ Right click on the created blank image, click `Get Info`, get the `Mount point`
 sudo tmutil setdestination <Mount point>
 ```
 
-### Good to go
+### 5. Good to go
+
+### 6. Troubleshooting
+
+**Q** Slow backup
+
+**A** Running in terminal
+
+```bash
+sudo sysctl debug.lowpri_throttle_enabled=0
+```
 
 ## Appendix
 
