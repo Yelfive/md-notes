@@ -11,7 +11,7 @@ Using <kbd>Command + K</kbd> in `Finder` to connect to the windows shared direct
 e.g.
 
 ```text
-smb://ip/director
+smb://ip/directory
 ```
 
 ### 3. Create a blank image
