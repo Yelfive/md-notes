@@ -51,6 +51,8 @@ sudo tmutil setdestination <Mount point>
 sudo sysctl debug.lowpri_throttle_enabled=0
 ```
 
+> Remember to `sudo sysctl debug.lowpri_throttle_enabled=1`
+
 ## Appendix
 
 - [jianshu](https://www.jianshu.com/p/388998fada12)
