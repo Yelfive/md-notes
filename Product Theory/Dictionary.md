@@ -1,3 +1,3 @@
 # Dictionary
 
-- `BRD` Business Requirements Documentation
+- `BRD` Business Requirements Document
