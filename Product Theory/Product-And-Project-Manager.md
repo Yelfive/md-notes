@@ -18,6 +18,10 @@
             - 是否需要技术预研
         - 市场资源（媒体、推广渠道、公馆资源e.t.c）
         - 运营资源（现有团队能否支撑可能发生的用户需求和与之相对应的其他需求）
+    4. 该阶段目标
+    5. 稳当输出，根据汇报对象实际情况
+        - 商业需求文档 BRD, Business Requirements Document
+        - 市场需求文档 MRD, Market Requirement Document
 
 ### 项目经理
 
