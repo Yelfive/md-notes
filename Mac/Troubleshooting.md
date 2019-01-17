@@ -33,3 +33,9 @@ sudo rm -rf NetworkInterfaces.plist com.apple.airport.preferences.plist com.appl
 ```bash
 sudo spctl --master-disable
 ```
+
+## Bluetooth not available
+
+```bash
+sudo rm -rf /Library/Preferences/com.apple.Bluetooth.plist*
+```
