@@ -34,8 +34,8 @@ sudo rm -rf NetworkInterfaces.plist com.apple.airport.preferences.plist com.appl
 sudo spctl --master-disable
 ```
 
-## Bluetooth not available
+## pmset
 
 ```bash
-sudo rm -rf /Library/Preferences/com.apple.Bluetooth.plist*
+sudo pmset -a autopoweroff 0
 ```
