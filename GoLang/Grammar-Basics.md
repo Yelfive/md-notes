@@ -34,7 +34,9 @@ $GOPATH
 - `bin`
 
     For executable binary files, *.exe for windows
-- ``
+- `pkg`
+
+    For application packages. Which is created by running `go install packageName`, and the `packageName` has no `main` function.
 
 ## Constants
 
