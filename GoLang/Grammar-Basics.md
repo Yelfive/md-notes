@@ -242,3 +242,5 @@ panic(interface{})
 panic("something goes wrong")
 panic(errors.New("something goes wrong"))
 ```
+
+## Anonymous 
