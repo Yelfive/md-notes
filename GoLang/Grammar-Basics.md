@@ -70,6 +70,8 @@ To build application or packages(`$GOPATH/pkg/*.a`)
 
 To download a go package, which generally works by cloning from repository and then run `go install`
 
+`go get -u` will download the package and its dependencies.
+
 ## Constants
 
 ```go
