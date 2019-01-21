@@ -276,7 +276,12 @@ func (b *Box) PaintBlack() {
     b.Color = "black"
 }
 
+func (b *Box) PaintRed() {
+    b.Color = "red"
+}
+
 box := Box{}
 box.PaintBlack()
-fmt.Println()
+fmt.Println(box.Color)
+(&box).PaintBlack()
 ```
