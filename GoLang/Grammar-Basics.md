@@ -43,6 +43,8 @@ $GOPATH
 
     For all source files: package, application etc.
 
+> For go source files (`*.go`), when a package has a `main` function inside, it is called "**application**", and otherwise it's a "**package**"
+
 ## Constants
 
 ```go
