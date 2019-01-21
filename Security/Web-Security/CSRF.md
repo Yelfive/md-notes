@@ -10,6 +10,9 @@ Suppose that Client as access to Good-Site, and when he visits one Evil-Site, Th
     | ---------------- 3. access -------------->|
                          | <---4. forge form--- |
 ```
+
+By the fourth step `forge form`, Evil site prepares a 
+
 ## Appendix
 
 1. [CSRF攻击原理及防御](https://www.cnblogs.com/shytong/p/5308667.html)
