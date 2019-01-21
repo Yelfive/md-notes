@@ -84,6 +84,8 @@ To download a go package, which generally works by cloning from repository and t
     - `array_darwin.go`
     - `array_windows.go`
     - `array_freebsd.go`
+3. `go build` will ignore the files starts with `_` or `.`.
+
 
 ## Constants
 
