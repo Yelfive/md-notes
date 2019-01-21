@@ -86,6 +86,9 @@ To download a go package, which generally works by cloning from repository and t
     - `array_freebsd.go`
 3. `go build` will ignore the files starts with `_` or `.`.
 
+### go clean
+
+To clean compiled files, which should not be committed to repositories.
 
 ## Constants
 
