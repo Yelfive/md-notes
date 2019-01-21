@@ -2,7 +2,7 @@
 
 ## Overview
 
-### What's $GOPATH
+### What's GOPATH
 
 
 
