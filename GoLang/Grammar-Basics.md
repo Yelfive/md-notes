@@ -72,6 +72,10 @@ To download a go package, which generally works by cloning from repository and t
 
 `go get -u` will download the package and its dependencies.
 
+### go build vs. go install
+
+1. `go install` will generate files, depending on it's package(without `main` function) or executable(with `main` function), while `go build` does not.
+
 ## Constants
 
 ```go
