@@ -4,7 +4,7 @@
 
 ### What's GOPATH
 
-
+`GOPATH` is the home of go, which contains three directories: `bin`, `pkg`, `src`.
 
 ### Directory structure
 
