@@ -68,7 +68,7 @@ To build application or packages(`$GOPATH/pkg/*.a`)
 
 ### go get
 
-
+To download a go package, which generally works by cloning from repository and then run `go install`
 
 ## Constants
 
