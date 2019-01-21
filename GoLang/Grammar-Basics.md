@@ -267,3 +267,12 @@ fmt.println("name is", mark.name)
 
 ## About methods
 
+```go
+type Box {
+    Color string
+}
+
+func (b *Box) PaintBlank() {
+
+}
+```
