@@ -1,5 +1,16 @@
 # Grammar Basics
 
+## Overview
+
+### What's GOPATH
+
+
+
+### Directory structure
+
+```text
+```
+
 ## Constants
 
 ```go
