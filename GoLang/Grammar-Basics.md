@@ -308,9 +308,24 @@ Similarly, If the receiver is defined as a non-pointer, the caller will be trans
 
 ```go
 type Human struct {
-    
+    name string
+    age uint
 }
 
+type Student struct {
+    Human
+    Major string
+}
+
+// 
+func (h *Human) SayHi {
+    fmt.Printf("Hi, I'm %s", h.age)
+}
+
+func main() {
+    s = Student{"Felix", 29}
+    s.SayHi()
+}
 ```
 
 ### Overwrite
