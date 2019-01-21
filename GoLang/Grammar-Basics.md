@@ -333,9 +333,20 @@ func main() {
 ### Overwrite
 
 ```go
-// ... after code above
+// ...
+// Student/Human definition
 
 func (s *Student) SayHi() {
     fmt.Printf("Hello, my name is %s\n", s.name);
 }
+
+func main() {
+    // Same as above
+}
+```
+
+and it will prints
+
+```text
+Hello, my name is Felix
 ```
