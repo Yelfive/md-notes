@@ -320,8 +320,8 @@ type Student struct {
 
 // Define a method on Human
 // and it will be inherited by Student
-func (h *Human) SayHi {
-    fmt.Printf("Hi, I'm %s", h.age)
+func (h *Human) SayHi() {
+    fmt.Printf("Hi, I'm %s", h.name)
 }
 
 func main() {
@@ -335,5 +335,7 @@ func main() {
 ```go
 // ... after code above
 
-
+func (s *Student) SayHi() {
+    fmt.Printf("Hello, my name is %s\n", s.name);
+}
 ```
