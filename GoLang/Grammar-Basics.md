@@ -47,7 +47,12 @@ $GOPATH
 
 For go source files (`*.go`), when a package has a `main` function inside, it is called "**application**", and otherwise it's a "**package**"
 
-### 
+### Directory
+
+A go package can has multiple level directories, and the last part of the path is called `package name`, such as,
+
+- `$GOPATH/go/pkg/github.com/yelfive/mymath`
+- `$GOPATH/go/pkg/mymath`
 
 ## Constants
 
