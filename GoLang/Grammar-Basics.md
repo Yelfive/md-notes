@@ -90,6 +90,10 @@ To download a go package, which generally works by cloning from repository and t
 
 To clean compiled files, which should not be committed to repositories.
 
+### go test
+
+It reads `*_test.go` under current package.
+
 ## Constants
 
 ```go
