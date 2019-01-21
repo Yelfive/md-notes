@@ -31,6 +31,11 @@ $GOPATH
         ` myapp.go
 ```
 
+- `bin`
+
+    For executable binary files, *.exe for windows
+- ``
+
 ## Constants
 
 ```go
