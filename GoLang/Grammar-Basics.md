@@ -243,4 +243,13 @@ panic("something goes wrong")
 panic(errors.New("something goes wrong"))
 ```
 
-## Anonymous 
+## Anonymous field in structure
+
+```go
+struct Human {
+    name string
+    age uint
+    weight uint
+}
+```
+
