@@ -296,3 +296,6 @@ black
 red
 ```
 
+### Conclusion
+
+When a receiver is defined as a pointer, no matter whether the caller is a pointer or not, go will automatically translate it to a pointer if not.
