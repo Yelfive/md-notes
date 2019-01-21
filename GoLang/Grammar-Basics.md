@@ -265,3 +265,5 @@ mark := Man{Human{"Mark", 16, 175}, "Black"}
 fmt.println("name is", mark.name)
 ```
 
+## About methods
+
