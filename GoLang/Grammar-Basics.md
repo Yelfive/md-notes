@@ -280,8 +280,19 @@ func (b *Box) PaintRed() {
     b.Color = "red"
 }
 
-box := Box{}
-box.PaintBlack()
-fmt.Println(box.Color)
-(&box).PaintBlack()
+func main() {
+    box := Box{}
+    box.PaintBlack()
+    fmt.Println(box.Color)
+    (&box).PaintRed()
+    fmt.Println(box.Color)
+}
 ```
+
+output:
+
+```text
+black
+red
+```
+
