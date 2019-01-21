@@ -76,8 +76,8 @@ To download a go package, which generally works by cloning from repository and t
 
 1. `go install` will generate files, depending on it's package(without `main` function) or executable(with `main` function), while `go build` may not.
 
-    - for packages `go install` will generate files in `/pkg`.
-    - for executable `go install` will generate files in `/bin`
+    - `go install` will generate files in `/pkg` for packages and for executable it will be in `/bin`.
+    - `go build` will generate a binary file in current directory.
 
 2. 
 
