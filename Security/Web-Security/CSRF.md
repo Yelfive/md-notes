@@ -12,7 +12,7 @@ Suppose that Client as access to Good-Site, and when he visits one Evil-Site, Th
     | <--- 5. bill ----- |
 ```
 
-By the fourth step `forge form`, Evil Site prepares a evil request trying to access some paid service, and after that, the bill will be `Client`'s
+By the fourth step `forge form`, Evil Site prepares a evil request trying to access some paid service, and after that, the bill will be on `Client`.
 
 ## Appendix
 
