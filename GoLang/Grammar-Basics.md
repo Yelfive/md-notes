@@ -262,7 +262,7 @@ struct Man {
 
 mark := Man{Human{"Mark", 16, 175}, "Black"}
 
-fmt.println("name is", mark.name)
+fmt.Println("name is", mark.name)
 ```
 
 ## About methods
@@ -272,7 +272,11 @@ type Box {
     Color string
 }
 
-func (b *Box) PaintBlank() {
-
+func (b *Box) PaintBlack() {
+    b.Color = "black"
 }
+
+box := Box{}
+box.PaintBlack()
+fmt.Println()
 ```
