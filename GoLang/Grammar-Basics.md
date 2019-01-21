@@ -254,10 +254,12 @@ struct Human {
 
 struct Man {
     /*
-     * Anonymous field allows `Man` to be able to access all fields in `Human`
+     * Anonymous field allows `Man` to have all fields in `Human`
      */
     Human // Anonymous field
     Hair string
 }
+
+man := Man{Human{}}
 ```
 
