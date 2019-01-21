@@ -60,6 +60,16 @@ A go package can has multiple level directories, and the last part of the path i
 - `$GOPATH/go/pkg/github.com/yelfive/mymath`
 - `$GOPATH/go/pkg/mymath`
 
+## Commands
+
+### go run
+
+To build application or packages(`$GOPATH/pkg/*.a`)
+
+### go get
+
+
+
 ## Constants
 
 ```go
