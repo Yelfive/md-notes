@@ -10,7 +10,11 @@
 
 ```text
 /bin
+    |
+    ` binary_file
 /pkg
+    |
+    ` pkg.a
 /src
     |
     |- github.com
