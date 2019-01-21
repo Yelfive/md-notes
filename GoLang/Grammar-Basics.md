@@ -79,7 +79,11 @@ To download a go package, which generally works by cloning from repository and t
     - `go install` will generate files in `/pkg` for packages and for executable it will be in `/bin`.
     - `go build` will generate a binary file in current directory.
 
-2. `go build`
+2. `go build` will automatically choose go file with suffix according to the OS, such as
+    - `array_linux.go`
+    - `array_darwin.go`
+    - `array_windows.go`
+    - `array_freebsd.go`
 
 ## Constants
 
