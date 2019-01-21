@@ -6,7 +6,7 @@
 
 `GOPATH` is the home of go, which contains three directories: `bin`, `pkg`, `src`.
 
-If more than one path want specifying, using
+If more than one path want specifying, separating them with semicolon (`:`)
 
 ```shell
 export GOPATH=path1:path2
