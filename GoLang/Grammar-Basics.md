@@ -79,7 +79,7 @@ To download a go package, which generally works by cloning from repository and t
     - `go install` will generate files in `/pkg` for packages and for executable it will be in `/bin`.
     - `go build` will generate a binary file in current directory.
 
-2. 
+2. `go build`
 
 ## Constants
 
