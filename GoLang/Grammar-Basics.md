@@ -2,7 +2,7 @@
 
 ## Overview
 
-### What's GOPATH
+### What's $GOPATH
 
 
 
@@ -49,7 +49,7 @@ For go source files (`*.go`), when a package has a `main` function inside, it is
 
 ### Directory
 
-A go package can has multiple level directories, and the last part of the path is called `package name`, such as,
+A go package can has multiple level directories, and the last part of the path is called `package name`. Such as:
 
 - `$GOPATH/go/pkg/github.com/yelfive/mymath`
 - `$GOPATH/go/pkg/mymath`
