@@ -6,9 +6,11 @@
 
 `GOPATH` is the home of go, which contains three directories: `bin`, `pkg`, `src`.
 
-If more than one path want specifying, using format
+If more than one path want specifying, using
 
-- Windows: `GOPATH=path1:path2`
+```shell
+export GOPATH=path1:path2
+```
 
 ### Directory structure
 
