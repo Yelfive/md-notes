@@ -313,11 +313,13 @@ type Human struct {
 }
 
 type Student struct {
+    // Anonymous field
     Human
     Major string
 }
 
-// 
+// Define a method on Human
+// and it will be inherited by Student
 func (h *Human) SayHi {
     fmt.Printf("Hi, I'm %s", h.age)
 }
