@@ -11,7 +11,7 @@ Suppose that Client as access to Good-Site, and when he visits one Evil-Site, Th
                          | <---4. forge form--- |
 ```
 
-By the fourth step `forge form`, Evil site prepares a 
+By the fourth step `forge form`, Evil Site prepares a evil request to 
 
 ## Appendix
 
