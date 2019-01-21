@@ -9,6 +9,21 @@
 ### Directory structure
 
 ```text
+/bin
+/pkg
+/src
+    |
+    |- github.com
+    |   |
+    |   ` yelfie
+    |       |
+    |       ` pkg.go
+    |- mypkg
+    |   |
+    |   ` mypkg.go
+    `- myapp
+        |
+        ` myapp.go
 ```
 
 ## Constants
