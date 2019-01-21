@@ -268,7 +268,7 @@ fmt.Println("name is", mark.name)
 ## About methods
 
 ```go
-type Box {
+type Box struct {
     Color string
 }
 
@@ -301,3 +301,16 @@ red
 When a receiver is defined as a pointer, no matter whether the caller is a pointer or not, go will automatically translate it to a pointer if not.
 
 Similarly, If the receiver is defined as a non-pointer, the caller will be translated into a non-pointer if it is a pointer.
+
+## Object-Oriented
+
+### Inherit
+
+```go
+type Human struct {
+    
+}
+
+```
+
+### Overwrite
