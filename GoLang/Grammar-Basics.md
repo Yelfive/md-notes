@@ -251,5 +251,13 @@ struct Human {
     age uint
     weight uint
 }
+
+struct Man {
+    /*
+     * Anonymous 
+     */
+    Human
+    Hair string
+}
 ```
 
