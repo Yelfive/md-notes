@@ -418,6 +418,8 @@ type Interface2 interface {
 // Interface2 has both method1 and method2 then.
 ```
 
+**See Also** https://blog.golang.org/laws-of-reflection
+
 ## Reflection
 
 - `reflect.ValueOf(i)`
