@@ -421,4 +421,9 @@ type Interface2 interface {
 ## Reflection
 
 - `reflect.ValueOf(i)`
+
+    Returns a new Value initialized to the concrete value stored in the interface i. ValueOf(nil) returns the zero Value
+
 - `reflect.TypeOf(i)`
+
+    Returns the reflection Type that represents the dynamic type of i. If i is a nil interface value, TypeOf returns nil
