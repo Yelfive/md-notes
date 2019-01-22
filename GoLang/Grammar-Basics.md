@@ -427,3 +427,7 @@ type Interface2 interface {
 - `reflect.TypeOf(i)`
 
     Returns the reflection `Type` that represents the dynamic type of i. If i is a `nil` interface value, `TypeOf` returns `nil`.
+
+## `runtime.Gosched()`
+
+`runtime.Gosched()` tells CPU to leave some interval to other tasks, not taking all CPU time.
