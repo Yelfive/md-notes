@@ -390,5 +390,12 @@ if value, ok := a.(int); ok {
 
 ```go
 var a interface{}
-switch 
+a = 1
+
+switch value:= a.(type) {
+    case int:
+        fmt.Println("int")
+    case string:
+        fmt.Println("string")
+}
 ```
