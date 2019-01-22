@@ -402,3 +402,16 @@ switch value := a.(type) {
 
 > Note: `a.(type)` notation is only available inside switch.
 
+### extends
+
+```go
+
+type Interface1 interface {
+    method1()
+}
+
+type Interface2 interface {
+    Interface1
+    method2()
+}
+```
