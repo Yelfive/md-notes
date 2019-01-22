@@ -358,6 +358,6 @@ and it will print
 Hello, my name is Felix
 ```
 
-## type interface{}
+## type `interface{}`
 
-In GoLang 
+In GoLang every data type implements `interface{}`, 
