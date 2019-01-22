@@ -392,10 +392,10 @@ if value, ok := a.(int); ok {
 var a interface{}
 a = 1
 
-switch value:= a.(type) {
+switch value := a.(type) {
     case int:
-        fmt.Println("int")
+        fmt.Println("int", value)
     case string:
-        fmt.Println("string")
+        fmt.Println("string", value)
 }
 ```
