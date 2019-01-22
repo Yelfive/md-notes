@@ -357,3 +357,7 @@ and it will print
 ```text
 Hello, my name is Felix
 ```
+
+## type interface{}
+
+In GoLang 
