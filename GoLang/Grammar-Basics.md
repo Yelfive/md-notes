@@ -371,3 +371,8 @@ v = i // integer
 v = s // string
 ```
 
+### determine what type is stored inside a `interface{}`
+
+#### Comma-ok assert
+```
+```
