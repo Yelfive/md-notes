@@ -361,3 +361,9 @@ Hello, my name is Felix
 ## type `interface{}`
 
 In GoLang every data type implements `interface{}`, so if a variable is defined as `interface{}`, it can be assigned any value.
+
+```go
+v := interface{}
+i := 1
+s := "hello"
+```
