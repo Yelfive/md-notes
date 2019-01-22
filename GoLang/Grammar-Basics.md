@@ -363,7 +363,11 @@ Hello, my name is Felix
 In GoLang every data type implements `interface{}`, so if a variable is defined as `interface{}`, it can be assigned any value.
 
 ```go
-v := interface{}
+var v interface{}
 i := 1
 s := "hello"
+
+v = i // integer
+v = s // string
 ```
+
