@@ -399,3 +399,6 @@ switch value := a.(type) {
         fmt.Println("string", value)
 }
 ```
+
+> Note: `a.(type)` notation is only available inside switch.
+
