@@ -360,4 +360,4 @@ Hello, my name is Felix
 
 ## type `interface{}`
 
-In GoLang every data type implements `interface{}`, 
+In GoLang every data type implements `interface{}`, so if a variable is defined as `interface{}`, it can be assigned any value.
