@@ -373,15 +373,22 @@ v = s // string
 
 ### determine what type is stored inside a `interface{}`
 
-#### Comma-ok assert
+#### Comma-ok assertion
 
 ```go
-a := interface{}
+var a interface{}
 a = 1
 
-if a.(int) {
-    fmt.Println("int")
-} else if a.(string) {
+if value, ok := a.(int); ok {
+    fmt.Println("int", value)
+} else if _, ok := a.(string); ok {
     fmt.Println("string")
 }
+```
+
+#### switch assertion
+
+```go
+var a interface{}
+switch 
 ```
