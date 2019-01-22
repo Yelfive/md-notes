@@ -374,5 +374,14 @@ v = s // string
 ### determine what type is stored inside a `interface{}`
 
 #### Comma-ok assert
-```
+
+```go
+a := interface{}
+a = 1
+
+if a.(int) {
+    fmt.Println("int")
+} else if a.(string) {
+    fmt.Println("string")
+}
 ```
