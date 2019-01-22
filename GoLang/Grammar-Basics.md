@@ -417,3 +417,8 @@ type Interface2 interface {
 
 // Interface2 has both method1 and method2 then.
 ```
+
+## Reflection
+
+- `reflect.ValueOf(i)`
+- `reflect.TypeOf(i)`
