@@ -443,3 +443,13 @@ type Interface2 interface {
 ```go
 regexp.MatchString(pattern string, data) (matched bool, err error)
 ```
+
+## import
+
+### 1. dot `.`
+
+```go
+import (
+    . "fmt"
+)
+```
