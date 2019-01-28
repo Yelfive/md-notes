@@ -466,7 +466,7 @@ import (
 f.Println(sth) // instead of fmt.Println
 ```
 
-### 3. `_` underline
+### 3. underscore `_`
 
 ```go
 import (
@@ -474,3 +474,4 @@ import (
 )
 ```
 
+Call the `init` function inside `some/package`
