@@ -438,3 +438,8 @@ type Interface2 interface {
 - `runtime.NumGoroutine` Returns the total number of gorouines, including running and scheduled tasks.
 - `runtime.GOMAXPROCS` Set the the max number of CPU cores available for concurrently computing and returns the original value.
 
+## regexp
+
+```go
+regexp.MatchString(pattern string, data) (match bool, err error)
+```
