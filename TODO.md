@@ -62,8 +62,8 @@
 ## PHP
 
 - PEAR, the PHP Extension and Application Repository
-    + https://www.ibm.com/developerworks/cn/linux/sdk/php/pear1/
-    + http://pear.php.net/
+  - https://www.ibm.com/developerworks/cn/linux/sdk/php/pear1/
+  - http://pear.php.net/
 - Thread Safe / Non Thread Safe PHP
 
 ## JS
@@ -84,6 +84,5 @@
 ## API
 
 - [GraphQL](https://graphql.org/code/)
-    -  [So what’s this GraphQL thing I keep hearing about?](https://medium.freecodecamp.org/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf)
-
-    - [APOLLO GRAPHQL](https://www.apollographql.com/)
+  - [So what’s this GraphQL thing I keep hearing about?](https://medium.freecodecamp.org/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf)
+  - [APOLLO GRAPHQL](https://www.apollographql.com/)
