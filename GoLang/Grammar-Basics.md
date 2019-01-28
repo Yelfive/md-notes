@@ -430,10 +430,11 @@ type Interface2 interface {
 
     Returns the reflection `Type` that represents the dynamic type of i. If i is a `nil` interface value, `TypeOf` returns `nil`.
 
-## `runtime.Gosched()`
+## `runtime` methods
 
 - `runtime.Goexit` Exit current goroutine, which `defer` to being exectued.
 - `runtime.Gosched()` tells CPU to leave some interval to other tasks, not taking all CPU time(scheduled).
 - `runtime.NumCPU` Returns the number of CPUs
 - `runtime.NumGoroutine` Returns the total number of gorouines, including running and scheduled tasks.
 - `runtime.GOMAXPROCS` Set the the max number of CPU cores available for concurrently computing and returns the original value.
+
