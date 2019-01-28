@@ -441,5 +441,5 @@ type Interface2 interface {
 ## regexp
 
 ```go
-regexp.MatchString(pattern string, data) (match bool, err error)
+regexp.MatchString(pattern string, data) (matched bool, err error)
 ```
