@@ -452,4 +452,25 @@ regexp.MatchString(pattern string, data) (matched bool, err error)
 import (
     . "fmt"
 )
+
+Println(sth) // instead of fmt.Println
 ```
+
+### 2. alias
+
+```go
+import (
+    f "fmt"
+)
+
+f.Println(sth) // instead of fmt.Println
+```
+
+### 3. `_` underline
+
+```go
+import (
+    _ "some/package"
+)
+```
+
