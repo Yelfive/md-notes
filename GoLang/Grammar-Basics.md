@@ -432,4 +432,6 @@ type Interface2 interface {
 
 ## `runtime.Gosched()`
 
-`runtime.Gosched()` tells CPU to leave some interval to other tasks, not taking all CPU time.
+- `runtime.Goexit` Exit current goroutine, which `defer` to being exectued.
+- `runtime.Gosched()` tells CPU to leave some interval to other tasks, not taking all CPU time(scheduled).
+- `runtime`
