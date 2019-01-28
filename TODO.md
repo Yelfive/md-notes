@@ -78,5 +78,9 @@
 
 ## AI
 
-- [ ] [Behavior Designer](https://www.opsive.com/assets/BehaviorDesigner/)
-- [ ] [Behavior Tree](http://www.aisharing.com/archives/tag/%E8%A1%8C%E4%B8%BA%E6%A0%91)
+- [Behavior Designer](https://www.opsive.com/assets/BehaviorDesigner/)
+- [Behavior Tree](http://www.aisharing.com/archives/tag/%E8%A1%8C%E4%B8%BA%E6%A0%91)
+
+## API
+
+- [GraphQL](https://graphql.org/code/)
