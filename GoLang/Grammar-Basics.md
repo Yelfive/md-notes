@@ -273,7 +273,7 @@ func main() {
 }
 ```
 
-
+Tags of `struct` is optional for one field, it can be retrieved by GoLang `reflect`, 
 
 ### See Also
 
