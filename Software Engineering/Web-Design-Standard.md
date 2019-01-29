@@ -8,5 +8,4 @@
 
 ## Web Design
 
-content width 1200px
-
+Content width 1200px
