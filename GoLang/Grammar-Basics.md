@@ -276,6 +276,9 @@ func main() {
 
 Tags of `struct` is optional for one field, it can be retrieved by GoLang `reflect`. However if tags are given in form of `key="value" key="value"`, reflect can conveniently get values for keys like the example above.
 
+- If the tag is not conveniently formed, `Tag` can be used to get the literal string.
+- If the tag is conveniently formed, 
+
 ### See Also
 
 - [Tags in Golang](https://medium.com/golangspec/tags-in-golang-3e5db0b8ef3e)
