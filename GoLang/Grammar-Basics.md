@@ -504,8 +504,13 @@ defer func () {
 }
 
 // or you can even return something here
-
 func sth() (inReturn string) {
-
+    defer func () {
+        if err:=recover; err != nil {
+            inReturn = "oops, something goes wrong"
+        }
+    }
+    somethingCausePanic()
+    return
 }
 ```
