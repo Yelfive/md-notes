@@ -9,3 +9,8 @@
 ## Web Design
 
 Content width 1200px
+
+## Font family
+
+- IOS Mac: PingFangSC-Regular
+- Windows: "微软雅黑"
