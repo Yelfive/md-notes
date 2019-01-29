@@ -475,3 +475,19 @@ import (
 ```
 
 Call the `init` function inside `some/package`
+
+## exception control
+
+Go does not have mechanism as `try...catch`, it provides a `panic & recover` mechanism
+
+```go
+func sth() {
+    defer func() {
+        if x := recover; x != nil {
+            // do something here
+        }
+    }()
+
+    panic()
+}
+```
