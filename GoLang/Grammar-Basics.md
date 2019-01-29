@@ -284,6 +284,8 @@ Tags of `struct` is optional for one field, it can be retrieved by GoLang `refle
     func (tag StructTag) Get(key string) string
     ```
 
+Struct tag can be used in occasion like `json`, `xml`, `orm` etc.
+
 ### See Also
 
 - [Tags in Golang](https://medium.com/golangspec/tags-in-golang-3e5db0b8ef3e)
