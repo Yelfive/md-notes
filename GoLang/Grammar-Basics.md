@@ -497,7 +497,6 @@ panic(errors.New("something goes wrong"))
 `recover` can only used when in deferred function, and it returns the `interface{}` being panicked, and if it's called out of `defer`, it returns `nil`.
 
 ```go
-
 defer func () {
     if err := recover; err != nil {
         //something goes wrong
