@@ -488,6 +488,10 @@ func sth() {
         }
     }()
 
-    panic()
+    goPanicHere()
 }
 ```
+
+### panic
+
+It's like a 
