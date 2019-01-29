@@ -10,6 +10,11 @@
 
 Content width 1200px
 
+## H5 Design
+
+- `width` 750px
+- `height` 1334px
+
 ## Font family
 
 - IOS/Mac: PingFangSC-Regular
