@@ -559,3 +559,12 @@ func sth() (inReturn string) {
     return
 }
 ```
+
+## Regular Expression
+
+In GoLang, regular expression is provided by package `regexp`, it contains methods of three types:
+
+- `Match`
+- `Compile`
+- `Find`
+- `Replace`
