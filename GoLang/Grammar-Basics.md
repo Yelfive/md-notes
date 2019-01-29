@@ -279,6 +279,11 @@ Tags of `struct` is optional for one field, it can be retrieved by GoLang `refle
 - If the tag is not conveniently formed, `Tag` can be used to get the literal string.
 - If the tag is conveniently formed, `Lookup` and `Get` can be used to "get value by key"
 
+    ```go
+    func (tag StructTag) Lookup(key string) (value string, ok bool)
+    func (tag StructTag) Get(key string) string
+    ```
+
 ### See Also
 
 - [Tags in Golang](https://medium.com/golangspec/tags-in-golang-3e5db0b8ef3e)
