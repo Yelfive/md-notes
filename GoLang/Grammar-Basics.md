@@ -491,3 +491,7 @@ panic(interface{})
 panic("something goes wrong")
 panic(errors.New("something goes wrong"))
 ```
+
+### recover
+
+`recover` can only used when in deferred function, and it returns the `interface{}` being panicked
