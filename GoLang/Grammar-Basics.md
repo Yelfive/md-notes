@@ -502,4 +502,10 @@ defer func () {
         //something goes wrong
     }
 }
+
+// or you can even return something here
+
+func sth() (inReturn string) {
+
+}
 ```
