@@ -246,6 +246,14 @@ mark := Man{Human{"Mark", 16, 175}, "Black"}
 fmt.Println("name is", mark.name)
 ```
 
+## struct tags
+
+```go
+
+```
+
+- [Tags in Golang](https://medium.com/golangspec/tags-in-golang-3e5db0b8ef3e)
+
 ## About methods
 
 ```go
