@@ -224,25 +224,6 @@ func main() {
 }
 ```
 
-## panic
-
-`panic` will print out error message and goroutine traces then exit with a none-zero status code.
-
-It similar to PHP's throw exception, which output an error message and a runtime trace.
-
-### syntax
-
-```go
-panic(interface{})
-```
-
-### example
-
-```go
-panic("something goes wrong")
-panic(errors.New("something goes wrong"))
-```
-
 ## Anonymous field in structure
 
 ```go
@@ -494,4 +475,19 @@ func sth() {
 
 ### panic
 
-It's like a 
+`panic` will print out error message and goroutine traces then exit with a none-zero status code.
+
+It's similar to PHP's throw exception, which output an error message and a runtime trace.
+
+#### syntax
+
+```go
+panic(interface{})
+```
+
+#### example
+
+```go
+panic("something goes wrong")
+panic(errors.New("something goes wrong"))
+```
