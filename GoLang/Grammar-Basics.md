@@ -258,11 +258,12 @@ import (
 )
 
 type T struct {
-    f string `one:"1" two:"2" blank:""`
+    bar string "I am a tag"
+    foo string `one:"1" two:"2"blank:""`
 }
 func main() {
     t := reflect.TypeOf(T{})
-    f, _ := t.FieldByName("f")
+    f, _ := t.FieldByName("foo")
     fmt.Println(f.Tag) // one:"1" two:"2"blank:""
     v, ok := f.Tag.Lookup("one")
     fmt.Printf("%s, %t\n", v, ok) // 1, true
