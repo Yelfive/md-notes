@@ -475,4 +475,3 @@ import (
 ```
 
 Call the `init` function inside `some/package`
-
