@@ -562,7 +562,7 @@ func sth() (inReturn string) {
 
 ## Regular Expression
 
-In GoLang, regular expression is provided by package `regexp`, it contains methods of three types:
+In GoLang, regular expression is provided by package `regexp`, it contains methods of four types:
 
 - `Match`
 - `Compile`
