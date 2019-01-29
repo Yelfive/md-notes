@@ -12,5 +12,6 @@ Content width 1200px
 
 ## Font family
 
-- IOS Mac: PingFangSC-Regular
-- Windows: "微软雅黑"
+- IOS/Mac: PingFangSC-Regular
+- Windows: 微软雅黑
+- Android: 思源黑体
