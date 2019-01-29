@@ -273,7 +273,7 @@ func main() {
 }
 ```
 
-Tags of `struct` is optional for one field, it can be retrieved by GoLang `reflect`, 
+Tags of `struct` is optional for one field, it can be retrieved by GoLang `reflect`. However if tags are given in form of `key="value" key="value"`, reflect can conveniently get values for keys like the example above.
 
 ### See Also
 
