@@ -48,7 +48,7 @@ export http_proxy="127.0.0.1:8118"
 export https_proxy="127.0.0.1:8118"
 ```
 
-# Appendix
+## Appendix
 
 - [Linux中使用ShadowSocks+Privoxy代理](https://docs.lvrui.io/2016/12/12/Linux%E4%B8%AD%E4%BD%BF%E7%94%A8ShadowSocks-Privoxy%E4%BB%A3%E7%90%86/)
 - [Ubuntu 14.04下shadowsocks-qt5的安装](https://my.oschina.net/HeAlvin/blog/487954)
