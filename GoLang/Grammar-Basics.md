@@ -568,3 +568,11 @@ In GoLang, regular expression is provided by package `regexp`, it contains metho
 - `Compile`
 - `Find`
 - `Replace`
+
+## switch
+
+`switch` clause will automatically `break` after each `case`, `fallthrough` will force it not to `break` and continue calling the next `case`
+
+```go
+fallthrough
+```
