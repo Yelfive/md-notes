@@ -611,7 +611,7 @@ func main() {
 }
 
 func doIt(workerID int, ch <-chan interface{}, done <-chan struct{},
-// it must be reference argument, or else to `wg` will be copied and won't affect the main process
+// It MUST be reference argument, or else to `wg` will be copied and won't affect the main process
  wg *sync.WaitGroup,
  ) {
     fmt.Printf("[%v] is running\n", workerID)
