@@ -581,3 +581,5 @@ case 2:
     // something else
 }
 ```
+
+## sync.WaitGroup
