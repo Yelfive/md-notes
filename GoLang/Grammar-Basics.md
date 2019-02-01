@@ -610,7 +610,10 @@ func main() {
     fmt.Println("all done!")
 }
 
-func doIt(workerID int, ch <-chan interface{}, done <-chan struct{}, wg *sync.WaitGroup) {
+func doIt(workerID int, ch <-chan interface{}, done <-chan struct{},
+// it must be reference argument, or else to `wg` will be copied and won't affect the main process
+ wg *sync.WaitGroup,
+ ) {
     fmt.Printf("[%v] is running\n", workerID)
     defer wg.Done()
     for {
