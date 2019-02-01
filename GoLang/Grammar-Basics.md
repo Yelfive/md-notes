@@ -574,5 +574,10 @@ In GoLang, regular expression is provided by package `regexp`, it contains metho
 `switch` clause will automatically `break` after each `case`, `fallthrough` will force it not to `break` and continue calling the next `case`
 
 ```go
-fallthrough
+switch cond {
+case 1:
+    fallthrough
+case 2:
+    // something else
+}
 ```
