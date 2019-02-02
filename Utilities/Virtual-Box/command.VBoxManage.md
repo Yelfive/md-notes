@@ -31,3 +31,5 @@ VBoxManage controlvm "Ubuntu Server" resume --type headless
 ```bash
 VBoxManage controlvm "Ubuntu Server" poweroff --type headless
 ```
+
+## List running virtual machines 
