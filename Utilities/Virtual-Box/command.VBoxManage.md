@@ -18,8 +18,9 @@ VBoxManage startvm Ubuntu --type headless
 VBoxManage controlvm "Ubuntu Server" pause --type headless
 ```
 
-## 
+## Restart an paused virtual machine
 
 ```bash
 VBoxManage controlvm "Ubuntu Server" resume --type headless
 ```
+
