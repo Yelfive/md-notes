@@ -1,6 +1,6 @@
 # VBoxManage command
 
-## Start virtual box without GUI
+## Start virtual machines without GUI
 
 ```bash
 VBoxManage startvm Ubuntu --type headless
