@@ -39,3 +39,5 @@ VBoxManage controlvm "Ubuntu Server" poweroff --type headless
 ```bash
 VBoxManage list runningvms
 ```
+
+### List running virtual machines verbosely
