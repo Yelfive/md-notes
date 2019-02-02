@@ -6,6 +6,8 @@
 VBoxManage startvm <vm> --type headless
 ```
 
+- `--type headless` means no GUI
+
 ### example
 
 ```bash
