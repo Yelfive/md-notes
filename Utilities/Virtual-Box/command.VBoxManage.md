@@ -11,3 +11,15 @@ VBoxManage startvm <vm> --type headless
 ```bash
 VBoxManage startvm Ubuntu --type headless
 ```
+
+## Pause virtual machine
+
+```bash
+VBoxManage controlvm "Ubuntu Server" pause --type headless
+```
+
+## 
+
+```bash
+VBoxManage controlvm "Ubuntu Server" resume --type headless
+```
