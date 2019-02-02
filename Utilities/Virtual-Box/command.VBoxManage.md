@@ -24,3 +24,8 @@ VBoxManage controlvm "Ubuntu Server" pause --type headless
 VBoxManage controlvm "Ubuntu Server" resume --type headless
 ```
 
+## To shut down the VM
+
+```bash
+VBoxManage controlvm "Ubuntu Server" poweroff --type headless
+```
