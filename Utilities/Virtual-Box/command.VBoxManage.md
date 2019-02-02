@@ -41,3 +41,7 @@ VBoxManage list runningvms
 ```
 
 ### List running virtual machines verbosely
+
+```bash
+VBoxManage list -l runningvms
+```
