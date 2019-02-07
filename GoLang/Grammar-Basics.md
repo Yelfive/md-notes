@@ -634,7 +634,7 @@ func doIt(workerID int, ch <-chan interface{}, done <-chan struct{},
 
 `init` is the function invoked after a package is loaded. Inside a package, there can be multiple `init` function defined, but one for each package is recommended.
 
-`main` is the function distinguish a **package** from a **executable**.
+`main` is the function distinguish a **package** from a **executable**. The package without a `main` function is package library and the other a executable library.
 
 
 
