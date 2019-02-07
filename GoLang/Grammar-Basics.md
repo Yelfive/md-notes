@@ -636,6 +636,6 @@ func doIt(workerID int, ch <-chan interface{}, done <-chan struct{},
 
 `main` is the function distinguish a **package** from a **executable**. The package without a `main` function is package library and the other a executable library.
 
-
+The following image illustrates init and main calling stack.
 
 ![init stack](https://raw.githubusercontent.com/astaxie/build-web-application-with-golang/master/zh/images/2.3.init.png)
