@@ -627,3 +627,9 @@ func doIt(workerID int, ch <-chan interface{}, done <-chan struct{},
     }
 }
 ```
+
+## init & main
+
+`init` and `main` are reserved function name.
+
+![image](https://raw.githubusercontent.com/astaxie/build-web-application-with-golang/master/zh/images/2.3.init.png)
