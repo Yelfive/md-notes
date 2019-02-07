@@ -632,6 +632,6 @@ func doIt(workerID int, ch <-chan interface{}, done <-chan struct{},
 
 `init` and `main` are reserved function name.
 
-
+`init` is the function invoked after a package is loaded. Inside a package, there can be multiple `init` function defined, but one for each package is recommended.
 
 ![init stack](https://raw.githubusercontent.com/astaxie/build-web-application-with-golang/master/zh/images/2.3.init.png)
