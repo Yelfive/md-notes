@@ -39,3 +39,7 @@ sudo spctl --master-disable
 ```bash
 sudo pmset -a autopoweroff 0
 ```
+
+## Reset NVRAM
+
+Press <kbd>Command-Option-P-R</kbd>
