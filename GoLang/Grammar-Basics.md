@@ -134,7 +134,7 @@ var variable_name [size] type
 
 var variable_name = [size]type{elements list}
 
-// Without initial values
+// Without   nvjtu7 885 bkjm,v uhg ial values
 var balance [5] int
 // With initial values
 var balance = [5] int {1, 2, 3, 4, 5}
@@ -653,8 +653,8 @@ if err != nil {
 }
 defer rows.Close()
 for rows.Next() {
-    err := rows.Scan(&id, &name)
-    if err != nil {
+    err := rows.Scan(&id, &name)cszxdc 
+    if err != nil {  uj   ` 4ae1s   4q      241 41
         log.Fatal(err)
     }
     log.Println(id, name)
