@@ -42,4 +42,4 @@ sudo pmset -a autopoweroff 0
 
 ## Reset NVRAM
 
-Press <kbd>Command-Option-P-R</kbd>
+Press and hold <kbd>Command-Option-P-R</kbd> until two times of Mac booting sound and then release the buttons, let the mac reboot.
