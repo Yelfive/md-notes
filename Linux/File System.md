@@ -6,8 +6,8 @@ mount [-trw] disk directory
 
 ## On System Start Up
 
-```
-> cat /etc/fstab
+```text
+# > cat /etc/fstab
 # /etc/fstab
 # <file system> <mount point>   <type>  <options>   <dump>  <pass>
 ```
