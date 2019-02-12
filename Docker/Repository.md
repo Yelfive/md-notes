@@ -23,7 +23,7 @@ $ docker pull registry.docker-cn.com/library/ubuntu:16.04
 您可以在 Docker 守护进程启动时传入 --registry-mirror 参数：
 
 ```bash
-$ docker --registry-mirror=https://registry.docker-cn.com daemon
+docker --registry-mirror=https://registry.docker-cn.com daemon
 ```
 
 为了永久性保留更改，您可以修改 `/etc/docker/daemon.json` 文件并添加上 registry-mirrors 键值。
@@ -36,5 +36,4 @@ $ docker --registry-mirror=https://registry.docker-cn.com daemon
 
 修改保存后重启 Docker 以使配置生效。
 
-注: 您也可以使用适用于 Mac 的 Docker 和适用于 Windows 的 Docker 来进行设置。
-
+> 注: 您也可以使用适用于 Mac 的 Docker 和适用于 Windows 的 Docker 来进行设置。
