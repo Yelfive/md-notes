@@ -134,7 +134,6 @@ var variable_name [size] type
 
 var variable_name = [size]type{elements list}
 
-// Without   nvjtu7 885 bkjm,v uhg ial values
 var balance [5] int
 // With initial values
 var balance = [5] int {1, 2, 3, 4, 5}
