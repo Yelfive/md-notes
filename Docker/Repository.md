@@ -7,13 +7,13 @@ Docker 中国官方镜像加速可通过 registry.docker-cn.com 访问。该镜�
 您可以使用以下命令直接从该镜像加速地址进行拉取：
 
 ```bash
-$ docker pull registry.docker-cn.com/myname/myrepo:mytag
+docker pull registry.docker-cn.com/myname/myrepo:mytag
 ```
 
 例如:
 
 ```bash
-$ docker pull registry.docker-cn.com/library/ubuntu:16.04
+docker pull registry.docker-cn.com/library/ubuntu:16.04
 ```
 
 注: 除非您修改了 Docker 守护进程的 `--registry-mirror` 参数 (见下文), 否则您将需要完整地指定官方镜像的名称。例如，library/ubuntu、library/redis、library/nginx。
