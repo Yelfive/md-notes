@@ -19,3 +19,11 @@ sudo nfsd disable
 sudo nfsd start
 sudo nfsd stop
 ```
+
+## Mac
+
+/etc/exports
+
+```text
+/Users/felix/projects -alldirs -mapall=felix:staff (rw)
+```
