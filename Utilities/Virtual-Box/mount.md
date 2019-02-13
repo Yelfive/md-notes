@@ -27,3 +27,17 @@ sudo nfsd stop
 ```text
 /Users/felix/projects -alldirs -mapall=felix:staff (rw)
 ```
+
+## Ubuntu
+
+/etc/fstab
+
+```text
+192.168.2.12:/Users/felix/projects /srv/projects nfs auto,noatime,bg 0 0
+```
+
+- 192.168.2.12 is the server ip(MacPro ip)
+
+```bash
+sudo mount /srv/projects
+```
