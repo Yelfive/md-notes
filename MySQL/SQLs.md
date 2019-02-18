@@ -19,7 +19,7 @@ update ic_excel_car_relation as r, ic_excel as e set r.created_by=e.created_by w
 mysql -u root -p table_name < file.sql
 ```
 
-> If every goes well, no output will be generated. You should 
+> If every goes well, no output will be generated. You should output with SQL instead.
 
 ## Export to csv
 
