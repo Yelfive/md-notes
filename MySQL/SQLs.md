@@ -1,6 +1,6 @@
 # SQLs
 
-### Disable constrain checks
+## Disable constrain checks
 
 ```sql
 set unique_checks = 0
@@ -11,4 +11,16 @@ set foreign_key_checks = 0
 
 ```sql
 update ic_excel_car_relation as r, ic_excel as e set r.created_by=e.created_by where r.excel_id=e.id
+```
+
+### Export to csv
+
+```sql
+SELECT order_id,product_name,qty
+FROM orders
+WHERE foo = 'bar'
+INTO OUTFILE '/var/lib/mysql-files/orders.csv'
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
 ```
