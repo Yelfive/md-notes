@@ -7,13 +7,21 @@ set unique_checks = 0
 set foreign_key_checks = 0
 ```
 
-### Update a column based on value of another table
+## Update a column based on value of another table
 
 ```sql
 update ic_excel_car_relation as r, ic_excel as e set r.created_by=e.created_by where r.excel_id=e.id
 ```
 
-### Export to csv
+## Read and execute from sql file
+
+```bash
+mysql -u root -p table_name < file.sql
+```
+
+> If every goes well, no output will be generated. You should 
+
+## Export to csv
 
 ```sql
 SELECT order_id,product_name,qty
