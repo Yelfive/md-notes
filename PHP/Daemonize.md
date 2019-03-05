@@ -52,4 +52,5 @@ And it returns
 
 ## Appendix
 
-- []()
+- [php.net pcntl_fork](http://php.net/manual/en/function.pcntl-fork.php)
+- [php.net posix_setsid](http://php.net/manual/en/function.posix-setsid.php)
