@@ -52,5 +52,6 @@ And it returns
 
 ## Appendix
 
-- [php.net pcntl_fork](http://php.net/manual/en/function.pcntl-fork.php)
-- [php.net posix_setsid](http://php.net/manual/en/function.posix-setsid.php)
+- [pcntl_fork](http://php.net/manual/en/function.pcntl-fork.php)
+- [posix_setsid](http://php.net/manual/en/function.posix-setsid.php)
+- [守护进程之PHP实现](https://segmentfault.com/a/1190000008916867)
