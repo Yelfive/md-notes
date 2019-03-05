@@ -26,10 +26,12 @@ if ($pid < 0) { // error
 }
 ```
 
-The key for _daemonizing_ is the method `posix_setsid`
+The key for _daemonizing_ is the method `posix_setsid`:
 
 ```php
 posix_setsid ( void ) : int
 ```
 
 > Make the current process a session leader. Returns the session id, or -1 on errors.
+
+Which allows child process to get rid of the parent process and become the leader of the session group.
