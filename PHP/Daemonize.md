@@ -32,4 +32,4 @@ The key for _daemonizing_ is the method `posix_setsid`
 posix_setsid ( void ) : int
 ```
 
-> Make the current process a session leader
+> Make the current process a session leader. Returns the session id, or -1 on errors.
