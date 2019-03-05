@@ -26,7 +26,7 @@ if ($pid < 0) { // error
 }
 ```
 
-The key for _daemonizing_ is the method `posix_setsid`:
+**One** key for _daemonizing_ is the method `posix_setsid`:
 
 ```php
 posix_setsid ( void ) : int
@@ -36,7 +36,7 @@ posix_setsid ( void ) : int
 
 Which allows child process to get rid of the parent process and become the leader of the session group. And when the child process dies somehow, it won't become a zombie process.
 
-**Another** key is the `pcntl_fork` which is the same as `C`, it forks a process as its child, and returns the new process id(`PID`).
+**Another** key is the `pcntl_fork` which is the same as `fork` of `C`, it forks a process as its child, and returns the new process id(`PID`):
 
 ```php
 pcntl_fork ( void ) : int
@@ -50,3 +50,6 @@ And it returns
 > 2.  and a 0 is returned in the child's thread of execution.
 > 3. On failure, a -1 will be returned in the parent's context, no child process will be created, and a PHP error is raised.
 
+## Appendix
+
+- []()
