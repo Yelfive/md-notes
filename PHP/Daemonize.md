@@ -25,3 +25,5 @@ if ($pid < 0) { // error
     }
 }
 ```
+
+The key for _daemonizing_ is the 
