@@ -9,8 +9,7 @@
 - Zend Engine
 - Application (output)
 
-Events
-------
+## Events
 
 > Events during a request to SAPI
 
@@ -33,10 +32,9 @@ Events
 
     > Calling all `PHP_MSHUTDON_FUNCTION`, to gc the module, close module's sub-system.
 
-SPIs List
----------
+## SPIs List
 
-**Common used**
+### Commonly used
 
 - CGI/CLI `Command Line`
 - Multiprocess `Apache`
@@ -46,7 +44,7 @@ SPIs List
     
     > Allowing C/C++ to make PHP call
 
-**Others**
+### Others
 
 - apache
 - apache2filter
@@ -64,8 +62,7 @@ SPIs List
 - tux
 - webjames
 
-PHP Lifespan
---------------
+## PHP Lifespan
 
 PHP's life circle differs from SAPIs, it starts when PHP starts, ends when PHP stops.
 
@@ -99,8 +96,8 @@ PHP's life circle differs from SAPIs, it starts when PHP starts, ends when PHP s
     > Same as CGI
 
 
-Appendix: Lifespan
---------
+## Appendix: Lifespan
+
 
 ### CGI/CLI
 
@@ -152,8 +149,7 @@ Appendix: Lifespan
 ```
 
 
-Execute a script
-----------------
+## Executes a script
 
 Zend engine will will go through 4 phases to execute a script:
 
