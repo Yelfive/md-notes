@@ -1,8 +1,6 @@
-Server Application Programming Interface
-========================================
+# Server Application Programming Interface
 
-Executing Process
------------------
+## Executing Process
 
 > When we run a PHP program, it goes through the following process
 
