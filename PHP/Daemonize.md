@@ -35,3 +35,10 @@ posix_setsid ( void ) : int
 > Make the current process a session leader. Returns the session id, or -1 on errors.
 
 Which allows child process to get rid of the parent process and become the leader of the session group. And when the child process dies somehow, it won't become a zombie process.
+
+**Another** key is the `pcntl_fork` which is the same as `C`, it forks a process as its child, and returns the new process id(`PID`).
+
+```php
+<?php
+
+```
