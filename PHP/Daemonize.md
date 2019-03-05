@@ -55,3 +55,4 @@ And it returns
 - [pcntl_fork](http://php.net/manual/en/function.pcntl-fork.php)
 - [posix_setsid](http://php.net/manual/en/function.posix-setsid.php)
 - [守护进程之PHP实现](https://segmentfault.com/a/1190000008916867)
+- [PHP程序守护进程化](http://rango.swoole.com/archives/59)
