@@ -1,5 +1,7 @@
 # PHP Daemonize
 
+## Code Snippet
+
 ```php
 <?php
 
@@ -22,5 +24,4 @@ if ($pid < 0) { // error
         sleep(5);
     }
 }
-``
-
+```
