@@ -39,6 +39,9 @@ Which allows child process to get rid of the parent process and become the leade
 **Another** key is the `pcntl_fork` which is the same as `C`, it forks a process as its child, and returns the new process id(`PID`).
 
 ```php
-<?php
-
+pcntl_fork ( void ) : int
 ```
+
+> The pcntl_fork() function creates a child process that differs from the parent process only in its PID and PPID.
+> 
+> On success, the PID of the child process is returned in the parent's thread of execution, and a 0 is returned in the child's thread of execution. On failure, a -1 will be returned in the parent's context, no child process will be created, and a PHP error is raised.
