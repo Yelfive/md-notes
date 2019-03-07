@@ -21,9 +21,12 @@ int putchar(char c)
 > returns ASCII code of `c`, `EOF` on error
 
 ```c
-int puts(char *)
+int puts(char *str)
 char *gets()
 ```
+
+> returns `\n` on success, `EOF` on error
+
 ```c
 FILE  *fopen(char *filename, char *mode)
 int   fgetc(FILE *fp)
