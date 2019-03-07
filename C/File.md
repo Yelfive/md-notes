@@ -23,6 +23,7 @@ int putchar(char ch)
 int puts(char *str);
 char *gets(char *str);
 ```
+
 #### file
 
 ```c
