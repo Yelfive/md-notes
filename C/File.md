@@ -18,7 +18,10 @@ char getchar(void)
 int putchar(char c)
 ```
 
-int puts
+> returns ASCII code of `c`, `EOF` on error
+
+```c
+int puts(char *)
 char *gets()
 ```
 ```c
