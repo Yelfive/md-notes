@@ -11,7 +11,8 @@ Header `<stdio.h>` provides file handling functions.
 <!-- Function | Description -->
 ```c
 #define getchar() fgetc(stdin)
-char getchar(void)
+char  getchar(void)
+int   putchar(char c)
 FILE *fopen(char *filename, char *mode)
 int   fgetc(FILE *fp)
 int   fputc(int ch, FILE *pf)
