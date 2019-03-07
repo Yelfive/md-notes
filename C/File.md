@@ -20,8 +20,8 @@ int putchar(char ch)
 #### string
 
 ```c
-int puts(char *str)
-char *gets(char *str)
+int puts(char *str);
+char *gets(char *str);
 ```
 #### file
 
@@ -52,3 +52,9 @@ int putchar(char ch)
 ```
 
 Returns `ch` on success, `EOF` on failure.
+
+#### puts
+
+```c
+int puts(char *str)
+```
