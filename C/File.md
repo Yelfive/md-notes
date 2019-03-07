@@ -2,4 +2,9 @@
 
 `C` takes everything as files: `stdin`, `stdout`, `stderr` etc..
 
-## <stdio.h>
+## `<stdio.h>`
+
+Header `<stdio.h>` provides file handling functions.
+
+### functions
+
