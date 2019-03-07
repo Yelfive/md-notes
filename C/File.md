@@ -22,10 +22,15 @@ int putchar(char c)
 
 ```c
 int puts(char *str)
-char *gets()
 ```
 
 > returns `\n` on success, `EOF` on error
+
+```c
+char *gets(char *str)
+```
+
+> returns
 
 ```c
 FILE  *fopen(char *filename, char *mode)
