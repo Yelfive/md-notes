@@ -15,6 +15,7 @@ char getchar(void)
 #define putchar(c) fputc(c, stdout)
 int putchar(char c)
 int puts
+char *gets()
 ```
 ```c
 FILE  *fopen(char *filename, char *mode)
