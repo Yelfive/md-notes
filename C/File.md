@@ -8,3 +8,4 @@ Header `<stdio.h>` provides file handling functions.
 
 ### functions
 
+Function | Description
