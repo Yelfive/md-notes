@@ -13,8 +13,8 @@ Header `<stdio.h>` provides file handling functions.
 ```c
 #define getchar() fgetc(stdin)
 char getchar(void)
-#define putchar(c) fputc(c, stdout)
-int putchar(char c)
+#define putchar(ch) fputc(ch, stdout)
+int putchar(char ch)
 ```
 
 #### string
@@ -45,8 +45,10 @@ int fwrite(void *buffer, int size, int n, FILE *fp);
 
 ### Details
 
-#### getchar
+#### putchar
 
 ```c
-char getchar(void)
+int putchar(char ch)
 ```
+
+Returns `ch` on success, `EOF` on failure.
