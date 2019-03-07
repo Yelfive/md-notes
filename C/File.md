@@ -17,3 +17,8 @@ char *fgets(char *str, int length, FILE *fp)
 char *fputs(char *str, FILE *fp)
 ```
 #### Binary read/write
+
+```c
+int fread (void *buffer, int size, int n, FILE *fp)
+int fwrite(void *buffer, int size, int n, FILE *fp)
+```
