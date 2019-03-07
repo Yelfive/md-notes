@@ -11,4 +11,9 @@ Header `<stdio.h>` provides file handling functions.
 <!-- Function | Description -->
 ```c
 FILE *fopen(char *filename, char *mode)
+int   fgetc(FILE *fp)
+int   fputc(int ch, FILE *pf)
+char *fgets(char *str, int length, FILE *fp)
+char *fputs(char *str, FILE *fp)
 ```
+#### Binary read/write
