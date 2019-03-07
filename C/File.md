@@ -8,4 +8,7 @@ Header `<stdio.h>` provides file handling functions.
 
 ### functions
 
-Function | Description
+<!-- Function | Description -->
+```c
+FILE *fopen(char *filename, char *mode)
+```
