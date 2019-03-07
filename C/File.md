@@ -30,7 +30,9 @@ int puts(char *str)
 char *gets(char *str)
 ```
 
-> returns
+**returns**
+> - starting address of `str` on success
+> - 0 on failure 
 
 ```c
 FILE  *fopen(char *filename, char *mode)
