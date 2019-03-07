@@ -8,17 +8,16 @@ Header `<stdio.h>` provides file handling functions.
 
 ### Text I/O
 
-<!-- Function | Description -->
 ```c
 #define getchar() fgetc(stdin)
 char getchar(void)
 ```
 
-
 ```c
 #define putchar(c) fputc(c, stdout)
 int putchar(char c)
 ```
+
 int puts
 char *gets()
 ```
