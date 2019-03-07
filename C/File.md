@@ -37,7 +37,7 @@ char *gets(char *str)
 ```c
 FILE  *fopen(char *filename, char *mode)
 int   fgetc(FILE *fp)
-int   fputc(int ch, FILE *pf)
+int   fputc(int ch, FILE *fp)
 char *fgets(char *str, int length, FILE *fp)
 char *fputs(char *str, FILE *fp)
 
