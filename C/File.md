@@ -8,17 +8,22 @@ Header `<stdio.h>` provides file handling functions.
 
 ### Text I/O
 
+#### char
+
 ```c
 #define getchar() fgetc(stdin)
 char getchar(void)
 #define putchar(c) fputc(c, stdout)
 ```
 
+#### string
+
 ```c
 int putchar(char c)
 int puts(char *str)
 char *gets(char *str)
 ```
+#### file
 
 ```c
 FILE *fopen(char *filename, char *mode);
@@ -30,9 +35,13 @@ char *fputs(char *str, FILE *fp);
 int fscanf (FILE *fp, char *format, args, ...);
 int fprintf(FILE *fp, char *format, args, ...);
 ```
+
 ### Binary I/O
 
 ```c
 int fread (void *buffer, int size, int n, FILE *fp);
 int fwrite(void *buffer, int size, int n, FILE *fp);
 ```
+
+#### details
+
