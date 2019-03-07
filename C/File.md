@@ -58,3 +58,11 @@ Returns `ch` on success, `EOF` on failure.
 ```c
 int puts(char *str)
 ```
+
+Returns `\n` on success, `EOF` on failure
+
+#### gets
+
+```c
+char *gets(char *str);
+```
