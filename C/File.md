@@ -66,3 +66,6 @@ Returns `\n` on success, `EOF` on failure
 ```c
 char *gets(char *str);
 ```
+
+Returns starting address of `str` on success, `0` on failure.
+
