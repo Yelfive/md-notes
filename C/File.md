@@ -16,7 +16,8 @@ int   fputc(int ch, FILE *pf)
 char *fgets(char *str, int length, FILE *fp)
 char *fputs(char *str, FILE *fp)
 
-fcanf(FILE *fp, char *format, args, ...)
+int fscanf (FILE *fp, char *format, args, ...)
+int fprintf(FILE *fp, char *format, args, ...)
 ```
 #### Binary read/write
 
