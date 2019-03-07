@@ -12,8 +12,13 @@ Header `<stdio.h>` provides file handling functions.
 ```c
 #define getchar() fgetc(stdin)
 char getchar(void)
+```
+
+
+```c
 #define putchar(c) fputc(c, stdout)
 int putchar(char c)
+```
 int puts
 char *gets()
 ```
