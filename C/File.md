@@ -34,6 +34,7 @@ char *fputs(char *str, FILE *fp);
 
 int fscanf (FILE *fp, char *format, args, ...);
 int fprintf(FILE *fp, char *format, args, ...);
+int fseek  (FILE *fp, long offset, int origin);
 ```
 
 ### Binary I/O
