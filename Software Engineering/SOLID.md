@@ -21,4 +21,4 @@ SOLID stands for
 ## References
 
 1. [Robert C. Martin "The Open-Closed Principle", C++ Report, January 1996 Archived August 22, 2006, at the Wayback Machine](https://drive.google.com/file/d/0BwhCYaYDn8EgN2M5MTkwM2EtNWFkZC00ZTI3LWFjZTUtNTFhZGZiYmUzODc1/view)
-2. 
+2. [S.O.L.I.Dprinciples:whataretheyandwhyprojectsshouldusethem](https://medium.com/@mari_azevedo/s-o-l-i-d-principles-what-are-they-and-why-projects-should-use-them-50b85e4aa8b6)
