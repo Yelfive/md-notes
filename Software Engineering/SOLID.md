@@ -14,7 +14,9 @@ SOLID stands for
 
   > Derived classes must be substitutable for their base classes
 
+- Interface Segregation Principle(ISP)
 
+- Dependency Inversion Principle(DIP)
 
 ## References
 
