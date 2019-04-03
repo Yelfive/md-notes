@@ -16,6 +16,8 @@ SOLID stands for
 
 - Interface Segregation Principle(ISP)
 
+  > Make fine grained interfaces that are client specific.
+
 - Dependency Inversion Principle(DIP)
 
 ## References
