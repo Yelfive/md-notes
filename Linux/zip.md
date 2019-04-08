@@ -21,3 +21,7 @@ unzip -l zipfile.zip
 # view entries and files in zip archive
 view zipfile.zip
 ```
+
+## options
+
+- `-r` recursively, zip directory
