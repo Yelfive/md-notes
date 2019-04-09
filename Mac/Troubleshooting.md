@@ -43,6 +43,7 @@ sudo pmset -a autopoweroff 0
 ## Reset NVRAM
 
 1. Shutdown the Mac
-2. Press and hold <kbd>Command-Option-P-R</kbd> until two times of Mac booting sound and then release the buttons, let the mac reboot.
+2. Press and hold <kbd>Shift-Control-Option-Power</kbd> for about 5 seconds, then go to **step 3**
+3. Press and hold <kbd>Command-Option-P-R</kbd> until two times of Mac booting sound and then release the buttons, let the mac reboot.
 
 _This solves 90% of Mac's problem such as WiFi or Bluetooth._
