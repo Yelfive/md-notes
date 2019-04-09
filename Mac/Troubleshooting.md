@@ -30,11 +30,20 @@ sudo rm -rf NetworkInterfaces.plist com.apple.airport.preferences.plist com.appl
 
 ## Allow apps download from Anywhere
 
+
 ```bash
 sudo spctl --master-disable
 ```
 
 ## pmset
+
+### list the potions
+
+```bash
+sudo pmset -g
+```
+
+### turn off auto power off
 
 ```bash
 sudo pmset -a autopoweroff 0
