@@ -46,6 +46,12 @@ Host github.com-sth
     IdentityFile ~/.ssh/id_rsa-sth
 ```
 
+### 4. git clone
+
+```bash
+git clone git@github.com-sth:username/xxx.git
+```
+
 ### Appendix
 
 - [How to manage multiple GitHub accounts on a single machine with SSH keys](https://medium.freecodecamp.org/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca)
