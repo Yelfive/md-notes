@@ -17,10 +17,13 @@ Host github.com
     Port 22
 ```
 
-## Configure multiple ssh keys
+## Configure multiple ssh keys for GitHub
 
 ### 1. Create a new pair of rsa keys
 
+```bash
+ssh-keygen -t rsa -C "your-email@domain.com" -f ""
+```
 ### Appendix
 
 - [How to manage multiple GitHub accounts on a single machine with SSH keys](https://medium.freecodecamp.org/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca)
