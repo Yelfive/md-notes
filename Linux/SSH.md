@@ -35,6 +35,14 @@ ssh-add ~/.ssh/id_rsa-sth
 
 ### 3. Configure the ssh
 
+```bash
+vim ~/.ssh/config
+```
+
+```text
+
+```
+
 ### Appendix
 
 - [How to manage multiple GitHub accounts on a single machine with SSH keys](https://medium.freecodecamp.org/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca)
