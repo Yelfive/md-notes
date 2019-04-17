@@ -19,7 +19,7 @@ Host github.com
 
 ## Configure multiple ssh keys
 
-### 1. create
+### 1. Create a new pair of rsa keys
 
 ### Appendix
 
