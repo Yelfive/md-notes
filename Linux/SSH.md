@@ -24,6 +24,14 @@ Host github.com
 ```bash
 ssh-keygen -t rsa -C "your-email@domain.com" -f ~/.ssh/id_rsa-sth
 ```
+
+### 2. Add key to ssh agent
+
+SSH agent
+
+```bash
+```
+
 ### Appendix
 
 - [How to manage multiple GitHub accounts on a single machine with SSH keys](https://medium.freecodecamp.org/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca)
