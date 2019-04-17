@@ -13,6 +13,10 @@ reside in file `~/.ssh/config`
 ```conf
 # Send keep alive packet every 60s
 ServerAliveInterval 60
+Host *
+    # Use private key without enter password
+    UseKeychain yes
+
 Host github.com
     Hostname github.com
     User git
