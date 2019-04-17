@@ -18,3 +18,10 @@ Host github.com
 ```
 
 ## Configure multiple ssh keys
+
+### 1. create
+
+### Appendix
+
+- [How to manage multiple GitHub accounts on a single machine with SSH keys](https://medium.freecodecamp.org/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca)
+- [Multiple SSH keys for different github accounts](https://gist.github.com/jexchan/2351996)
