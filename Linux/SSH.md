@@ -11,6 +11,8 @@ ssh -tp port username@ip 'cd /path/to/directory'
 reside in file `~/.ssh/config`
 
 ```conf
+# Send keep alive packet every 60s
+ServerAliveInterval 60
 Host github.com
     Hostname github.com
     User git
@@ -39,7 +41,7 @@ ssh-add ~/.ssh/id_rsa-sth
 vim ~/.ssh/config
 ```
 
-```txt
+```conf
 Host github.com-sth
     HostName github.com
     User git
