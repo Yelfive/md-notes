@@ -17,15 +17,15 @@ Host github.com
     Port 22
 ```
 
-## Configure multiple ssh keys for GitHub
+## Configure multiple SSH keys for GitHub
 
-### 1. Create a new pair of rsa keys
+### 1. Create a new pair of RSA keys
 
 ```bash
 ssh-keygen -t rsa -C "your-email@domain.com" -f ~/.ssh/id_rsa-sth
 ```
 
-### 2. Add key to ssh agent
+### 2. Add key to SSH agent
 
 SSH agent manages the private keys used to start a SSH connection
 
@@ -33,7 +33,7 @@ SSH agent manages the private keys used to start a SSH connection
 ssh-add ~/.ssh/id_rsa-sth
 ```
 
-### 3. Configure the ssh
+### 3. Configure the SSH
 
 ```bash
 vim ~/.ssh/config
