@@ -27,9 +27,10 @@ ssh-keygen -t rsa -C "your-email@domain.com" -f ~/.ssh/id_rsa-sth
 
 ### 2. Add key to ssh agent
 
-SSH agent
+SSH agent manages the private keys used to start a SSH connection
 
 ```bash
+ssh-add ~/.ssh/id_rsa-github-sth
 ```
 
 ### Appendix
