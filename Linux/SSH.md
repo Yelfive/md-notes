@@ -22,7 +22,7 @@ Host github.com
 ### 1. Create a new pair of rsa keys
 
 ```bash
-ssh-keygen -t rsa -C "your-email@domain.com" -f ""
+ssh-keygen -t rsa -C "your-email@domain.com" -f ~/.ssh/id_rsa-sth
 ```
 ### Appendix
 
