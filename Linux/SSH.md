@@ -12,9 +12,9 @@ reside in file `~/.ssh/config`
 
 ```conf
 Host github.com
-    User git
     Hostname github.com
+    User git
     Port 22
 ```
 
-## Configure multiple ssh keys for the same
+## Configure multiple ssh keys
