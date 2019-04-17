@@ -39,8 +39,11 @@ ssh-add ~/.ssh/id_rsa-sth
 vim ~/.ssh/config
 ```
 
-```text
-
+```txt
+Host github.com-sth
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa-sth
 ```
 
 ### Appendix
