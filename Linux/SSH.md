@@ -37,6 +37,9 @@ SSH agent manages the private keys used to start a SSH connection
 
 ```bash
 ssh-add ~/.ssh/id_rsa-sth
+# the origin private key should also be added
+# to ssh agent
+ssh-add ~/.ssh/id_rsa
 ```
 
 ### 3. Configure the SSH
