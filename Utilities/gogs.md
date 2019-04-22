@@ -1,14 +1,18 @@
 # Gogs
 
-## backup
+## backup & restore
 
-### inside docker container
+### backup
+
+#### inside docker container
 
 Set environment variable `USER=git`
 
 ```bash
 USER=git ./gogs backup
 ```
+
+###
 
 ### See Also
 
