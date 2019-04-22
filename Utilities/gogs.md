@@ -16,7 +16,7 @@ USER=git ./gogs backup
 
 #### creating tmp directory
 
-If `/data` is mounted by docker container and `/tmp` not, `gogs` will restore using the `/tmp` and perform `mv /tmp/xxx /data/gogs/xxx` which are in different filesystem. 
+If `/data` is mounted to docker container and `/tmp` not, when `gogs` restores using the `/tmp` and performs `mv /tmp/xxx /data/gogs/xxx` which are in different filesystem. 
 
 ```bash
 rm -rf tmp
