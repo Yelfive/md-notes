@@ -22,7 +22,7 @@ Individually it means
 - `hour` 0~23
 - `day` 1~31
 - `month` 1~12
-- `week` 0~6, sunday~saturday
+- `week` 0~6, sunday to saturday
 - `command` The command column should always be absolute path of command, not shortened.
 
     ```bash
