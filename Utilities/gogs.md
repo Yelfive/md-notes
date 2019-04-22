@@ -12,7 +12,16 @@ Set environment variable `USER=git`
 USER=git ./gogs backup
 ```
 
-###
+### restore
+
+#### creating tmp directory
+
+```bash
+```
+
+```bash
+USER=git /app/gogs/gogs restore --from /path/to/gogs-backup-xxx.zip -t tmp
+```
 
 ### See Also
 
