@@ -17,7 +17,11 @@ USER=git ./gogs backup
 #### creating tmp directory
 
 ```bash
+rm -rf tmp
+mkdir -p tmp/gogs-backup/data/{attachments,avatars}
 ```
+
+#### restore using created tmp
 
 ```bash
 USER=git /app/gogs/gogs restore --from /path/to/gogs-backup-xxx.zip -t tmp
