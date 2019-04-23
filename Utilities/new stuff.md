@@ -101,3 +101,7 @@ network protocol analyzer
 ## Flowchart
 
 - [draw.io](https://www.draw.io/)
+
+## Logger
+
+- [通过 Elasticsearch 和 Elastic Stack 进行日志管理 | Elastic](https://www.elastic.co/cn/solutions/logging)
