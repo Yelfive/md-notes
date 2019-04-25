@@ -34,3 +34,8 @@ So this document is written for 1.12
   go list -m -version host/vendor/packet
   ```
 
+3. List modules with wildcard: `...`
+
+  ```bash
+  go list -m rsc.io/q...
+  ```
