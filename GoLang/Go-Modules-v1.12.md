@@ -19,3 +19,18 @@ So this document is written for 1.12
   ```bash
   go get host/vendor/packet@v1.3.1
   ```
+
+### go list
+
+1. List all modules
+
+  ```bash
+  go list -m all
+  ```
+
+2. List available version
+
+  ```bash
+  go list -m -version host/vendor/packet
+  ```
+
