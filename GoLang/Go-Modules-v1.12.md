@@ -4,6 +4,10 @@ At the time of writing the document, GoLang released its version 1.12, and GoLan
 
 So this document is written for 1.12
 
+## Versioning
+
+
+
 ## Commands
 
 ### go get host/vendor/packet
