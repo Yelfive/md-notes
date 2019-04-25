@@ -10,7 +10,7 @@ So this document is written for 1.12
 v<major>.<minor>.<patch>
 ```
 
-1. Package major version
+1. Package major version should be specified in path: `rsc.io/quote/v3`, starts from `v2`
 
 ## Commands
 
