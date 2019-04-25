@@ -6,22 +6,26 @@ So this document is written for 1.12
 
 ## Versioning
 
+```txt
+v<major>.<minor>.<patch>
+```
 
+1. Package major version
 
 ## Commands
 
-### go get host/vendor/packet
+### go get host/vendor/package
 
 1. Get latest version
 
   ```bash
-  go get host/vendor/packet
+  go get host/vendor/package
   ```
 
 2. Get specific version
 
   ```bash
-  go get host/vendor/packet@v1.3.1
+  go get host/vendor/package@v1.3.1
   ```
 
 ### go list
@@ -35,7 +39,7 @@ So this document is written for 1.12
 2. List available version
 
   ```bash
-  go list -m -version host/vendor/packet
+  go list -m -version host/vendor/package
   ```
 
 3. List modules with wildcard: `...`
