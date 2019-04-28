@@ -29,9 +29,9 @@ v<major>.<minor>.<patch>
   go get host/vendor/package@v1.3.1
   ```
 
-### List modules
+### List modules(`go list`)
 
-1. List all modules
+1. List all modules current project depends on.
 
   ```bash
   go list -m all
