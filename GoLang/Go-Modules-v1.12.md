@@ -29,9 +29,15 @@ v<major>.<minor>.<patch>
   go get host/vendor/package@v1.3.1
   ```
 
+### Create `go.mod`
+
+```bash
+go mod init
+```
+
 ### Update dependencies
 
-Dependencies will be updated automatically into `go.mod` when running the following command:
+Dependencies will be updated automatically into `go.mod` when running the following commands:
 
 1. `go test`
 2. `go build`
