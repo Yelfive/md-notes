@@ -29,7 +29,7 @@ v<major>.<minor>.<patch>
   go get host/vendor/package@v1.3.1
   ```
 
-### go list
+### List modules
 
 1. List all modules
 
@@ -48,3 +48,9 @@ v<major>.<minor>.<patch>
   ```bash
   go list -m rsc.io/q...
   ```
+
+### Clean dependency
+
+```bash
+go mod tidy
+```
