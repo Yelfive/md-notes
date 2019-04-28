@@ -29,6 +29,13 @@ v<major>.<minor>.<patch>
   go get host/vendor/package@v1.3.1
   ```
 
+### Update dependencies
+
+Dependencies will be updated automatically into `go.mod` when running the following command:
+
+1. `go test`
+2. `go build`
+
 ### List modules(`go list`)
 
 1. List all modules current project depends on.
