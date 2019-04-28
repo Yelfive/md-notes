@@ -41,6 +41,7 @@ Dependencies will be updated automatically into `go.mod` when running the follow
 
 1. `go test`
 2. `go build`
+3. `go get`
 
 ### List modules(`go list`)
 
