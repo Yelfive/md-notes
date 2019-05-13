@@ -1,18 +1,18 @@
 # git submodule
 
-### add a sub repository to current one
+## add a sub repository to current one
 
 ```bash
 git submodule add [--name <name>] <repository> <path>
 ```
 
-### initialize
+## initialize
 
 ```bash
 git submodule init
 ```
 
-### pull from submodule
+## pull from submodule
 
 ```bash
 git submodule update
@@ -57,13 +57,13 @@ git commit -m "update latest submodule commit id"
 git push
 ```
 
-### List all the submodules
+## List all the submodules
 
 ```bash
 git ls-files --stage | grep 160000
 ```
 
-### Remove a submodule
+## Remove a submodule
 
 To remove a submodule you need to:
 
