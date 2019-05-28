@@ -34,7 +34,14 @@ Individually it means
 
 ### Linux
 
-    `/var/log/cron`
+
+```bash
+# CentOS
+less +G /var/log/cron
+
+# Ubuntu
+less +G /var/log/syslog
+```
 
 ## Examples
 
@@ -42,6 +49,20 @@ Individually it means
 
 ```bash
 0 23-7/1 * * * /usr/local/etc/rc.d/lighttpd restart
+```
+
+## Sending mail if something goes wrong
+
+`sendmail` program should be installed.
+
+```bash
+sudo apt-get install sendmail
+```
+
+And then the mail can be sent and read by command `mail`
+
+```bash
+mail
 ```
 
 ## See Also
