@@ -653,7 +653,7 @@ if err != nil {
 defer rows.Close()
 for rows.Next() {
     err := rows.Scan(&id, &name)cszxdc 
-    if err != nil {  uj   ` 4ae1s   4q      241 41
+    if err != nil {
         log.Fatal(err)
     }
     log.Println(id, name)
