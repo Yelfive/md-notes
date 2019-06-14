@@ -29,7 +29,7 @@ to test your code.
 ### 1. Install SMB on Ubuntu (skipping the install Ubunut part)
 
 ```bash
-sudo apt-get install -y samba samba-common python-glade2 system-config-samba
+sudo apt-get install -y samba
 ```
 
 ### 2. Configure your SMB
