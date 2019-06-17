@@ -67,7 +67,7 @@ sudo smbpasswd -e <username>
 ### 4. Start the SMB server
 
 ```bash
-sudo systemctl start smdb
+sudo systemctl start smbd
 ```
 
 ### 5. Connect from Windows (actually, any OS is fine)
