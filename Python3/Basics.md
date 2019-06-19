@@ -103,6 +103,10 @@ else:
     # do something
 ```
 
+```python
+print(a if condition else b)
+```
+
 ## for
 
 ```python
