@@ -57,6 +57,6 @@ sudo pmset -a autopoweroff 0
 
 _This solves 90% of Mac's problem such as WiFi or Bluetooth._
 
-### See alson
+### See also
 
 - [Fix Bluetooth Not Working After Wake From Sleep on macOS Mojave](https://pc-mac-help.com/blog/fix-bluetooth-not-working-after-wake-from-sleep-on-macos-mojave)
