@@ -1,5 +1,7 @@
 # NTFS Support
 
+`Samba` is recommended over `NTFS`
+
 ### 1. open file
 
 ```bash
