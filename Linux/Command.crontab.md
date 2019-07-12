@@ -65,6 +65,17 @@ And then the mail can be sent and read by command `mail`
 mail
 ```
 
+## Execute command on startup
+
+```bash
+sudo crontab -e
+```
+
+```crontab
+@reboot /path/to/executable
+```
+
+
 ## See Also
 
 - [CSDN crontab 定时写法整理](https://blog.csdn.net/bsf5521/article/details/76522222)
