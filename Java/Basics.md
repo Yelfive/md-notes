@@ -136,7 +136,7 @@ public class HelloWorld {
 
 ## Access Modifiers
 
-Name        | Class | Package   | Subclass  | Subclass  | Public
----         | ---   | ---       | ---       | ---       | ---
-private     |   +   |           |           |           |
-(Not Set)   | 
+Name        | Class | Package   | Subclass  | Public
+:---:       | :---: | :---:     | :---:     | :---:
+private     |   Y   |           |           |
+(Not Set)   |   Y   | Y         |           |
