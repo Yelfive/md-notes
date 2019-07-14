@@ -138,5 +138,5 @@ public class HelloWorld {
 
 Name        | Class | Package   | Subclass  | Subclass  | Public
 ---         | ---   | ---       | ---       | ---       | ---
-private     | 
+private     |   +   |           |           |           |
 (Not Set)   | 
