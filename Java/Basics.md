@@ -136,11 +136,11 @@ public class HelloWorld {
 
 ## Access Modifiers
 
-Name        | Class | Package   | Subclass  | Public
+Modifier    | Class | Package   | Subclass  | World
 :---:       | :---: | :---:     | :---:     | :---:
 private     | Y     |           |           |
 (Not Set)   | Y     | Y         |           |
 protected   | Y     | Y         | Y         |
 public      | Y     | Y         | Y         | Y
 
-**See Also** [Controlling Access to Members of a Class (The Java™ Tutorials > Learning the Java Language > Classes and Objects)](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
+**See Also** [Controlling Access to Members of a Class](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
