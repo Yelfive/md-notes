@@ -23,7 +23,7 @@ location modifier uri {
     
     Exact match, non-regular
 
-    ```conf
+    ```nginx
     #nginx
     location = / {
         # match http://www.domain.com
@@ -44,13 +44,13 @@ location modifier uri {
 
 - `^~`
 
-    Terminate non-regular expression match
+    Matches prefix string, and no regular expression location will be checked.
 
-    This works for **non-regular expression** only
+    Similar to `=`, while the later means **exact match**.
 
 #### Example
 
-```conf
+```nginx
 location = / {
     #[ configuration A ]
 }
@@ -77,3 +77,33 @@ location ~* \.(gif|jpg|jpeg)$ {
 - The `/documents/document.html` request will match configuration C
 - The `/images/1.gif` request will match configuration D
 - The `/documents/1.jpg` request will match configuration E.
+
+## More about prefix string
+
+> **In response to a request with URI equal to this string, but without the trailing slash, a permanent redirect with the code 301 will be returned to the requested URI with the slash appended**. If this is not desired, an exact match of the URI and location could be defined like this:
+> 
+> ```nginx
+> location /user/ {
+>     proxy_pass http://user.example.com; 
+> }
+>
+> location = /user {
+>     proxy_pass http://login.example.com; 
+> }
+> ```
+> _Referenced from [Nginx docs](https://nginx.org/en/docs/http/ngx_http_core_module.html#location)_
+
+Which means, if you visit path `http://example.com/client/hello` and with configuration:
+
+```nginx
+location /client/ {
+    # [some configuration]
+}
+```
+
+you will actually get a response:
+
+```http
+HTTP/1.1 301 Moved Permanently
+Location: http://example.com/client/hello/
+```
