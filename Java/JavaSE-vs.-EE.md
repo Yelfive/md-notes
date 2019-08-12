@@ -1,0 +1,13 @@
+# Java SE vs. EE
+
+**Java Development Kit** is the way we usually refer to a set of tools to create Java applications, including the Java Compiler (to translate your JAVA Source classes into .class bytecode files), the Java Virtual Machine (to execute those .class files), the JAR tool to ZIP applications (or extract them) and so on.
+
+The **Java Standard Edition** usually refers to the core classes that make up the foundation of most Java programs, such as the Collections API (List, Map, Set, etc.), the classes in the java.lang package, the I/O classes, the Threading API, the RMI packages and classes, the i18n (internationalization) classes, the JDBC API and, of course, the AWT and Swing classes to create desktop applications and applets. These APIs are the very foundation of all other programs you can write 'in Java', such as the IntelliJ IDEA IDE, Servlet Containers (like Tomcat), RDBMS (like Apache Derby) or custom standalone clients such as SQuirreL. These classes you get as part of the JDK (just crack-open the src.zip file right under your JDK folder and see what you find there :) )
+
+**Java EE** is a specification with sub-specifications that, as a whole, define a set of services that implementations (such as GlassFish or IBM's WebSphere) should provide in order to be in compliance with the spec. These 'implementations' are the so-called Java EE Containers. When you hear people saying that 'GlassFish is a Java EE 1.6 implementation' they mean that GlassFish (a Java program written using the Java Standard Edition classes) provides all the features that the Java EE 6 family of specifications define.
+
+The Java EE specifications are supposed to cover a particular need within the field of 'enterprise' application development, such as the Servlet specification for HTTP request-response processing, the EJB specification for transaction management and component life-cycle management, the JMS specification for messaging services and so on. The Java EE containers (WebLogic, WebSphere, Tomcat) provide actual implementations of these specifications as classes. In an overly simplified statement, these containers provide the JARs for the Java EE APIs. The classes within these JAR files make use of the Java SE core classes. I think this last sentence makes the connection between Java SE and Java EE.
+
+## See Also
+
+- [JDK = Java SE && JDK != Java EE? - Stack Overflow](https://stackoverflow.com/questions/2024143/jdk-java-se-jdk-java-ee)

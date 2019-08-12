@@ -1,5 +1,7 @@
 # Deleting History
 
+This article describes how to delete **commit history of git**.
+
 ## First method
 
 #### 1. Checkout
