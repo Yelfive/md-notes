@@ -13,3 +13,4 @@ Shard   | 分片是对数据库或搜索引擎进行水平分区。水平分区�
 Swimlane| 泳道，是用来表示故障隔离域的术语。不允许跨越泳道边界进行同步调用。换言之，用到围绕一组同步调用定义。泳道内一个组件发生故障，不会影响到其他泳道内的组件。因此，共享组件不能跨越泳道。 泳道时发生同步调用的最小边界
 overload    | 重载
 Generics    | 泛型
+STOMP       | Simple (or Streaming) Text Orientated Messaging Protocol<ol><li>[STOMP](http://stomp.github.io/)</li><li>[STOMP Over WebSocket](http://jmesnil.net/stomp-websocket/doc/)</li></ol>
