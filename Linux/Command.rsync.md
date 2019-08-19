@@ -8,6 +8,16 @@
 rsync -ave 'ssh -p 9822' src username@ip:/path/on/server
 ```
 
+## Options
+
+- `-p` preserve privileges
+- `-q` quiet
+- `--copy-links` Turn all symlinks into normal files (leaving no symlinks for any other options to affect)
+- `--links` duplicate all links
+- `--delete` delete if the file does not exist at src.
+- `--force` force to delete, even if the directory is not empty
+
+
 ## 一、什么是rsync
 
 rsync，remote synchronize 顾名思意就知道它是一款实现远程同步功能的软件，它在同步文件的同时，可以保持原来文件的权限、时间、软硬链接等附加信息。 rsync是用 “rsync 算法”提供了一个客户机和远程文件服务器的文件同步的快速方法，而且可以通过ssh方式来传输文件，这样其保密性也非常好，另外它还是免费的软件。
