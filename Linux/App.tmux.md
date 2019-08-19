@@ -107,26 +107,26 @@ It's also possible to type shorter versions of a command, for example: "new-se".
 
 1.  As you get comfortable with tmux, you may want to change some of the defaults. Using a text editor, create a configuration file(`~/.tmux.conf`) in your user's home directory:
 
+    ```conf
+    # Uncomment the lines with the options you want to activate (by deleting the preceding "#")
 
-```conf
-# Uncomment the lines with the options you want to activate (by deleting the preceding "#")
+    # Allow mouse interaction
+    # set-option -g mouse on
 
-# Allow mouse interaction
-# set-option -g mouse on
+    # Change prefix key to CTRL+A. "C-" stands for CTRL, "M-" stands for ALT key
+    # set-option -g prefix C-a
+    # unbind-key C-b
+    # bind-key C-a send-prefix
 
-# Change prefix key to CTRL+A. "C-" stands for CTRL, "M-" stands for ALT key
-# set-option -g prefix C-a
-# unbind-key C-b
-# bind-key C-a send-prefix
-
-# Display CPU load average for the last 1,5 and 15 minutes, in the status bar
-set -g status-right "#(cut -d ' ' -f -3 /proc/loadavg) %H:%M %d-%b-%y"
-```
+    # Display CPU load average for the last 1,5 and 15 minutes, in the status bar
+    set -g status-right "#(cut -d ' ' -f -3 /proc/loadavg) %H:%M %d-%b-%y"
+    ```
 
 2.  When you have saved your changes to this file, load the new configuration. Enter the tmux command mode by pressing **Prefix** then **:**, then use the following command:
 
-        source-file ~/.tmux.conf
-
+    ```text
+    source-file ~/.tmux.conf
+    ```
 3.  With the mouse option enabled you can use the pointer to interact with tmux panes, windows and status bar. For example you can click on a window name in the status bar to switch to it or you can click and drag a pane line to resize it.
 
 4.  Other configuration options are available in the [tmux manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1).
