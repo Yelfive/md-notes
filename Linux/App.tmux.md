@@ -1,10 +1,10 @@
 # Tmux
 
 external_resources:
-- '[tmux Manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)'
-- '[The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read)'
+- [tmux Manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
+- [The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read)
 
-![tmux](tmux.jpg)
+![tmux](./images/tmux.jpg)
 
 ## What is tmux?
 
@@ -28,7 +28,7 @@ On Debian or Ubuntu:
 
     Your terminal window should have a green menu bar at the bottom, similar to the one below:
 
-    ![Tmux menu](tmux_menu.png)
+    ![Tmux menu](../images/tmux_menu.png)
 
 2.  Detach from the session:
 
