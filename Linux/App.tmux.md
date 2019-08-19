@@ -1,24 +1,8 @@
 # Tmux
 
----
-author:
-  name: Linode Community
-  email: docs@linode.com
-description: 'Keep processes running even if your SSH connection drops. This guide includes examples on managing tmux sessions, windows and panes'
-og_description: 'This guide will show you how to use tmux the terminal multiplexer. tmux allows you to save terminal sessions, and manage multiple terminal sessions within one window'
-keywords: ['tmux','terminal','multiplexer','attach','detach','panes','sessions']
-license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
-published: 2017-12-06
-modified: 2017-12-06
-modified_by:
-  name: Linode
-title: 'How to Use tmux the Terminal Multiplexer'
-contributor:
-  name: Alexandru Andrei
 external_resources:
 - '[tmux Manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)'
 - '[The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read)'
----
 
 ![tmux](tmux.jpg)
 
@@ -121,9 +105,10 @@ It's also possible to type shorter versions of a command, for example: "new-se".
 
 ## Create a tmux Configuration File
 
-1.  As you get comfortable with tmux, you may want to change some of the defaults. Using a text editor, create a configuration file in your user's home directory:
+1.  As you get comfortable with tmux, you may want to change some of the defaults. Using a text editor, create a configuration file(`~/.tmux.conf`) in your user's home directory:
 
-    {{< file "~/.tmux.conf" conf >}}
+
+```conf
 # Uncomment the lines with the options you want to activate (by deleting the preceding "#")
 
 # Allow mouse interaction
@@ -136,7 +121,7 @@ It's also possible to type shorter versions of a command, for example: "new-se".
 
 # Display CPU load average for the last 1,5 and 15 minutes, in the status bar
 set -g status-right "#(cut -d ' ' -f -3 /proc/loadavg) %H:%M %d-%b-%y"
-{{< /file >}}
+```
 
 2.  When you have saved your changes to this file, load the new configuration. Enter the tmux command mode by pressing **Prefix** then **:**, then use the following command:
 
