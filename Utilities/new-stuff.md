@@ -86,7 +86,7 @@ network protocol analyzer
 
 ## JS Packages
 
-### Markdown
+### Markdown JS
 
 - [showdown](https://www.npmjs.com/package/showdown) - Markdown compiler
 - [highlight](https://www.npmjs.com/package/highlight.js) - Code block highlighting
@@ -111,3 +111,7 @@ network protocol analyzer
 - [FFmpeg](http://ffmpeg.org/)
 
     A complete, cross-platform solution to record, convert and stream audio and video.
+
+## Expose your local endpoints to the Internet
+
+- [alexellis/inlets: Expose your local endpoints to the Internet](https://github.com/alexellis/inlets)

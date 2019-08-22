@@ -1,14 +1,10 @@
 # Tmux
 
-external_resources:
-- [tmux Manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
-- [The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read)
-
 ![tmux](./images/tmux.jpg)
 
 ## What is tmux?
 
-Tmux is a **terminal multiplexer**. It creates a host **server** on your Linode and connects to it with a client window. If the client is disconnected, the server keeps running. When you reconnect to your Linode after rebooting your computer or losing your Internet connection, you can reattach to the tmux session and the files you were working with will still be open, and the processes you had running will still be active.
+Tmux is a **terminal multiplexer**. It creates a host **server** on your computer and connects to it with a client window. If the client is disconnected, the server keeps running. When re-opened you terminal, you can reattach to the `tmux` session and the files you were working with will still be open, and the processes you had running will still be active.
 
 By attaching multiple sessions, windows, and panes to a tmux server, you can organize your workflow and easily manage multiple tasks and processes.
 
@@ -130,3 +126,8 @@ It's also possible to type shorter versions of a command, for example: "new-se".
 3.  With the mouse option enabled you can use the pointer to interact with tmux panes, windows and status bar. For example you can click on a window name in the status bar to switch to it or you can click and drag a pane line to resize it.
 
 4.  Other configuration options are available in the [tmux manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1).
+
+## See Also
+
+- [tmux Manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
+- [The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read)
