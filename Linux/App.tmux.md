@@ -32,7 +32,7 @@ On Debian or Ubuntu:
 
     This will return you to the basic terminal.
 
-3.  Once a session has been started, it will continue to run as long as the Linode is running, or until you stop the session. You can log out of your current session, and reattach to the previous session.
+3.  Once a session has been started, it will continue to run as long as the host computer is running, or until you stop the session. You can log out of your current session, and reattach to the previous session.
 
         tmux attach
 
@@ -40,15 +40,13 @@ On Debian or Ubuntu:
 
 There are three ways to issue commands to tmux:
 
-  * **shortcuts**: tmux uses what is called a *prefix key*, which is **CTRL+b** by default. tmux will interpret the keystroke following the prefix as a tmux shortcut. For example: to detach from your session using a shortcut: press **CTRL+b**, release both keys and then press **d**.
-  * **command mode**: Enter command mode by pressing **Prefix** then <font size ="6"> **:**</font>. This will open a command prompt at the bottom of the screen, which will accept tmux commands.
+  * **shortcuts**: tmux uses what is called a *prefix key*, which is **<kbd>CTRL+b</kbd>** by default. tmux will interpret the keystroke following the prefix as a tmux shortcut. For example: to detach from your session using a shortcut: press **<kbd>CTRL+b</kbd>**, release both keys and then press **d**.
+  * **command mode**: Enter command mode by pressing **`Prefix`** then **`:`**. This will open a command prompt at the bottom of the screen, which will accept tmux commands.
   * **command line**: Commands can also be entered directly to the command line within a tmux session. Usually these commands are prefaced by `tmux`. The `tmux attach` command used in the previous section was an example of this type of command.
 
   Most tmux tasks can be accomplished using any of these three methods.
 
-{{< note >}}
-You can change the prefix key by editing the `.tmux.config` file. For the remainder of this guide, **Prefix** will be used to refer to either the default **CTRL+b** or the combination you have chosen in your configuration file.
-{{< /note >}}
+> **Note**: You can change the prefix key by editing the `.tmux.config` file. For the remainder of this guide, **Prefix** will be used to refer to either the default **<kbd>CTRL+b</kbd>** or the combination you have chosen in your configuration file.
 
 ## Manage tmux Windows
 
@@ -64,7 +62,7 @@ When a tmux session starts, a single window is created by default. It is possibl
 | **exit** |  Close a window |
 | **Prefix** + **&**  | Force kill-all processes in an unresponsive window  |
 
-By default, tmux names each window according to the process that spawned it (most commonly bash). To give windows names that are easier to remember and work with, you can rename a window with **Prefix + ,**.
+By default, tmux names each window according to the process that spawned it (most commonly bash). To give windows names that are easier to remember and work with, you can rename a window with **`Prefix + ,`**.
 
 ## Manage tmux Panes
 
@@ -82,13 +80,13 @@ Each window can be divided into multiple panes. This is useful when you want out
 
 ## Manage tmux Sessions
 
-Sometimes even multiple windows and panes aren't enough and you need to separate the layouts logically by grouping them into separate sessions. Open the command prompt with **Prefix** then **:**, then start a new session:
+Sometimes even multiple windows and panes aren't enough and you need to separate the layouts logically by grouping them into separate sessions. Open the command prompt with **`Prefix`** then **`:`**, then start a new session:
 
-    new-session
+```text
+new-session
+```
 
-{{< note >}}
-It's also possible to type shorter versions of a command, for example: "new-se". But this will work only if it there isn't another command that starts with the same string of characters.
-{{< /note >}}
+> **Note**: It's also possible to type shorter versions of a command, for example: "`new-se`". But this will work only if it there isn't another command that starts with the same string of characters.
 
 | Command  | Result  |
 |---|---|
@@ -118,7 +116,7 @@ It's also possible to type shorter versions of a command, for example: "new-se".
     set -g status-right "#(cut -d ' ' -f -3 /proc/loadavg) %H:%M %d-%b-%y"
     ```
 
-2.  When you have saved your changes to this file, load the new configuration. Enter the tmux command mode by pressing **Prefix** then **:**, then use the following command:
+2.  When you have saved your changes to this file, load the new configuration. Enter the tmux command mode by pressing **`Prefix`** then **`:`**, then use the following command:
 
     ```text
     source-file ~/.tmux.conf
@@ -127,7 +125,22 @@ It's also possible to type shorter versions of a command, for example: "new-se".
 
 4.  Other configuration options are available in the [tmux manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1).
 
+## Some Tips
+
+### 1. Start tmux as default terminal
+
+Add this to your remote system’s ~/.bash_profile file:
+
+```.bash_profile
+if [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
+```
+
+### 2. 
+
 ## See Also
 
 - [tmux Manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
 - [The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read)
+- [4 tips for better tmux sessions - Fedora Magazine](https://fedoramagazine.org/4-tips-better-tmux-sessions/)
