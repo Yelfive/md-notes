@@ -105,8 +105,9 @@ http {
 }
 ```
 
-1. stream **MUST** be used under `root context`(which is at the same level of `http` module)
-2. `upstream` is similar to the one of `http` module, except that as to `stream` module, the server of `upstream` **MUST** have a port.
+1. If `stream` not loaded, add `load_module /usr/lib/nginx/modules/ngx_stream_module.so` in the very front of `nginx.conf`
+2. `stream` **MUST** be used under `root context`(which is at the same level of `http` module)
+3. `upstream` is similar to the one of `http` module, except that as to `stream` module, the server of `upstream` **MUST** have a port.
 
 After configured this way, you can use ssh to visit a local machine with `ssh`.
 
