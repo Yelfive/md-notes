@@ -86,6 +86,8 @@ rewrite regexp replacement [flag]
 
 ## Reverse Proxy SSH
 
+`SSH` traffic can be reverse proxied by `Nginx`. This is especially useful when you want to redirect 
+
 ```conf
 stream {
     upstream ssh_gitlab {
