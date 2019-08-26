@@ -88,7 +88,7 @@ rewrite regexp replacement [flag]
 
 ```conf
 stream {
-    upstream {
+    upstream ssh_gitlab {
         
     }
     server {
