@@ -89,14 +89,21 @@ rewrite regexp replacement [flag]
 ```conf
 stream {
     upstream ssh_gitlab {
-        
+        # syntax
+        # server ip:port
+        server 118.113.177.164:712;
     }
     server {
         listen 22;
         proxy_pass ssh_gitlab;
     }
 }
+http {
+    # ...
+}
 ```
+
+1. 
 
 [break]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#break
 [rewrite]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite
