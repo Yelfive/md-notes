@@ -105,7 +105,8 @@ http {
 }
 ```
 
-1. 
+1. stream **MUST** be used under `root context`(which is at the same level of `http` module)
+2. 
 
 [break]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#break
 [rewrite]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite
