@@ -108,6 +108,12 @@ http {
 1. stream **MUST** be used under `root context`(which is at the same level of `http` module)
 2. `upstream` is similar to the one of `http` module, except for `stream` module, the server of `upstream` **MUST** has a port
 
+After configured this way, you can use ssh to visit a local machine with `ssh`.
+
+```bash
+ssh -p 22 user@remote.ip
+```
+
 [break]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#break
 [rewrite]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite
 
