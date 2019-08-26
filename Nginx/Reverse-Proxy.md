@@ -84,6 +84,19 @@ rewrite regexp replacement [flag]
 
     > returns a permanent redirect with the 301 code
 
+## Reverse Proxy SSH
+
+```conf
+stream {
+    upstream {
+        
+    }
+    server {
+        listen 22;
+        proxy_pass ssh_gitlab;
+    }
+}
+```
 
 [break]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#break
 [rewrite]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite
