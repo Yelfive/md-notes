@@ -91,7 +91,7 @@ rewrite regexp replacement [flag]
 ```conf
 stream {
     upstream ssh_gitlab {
-        # syntax
+        # syntax:
         # server ip:port
         server 118.113.177.164:712;
     }
@@ -106,7 +106,7 @@ http {
 ```
 
 1. stream **MUST** be used under `root context`(which is at the same level of `http` module)
-2. `upstream` is similar to the one of `http` module, except for `stream` module, the server of `upstream` **MUST** has a port
+2. `upstream` is similar to the one of `http` module, except that as to `stream` module, the server of `upstream` **MUST** have a port.
 
 After configured this way, you can use ssh to visit a local machine with `ssh`.
 
