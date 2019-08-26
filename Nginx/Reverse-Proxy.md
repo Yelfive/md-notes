@@ -86,7 +86,7 @@ rewrite regexp replacement [flag]
 
 ## Reverse Proxy SSH
 
-`SSH` traffic can be reverse proxied by `Nginx`. This is especially useful when you want to redirect 
+`SSH` traffic can be reverse proxied by `Nginx`. This is especially useful when you want to redirect traffic to a local machine, such as hosting a `GitLab` or `SSH server` on a local machine and with a server, which has public ip address. 
 
 ```conf
 stream {
