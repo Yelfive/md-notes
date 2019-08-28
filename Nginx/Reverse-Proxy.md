@@ -83,6 +83,36 @@ rewrite regexp replacement [flag]
 
     > returns a permanent redirect with the 301 code
 
+## Reverse Proxy SSH
+
+`SSH` traffic can be reverse proxied by `Nginx`. This is especially useful when you want to redirect traffic to a local machine, such as hosting a `GitLab` or `SSH server` on a local machine and with a server, which has public ip address. 
+
+```conf
+stream {
+    upstream ssh_gitlab {
+        # syntax:
+        # server ip:port
+        server 118.113.177.164:712;
+    }
+    server {
+        listen 22;
+        proxy_pass ssh_gitlab;
+    }
+}
+http {
+    # ...
+}
+```
+
+1. If `stream` not loaded, add `load_module /usr/lib/nginx/modules/ngx_stream_module.so` in the very front of `nginx.conf`, before any `http` or `stream`.
+2. `stream` **MUST** be used under `root context`(which is at the same level of `http` module).
+3. `upstream` is similar to the one of `http` module, except that as to `stream` module, the server of `upstream` **MUST** have a port.
+
+After configured this way, you can use ssh to visit a local machine with `ssh`.
+
+```bash
+ssh -p 22 user@remote.ip
+```
 
 [break]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#break
 [rewrite]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite
