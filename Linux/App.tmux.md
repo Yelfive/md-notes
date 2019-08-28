@@ -141,6 +141,9 @@ fi
 
 1. `Prefix :` Enter command mode.
 1. `clear-history` As the name indicates, clear the scrollbar.
+1. **search** in screen buffer([StackExchange](https://superuser.com/questions/231002/how-can-i-search-within-the-output-buffer-of-a-tmux-shell))
+
+    > 
 
 ## See Also
 
