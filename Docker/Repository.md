@@ -14,6 +14,8 @@
 
 - Go to https://cr.console.aliyun.com/ to register a mirror link
 
+  Untested
+
 ## 1. At daemon start time
 
 ```bash
@@ -32,13 +34,15 @@ docker pull docker.mirrors.ustc.edu.cn/library/repo:tag
 vim /etc/docker/daemon.json
 ```
 
+Configure the mirror
+
 ```json
 {
   "registry-mirrors": ["https://registry.docker-cn.com"]
 }
 ```
 
-And restart to apply the change
+Restart to apply the change
 
 ```bash
 systemctl restart docker
