@@ -34,7 +34,7 @@ Presentation| Description
 `$!`        | Last process id of the script run at background
 `$$`        | Current process id
 `$-`        | Show options passed to `sh/bash`, same as command `set`
-`$?`        | Return exit code of the last command: `echo command && echo $?`
+`$?`        | Return exit code of the last command: `echo command ; echo $?`
 
 **$-** 
 

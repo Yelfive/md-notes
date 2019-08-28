@@ -137,7 +137,10 @@ if [ -z "$TMUX" ]; then
 fi
 ```
 
-### 2. 
+## Tmux Commands
+
+1. `Prefix :` Enter command mode.
+1. `clear-history` As the name indicates, clear the scrollbar.
 
 ## See Also
 

@@ -47,7 +47,6 @@ server {
 }
 ```
 
-
 # rewrite 
 
 ```nginx
