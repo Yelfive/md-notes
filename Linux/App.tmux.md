@@ -145,11 +145,11 @@ fi
 
     > **copy mode search**
     >
-    > To search in the tmux history buffer for the current window, press Ctrl-b [ to enter copy mode.
+    > To search in the tmux history buffer for the current window, press <kbd>Ctrl-b [</kbd> to enter copy mode.
     >
     > If you're using `emacs` key bindings (the default), press <kbd>Ctrl-s</kbd> then type the string to search for and press Enter. Press n to search for the same string again. Press <kbd>Shift-n</kbd> for reverse search. Press Escape twice to exit copy mode. You can use <kbd>Ctrl-r</kbd> to search in the reverse direction. Note that since `tmux` is in control of the keyboard in copy mode, <kbd>Ctrl-s</kbd> works regardless of the `stty ixon` setting (which I like to have as `stty -ixon` to enable forward searches in Bash).
     >
-    > If you're using vi key bindings (<kbd>Ctrl-b:</kbd>`set-window-option -g mode-keys vi`), press <kbd>/</kbd> then type the string to search for and press Enter. Press n to search for the same string again. Press <kbd>Shift-n</kbd> for reverse search as in emacs mode. Press q twice to exit copy mode. You can use ? to search in the reverse direction.
+    > If you're using vi key bindings (<kbd>Ctrl-b:</kbd>`set-window-option -g mode-keys vi`), press <kbd>/</kbd> then type the string to search for and press Enter. Press n to search for the same string again. Press <kbd>Shift-n</kbd> for reverse search as in emacs mode. Press q twice to exit copy mode. You can use `?` to search in the reverse direction.
     > 
     > **find-window**
     > If you want to switch to a window based on something displayed in it (this also includes window names and titles but not history), (starting with more than one window open) press <kbd>Ctrl-b</kbd> f then type the string to search for and press Enter. You will be switched to a window containing that text if it's found. If more than one window matches, you'll see a list to select from.
