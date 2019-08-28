@@ -23,11 +23,16 @@ docker pull registry.docker-cn.com/library/ubuntu:16.04
 您可以在 Docker 守护进程启动时传入 --registry-mirror 参数：
 
 ```bash
-docker --registry-mirror=https://registry.docker-cn.com daemon
 ```
 
 为了永久性保留更改，您可以修改 `/etc/docker/daemon.json` 文件并添加上 registry-mirrors 键值。
-## 1. at pull time
+## 1. At daemon start time
+
+```bash
+docker --registry-mirror=https://registry.docker-cn.com daemon
+```
+
+## 1. At pull time
 
 ```bash
 docker pull docker.mirrors.ustc.edu.cn/library/repo:tag
