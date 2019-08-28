@@ -27,6 +27,12 @@ docker --registry-mirror=https://registry.docker-cn.com daemon
 ```
 
 为了永久性保留更改，您可以修改 `/etc/docker/daemon.json` 文件并添加上 registry-mirrors 键值。
+## 1. at pull time
+
+```bash
+docker pull docker.mirrors.ustc.edu.cn/library/repo:tag
+```
+
 
 ```json
 {
