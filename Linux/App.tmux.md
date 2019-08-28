@@ -141,9 +141,18 @@ fi
 
 1. `Prefix :` Enter command mode.
 1. `clear-history` As the name indicates, clear the scrollbar.
-1. **search** in screen buffer([StackExchange](https://superuser.com/questions/231002/how-can-i-search-within-the-output-buffer-of-a-tmux-shell))
+1. **search** in `Tmux` buffer ([StackExchange](https://superuser.com/questions/231002/how-can-i-search-within-the-output-buffer-of-a-tmux-shell))
 
-    > 
+    > **copy mode search**
+    >
+    > To search in the tmux history buffer for the current window, press Ctrl-b [ to enter copy mode.
+    >
+    > If you're using `emacs` key bindings (the default), press Ctrl-s then type the string to search for and press Enter. Press n to search for the same string again. Press Shift-n for reverse search. Press Escape twice to exit copy mode. You can use Ctrl-r to search in the reverse direction. Note that since tmux is in control of the keyboard in copy mode, Ctrl-s works regardless of the stty ixon setting (which I like to have as stty -ixon to enable forward searches in Bash).
+
+If you're using vi key bindings (Ctrl-b:set-window-option -g mode-keys vi), press / then type the string to search for and press Enter. Press n to search for the same string again. Press Shift-n for reverse search as in emacs mode. Press q twice to exit copy mode. You can use ? to search in the reverse direction.
+
+find-window
+If you want to switch to a window based on something displayed in it (this also includes window names and titles but not history), (starting with more than one window open) press Ctrl-b f then type the string to search for and press Enter. You will be switched to a window containing that text if it's found. If more than one window matches, you'll see a list to select from.
 
 ## See Also
 
