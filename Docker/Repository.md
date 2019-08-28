@@ -32,17 +32,28 @@ docker pull registry.docker-cn.com/library/ubuntu:16.04
 docker --registry-mirror=https://registry.docker-cn.com daemon
 ```
 
-## 1. At pull time
+## 2. At pull time
 
 ```bash
 docker pull docker.mirrors.ustc.edu.cn/library/repo:tag
 ```
 
+## 3. Configure
+
+```bash
+vim /etc/docker/daemon.json
+```
 
 ```json
 {
   "registry-mirrors": ["https://registry.docker-cn.com"]
 }
+```
+
+And restart
+
+```bash
+systemctl restart docker
 ```
 
 修改保存后重启 Docker 以使配置生效。
