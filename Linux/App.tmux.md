@@ -52,15 +52,15 @@ There are three ways to issue commands to tmux:
 
 When a tmux session starts, a single window is created by default. It is possible to attach multiple windows to the same session and switch between them as needed. This can be helpful when you want to run multiple jobs in parallel.
 
-| Command  |  Result |
-|---|---|
-| **Prefix** + **c**  | Create a new window  |
-| **Prefix** + **p** |  Switch to the previous window |
-| **Prefix** + **n**  |  Switch to the next window |
-| **Prefix** + **0-9**  |  Switch to a window using it's index number |
-| **Prefix** + **w**  | Choose a window from an interactive list |
-| **exit** |  Close a window |
-| **Prefix** + **&**  | Force kill-all processes in an unresponsive window  |
+| Command               |  Result |
+| ---                   | ---|
+| **Prefix** + **c**    | Create a new window  |
+| **Prefix** + **p**    | Switch to the previous window |
+| **Prefix** + **n**    | Switch to the next window |
+| **Prefix** + **0-9**  | Switch to a window using it's index number |
+| **Prefix** + **w**    | Choose a window from an interactive list |
+| **exit**              | Close a window |
+| **Prefix** + **&**    | Force kill-all processes in an unresponsive window  |
 
 By default, tmux names each window according to the process that spawned it (most commonly bash). To give windows names that are easier to remember and work with, you can rename a window with **`Prefix + ,`**.
 
