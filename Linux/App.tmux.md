@@ -68,15 +68,15 @@ By default, tmux names each window according to the process that spawned it (mos
 
 Each window can be divided into multiple panes. This is useful when you want outputs from multiple processes visible within a single window.
 
-| Command  | Result  |
-|---|---|
-| **Prefix** + **"**  |  Split the active pane horizontally |
-| **Prefix** + **%**  | Split the active pane vertically  |
+| Command               | Result  |
+| ---                   | ---|
+| **Prefix** + **"**    |  Split the active pane horizontally |
+| **Prefix** + **%**    | Split the active pane vertically  |
 | **Prefix** + **arrow key**  | Switch to another pane  |
 | **Prefix** + **ALT+arrow**  | Resize the active pane  |
-| **Prefix** + **z**  | Zoom in on the active pane. Press the same combination again to exit zoom mode  |
-| **exit**  | Close the active pane  |
-| **Prefix** + **x**   | Force kill an unresponsive process in a pane  |
+| **Prefix** + **z**    | Zoom in on the active pane. Press the same combination again to exit zoom mode  |
+| **exit**              | Close the active pane  |
+| **Prefix** + **x**    | Force kill an unresponsive process in a pane  |
 
 ## Manage tmux Sessions
 
