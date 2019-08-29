@@ -159,3 +159,4 @@ fi
 - [tmux Manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
 - [The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read)
 - [4 tips for better tmux sessions - Fedora Magazine](https://fedoramagazine.org/4-tips-better-tmux-sessions/)
+- [tmux shortcuts & cheatsheet](https://gist.github.com/MohamedAlaa/2961058)
