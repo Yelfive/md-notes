@@ -52,15 +52,15 @@ There are three ways to issue commands to tmux:
 
 When a tmux session starts, a single window is created by default. It is possible to attach multiple windows to the same session and switch between them as needed. This can be helpful when you want to run multiple jobs in parallel.
 
-| Command  |  Result |
-|---|---|
-| **Prefix** + **c**  | Create a new window  |
-| **Prefix** + **p** |  Switch to the previous window |
-| **Prefix** + **n**  |  Switch to the next window |
-| **Prefix** + **0-9**  |  Switch to a window using it's index number |
-| **Prefix** + **w**  | Choose a window from an interactive list |
-| **exit** |  Close a window |
-| **Prefix** + **&**  | Force kill-all processes in an unresponsive window  |
+| Command               |  Result |
+| ---                   | ---|
+| **Prefix** + **c**    | Create a new window  |
+| **Prefix** + **p**    | Switch to the previous window |
+| **Prefix** + **n**    | Switch to the next window |
+| **Prefix** + **0-9**  | Switch to a window using it's index number |
+| **Prefix** + **w**    | Choose a window from an interactive list |
+| **exit**              | Close a window |
+| **Prefix** + **&**    | Force kill-all processes in an unresponsive window  |
 
 By default, tmux names each window according to the process that spawned it (most commonly bash). To give windows names that are easier to remember and work with, you can rename a window with **`Prefix + ,`**.
 
@@ -68,15 +68,15 @@ By default, tmux names each window according to the process that spawned it (mos
 
 Each window can be divided into multiple panes. This is useful when you want outputs from multiple processes visible within a single window.
 
-| Command  | Result  |
-|---|---|
-| **Prefix** + **"**  |  Split the active pane horizontally |
-| **Prefix** + **%**  | Split the active pane vertically  |
+| Command               | Result  |
+| ---                   | ---|
+| **Prefix** + **"**    |  Split the active pane horizontally |
+| **Prefix** + **%**    | Split the active pane vertically  |
 | **Prefix** + **arrow key**  | Switch to another pane  |
 | **Prefix** + **ALT+arrow**  | Resize the active pane  |
-| **Prefix** + **z**  | Zoom in on the active pane. Press the same combination again to exit zoom mode  |
-| **exit**  | Close the active pane  |
-| **Prefix** + **x**   | Force kill an unresponsive process in a pane  |
+| **Prefix** + **z**    | Zoom in on the active pane. Press the same combination again to exit zoom mode  |
+| **exit**              | Close the active pane  |
+| **Prefix** + **x**    | Force kill an unresponsive process in a pane  |
 
 ## Manage tmux Sessions
 
@@ -141,9 +141,22 @@ fi
 
 1. `Prefix :` Enter command mode.
 1. `clear-history` As the name indicates, clear the scrollbar.
+1. **search** in `Tmux` buffer ([StackExchange](https://superuser.com/questions/231002/how-can-i-search-within-the-output-buffer-of-a-tmux-shell))
+
+    > **copy mode search**
+    >
+    > To search in the tmux history buffer for the current window, press <kbd>Ctrl-b [</kbd> to enter copy mode.
+    >
+    > If you're using `emacs` key bindings (the default), press <kbd>Ctrl-s</kbd> then type the string to search for and press <kbd>Enter</kbd>. Press n to search for the same string again. Press <kbd>Shift-n</kbd> for reverse search. Press <kbd>Escape</kbd> twice to exit copy mode. You can use <kbd>Ctrl-r</kbd> to search in the reverse direction. Note that since `tmux` is in control of the keyboard in copy mode, <kbd>Ctrl-s</kbd> works regardless of the `stty ixon` setting (which I like to have as `stty -ixon` to enable forward searches in Bash).
+    >
+    > If you're using vi key bindings (<kbd>Ctrl-b:</kbd>`set-window-option -g mode-keys vi`), press <kbd>/</kbd> then type the string to search for and press <kbd>Enter</kbd>. Press <kbd>N</kbd> to search for the same string again. Press <kbd>Shift-n</kbd> for reverse search as in emacs mode. Press <kbd>Q</kbd> twice to exit copy mode. You can use `?` to search in the reverse direction.
+    > 
+    > **find-window**
+    > If you want to switch to a window based on something displayed in it (this also includes window names and titles but not history), (starting with more than one window open) press <kbd>Ctrl-B</kbd> f then type the string to search for and press Enter. You will be switched to a window containing that text if it's found. If more than one window matches, you'll see a list to select from.
 
 ## See Also
 
 - [tmux Manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
 - [The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read)
 - [4 tips for better tmux sessions - Fedora Magazine](https://fedoramagazine.org/4-tips-better-tmux-sessions/)
+- [tmux shortcuts & cheatsheet](https://gist.github.com/MohamedAlaa/2961058)
