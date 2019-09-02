@@ -154,6 +154,12 @@ fi
     > **find-window**
     > If you want to switch to a window based on something displayed in it (this also includes window names and titles but not history), (starting with more than one window open) press <kbd>Ctrl-B</kbd> f then type the string to search for and press Enter. You will be switched to a window containing that text if it's found. If more than one window matches, you'll see a list to select from.
 
+1. `tmux attach`
+
+    ```bash
+    tmux attach -c /path/to/working_directory -t session_name_or_number
+    ```
+
 ## See Also
 
 - [tmux Manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
