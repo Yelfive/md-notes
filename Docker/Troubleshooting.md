@@ -18,4 +18,9 @@ ERROR: driver "overlay" failed to remove root filesystem for 738f492a57f80951b27
 grep docker /proc/*/mountinfo|grep 6031651302dba6053c5fde07937f4fd00dfc063577fa343b12c83f1c26b77887
 ```
 
-and you will see lines including some numbers, which are the `pid`s of the mount, and 
+You will see lines including some numbers, which are the `pid`s of the mount,
+and `kill` them all does the trick.
+
+```bash
+
+```
