@@ -18,7 +18,7 @@ ERROR: driver "overlay" failed to remove root filesystem for 738f492a57f80951b27
 grep docker /proc/*/mountinfo|grep 6031651302dba6053c5fde07937f4fd00dfc063577fa343b12c83f1c26b77887
 ```
 
-and it will result
+and it will result in something like
 
 ```text
 
