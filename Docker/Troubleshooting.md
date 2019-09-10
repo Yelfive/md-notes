@@ -26,6 +26,11 @@ and `kill` them all does the trick.
 After that, you can try again to `up` or `rm` etc.
 
 ### A little script
-```bash
 
+This script removes the specified mount.
+
+```bash
+#!/usr/bin/bash
+
+# TODO: under construction
 ```
