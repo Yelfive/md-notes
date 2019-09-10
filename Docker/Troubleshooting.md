@@ -4,7 +4,7 @@
 
 The filesystem for the container is still mounted, so the container cannot be removed.
 
-Involved commands: `up`, `rm`
+**Involved commands**: `up`, `rm` etc.
 
 ### Solution
 
@@ -21,7 +21,5 @@ grep docker /proc/*/mountinfo|grep 6031651302dba6053c5fde07937f4fd00dfc063577fa3
 You will see lines including some numbers, which are the `pid`s of the mount,
 and `kill` them all does the trick.
 
-```bash
-
-```
+After that, you can try again to `up` or `rm` etc.
 
