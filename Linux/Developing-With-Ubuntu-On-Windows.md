@@ -9,7 +9,7 @@ And what if there is a way, allows us to develop with awesome tools on Windows
 and test our code on Linux. Or maybe you don't want to jeopardise your machine
 with vulnerable developing tools which might crush or even damage the whole OS.
 
-What we need here is 
+What we need here is
 
 - VirtualBox(or another machine)
 - SMB, for file sharing
@@ -24,7 +24,7 @@ After all these steps, we are allowed to use `IDE`(and others) on Windows to dev
 The only defect which makes the developing a litte bit inconvenient is that, you have to ssh into the Ubuntu in order
 to test your code.
 
-## How do we do that?
+## How do we do that ?
 
 ### 1. Install SMB on Ubuntu (skipping the install Ubunut part)
 
@@ -73,8 +73,39 @@ sudo systemctl start smbd
 ### 5. Connect from Windows (actually, any OS is fine)
 
 1. Open up File Explorer and in the left pane right-click on `This PC`.
-2. Select `Choose a custom network location` and then click `Next`.
-2. In `Internet or network address`, enter the address of the Samba share in the following format `\\samba_hostname_or_server_ip\sharename`.
+2. Select `Map network drive` and then click `Next`.
+3. In `Internet or network address`, enter the address of the Samba share in the following format `\\samba_hostname_or_server_ip\sharename`.
+
+## Others
+
+### Virualbox host-only
+
+Generally, `Host-Only` will create an adapter with address `192.168.56.1/24` on the host, and the guest should configure the interface manually.
+
+```bash
+vim /etc/network/interfaces
+```
+
+add configuration like
+
+```text
+auto enp0s8
+iface enp0s8 inet static
+    address 192.168.56.2
+    netmask 255.255.255.0
+```
+
+Install `ifupdown` if missing
+
+```bash
+sudo apt install -y ifupdown
+```
+
+and then start the configured interface
+
+```bash
+sudo ifup enp0s8
+```
 
 ## See also
 

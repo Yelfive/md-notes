@@ -10,3 +10,9 @@ git config --global color.interactive auto
 ```bash
 git config --global core.editor vim
 ```
+
+``text
+[core]
+    autocrlf = false
+    editor = vim
+```

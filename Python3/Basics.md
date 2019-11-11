@@ -42,7 +42,7 @@ string % (variable list)
 
 ## None
 
-None for null
+`None` for `null`
 
 ## list
 
@@ -272,7 +272,7 @@ print(s[1, 3]) # ditto
 1. Similar to list comprehensions, but with parenthesis instead of brackets
 
     ```python
-    >>> g = ( xx for in range(1, 10))
+    >>> g = ( x*x for in range(1, 10))
     >>> type(g)
     <class 'generator'>
     >>> g.current()
@@ -300,7 +300,7 @@ try:
     while True:
         next(a)
 except StopIteration as e:
-    print(e.value)
+    print(e.value) # finished
 
 ```
 
