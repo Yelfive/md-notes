@@ -84,4 +84,23 @@ echo ${a[@]/search/replacement}
 
 **See Also** https://www.cnblogs.com/chengmo/archive/2010/09/30/1839632.html
 
+## \`\`
 
+```bash
+`command`
+```
+
+Run `command` and returns its `stdout`. This will fork a child process for process running, thus command like
+
+```bash
+# file: test.sh
+echo -e "`ps aux | grep test.sh`"
+```
+
+and
+
+```bash
+./test.sh
+```
+
+will always output two lines with same command(`bash ./test.sh`) but different `pid`
