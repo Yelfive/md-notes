@@ -30,6 +30,8 @@
 
 > grep [option] pattern [files]
 
+![](./images/grep.jpeg)
+
 ### find
 
 > find [option] [path] [expression]
