@@ -1,14 +1,46 @@
 # Manual
 
+To show the manual of the command
+
 ```bash
-
-> man cmd
-
-cmd(1), cmd(2)
-
+man cmd
 ```
 
-The standard sections of the manual include:
+## Overview
+
+Running the command
+
+```bash
+man man
+```
+
+and you will get the description as follows,
+
+```man
+MANUAL SECTIONS
+    The standard sections of the manual include:
+
+    1      User Commands
+    2      System Calls
+    3      C Library Functions
+    4      Devices and Special Files
+    5      File Formats and Conventions
+    6      Games et. al.
+    7      Miscellanea
+    8      System Administration tools and Daemons
+
+    Distributions customize the manual section to their specifics,
+    which often include additional sections.
+```
+
+In order to query the specified section run the `man` with section specified
+
+```bash
+# man SECTION COMMAND
+man 1 printf
+```
+
+## Secdions
 
 - 1 [User Commands][1]
 
@@ -29,21 +61,10 @@ The standard sections of the manual include:
     > All library functions excluding the
        library functions (system call wrappers) described in Section 2,
        which implement system calls.
-
-    > Many of the functions described in the section are part of the
-       Standard C Library (libc).  Some functions are part of other
-       libraries (e.g., the math library, libm, or the real-time library,
-       librt) in which case the manual page will indicate the linker option
-       needed to link against the required library (e.g., -lm and -lrt,
-       respectively, for the aforementioned libraries).
-
-    > In some cases, the programmer must define a feature test macro in
-       order to obtain the declaration of a function from the header file
-       specified in the man page SYNOPSIS section.  (Where required, these
-       feature test macros must be defined before including any header
-       files.)  In such cases, the required macro is described in the man
-       page.  For further information on feature test macros, see
-       [feature_test_macros(7)][macro].
+    >
+    > Many of the functions described in the section are part of the Standard C Library (libc).  Some functions are part of other libraries (e.g., the math library, libm, or the real-time library, librt) in which case the manual page will indicate the linker option needed to link against the required library (e.g., -lm and -lrt, respectively, for the aforementioned libraries).
+    >
+    > In some cases, the programmer must define a feature test macro in order to obtain the declaration of a function from the header file specified in the man page SYNOPSIS section.  (Where required, these feature test macros must be defined before including any header files.)  In such cases, the required macro is described in the man page.  For further information on feature test macros, see [feature_test_macros(7)][macro].
 
 - 4 [Devices and Special Files][4]
 
@@ -54,7 +75,6 @@ The standard sections of the manual include:
     > Describes various file formats, as well as
        the corresponding C structures, if any.  In addition, there are a
        number of pages that document various file-systems.
-
 
 - 6 [Games et. Al.][6]
 
@@ -67,11 +87,11 @@ The standard sections of the manual include:
         the standard file-system layout, and miscellaneous other things.
 
 - 8 [Administration and Privileged commands][8]
-    
+
     > Describes commands which either can be or are
        used only by the superuser, like system-administration commands,
        daemons, and hardware-related commands.
-
+    >
     > As with the commands described in Section 1, the commands described
        in this section terminate with an exit status that indicates whether
        the command succeeded or failed.  See [intro(1)][1] for more information.
