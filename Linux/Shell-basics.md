@@ -29,7 +29,7 @@ $#
 Presentation| Description
 ---         | ---
 `$#`        | Number of parameters passed to current script
-`$*`        | All parameters
+`$*`        | All parameters, exclude the script name
 `$@`        | Same as above
 `$!`        | Last process id of the script run at background
 `$$`        | Current process id
@@ -153,7 +153,7 @@ ${var%%_*} #abcd
 ${var#*string}
 ```
 
-strip everything from the start to the first occurrence of `string`
+strip everything from the start to the **first** occurrence of `string`
 
 ```bash
 ${var#*_} # efg_abc
@@ -165,10 +165,10 @@ ${var#*_} # efg_abc
 ${var##*string}
 ```
 
-strip everything from the start to the last occurrence of `string`
+strip everything from the start to the **last** occurrence of `string`
 
 ```bash
-${var##*_} # efg
+${var##*_} # abc
 ```
 
 ## Read from `stdin`
