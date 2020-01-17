@@ -41,6 +41,39 @@ export  XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9000 remote_h
         PHP_IDE_CONFIG="serverName=localhost"
 ```
 
+## Config PhpStorm
+
+### 1. Configure server
+
+Under `PHPStorm's Preferences`
+
+```text
+Preferences | Languages & Frameworks | PHP | Servers
+```
+
+Configure a server named `localhost`
+
+### 2. Start debug
+
+#### 2.1 Add a query key in the URL
+
+Such as
+
+```
+http://exmaple.com?XDEBUG_SESSION_START=1
+```
+where `1` can be any string, and then press <kbd>Enter</kbd>.
+
+`Xdebug` automatically create a `COOKIE` named `XDEBUG_SESSION=1` in the browser. This way, you can start debugging on the subsequent requests without passing such a key. If you don't pass value to the query parameter, it starts debugging only in that request, not in the subsequent ones.
+
+#### 2.2 Configure in `xdebug.ini`
+
+Add `autostart` in the configuration file of PHP
+
+```ini
+xdebug.remote_autostart = 1
+```
+
 ## Appendix
 
 Full configuration saved in `xdebug/xdebug.ini`
