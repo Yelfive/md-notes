@@ -58,6 +58,6 @@ let a = '<span>123';
 
 with **closing tag removed**. In fact, everything after the closing tag is removed too.
 
-`Laravel-Admin` uses `\Symfony\Component\DomCrawler\Crawler`, which uses `\DOMDocument`, which uses `libxml` to get pjax container's content. And this is a known bug with `libxml`, which does not support `HTML5`.
+`Laravel-Admin` uses `\Symfony\Component\DomCrawler\Crawler`, which uses `\DOMDocument`, which uses `libxml` to get `pjax` container's content. And this is a known bug with `libxml`, which does not support `HTML5`.
 
 With this bug under consideration, the pjax response passing should take place at browser side, instead of server side.
