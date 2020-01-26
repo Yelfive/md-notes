@@ -61,3 +61,36 @@ with **closing tag removed**. In fact, everything after the closing tag is remov
 `Laravel-Admin` uses `\Symfony\Component\DomCrawler\Crawler`, which uses `\DOMDocument`, which uses `libxml` to get `pjax` container's content. And this is a known bug with `libxml`, which does not support `HTML5`.
 
 With this bug under consideration, the pjax response passing should take place at browser side, instead of server side.
+
+### 4. Allows `$form->text()->ignore()`
+
+Currently supported syntax:
+
+```php
+$form->text('should-be-ignored');
+$form->ignore('should-be-ignored');
+```
+
+Expected:
+
+```php
+$form->text('should-be-ignored')->ignore();
+```
+
+to ignore specific field.
+
+## Binding `Form` as `$this`
+
+*Laravel Admin* binds class `Form` to callbacks as `$this`, and such behavior makes calling methods from controller inside callbacks troublesome.
+
+DO NOT bind anything, just variables passing.
+
+```php
+// source code
+$this->$callback($value, $form);
+
+// usage
+$column->display(function ($value, Form $form) {
+   $this->methodInController();
+});
+```
