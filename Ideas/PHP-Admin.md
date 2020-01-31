@@ -1,5 +1,18 @@
 #  Some ideas about Laravel Admin extension
 
+## Overall conventions
+
+### table with plural, model with singular
+
+e.g. 
+
+```text
+table: users
+model: User
+```
+
+`Laravel` will use the convention, the plural of model is the name of the table.
+
 ## Model
 
 1. `$form/$grid` translation uses `Model::getAttributeLabels();` by default
@@ -149,6 +162,14 @@ Filter input cannot
 
 1. Have `help` message, consider this, compose a `Input` component to represent for all inputs, with all kinds of features but allows user to set the properties to either switch it on/off or others.
 
+### Grid excellent feature
+
+1. `$grid->column()->display`: callback passed until render, that way, we can go through the whole data set, and process them. Some processing might need all data of current page, such as injecting some `JS` to pop up a modal for all rows.
+
+### Grid should have resizable width
+
+1. when it's being resizing, and when actual size is wider, should display with ellipsis `xxx...`.
+
 ## 3. `Laravel-admin` uses pjax, which has bug with PHP
 
 Consider this example
@@ -218,6 +239,9 @@ $column->display(function ($value, Form $form) {
 ## Command `reference:model`
 
 1. SHOULD be able to use `TableNameContract` and `TableName` model strategy and create those two files simultaneously.
+2. Consistent with `Laravel`'s convention:
+
+   > Note that we did not tell `Eloquent` which table to use for our `Flight` model. By convention, the "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Eloquent will assume the `Flight` model stores records in the `flights` table. You may specify a custom `table` by defining a table property on your model.
 
 ## Command `trans:extract`
 
