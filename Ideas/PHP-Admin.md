@@ -75,16 +75,55 @@
 
    `Field::prepare` **MUST** be called before `\Encore\Admin\Form::validationMessages` to keep consistent to `Laravel` and `reference:model`, if it is still needed.
 
+5. `select2`, cannot pass JS functions to it
+
+   `Laravel Admin` uses `json_encode` to encode `$config`, which makes it impossible to pass functions to `select2` etc..
+
+   ```php
+   public function render()
+   {
+      $configs = array_merge([
+         'allowClear'  => true,
+         'placeholder' => [
+               'id'   => '',
+               'text' => $this->label,
+         ],
+      ], $this->config);
+
+      $configs = json_encode($configs);
+
+      if (empty($this->script)) {
+         $this->script = "$(\"{$this->getElementClassSelector()}\").select2($configs);";
+      }
+      // other code..
+   }
+   ```
+
+   **EXPECTATION** Use custom encoder, such as `\fk\helpers\Dumper` to encode, it allows use of `\fk\helpers\DumperExpression` to keep the JS function as is.
+
+6. `Form` will not load data until `Form::edit()` called
+
+   `Laravel Admin` assumes that a `From` is either in **edit** mode or **create** mode, and load data only when `Form::edit` is called. Actually sometimes I needed the data before this was called.
+
+   It's better to use state of `Eloquent Model` to decide the current mode, leaving more customization to developers.
+
+   **EXPECTATION**
+
+   ```php
+   $form = new Form(User::findOrFail($id));
+   return $form->render(); // HTML that contains user data.
+   ```
+
 ## Grid
 
-1. Link on field
+### 1. Link on field
 
    ```php
    // generate a link to redirect to edit/view page on `name` field
    $grid->column('name')->linkToEditPage();
    ```
 
-2. `Grid/Form` should query required fields, not the all of the table.
+### 2. `Grid/Form` should query required fields, not the all of the table.
 e.g.
 
    ```php
@@ -99,6 +138,16 @@ e.g.
    -- other than
    SELECT * FROM table_name;
    ```
+
+### 3. `$grid->image` **SHOULD** be available to set `height`, not just `width`.
+
+### 4. `\Encore\Admin\Grid\Displayers\RowSelector` does not support `checked=true` attributes, which should be otherwise.
+
+### Filter input is not consistent with other fields
+
+Filter input cannot
+
+1. Have `help` message, consider this, compose a `Input` component to represent for all inputs, with all kinds of features but allows user to set the properties to either switch it on/off or others.
 
 ## 3. `Laravel-admin` uses pjax, which has bug with PHP
 
@@ -184,3 +233,35 @@ $column->display(function ($value, Form $form) {
 ## Command `map:const`
 
 Generate labels for model constants, SHOULD be considered being **ABLE** to be included inside `reference:model`
+
+## Methods that should accept returns of any type
+
+- `$grid->column()->modal()` in `\Encore\Admin\Grid\Displayers\Modal`
+
+
+## Image previewer
+
+Preview image in any page.
+
+for example
+
+```html
+<img src="grep.jpeg"/>
+
+<script>
+$('img').preview();
+</script>
+
+```
+
+## Server overload problem
+
+`Laravel Admin` parsing everything at server side, which significant increase the server's load.
+
+**SHOULD** consider frontend-backend isolation solution. Leave the `HTML` to client and data to the server. `PHP` is not very good at dealing with that.
+
+## Tree
+
+- Tree actions: cannot custom actions, say, add a create child button, change the icon etc.
+
+   see `src/vendor/encore/laravel-admin/resources/views/tree/branch.blade.php`
