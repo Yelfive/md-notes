@@ -127,6 +127,29 @@ model: User
    return $form->render(); // HTML that contains user data.
    ```
 
+### Form layout
+
+```php
+
+$form->text('name');
+
+// equivalent to
+$form->row(function (Row $row) {
+   $row->grid(12, function(Column $column) {
+      $column->text('name');
+   });
+});
+
+// This allows more flexible layout like
+$form->row(function(Row $row) {
+   $row->grid(6, function(Column $column) {
+      $column->text('name');
+   });
+   // other grids...
+});
+
+```
+
 ## Grid
 
 ### 1. Link on field
