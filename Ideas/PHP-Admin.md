@@ -127,6 +127,28 @@ model: User
    return $form->render(); // HTML that contains user data.
    ```
 
+7. element class should have default class
+
+   ```php
+   $form->text('field')
+      // to add to default list
+      // $this->elementClasses = array_merge($this->elementClasses, $classes)
+      ->addElementClass($classes)
+      // to remove from list, including default
+      // $this->elementClasses = array_key_diff($this->elementClasses, array_flip($classes))
+      ->removeElementClass($classes)
+      // to overwrite
+      // $this->defaultElementClasses = $classes;
+      ->overwriteElementClass($classes);
+   ```
+   
+   Or consider the following pattern
+   
+   ```php
+   class Element implements Htmlable, Renderable {}
+   class Elements implements Htmlable, Renderable {}
+   ```
+
 ### Form layout
 
 ```php
@@ -262,9 +284,35 @@ $column->display(function ($value, Form $form) {
 ## Command `reference:model`
 
 1. SHOULD be able to use `TableNameContract` and `TableName` model strategy and create those two files simultaneously.
-2. Consistent with `Laravel`'s convention:
+2. Consistent with `Laravel`'s convention, **singular for table, plural for `Model`**:
 
    > Note that we did not tell `Eloquent` which table to use for our `Flight` model. By convention, the "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Eloquent will assume the `Flight` model stores records in the `flights` table. You may specify a custom `table` by defining a table property on your model.
+2. Default to generate contract
+3. Allow rule overwriting
+
+   ```php
+      public function rules()
+      {
+         // No static variable to store the rule
+         // static variable has one problem: when the rule is based on state(object properties etc.),
+         // it will not change when state changes. 
+         $rules = [
+            // rules generated from database
+         ];
+
+         $rules = array_merge($rules, $this->replaceRules());
+
+         return $rules;
+      }
+
+      protected function replaceRules()
+      {
+         return [
+            'name' => ['rules'],
+            'mobile' => ['rules'],
+         ];
+      }
+   ```
 
 ## Command `trans:extract`
 
@@ -274,7 +322,8 @@ $column->display(function ($value, Form $form) {
 ## Command `model:label`
 
 1. Generate locale method `getAttributeLabels` for a model, SHOULD be considered being **ABLE** to be included inside `reference:model`
-2. SHOULD allow to customize map for model fields, fx.  `created_at` will be `__('Created at')` instead of `__(table-name.Created at)`
+2. Generate `key=>value` pairs: `'key' => __('table-name.attributes.key')`, with `attributes` prefix the value
+3. SHOULD allow to customize map for model fields, fx.  `created_at` will be `__('Created at')` instead of `__(table-name.Created at)`
 
 
 ## Command `map:const`
@@ -312,3 +361,11 @@ $('img').preview();
 - Tree actions: cannot custom actions, say, add a create child button, change the icon etc.
 
    see `src/vendor/encore/laravel-admin/resources/views/tree/branch.blade.php`
+
+## `Support` class
+
+### `Support\Str`
+
+```php
+Str::camel($string, $delimiter = '_'); // 'one.two' => oneTwo
+```
