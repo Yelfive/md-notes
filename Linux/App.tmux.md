@@ -161,13 +161,62 @@ fi
     - <kbd>ctrl-b-]</kbd> to paste
 
 1. **find-window**
-    > If you want to switch to a window based on something displayed in it (this also includes window names and titles but not history), (starting with more than one window open) press <kbd>Ctrl-B-F</kbd> then type the string to search for and press Enter. You will be switched to a window containing that text if it's found. If more than one window matches, you'll see a list to select from.
+
+> If you want to switch to a window based on something displayed in it (this also includes window names and titles but not history), (starting with more than one window open) press <kbd>Ctrl-B-F</kbd> then type the string to search for and press Enter. You will be switched to a window containing that text if it's found. If more than one window matches, you'll see a list to select from.
 
 1. `tmux attach`
 
     ```bash
     tmux attach -c /path/to/working_directory -t session_name_or_number
     ```
+
+## Other commands
+
+- swap-panes
+  - <kbd>ctrl+b+{</kbd>  swap with left
+  - <kbd>ctrl+b+}</kbd>  swap with right
+  
+- move pane clockwise
+  
+  - <kbd>ctrl+b+o</kbd>
+  
+- move pane into specific window
+
+  ```tmux
+  :move-pane -t <window number>:<split number>
+  ```
+
+- change pane layouts(vertical/horizanal)
+  
+  - <kbd>ctrl+b+space</kbd>
+
+## Configurations
+
+Configuration file locates at `~/.tmux.conf`
+
+```conf
+set-window-option -g mode-keys vi
+bind -n C-k send-keys -R \; clear-history
+set -g display-panes-time 4000
+
+# Allow to save by `prefx + ctrl + s`
+# to restore by `prefix + ctrl +r`
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+# To save sessions in 15minutes, and restore on boot
+set -g @plugin 'tmux-plugins/tmux-continuum'
+ 
+set -g @continuum-restore 'on'
+```
+
+Apply changes
+
+```bash
+tmux  source-file ~/.tmux.conf
+```
+
+
+
+
 
 ## See Also
 

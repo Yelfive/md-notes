@@ -12,6 +12,7 @@ Set your new prompt by manipulating the $PS1 variable.
 
 ```bash
 export PS1='\h:\W \u\$ '
+export PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$'
 ```
 
 Characters prefixed by a backslash (`\`) are actually variables that get expanded. Here is a list of all Bash prompt variables as described in the PROMPTING section of the BASH(1) man page.

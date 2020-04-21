@@ -64,7 +64,7 @@ then rendered as html
    To validate corresponding rules as specified by `$form->rules` or `Model::rules`. `Laravel Admin` does not have such mechanism, it validates only in the backend.
 
 3. `Form` SHOULD have access to the value of current record, when it's editing.
-   
+  
    ```php
    $form->tools(function (Form\Tools $tools) {
       /** @var Form $this */
@@ -198,10 +198,68 @@ $form->row(function(Row $row) {
 
 ### Form fields
 
-1. `number` should be able to set step
+#### 1. `number` should be able to set step
+
    ```php
    $form->number('column')->step(1000); // atom unit is 1000
    ```
+
+#### 2. Form fields should have some idea of generating unique element ids, and maybe prefix
+
+   ```php
+   <?php
+   $form->prefixIdWith('hello_');
+   $form->text('name');
+   // result
+   // <input type="text" name="name" id="hello_name"/>
+   ```
+
+   > **NOTE: Also should consider when a field is rendered twice, the id should be unique.**
+
+####  3. Form fields should allow extending
+
+```php
+<?php
+
+// Display this field only when with empty value
+Field::extend('whenEmpty', function (mixed $value, Field $field) {
+    if ($value) {
+        $field->shouldDisplay = true;
+    } else {
+        $field->shouldDisplay = false;
+    }
+    return $this;
+});
+
+// Applies to all fields
+$form->text('name')->whenEmpty();
+$form->select('country')->whenEmpty();
+```
+
+#### 4. HasMany does not relation does not respect `HasAttributes::snakeAttributes`
+
+```php
+// Get relation by calling Model::rankHistory
+$form->hasMany('rankHistory', function() {
+    // but actually cannot get any fileds
+    // because laravel uses snake case of relation name as key
+    // to store data when calling Model::toArray
+    //
+    // $rankHistory['rank_history'] = $model->rankHistory->toArray()
+    //
+    // and LaravelAdmin uses toArray to get fields' values from model
+    // and retrive them using camel case
+    //
+    // $data['rankHistory']['id']
+    // instead of $data['rank_history']['id']
+});
+
+// see Illuminate\Database\Eloquent\Concerns\HasAttributes(260) for more
+```
+
+
+
+
 
 ## Grid
 
@@ -219,9 +277,9 @@ e.g.
    $grid->column('id');
    $grid->column('name');
    ```
-   
+
    Should generate
-   
+
    ```sql
    SELECT id, name FROM table_name;
    -- other than
@@ -234,7 +292,7 @@ e.g.
 
 ### Filter input is not consistent with other fields
 
-Filter input cannot
+### 5. Filter input cannot
 
 1. Have `help` message, consider this, compose a `Input` component to represent for all inputs, with all kinds of features but allows user to set the properties to either switch it on/off or others.
 
@@ -245,6 +303,14 @@ Filter input cannot
 ### Grid should have resizable width
 
 1. when it's being resizing, and when actual size is wider, should display with ellipsis `xxx...`.
+
+### Should have access to custom row style
+
+```html
+<tr class="messsage-read"></tr>
+```
+
+
 
 ## 3. `Laravel-admin` uses pjax, which has bug with PHP
 
@@ -300,7 +366,7 @@ to ignore specific field.
 
 *Laravel Admin* binds class `Form` to callbacks as `$this`, and such behavior makes calling methods from controller inside callbacks troublesome.
 
-DO NOT bind anything, just variables passing.
+**DO NOT bind anything, just variables passing.**
 
 ```php
 // source code
@@ -315,10 +381,13 @@ $column->display(function ($value, Form $form) {
 ## Command `reference:model`
 
 1. SHOULD be able to use `TableNameContract` and `TableName` model strategy and create those two files simultaneously.
+
 2. Consistent with `Laravel`'s convention, **singular for table, plural for `Model`**:
 
    > Note that we did not tell `Eloquent` which table to use for our `Flight` model. By convention, the "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Eloquent will assume the `Flight` model stores records in the `flights` table. You may specify a custom `table` by defining a table property on your model.
-2. Default to generate contract
+   
+3. Default to generate contract
+
 3. Allow rule overwriting
 
    ```php
@@ -344,6 +413,42 @@ $column->display(function ($value, Form $form) {
          ];
       }
    ```
+   
+5. Allow to use trait insteand of only extends
+
+   ```php
+   <?php
+   
+   namespace App\Models;
+   
+   class User extends OtherBaseModel
+   {
+   		use UserContract;
+   }
+   ```
+
+   For example, `laravel/passport` uses a `Larave\Passport\Client` as the base `Model`, thus cannot extends another model.
+
+6. Rewrite migrate to auto `reference:model`
+
+   ```php
+   <?php
+   
+   class SomeMigrate extends Migation
+   {
+     public function up()
+     {
+       	// run reference:model after up
+   	}
+   
+     public function down()
+     {
+       // run refernce:model after down
+     }
+   }
+   ```
+
+   
 
 ## Command `trans:extract`
 
@@ -398,5 +503,5 @@ $('img').preview();
 ### `Support\Str`
 
 ```php
-Str::camel($string, $delimiter = '_'); // 'one.two' => oneTwo
+Str::camel($string, $delimiter = '_'); // 'one_two' => oneTwo
 ```
