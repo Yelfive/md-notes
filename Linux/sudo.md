@@ -14,6 +14,21 @@ or
 vim /etc/sudoers
 ```
 
+
+
+## Rules
+
+- __root__   ALL=(ALL:ALL) ALL
+  The first field indicates the username that the rule will apply to (`root`).
+- demo     __ALL__=(ALL:ALL) ALL
+  The first `ALL` indicates that this rule applies to all hosts.
+- demo     ALL=(__ALL__:ALL) ALL
+  This `ALL` indicates that the `root` user can run commands as all users.
+- demo     ALL=(ALL:__ALL__) ALL
+  This `ALL` indicates that the `root` user can run commands as all groups.
+- demo     ALL=(ALL:ALL) **ALL**
+  The last `ALL` indicates these rules apply to all commands.
+
 ## Editing
 
 ```bash
@@ -45,13 +60,13 @@ Fields within `[]` is optional.
     - `%root` for group root
 
 - `host`
-    
+  
     Which host the user logged in can use the `sudo` command
 
     `ALL` for all the hosts
 
 - `another_role` **optional**
-    
+  
     The role to run `sudo` as.
 
     `ALL` means all users

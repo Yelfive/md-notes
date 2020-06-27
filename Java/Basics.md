@@ -1,4 +1,6 @@
-# Java Basics
+#  
+
+Java Basics
 
 ## Variable scope
 
@@ -372,15 +374,15 @@ int j = i.intValue();
 ## `String`, `StringBuffer` and `StringBuilder`
 
 - `String`
-    
+  
     Constant object, cannot be modified after created.
 
 - `StringBuffer`
-    
+  
     Variable object, can be modified after created, thread-safe.
 
 - `StringBuilder`
-    
+  
     Variable object, can be modified after created, non-thread-safe, high performance, recommended.
 
 ## File path

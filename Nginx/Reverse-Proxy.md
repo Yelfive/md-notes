@@ -20,6 +20,14 @@ server {
         proxy_set_header   X-Real-IP        $remote_addr;
         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
     }
+  
+  	# Reverse proxy /api/xxx to example.com/api/xxx
+	  location /api/ {
+        proxy_pass http://exmaple.com;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+    }
 
     # Proxy the WebSocket protocol
     location ~ ^/socket.io {
@@ -64,7 +72,7 @@ rewrite regexp replacement [flag]
 ### flag
 
 - last 
-    
+  
     > stops processing the current set of ngx_http_rewrite_module directives and starts a search for a new location matching the changed URI;
     >
     > Last rule for this **block**
