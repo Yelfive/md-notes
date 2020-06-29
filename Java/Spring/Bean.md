@@ -15,9 +15,9 @@
 
 
 
-Spring `bean` has the following `scope`, to determine the lifetime of a bean.
+Spring `bean` has the following `scope`, to determine the lifecycle of a bean.
 
-- `singleton`, with lifetime same as IoC container
+- `singleton`, with lifecycle same as IoC container
 - `prototype`, for multiple instances. It creates when the bean is fetched, and destroyed by Java GC
 - `request`, for a request of web application
 - `session`, for session of a web application
