@@ -56,7 +56,14 @@ When one class instance want to use instance of another class,  **Spring** maint
 
 
 
-## For annotation-based IoC and DI
+## Annotation-based IoC and DI
+
+Before you using annotations, you should configure to tell _Spring_ that you're going to use annotations:
+
+```xml
+<!-- org.example is the base where the Spring should scan for components from -->
+<context:component-scan base-package="org.example"/>
+```
 
 Annotation can be categorized into 4 categories:
 
@@ -70,6 +77,33 @@ Annotation can be categorized into 4 categories:
    4. `@Repository` used in persistence layer
 
    > `@Controller`, `@Service`, `@Repository` are the same as `@Component` when comes to bean declaration
+
+   5. `@Bean` tag to be used at method level, and must be used with conjunction with `@Configuration`.
+
+        ```java
+        import javax.sql.DataSource;
+        import java.beans.PropertyVetoException;
+
+        @Configuration
+        class {
+            // This bean will first look for bean with `DataSource` in application container.
+            // If not found, it will be delayed
+            @Bean
+            public QueryRunner queryRunner(DataSource dataSource) {
+                return new QueryRunner(dataSource);
+            }
+
+            @Bean
+            public DataSource dataSource() {
+                ComboPooledDataSource ds = new ComboPooledDataSource();
+                ds.setDriverClass(Driver.class.getName());
+                ds.setJdbcUrl("jdbc:mysql://localhost/dbname");
+                ds.setUser("user");
+                ds.setPassword("pass");
+                return ds;
+            }
+        }
+        ```
 
 2. To inject data
 
@@ -146,8 +180,8 @@ Annotation can be categorized into 4 categories:
 
    Manipulating the lifecycle of a bean
 
-   1. `@PostConstruct` similar to `init-method`
-   2. `@PreDestroy` similar to `destroy-method`
+   1. `@PostConstruct` similar to `init-method` of `<bean>` tag
+   2. `@PreDestroy` similar to `destroy-method` of `<bean>` tag
 
    **Example**:
 
