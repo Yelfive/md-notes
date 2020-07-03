@@ -1,7 +1,5 @@
 # IoC and DI of Spring
 
-
-
 - IoC
 
   **I**nverse **o**f **C**ontrol
@@ -9,8 +7,6 @@
 - DI
 
   **D**ependency **I**njection
-
-
 
 ## IoC
 
@@ -20,25 +16,46 @@ Decrease the level of coupling
 
 When one class instance want to use instance of another class,  **Spring** maintains the dependency relationship between those instances, and gives one to another.
 
-#### There are generally three categories of DI in spring:
+### There are generally three categories of DI in spring
 
 1. Primitive types & String
 2. Beans
 3. Complicated type/Collections
 
-#### There area three **injection ways**:
+#### There area three **injection ways**
 
 1. Constructor
 2. Setter
-3. Annotation
 
+    **Annotation based example**
+
+    ```java
+    @Component
+    class A {
+        private B b;
+        @Autowired
+        private setB(B b) {
+            this.b = b;
+        }
+    }
+    ```
+
+    **XML based example**
+
+    ```xml
+    <bean id="a" class="org.example.A">
+        <property name="b" value="id of bean b"/>
+    </bean>
+    ```
+
+3. Annotation
 
 ## For XML-based IoC and DI
 
 ```xml
 <bean id="" class="fully.qualified.class" scope="" init-method="" destroy-method="">
     <!-- For primitive types and Strings -->
-	<property name="" value=""></property>
+    <property name="" value=""></property>
     <!-- For bean values -->
     <property name="" ref=""></property>
     <!-- For collections and maps -->
@@ -53,8 +70,6 @@ When one class instance want to use instance of another class,  **Spring** maint
     </property>
 </bean>
 ```
-
-
 
 ## Annotation-based IoC and DI
 
@@ -76,7 +91,7 @@ Annotation can be categorized into 4 categories:
    3. `@Service` used in service layer
    4. `@Repository` used in persistence layer
 
-   > `@Controller`, `@Service`, `@Repository` are the same as `@Component` when comes to bean declaration
+        > `@Controller`, `@Service`, `@Repository` are the same as `@Component` when comes to bean declaration
 
    5. `@Bean` tag to be used at method level, and must be used with conjunction with `@Configuration`.
 
@@ -109,7 +124,7 @@ Annotation can be categorized into 4 categories:
 
     Similar to `<property>` tag. Available annotations:
 
-    1.  `@Autowired`
+    1. `@Autowired`
 
         Inject bean based on property type.
 
@@ -128,7 +143,7 @@ Annotation can be categorized into 4 categories:
 
         ![image-20200629105524117](images/IoC-DI/image-20200629105524117.png)
 
-    2. `@Qualifier` 
+    2. `@Qualifier`
 
        Cannot be used alone, but with `@Autowired`. Used to specify the id of bean to inject with.
 
@@ -139,34 +154,35 @@ Annotation can be categorized into 4 categories:
     4. `@Value`
 
        Inject primitive values
-       
+
        **Examples:**
-       
+
        ```java
        interface B {}
        @Component
        class B1 implements B {}
        @Component
        class B2 implements B {}
-       
+
        class C {
            @Autowired
            private B b; // throw exception
-           
+
            @Autowired
            private B b1; // valid expression and gets instance of class B1
-           
+
            @Autowired
            @Qualifier("b1") // use bean id
            private B b;	 // gets instance of class B1
-           
+
            @Resource(name = "b1")
            private B b;
-           
+
            @Value("SpEL")
            private String str;
        }
        ```
+
    > **Collections cannot be injected by annotation, only by XML-based**
 
 3. To manipulate the scope
@@ -193,5 +209,3 @@ Annotation can be categorized into 4 categories:
        public void destroy() {}
    }
    ```
-
-   

@@ -40,11 +40,11 @@ On Debian or Ubuntu:
 
 There are three ways to issue commands to tmux:
 
-  * **shortcuts**: tmux uses what is called a *prefix key*, which is **<kbd>CTRL+b</kbd>** by default. tmux will interpret the keystroke following the prefix as a tmux shortcut. For example: to detach from your session using a shortcut: press **<kbd>CTRL+b</kbd>**, release both keys and then press **d**.
-  * **command mode**: Enter command mode by pressing **`Prefix`** then **`:`**. This will open a command prompt at the bottom of the screen, which will accept tmux commands.
-  * **command line**: Commands can also be entered directly to the command line within a tmux session. Usually these commands are prefaced by `tmux`. The `tmux attach` command used in the previous section was an example of this type of command.
+* **shortcuts**: tmux uses what is called a *prefix key*, which is **<kbd>CTRL+b</kbd>** by default. tmux will interpret the keystroke following the prefix as a tmux shortcut. For example: to detach from your session using a shortcut: press **<kbd>CTRL+b</kbd>**, release both keys and then press **d**.
+* **command mode**: Enter command mode by pressing **`Prefix`** then **`:`**. This will open a command prompt at the bottom of the screen, which will accept tmux commands.
+* **command line**: Commands can also be entered directly to the command line within a tmux session. Usually these commands are prefaced by `tmux`. The `tmux attach` command used in the previous section was an example of this type of command.
 
-  Most tmux tasks can be accomplished using any of these three methods.
+Most tmux tasks can be accomplished using any of these three methods.
 
 > **Note**: You can change the prefix key by editing the `.tmux.config` file. For the remainder of this guide, **Prefix** will be used to refer to either the default **<kbd>CTRL+b</kbd>** or the combination you have chosen in your configuration file.
 
@@ -116,14 +116,15 @@ new-session
     set -g status-right "#(cut -d ' ' -f -3 /proc/loadavg) %H:%M %d-%b-%y"
     ```
 
-2.  When you have saved your changes to this file, load the new configuration. Enter the tmux command mode by pressing **`Prefix`** then **`:`**, then use the following command:
+2. When you have saved your changes to this file, load the new configuration. Enter the tmux command mode by pressing **`Prefix`** then **`:`**, then use the following command:
 
     ```text
     source-file ~/.tmux.conf
     ```
-3.  With the mouse option enabled you can use the pointer to interact with tmux panes, windows and status bar. For example you can click on a window name in the status bar to switch to it or you can click and drag a pane line to resize it.
 
-4.  Other configuration options are available in the [tmux manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1).
+3. With the mouse option enabled you can use the pointer to interact with tmux panes, windows and status bar. For example you can click on a window name in the status bar to switch to it or you can click and drag a pane line to resize it.
+
+4. Other configuration options are available in the [tmux manual](http://man.openbsd.org/OpenBSD-current/man1/tmux.1).
 
 ## Some Tips
 
@@ -131,7 +132,7 @@ new-session
 
 Add this to your remote system’s ~/.bash_profile file:
 
-```.bash_profile
+```bash_profile
 if [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
@@ -204,7 +205,7 @@ set -g display-panes-time 4000
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 # To save sessions in 15minutes, and restore on boot
 set -g @plugin 'tmux-plugins/tmux-continuum'
- 
+
 set -g @continuum-restore 'on'
 ```
 
@@ -213,9 +214,6 @@ Apply changes
 ```bash
 tmux  source-file ~/.tmux.conf
 ```
-
-
-
 
 
 ## See Also

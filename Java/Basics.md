@@ -80,14 +80,15 @@ if (1) {
 
 Two methods may have the same method name, as long as the parameters are different.
 
-### Is `overload`:
+### Is `overload`
+
 - different parameters:
     1. number of parameters
     2. type of parameters
     3. different parameter order
 - method is compared to the first method defined with the same name
 
-### Not `overload`:
+### Not `overload`
 
 - different return type is not considered a `overload`.
 - different parameter name is not considered a `overload`.

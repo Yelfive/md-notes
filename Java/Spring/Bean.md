@@ -1,7 +1,5 @@
 # Spring Bean
 
-
-
 ## Annotations
 
 - @Bean
@@ -13,8 +11,6 @@
 - @Repository
   - A special `@Component`.
 
-
-
 Spring `bean` has the following `scope`, to determine the lifecycle of a bean.
 
 - `singleton`, with lifecycle same as IoC container
@@ -22,4 +18,3 @@ Spring `bean` has the following `scope`, to determine the lifecycle of a bean.
 - `request`, for a request of web application
 - `session`, for session of a web application
 - `global-session`, when using clusters, a session will be considered among all clusters, and `global-session`  means the session among all clusters.
-
