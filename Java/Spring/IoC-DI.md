@@ -69,6 +69,7 @@ When one class instance want to use instance of another class,  **Spring** maint
         <props></props>
     </property>
 </bean>
+<bean id="" factory-bean="id of factory bean" factory-method=""></bean>
 ```
 
 ## Annotation-based IoC and DI
