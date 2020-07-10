@@ -1,6 +1,9 @@
 {
     "cSpell.words": [
+        "datasource",
+        "jdbc",
         "joinpoint",
-        "pointcut"
+        "pointcut",
+        "springframework"
     ]
 }
