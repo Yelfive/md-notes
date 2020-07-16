@@ -62,3 +62,22 @@ public class LambdaImpl implements LambdaInterface {
 
 LambadaInterface x = new LambdaImpl();
 ```
+
+## Further more
+
+If the methods of two interfaces have the same number of arguments,
+it is possible to distinguish the two interfaces either by specify the type of lambda or the type of arguments.
+
+### 1. Specifying the type of lambda
+
+```java
+A a = (A) () -> {};
+B b = (b) () -> {};
+```
+
+### 2. Specifying the type of arguments
+
+```java
+A a = (Integer x) -> {};
+B b = (Float x) -> {};
+```

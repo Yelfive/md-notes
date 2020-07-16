@@ -45,12 +45,12 @@ final String name = "Felix";
 
 #### Integer
 
-Data Type   | Space | Range
----         | ---   | ---
-byte        | 1b    |
-short       | 2b    |
-int         | 4b    |
-long        | 8b    |
+| Data Type | Space | Range |
+| --------- | ----- | ----- |
+| byte      | 1b    |
+| short     | 2b    |
+| int       | 4b    |
+| long      | 8b    |
 
 ### Reference Data Type
 
@@ -219,7 +219,7 @@ this.addKeyListener(new KeyAdapter() {
         @Override
         public void keyPressed(KeyEvent e) {
             myTank.keyPressed(e);
-        }      
+        }
         @Override
         public void keyReleased(KeyEvent e) {
             myTank.keyReleased(e);
@@ -296,25 +296,49 @@ var1 = new int[3];
 
 // define and fill value into array of integers
 // the array of size 3
-int[] var1 = {1, 2, 3}
+int[] var1 = {1, 2, 3};
+
+String[] str1 = new String[5];
+String[] str1 = new String[]{""}; // length of 1, whose value is empty string
 ```
 
 ### Default values for array
 
 ```java
-int i[] = new int[2]            // 0
-boolean b[] = new boolean[2]    // false
-String s[2] = new String[2]     // null
+int i[] = new int[2];            // 0
+boolean b[] = new boolean[2];    // false
+String s[] = new String[2];     // null
 ```
 
 ## Exception handling
 
 In Java, checked exceptions(every exception except for `RuntimeException`) must be handled:
 
-1. try-catch
-2. declared
+1. `try(){}`
+2. try-catch
+3. declared
 
-### 1. try...catch...finally
+### 1. `try(){}`
+
+> The `try-with-resources` statement is a try statement that declares one or more resources. A resource is an object that must be closed after the program is finished with it. The `try-with-resources` statement ensures that each resource is closed at the end of the statement. Any object that implements `java.lang.AutoCloseable`, which includes all objects which implement `java.io.Closeable`, can be used as a resource.
+>
+> -- [The try-with-resources Statement](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
+
+Supported interfaces:
+
+- `java.lang.AutoCloseable`
+- `java.io.Closeable`
+
+```java
+try (
+    BufferedReader br1 = new BufferedReader(new FileReader(path1));
+    BufferedReader br2 = new BufferedReader(new FileReader(path2));
+) {
+    // do sth with resource
+}
+```
+
+### 2. try...catch...finally
 
 ```java
 try {
@@ -326,7 +350,7 @@ try {
 }
 ```
 
-### 2. declare `throws`
+### 3. declare `throws`
 
 ```java
 public class ExceptionTest {
@@ -340,18 +364,20 @@ public class ExceptionTest {
 
 Convert the basic variable types into objects.
 
-Basic Type  | Corresponding Class
----         | ---
-char        | Character
-boolean     | Boolean
-byte        | Byte
-short       | Short
-int         | Integer
-long        | Long
-float       | Float
-double      | Double
+| Basic Type | Corresponding Class |
+| ---------- | ------------------- |
+| char       | Character           |
+| boolean    | Boolean             |
+| byte       | Byte                |
+| short      | Short               |
+| int        | Integer             |
+| long       | Long                |
+| float      | Float               |
+| double     | Double              |
 
 ## Boxing vs. Unboxing
+
+> [Auto Boxing and Unboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html) is the automatic conversion that the Java compiler makes between the primitive types and their corresponding object wrapper classes.
 
 ### 1. Boxing
 
@@ -359,7 +385,7 @@ double      | Double
 int i = 1;
 
 Integer j = i;
-// equivalent to 
+// equivalent to
 Integer j = Integer.valueOf(i);
 ```
 
@@ -416,7 +442,7 @@ enum Month {
 ## Generics
 
 Generics takes data type as a placeholder for a class.
-It's quite flexible as you can use the same class for different data types. 
+It's quite flexible as you can use the same class for different data types.
 
 **usage**:
 
@@ -424,8 +450,8 @@ It's quite flexible as you can use the same class for different data types.
 List<String> l = new ArrayList<String>();   // <String> declares the element inside list is `String`s
 ```
 
-When talking about generics, its always about container, a.k.a `Collection`.
-Here're the relations of `Collection`s
+When talking about generics, its always about containers, a.k.a `Collection`.
+Here are the relations of `Collection`s
 
 ```txt
                 +---------------+                               +---------------+
@@ -498,7 +524,7 @@ An unordered collection of objects in which duplicate values cannot be stored.
 
     ```java
     class User implements Comparable<User> {
-    
+
         public int id;
         public String name;
 
@@ -530,8 +556,9 @@ An unordered collection of objects in which duplicate values cannot be stored.
     while(iterator.hasNext()) {
         String key = iterator.next();
         // do sth.
-    } 
+    }
     ```
+
 2. With key => value
 
     ```java
@@ -543,6 +570,8 @@ An unordered collection of objects in which duplicate values cannot be stored.
          entry.getValue();
     }
     ```
+
+See more about generics [here](./Generic-Methods.md).
 
 ## Thread
 
@@ -589,6 +618,7 @@ Both are used to block current thread, give up CPU control.
     ```java
     Thread.yield();
     ```
+
 - `Thread.sleep` To put current thread into `blocked` state, until given time.
 
     ```java
@@ -604,7 +634,7 @@ public class FatherThread implements Runnable {
     public void run() {
         Thread son = new Thread(new SonThread);
         son.start();
-        
+
         try {
             // Wait the son to join the party.
             son.join();
@@ -671,11 +701,11 @@ thread.setPriority(priority);
 
 ## Access Modifiers
 
-Modifier    | Class | Package   | Subclass  | World
-:---:       | :---: | :---:     | :---:     | :---:
-private     | Y     |           |           |
-(Not Set)   | Y     | Y         |           |
-protected   | Y     | Y         | Y         |
-public      | Y     | Y         | Y         | Y
+|      Modifier       | Class | Package | Subclass | World |
+| :-----------------: | :---: | :-----: | :------: | :---: |
+|       private       |   Y   |         |          |
+| default _(Not Set)_ |   Y   |    Y    |          |
+|      protected      |   Y   |    Y    |    Y     |
+|       public        |   Y   |    Y    |    Y     |   Y   |
 
 **See Also** [Controlling Access to Members of a Class](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)

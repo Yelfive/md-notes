@@ -4,6 +4,7 @@
         "jdbc",
         "joinpoint",
         "pointcut",
-        "springframework"
+        "springframework",
+        "strictfp"
     ]
 }

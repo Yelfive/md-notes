@@ -14,8 +14,6 @@ or
 vim /etc/sudoers
 ```
 
-
-
 ## Rules
 
 - __root__   ALL=(ALL:ALL) ALL
@@ -45,59 +43,58 @@ installer ALL=/usr/bin/yum install
 user/group host=[(user/group could be changed into)] [whether password needed] command list separated by comma
 ```
 
-
 ```text
 role host=[(another_role)] [password_config] command
 ```
 
-Fields within `[]` is optional. 
+Fields within `[]` is optional.
 
 - `role`
 
-    Could be either `user` or `group` started with a `%`:
+  Could be either `user` or `group` started with a `%`:
 
-    - `root` for user root
-    - `%root` for group root
+  - `root` for user root
+  - `%root` for group root
 
 - `host`
   
-    Which host the user logged in can use the `sudo` command
+  Which host the user logged in can use the `sudo` command
 
-    `ALL` for all the hosts
+  `ALL` for all the hosts
 
 - `another_role` **optional**
   
-    The role to run `sudo` as.
+  The role to run `sudo` as.
 
-    `ALL` means all users
+  `ALL` means all users
 
-    ```bash
-    sudo -u user command
-    ```
+  ```bash
+  sudo -u user command
+  ```
 
-    Default to be `root` if omitted.
-    If set, the parenthesis`()` is required.
+  Default to be `root` if omitted.
+  If set, the parenthesis`()` is required.
 
 - `password_config` **optional**
 
-    Whether password is required when using `sudo`. Options available `NOPASSWD:`, and the colon(`:`) is required.
+  Whether password is required when using `sudo`. Options available `NOPASSWD:`, and the colon(`:`) is required.
 
-    This password affects only the first subsequent command.
+  This password affects only the first subsequent command.
 
-    ```
-    felix ALL=(root) NOPASSWD: yum install
-    ```
+  ```text
+  felix ALL=(root) NOPASSWD: yum install
+  ```
 
 - `command`
 
-    Any command to be allowed to be executed using `sudo`.
+  Any command to be allowed to be executed using `sudo`.
 
-    `ALL` means all commands.
+  `ALL` means all commands.
 
-    > **Notes**:
-    > 
-    > 1. Commands should be listed in absolute path
-    > 2. Commands should be called with `path/to/command`, absolute or relative
+  > **Notes**:
+  >
+  > 1. Commands should be listed in absolute path
+  > 2. Commands should be called with `path/to/command`, absolute or relative
 
 ## Multiple commands
 
@@ -134,7 +131,7 @@ if the `felix` is also in group `sudo`, then the previous setting will not take 
 
 Enter recovery mode to modify the `/etc/sudoers`
 
-In Ubuntu, 
+In Ubuntu,
 
 1. press and hold the <kbd>shift</kbd> untill in the start up menu
 2. choose recovery mode

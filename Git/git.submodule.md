@@ -1,12 +1,12 @@
 # git submodule
 
-## add a sub repository to current one
+## Add a sub repository to current one
 
 ```bash
 git submodule add [--name <name>] <repository> <path>
 ```
 
-## initialize
+## Initialize
 
 ```bash
 git submodule init
@@ -14,43 +14,45 @@ git submodule init
 
 ## pull from submodule
 
+> Should initialize before update
+
 ```bash
 git submodule update
 ```
 
 ## Push to a submodule
 
-### cd to inner submodule
+### 1. `cd` to inner submodule
 
 ```bash
 cd <submodule>
 ```
 
-### checkout a branch
+### 2. checkout a branch
 
 ```bash
 git checkout master
 ```
 
-### add-commit-push
+### 3. add-commit-push
 
 ```bash
 git add/commit/push
 ```
 
-### cd out of submodule
+### 4. cd out of submodule
 
 ```bash
 cd ..
 ```
 
-### update binding of submodule
+### 5. update binding of submodule
 
 ```bash
 git add -u
 ```
 
-### push main repository branch
+### 6. push main repository branch
 
 ```bash
 git commit -m "update latest submodule commit id"
