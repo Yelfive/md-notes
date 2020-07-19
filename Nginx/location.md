@@ -1,6 +1,6 @@
 # location
 
-It is important to understand that, by default, Nginx will serve regular expression matches in preference to prefix matches. However, it evaluates prefix locations first, allowing for the administer to override this tendency by specifying locations using the `=` and `^~` modifiers. 
+It is important to understand that, by default, Nginx will serve regular expression matches in preference to prefix matches. However, it evaluates prefix locations first, allowing for the administer to override this tendency by specifying locations using the `=` and `^~` modifiers.
 
 #### syntax
 
@@ -20,7 +20,7 @@ location modifier uri {
 #### modifier
 
 - `=`
-    
+
     Exact match, non-regular
 
     ```nginx
@@ -81,16 +81,17 @@ location ~* \.(gif|jpg|jpeg)$ {
 ## More about prefix string
 
 > **In response to a request with URI equal to this string, but without the trailing slash, a permanent redirect with the code 301 will be returned to the requested URI with the slash appended**. If this is not desired, an exact match of the URI and location could be defined like this:
-> 
+>
 > ```nginx
 > location /user/ {
->     proxy_pass http://user.example.com; 
+>     proxy_pass http://user.example.com;
 > }
 >
 > location = /user {
->     proxy_pass http://login.example.com; 
+>     proxy_pass http://login.example.com;
 > }
 > ```
+>
 > _Referenced from [Nginx docs](https://nginx.org/en/docs/http/ngx_http_core_module.html#location)_
 
 Which means, if you visit path `http://example.com/client/hello` and with configuration:

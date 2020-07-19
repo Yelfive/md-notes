@@ -21,8 +21,8 @@ server {
         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
     }
   
-  	# Reverse proxy /api/xxx to example.com/api/xxx
-	  location /api/ {
+    # Reverse proxy /api/xxx to example.com/api/xxx
+    location /api/ {
         proxy_pass http://exmaple.com;
         proxy_set_header   Host             $host;
         proxy_set_header   X-Real-IP        $remote_addr;
@@ -35,7 +35,7 @@ server {
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'Upgrade';
-    }   
+    }
 }
 ```
 
@@ -55,7 +55,7 @@ server {
 }
 ```
 
-# rewrite 
+## rewrite
 
 ```nginx
 rewrite regexp replacement [flag]
@@ -65,13 +65,13 @@ rewrite regexp replacement [flag]
 > [Rewrite][rewrite] URI and returns to the client by default.
 > If `http(s)://` or `$scheme` is the replacement, the processing will stop and redirect is returned to the client.
 
-### context
+## context
 
 > server, location, if
 
 ### flag
 
-- last 
+- last
   
     > stops processing the current set of ngx_http_rewrite_module directives and starts a search for a new location matching the changed URI;
     >
@@ -80,7 +80,7 @@ rewrite regexp replacement [flag]
 - break
 
     > stops processing the current set of ngx_http_rewrite_module directives as with the [break][break] directive;
-    > 
+    >
     > Stop searching rules in this block, and if the rule is in `location`, it stays in `location`
 
 - redirect
@@ -124,5 +124,3 @@ ssh -p 22 user@remote.ip
 
 [break]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#break
 [rewrite]: https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite
-
-

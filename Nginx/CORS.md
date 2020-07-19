@@ -9,9 +9,9 @@ Nginx
     add_header Access-Control-Allow-Credentials true;
     add_header Access-Control-Allow-Headers Content-Type,Accept;
     add_header Access-Control-Allow-Methods GET,POST,DELETE,PUT;
-    if ($request_method = 'OPTIONS') { 
+    if ($request_method = 'OPTIONS') {
         return 204;
-    } 
+    }
 ```
 
 PHP

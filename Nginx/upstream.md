@@ -46,7 +46,7 @@ upstream hello {
 - `weight = number`
 
     > Default 1
-    > 
+    >
     > Weight of the server.
 
 - `max_conns = number`
@@ -58,13 +58,13 @@ upstream hello {
 - `max_fails = number`
 
     > Default 1; 0 for no-limit
-    > 
+    >
     > Sets the number of unsuccessful attempts to communicate with the server that should happen to be considered as **unavailable**
 
 - `fail_timeout = time`
 
     > Default 10 seconds.
-    > 
+    >
     > 1. After `max_fails`, the server will be considered as **unavailable**
     > 2. After becoming unavailable, the next `fail_timeout` will be considered as unavailable and after which, the server will be tried again
 
@@ -73,7 +73,7 @@ upstream hello {
     > Marks the server as backup server, it will be used **only** when **all** primary servers are unavailable
 
 - `down`
-    
+
     > Marks the server permanently unavailable
 
 ## proxy_next_upstream
@@ -95,21 +95,21 @@ proxy_next_upstream parameters;
 ### parameters
 
 - non_idempotent
-    
+
     > Allows for non idempotent request methods(POST, PUT, DELETE) to be passed to next server
 
 - error
-    
+
     > Error occurs while establishing a connection with a server,
     > passing a request to it, reading the response header.
-    > 
+    >
     > Always set, event not in option list
 
 - timeout
 
     > Timeout while establishing a connection with a server,
     > passing a request to it, reading the response header.
-    > 
+    >
     > Always set, event not in option list
 
 - invalid_header
@@ -119,7 +119,7 @@ proxy_next_upstream parameters;
     > Always set, event not in option list
 
 - http_*
-    
+
     > For code `4XX` , the request will be passed to other servers,
     > but will never be considered as
     > **unsuccessful attempts**(for max_fails counting)
@@ -149,4 +149,3 @@ proxy_next_upstream_tries number
 
 - `0` means no limitation
 - `1` means try just once, if this one fails, the error response will be sent
-
