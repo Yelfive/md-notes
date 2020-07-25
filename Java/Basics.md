@@ -45,12 +45,54 @@ final String name = "Felix";
 
 #### Integer
 
-| Data Type | Space | Range |
-| --------- | ----- | ----- |
-| byte      | 1b    |
-| short     | 2b    |
-| int       | 4b    |
-| long      | 8b    |
+| Data Type | Size  | Range
+| --------- | ----- | -----
+| byte      | 1B    |
+| short     | 2B    |
+| int       | 4B    |
+| long      | 8B    |
+
+#### Float
+
+Data Type   | Size
+---         | ---
+float       | 4B
+double      | 4B
+
+#### Char
+
+Data Type   | Size
+---         | ---
+char        | 2B
+
+> Unicode char: `\uxxxxxx`, of which `xxxxxx` stands for hexadecimals.
+
+#### Automatically type conversion
+
+```java
+byte/short/char -> int -> long -> float -> double
+```
+
+> When calculation or assign data among `byte/short/char` types, they all got `int` result, even between the same type, e.g. `byte + byte` result in `int`.
+
+```java
+int a = (byte) 128; // -1
+```
+
+#### Force type conversion
+
+- `float` -> `int`, cut off.
+
+    ```java
+    int a = (int)123.3; // 123
+    ```
+
+- big integer to small one, according to binary presentation.
+
+    ```java
+    int a = 128;
+    byte b = (byte)a; // b = -128, 111111111
+    ```
 
 ### Reference Data Type
 
