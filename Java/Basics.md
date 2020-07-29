@@ -1,6 +1,4 @@
-#  
-
-Java Basics
+# Java Basics
 
 ## Variable scope
 
@@ -45,25 +43,25 @@ final String name = "Felix";
 
 #### Integer
 
-| Data Type | Size  | Range
-| --------- | ----- | -----
-| byte      | 1B    |
-| short     | 2B    |
-| int       | 4B    |
-| long      | 8B    |
+| Data Type | Size | Range |
+| --------- | ---- | ----- |
+| byte      | 1B   |
+| short     | 2B   |
+| int       | 4B   |
+| long      | 8B   |
 
 #### Float
 
-Data Type   | Size
----         | ---
-float       | 4B
-double      | 4B
+| Data Type | Size |
+| --------- | ---- |
+| float     | 4B   |
+| double    | 4B   |
 
 #### Char
 
-Data Type   | Size
----         | ---
-char        | 2B
+| Data Type | Size |
+| --------- | ---- |
+| char      | 2B   |
 
 > Unicode char: `\uxxxxxx`, of which `xxxxxx` stands for hexadecimals.
 
@@ -100,11 +98,48 @@ int a = (byte) 128; // -1
 - interface
 - array
 
+## Operators
+
+### Bitwise operation(on _integers_)
+
+| Operator | Desc                                                                                                     |
+| -------- | -------------------------------------------------------------------------------------------------------- |
+| `<<`     | Move left                                                                                                |
+| `>>`     | Move right, negative integers with `1` and positive with `0`, depends on the first bit on the very left. |
+| `>>>`    | Move right as unsigned integer, which always use `0` to pad left                                         |
+| `&`      | Bitwise and                                                                                              |
+| `|`      | Bitwise or                                                                                               |
+| `^`      | Xor                                                                                                      |
+| `~`      | Bitwise not, opposite according to the complement of the value.                                          |
+
+### Operator priorities
+
+> Larger level has higher priority
+
+| Level  | Operator                                              | Description                                                                                        | Associativity   |
+| ------ | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------- |
+| **16** | `[]` `.` `()`                                         | access array element access object member parentheses                                              | left to right   |
+| **15** | `++` `--`                                             | unary post-increment unary post-decrement                                                          | not associative |
+| **14** | `++` `--` `+` `-` `!` `~`                             | unary pre-increment unary pre-decrement unary plus unary minus unary logical NOT unary bitwise NOT | right to left   |
+| **13** | `(data tye)`<br/>`new`                                | cast object creation                                                                               | right to left   |
+| **12** | `* / %`                                               | multiplicative                                                                                     | left to right   |
+| **11** | `+ -` `+`                                             | additive string concatenation                                                                      | left to right   |
+| **10** | `<< >>` `>>>`                                         | shift                                                                                              | left to right   |
+| **9**  | `< <=` `> >=` `instanceof`                            | relational                                                                                         | not associative |
+| **8**  | `==` `!=`                                             | equality                                                                                           | left to right   |
+| **7**  | `&`                                                   | bitwise AND                                                                                        | left to right   |
+| **6**  | `^`                                                   | bitwise XOR                                                                                        | left to right   |
+| **5**  | `|`                                                   | bitwise OR                                                                                         | left to right   |
+| **4**  | `&&`                                                  | logical AND                                                                                        | left to right   |
+| **3**  | `||`                                                  | logical OR                                                                                         | left to right   |
+| **2**  | `?:`                                                  | ternary                                                                                            | right to left   |
+| **1**  | `=  +=  -=` `*=  /=  %=` `&=  ^=  |=` `<<=  >>= >>>=` | assignment                                                                                         | right to le     |
+
 ## Flow Control
 
-### condition
+### If
 
-Condition must be `boolean` or `boolean` expression.
+Condition of if must be `boolean` or `boolean` expression.
 
 ```java
 // valid
@@ -116,13 +151,100 @@ if (1) {
 }
 ```
 
-1. `switch...case...` takes string
+### `switch...case`
+
+- `switch(expression)` takes only expression that returns limited data types:
+
+  - `char`, `Character`
+  - `byte`, `Byte`
+  - `short`, `Short`
+  - `int`, `Integer`
+  - `String`
+  - `enum`
+
+- `case` takes only constant values like literal string, not even variables.
+
+```java
+String name = "Felix";
+
+switch(name) {
+    case "Felix":
+        // do something
+}
+```
+
+## Loop
+
+Java supports three types of loop: `for`, `while`, `do...while`
+
+### `for`
+
+With a `for`, it can further be divided into two types, `for loop`and `for each`
+
+#### `for loop`
+
+```java
+int max = 100;
+for (int i; i < max; i++) {
+    // loop body
+}
+```
+
+Specially, for without any parameter means infinite loop.
+
+```java
+for (; ; ) {
+    // Do sth infinitely.
+}
+```
+
+### `for each`
+
+**For each** loop literates the elements from `array`, `Collection`.
+
+```java
+String[] a = {"a", "b"};
+
+for (String s : a) {
+    // Use `s` to represents the element inside array `a`.
+}
+```
+
+### `continue` and `break`
+
+`continue` is used to terminate current iteration and begins the next immediately.
+
+`break` is used to terminate current loop, with all left iterations.
+
+`continue` and `break` can be used in conjunction with a _label_ to terminate loop of specific level.
+
+```java
+
+label:
+for () {
+    for () {
+        continue label;
+        break label;
+    }
+}
+```
+
+> **label** in which can be any string token to represent the cut point,
+> it can even be the same as defined variable name.
+
+---
+
+## **Object Oriented**
+
+---
+
+A class has typically composited by `field/property`, `method`.
 
 ## Overload
 
 Two methods may have the same method name, as long as the parameters are different.
 
-### Is `overload`
+### Considered as `overload`
 
 - different parameters:
     1. number of parameters
@@ -152,9 +274,26 @@ class HelloWorld {
 }
 ```
 
-## Static Block
+## Variable arguments method
 
-Static block executes at class loading-time, even before an object created from this class.
+```java
+public class A {
+    public void call(String ...args) {
+    }
+
+    // Equivalent to
+    public void call(String[] args) {
+    }
+}
+```
+
+> *Variable arguments* is equivalent to array argument, and they cannot exist in the same class as `overload`.
+
+## Class Code Block
+
+### Static Block
+
+Static block executes at class loading-time, even before an instance is created from this class.
 
 ```java
 public class HelloWorld {
@@ -178,6 +317,41 @@ public class HelloWorld {
     }
 }
 ```
+
+## Non-Static Block
+
+Similar to [static block](#static-block), except it is executed when an instance is created, before constructor called.
+
+```java
+public class HelloWorld {
+
+    {
+        System.out.println("code block");
+    }
+
+    public HelloWorld() {
+        System.out.println("constructor");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("first");
+        new HelloWorld();
+        System.out.println("last");
+    }
+}
+```
+
+The above code will output
+
+```text
+first
+code block
+constructor
+last
+```
+
+> _Non-static code block_ is quite similar to a constructor without arguments.
+> However, a Java class can have more thant one constructors, _code block_ will be called before any constructor is called.
 
 ## import
 
@@ -223,7 +397,7 @@ new Outer.Inner();
 
 ### Local inner class
 
-_seldom used_
+> _seldom used_
 
 ```java
 public class Outer {
@@ -289,7 +463,7 @@ public class Testing {
         // should be converted:
         // Dog d = (Dog) animal
         // d.watchDoor();
-        // 
+        //
         // the `d` passed in the method `main` is casted into instance of `Animal` inside `cry` by calling `cry(d)`
         animal.shout();
     }
@@ -320,47 +494,102 @@ class Cat extends Animal {
 
 ## Array
 
-Syntax:
+### Declare an array
 
 ```java
-int[] i = null; // recommended
-int j[] = null;
+int[] i = null; // Recommended
+int j[] = null; // c-style
 ```
 
+By declaring a variable of array, `i` for example, means that the variable `i` can be used to reference the starting address of an array.
+
+```text
+        +--+--+--+--+--+--+--+--+
+        +--+--+--+--+--+--+--+--+
+        ^
+    variable i
+```
+
+and then this variable can reference array of any length,
+
 ```java
-// array of 2 integers, with default 0
+i = new int[5];
+i = new int[6];
+```
+
+### Initialize an array with elements
+
+#### initialize at declaring time
+
+```java
+int[] var1 = new int[]{1, 2, 3};    // An array with 3 elements
+int[] var2 = {1, 2, 3};             // same as above
+```
+
+#### Initialize after declaration
+
+```java
+int[] var4;
+var4 = new int[5];
+var4[0] = 1;
+
+int[] var5;
+var5 = new int[]{1, 2, 3};
+```
+
+### More array examples
+
+```java
+// Array of 2 integers, with default 0
 int[] var1 = new int[2];
 
-// define a array of integers
+// Define a array of integers
 int[] var1 = null;
-// fill with values
+// Reference to memory
 var1 = new int[3];
 
-// define and fill value into array of integers
-// the array of size 3
+// Define and fill value into array with 3 integers
 int[] var1 = {1, 2, 3};
 
 String[] str1 = new String[5];
-String[] str1 = new String[]{""}; // length of 1, whose value is empty string
+String[] str2 = new String[]{""};   // length of 1, whose value is empty string
+String[] str3 = {""};               // Identical to syntax above
 ```
 
 ### Default values for array
 
+Element Type    | Default Value
+--              | ---
+`int`           | `0`
+`float`         | `0.0`
+`char`          | ASCII `0`
+`boolean`       | `false`
+Reference type  | `null`
+
+> **Reference type** includes `String`
+
+### Multi Dimension array
+
 ```java
-int i[] = new int[2];            // 0
-boolean b[] = new boolean[2];    // false
-String s[] = new String[2];     // null
+// Dynamic number of elements in second dimension
+int[][] a = { { 1, 2}, { 3, 4, 5 } };
+
+// 2x2
+int[][] b = new int[2][2];
+
+// 2x?, which means the second dimension size is arbitrary
+int[][] c = new int[2][];
 ```
 
 ## Exception handling
 
-In Java, checked exceptions(every exception except for `RuntimeException`) must be handled:
+In Java, checked exceptions(every exception except for `RuntimeException`) must be handled by:
 
-1. `try(){}`
+1. try-with-resources
 2. try-catch
-3. declared
+3. declaration
 
-### 1. `try(){}`
+### 1. try-with-resources
 
 > The `try-with-resources` statement is a try statement that declares one or more resources. A resource is an object that must be closed after the program is finished with it. The `try-with-resources` statement ensures that each resource is closed at the end of the statement. Any object that implements `java.lang.AutoCloseable`, which includes all objects which implement `java.io.Closeable`, can be used as a resource.
 >
@@ -392,7 +621,7 @@ try {
 }
 ```
 
-### 3. declare `throws`
+### 3. Declare exceptions by keyword `throws`
 
 ```java
 public class ExceptionTest {
@@ -749,5 +978,8 @@ thread.setPriority(priority);
 | default _(Not Set)_ |   Y   |    Y    |          |
 |      protected      |   Y   |    Y    |    Y     |
 |       public        |   Y   |    Y    |    Y     |   Y   |
+
+- Local class cannot have modifier
+- Package class can only be `public` or `default`
 
 **See Also** [Controlling Access to Members of a Class](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)

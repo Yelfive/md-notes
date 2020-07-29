@@ -1,10 +1,13 @@
 {
     "cSpell.words": [
         "datasource",
+        "instanceof",
         "jdbc",
         "joinpoint",
         "pointcut",
+        "println",
         "springframework",
-        "strictfp"
+        "strictfp",
+        "yelfive"
     ]
 }
