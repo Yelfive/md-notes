@@ -276,18 +276,50 @@ class HelloWorld {
 
 ## Variable arguments method
 
+### Define as variable list
+
+> With this syntax, it's valid to pass arguments separately or pass them as an array.
+
 ```java
 public class A {
-    public void call(String ...args) {
+    public void doSth(String ...args) {
     }
 
-    // Equivalent to
-    public void call(String[] args) {
+    public void() {
+        String str1;
+        String str2;
+        String[] strArr[] = {str1, str2};
+        // Valid expression
+        this.doSth(str1, str2);
+        this.doSth(strArr);
     }
 }
 ```
 
-> *Variable arguments* is equivalent to array argument, and they cannot exist in the same class as `overload`.
+### Define as array
+
+> With this syntax, on passing as an array is valid
+
+```java
+
+public class A {
+
+    // Equivalent to
+    public void doSth(String[] args) {
+    }
+
+    public void() {
+        String str;
+        String[] strArr[];
+        // Invalid expression
+        this.doSth(str);
+        // Valid expression
+        this.doSth(strArr);
+    }
+}
+```
+
+> *Variable arguments* of those two syntaxes cannot exist in the same class as `overload`.
 
 ## Class Code Block
 
@@ -558,13 +590,13 @@ String[] str3 = {""};               // Identical to syntax above
 
 ### Default values for array
 
-Element Type    | Default Value
---              | ---
-`int`           | `0`
-`float`         | `0.0`
-`char`          | ASCII `0`
-`boolean`       | `false`
-Reference type  | `null`
+| Element Type   | Default Value |
+| -------------- | ------------- |
+| `int`          | `0`           |
+| `float`        | `0.0`         |
+| `char`         | ASCII `0`     |
+| `boolean`      | `false`       |
+| Reference type | `null`        |
 
 > **Reference type** includes `String`
 

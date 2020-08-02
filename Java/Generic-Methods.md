@@ -1,10 +1,12 @@
 # Generic Methods
 
+> **NOTICE**: Generics cannot be used with primitive types, only classes.
+
 Consider writing a method that takes an array of objects and a collection and puts all objects in the array into the collection. Here's a first attempt:
 
 ```java
 static void fromArrayToCollection(Object[] a, Collection<?> c) {
-    for (Object o : a) { 
+    for (Object o : a) {
         c.add(o); // compile-time error
     }
 }
@@ -22,14 +24,14 @@ static <T> void fromArrayToCollection(T[] a, Collection<T> c) {
 }
 ```
 
-We can call this method with any kind of collection whose element type is a __supertype __of the element type of the array.
+We can call this method with any kind of collection whose element type is a __supertype__ of the element type of the array.
 
 ```java
 Object[] oa = new Object[100];
 Collection<Object> co = new ArrayList<Object>();
 
 // T inferred to be Object
-fromArrayToCollection(oa, co); 
+fromArrayToCollection(oa, co);
 
 String[] sa = new String[100];
 Collection<String> cs = new ArrayList<String>();
@@ -113,8 +115,7 @@ Wildcards also have the advantage that they can be used outside of method signat
 Returning to our shape drawing problem, suppose we want to keep a history of drawing requests. We can maintain the history in a static variable inside class `Shape`, and have `drawAll()` store its incoming argument into the history field.
 
 ```java
-static List<List<? extends Shape>> 
-    history = new ArrayList<List<? extends Shape>>();
+static List<List<? extends Shape>> history = new ArrayList<List<? extends Shape>>();
 
 public void drawAll(List<? extends Shape> shapes) {
     history.addLast(shapes);
@@ -126,8 +127,6 @@ public void drawAll(List<? extends Shape> shapes) {
 
 Finally, again let's take note of the naming convention used for the type parameters. We use `T` for type, whenever there isn't anything more specific about the type to distinguish it. This is often the case in generic methods. If there are multiple type parameters, we might use letters that neighbor `T` in the alphabet, such as `S`. If a generic method appears inside a generic class, it's a good idea to avoid using the same names for the type parameters of the method and class, to avoid confusion. The same applies to nested generic classes.
 
-
-
 ## Reference
 
-[Generic Methods (The Java™ Tutorials > Bonus > Generics)](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html)
+- [Generic Methods](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html)

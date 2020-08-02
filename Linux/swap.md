@@ -32,17 +32,17 @@ Perform the steps below to add swap space on Ubuntu 18.04.
 
 1. Start by creating a file which will be used for swap:
 
-  ```bash
-  sudo fallocate -l 1G /swapfile
-  ```
+   ```bash
+   sudo fallocate -l 4G /swapfile
+   ```
 
-  If fallocate is not installed or you get an error message saying fallocate failed: Operation not supported then use the following command to create the swap file:
+   If `fallocate` is not installed or you get an error message saying `fallocate` failed: Operation not supported then use the following command to create the swap file:
 
-  ```bash
-  sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
-  ```
+   ```bash
+   sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+   ```
 
-1. Only the root user should be able to write and read the swap file. Set the correct [permissions](https://linuxize.com/post/chmod-command-in-linux/) by typing:
+2. Only the root user should be able to write and read the swap file. Set the correct [permissions](https://linuxize.com/post/chmod-command-in-linux/) by typing:
 
    ```bash
    sudo chmod 600 /swapfile
@@ -72,24 +72,23 @@ Perform the steps below to add swap space on Ubuntu 18.04.
     /swapfile swap swap defaults 0 0
     ```
 
-1. Verify that the swap is active by using either the swapon or the [`free` command](https://linuxize.com/post/free-command-in-linux/), as shown below:
+5. Verify that the swap is active by using either the `swapon` or the [`free` command](https://linuxize.com/post/free-command-in-linux/), as shown below:
 
    ```bash
    sudo swapon --show
    ```
 
    ```text
-NAME      TYPE  SIZE   USED PRIO/swapfile file 1024M 507.4M   -1
+   NAME      TYPE  SIZE   USED PRIO/swapfile file 1024M 507.4M   -1
    ```
-   
+
    ```bash
-sudo free -h
+   sudo free -h
    ```
 
    ```text
    total        used        free      shared  buff/cache   availableMem:           488M        158M         83M        2.3M        246M        217MSwap:          1.0G        506M        517M
    ```
-
 
 ## Adjusting the Swappiness Value
 
@@ -141,11 +140,24 @@ To deactivate and remove the swap file, follow these steps:
    sudo rm /swapfile
    ```
 
+## If you have swap already
+
+If you already have a swap file, and want to resize it.
+
+First, you should `swapoff` it:
+
+```bash
+sudo swapoff /swapfile
+```
+
+and then remove it(not really needed, as you will create a new one)
+
+```bash
+sudo rm -f /swapfile
+```
+
 ## Conclusion
 
 You have learned how to create a swap file and activate and configure swap space on your Ubuntu 18.04 system.
 
-
-
 Original article: [How to Add Swap Space on Ubuntu 18.04 | Linuxize](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/)
-
