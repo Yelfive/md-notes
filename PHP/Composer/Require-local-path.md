@@ -4,9 +4,9 @@ Composer allows you to load from local filesystem for packages. This is achieved
 
 ## Prerequisites
 
-1. `git` 
+1. `git`
 
-   For local path, Composer will use `git` to check the version of the package. Without `git`, Composer will simply ignore this path, and download the package from other repositories specified in `composer.json`.   
+   For local path, Composer will use `git` to check the version of the package. Without `git`, Composer will simply ignore this path, and download the package from other repositories specified in `composer.json`.
 
 ## Your package
 
@@ -18,8 +18,8 @@ my-local-package/
 `-- composer.json
 |
 `-- src/
-		|
-		` <source files>
+    |
+    ` <source files>
 ```
 
 And the `composer.json` looks like
@@ -48,11 +48,11 @@ And the `composer.json` looks like
   },
   "repositories": [
     { "packagist.org": false },
-		{
+    {
       "type": "path",
       "url": "~/projects/packages/my-local-package"
     },
-		{
+    {
       "type": "composer",
       "url": "https://mirror.packagist.com"
     }
@@ -60,7 +60,7 @@ And the `composer.json` looks like
 }
 ```
 
-#### Some explanations
+### Some explanations
 
 - **Order is significant here**. When looking for a package, Composer will look from the first to the last repository, and pick the first match. By default Packagist is added last which means that custom repositories can override packages from it.[^1]
 
@@ -69,6 +69,7 @@ And the `composer.json` looks like
 - `url` is the local path, either absolute or relative is ok.
 
 - The composer use `symlink` as default option in order not to copy the files under the package, so that the changes under package developing workspace can take effects immediately after modification, this can be overwritten, which copies the package to `vendor/`, by setting `symlink: false`:
+
   ```json
   {
       "type": "path",
@@ -98,7 +99,7 @@ And the `composer.json` looks like
 
 ## Versioning
 
-When you are using local; packages, you are actually working on a branch such as `master`, or `dev` as I prefer. After making some changes, you install it to your project with 
+When you are using local; packages, you are actually working on a branch such as `master`, or `dev` as I prefer. After making some changes, you install it to your project with
 
 ```bash
 composer require my/local-package dev-dev
@@ -108,7 +109,7 @@ That might be where the problem comes up. Say another repository you installed `
 
 There are typically two solutions,
 
-1. Remove `1.0` and reinstall using version `dev-dev` 
+1. Remove `1.0` and reinstall using version `dev-dev`
 2. Configure your `extra.branch-alias` in  `my/local-package/composer.json`
 
 And I'm gonna go through the second solution with an example.
@@ -191,7 +192,7 @@ So this way you can the conflicting problem previously mentioned.
         "fk/laravel-references": "dev-dev",
         "fk/laravel-utility": "dev-dev",
     },
-  	"repositories": [
+    "repositories": [
         {
             "packagist.org": false
         },
@@ -227,4 +228,3 @@ composer require fk/laravel-utility dev-dev
 ## References
 
 [^1]: [Composer JSONSchema](https://getcomposer.org/doc/04-schema.md#repositories)
-

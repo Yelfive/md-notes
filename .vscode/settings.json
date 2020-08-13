@@ -1,13 +1,18 @@
 {
     "cSpell.words": [
+        "autoload",
         "datasource",
         "instanceof",
         "jdbc",
         "joinpoint",
+        "laravel",
+        "packagist",
         "pointcut",
+        "printf",
         "println",
         "springframework",
         "strictfp",
+        "symlink",
         "yelfive"
     ]
 }

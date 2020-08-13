@@ -1,17 +1,5 @@
 # New Staff
 
-## NoSQL
-
-- [Neo4j](https://neo4j.com)
-
-    - Fraud Detection
-    - Graph Based Search
-    - Identity and Access
-    - Master Data Management
-    - Network and IT Operations
-    - Recommendation Engine
-    - Social Network
-
 ## Search Engine
 
 - ElasticSearch
@@ -60,7 +48,7 @@
 
 network protocol analyzer
 
-- https://www.wireshark.org/
+- [WireShark](https://www.wireshark.org/)
 
 ## Service discovery
 
@@ -96,7 +84,7 @@ network protocol analyzer
 
 ## Real Time Communication
 
-- https://webrtc.org/
+- [WebRTC](https://webrtc.org/)
 
 ## Flowchart
 
@@ -115,3 +103,20 @@ network protocol analyzer
 ## Expose your local endpoints to the Internet
 
 - [alexellis/inlets: Expose your local endpoints to the Internet](https://github.com/alexellis/inlets)
+
+## Databases
+
+### NoSQL
+
+- [Neo4j](https://neo4j.com)
+
+  - Fraud Detection
+  - Graph Based Search
+  - Identity and Access
+  - Master Data Management
+  - Network and IT Operations
+  - Recommendation Engine
+  - Social Network
+- OrientDB: Document, graph
+- MongoDB: Document and Geo
+- CockroachDB: Document and Geo

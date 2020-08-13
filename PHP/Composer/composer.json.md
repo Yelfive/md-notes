@@ -11,13 +11,13 @@
             "fk/*": "source",
             "*": "dist"
         }
-    }    
+    }
 }
 ```
 
-Can be both string or map to indicates whether `source` or `dist` is preferred
+Can be both `string` or `map` to indicates whether `source` or `dist` is preferred
 
-**string**
+#### `string`
 
 Applies to all packages
 
@@ -27,7 +27,7 @@ Applies to all packages
 }
 ```
 
-**map**
+#### `map`
 
 Applies more respectively to packages
 
@@ -44,7 +44,7 @@ Asterisk(`*`) to indicate all packages
 }
 ```
 
-_It reads_
+_It reads_:
 
 - `fk/*` All packages under vendor `fk` to be installed as `source`
 - `*` All other packages to be installed as `dist`
@@ -55,11 +55,41 @@ Setting repositories to overwrite default
 
 ```json
 {
-    "repositories": {
-        "packagist": {
+    "repositories": [
+        {
             "type": "composer",
             "url": "https://packagist.phpcomposer.com"
-        }   
-    }   
+        },
+        {
+            "packagist.org": false
+        }
+    ]
+}
+```
+
+#### Disabling Packagist.org
+
+```json
+{
+    "repositories": [
+        {
+            "packagist.org": false
+        }
+    ]
+}
+```
+
+### autoload
+
+```json
+{
+    "autoload": {
+        "psr-4": {
+            "Namespace": "path/to/src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
 }
 ```
