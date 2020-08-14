@@ -198,7 +198,7 @@ So this way you can the conflicting problem previously mentioned.
         },
         {
             "type": "path",
-            "url": "~/projects/packages/*"
+            "url": "../packages/*"
         },
         {
             "type": "composer",
@@ -207,6 +207,9 @@ So this way you can the conflicting problem previously mentioned.
     ]
 }
 ```
+
+> When using type path, it is better to assign a relative path to the packages repository, as this works cross-platform.
+> With absolute path, your path on *macOS* may never find a counterpart on *Windows*.
 
 Install Git on Alpine
 

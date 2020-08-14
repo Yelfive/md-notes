@@ -12,7 +12,9 @@
 
 - `transient`
 
-    To declare that the this field/member should not be serialized
+    To declare that the this field/member should not be serialized, when deserializing, the default value of that **data type** is assigned(0 for `int`).
+
+    See also: [transient keyword in Java - GeeksForGeeks](https://www.geeksforgeeks.org/transient-keyword-java/)
 
 - `volatile`
 
