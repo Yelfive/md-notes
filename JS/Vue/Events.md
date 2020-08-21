@@ -83,7 +83,7 @@ Called with directive `v-on` or its shorthand `@` .
 - `.up`
 - `.down`
 - `.left`
-- `.righ`
+- `.right`
 
 ## Mouse modifier
 
