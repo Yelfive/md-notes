@@ -285,7 +285,7 @@ public class A {
     public void doSth(String ...args) {
     }
 
-    public void() {
+    public void caller() {
         String str1;
         String str2;
         String[] strArr[] = {str1, str2};
@@ -298,7 +298,7 @@ public class A {
 
 ### Define as array
 
-> With this syntax, on passing as an array is valid
+> With this syntax, passing as an array is valid
 
 ```java
 
@@ -308,7 +308,7 @@ public class A {
     public void doSth(String[] args) {
     }
 
-    public void() {
+    public void caller() {
         String str;
         String[] strArr[];
         // Invalid expression

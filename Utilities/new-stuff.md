@@ -120,3 +120,7 @@ network protocol analyzer
 - OrientDB: Document, graph
 - MongoDB: Document and Geo
 - CockroachDB: Document and Geo
+
+## New Stuff for Java
+
+See [here](./New-Stuff-Java.md)

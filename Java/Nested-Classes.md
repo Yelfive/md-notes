@@ -31,7 +31,7 @@ class OuterClass {
 
 A nested class is a member of its enclosing class. Non-static nested classes (inner classes) have access to other members of the enclosing class, even if they are declared private. Static nested classes do not have access to other members of the enclosing class. As a member of the `OuterClass`, a nested class can be declared `private`, `public`, `protected`, or *package private*. (Recall that outer classes can only be declared `public` or *package private*.)
 
-## Why Use Nested Classes?
+## Why Use Nested Classes
 
 Compelling reasons for using nested classes include the following:
 
@@ -58,8 +58,7 @@ OuterClass.StaticNestedClass
 For example, to create an object for the static nested class, use this syntax:
 
 ```java
-OuterClass.StaticNestedClass nestedObject =
-     new OuterClass.StaticNestedClass();
+OuterClass.StaticNestedClass nestedObject = new OuterClass.StaticNestedClass();
 ```
 
 ## Inner Classes
@@ -82,6 +81,7 @@ An instance of `InnerClass` can exist only within an instance of `OuterClass` an
 To instantiate an inner class, you must first instantiate the outer class. Then, create the inner object within the outer object with this syntax:
 
 ```java
+OuterClass outerObject = new OuterClass();
 OuterClass.InnerClass innerObject = outerObject.new InnerClass();
 ```
 

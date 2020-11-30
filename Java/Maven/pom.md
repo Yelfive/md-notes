@@ -7,6 +7,7 @@
     <build>
         <plugins>
             <plugin>
+                <!-- Specify which sdk version to use to compile -->
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>1.8</source>

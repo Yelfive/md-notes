@@ -2,17 +2,22 @@
     "cSpell.words": [
         "autoload",
         "datasource",
+        "deque",
         "instanceof",
         "jdbc",
         "joinpoint",
+        "kbd",
         "laravel",
+        "mysqldump",
         "packagist",
         "pointcut",
         "printf",
         "println",
+        "serializable",
         "springframework",
         "strictfp",
         "symlink",
+        "vuex",
         "yelfive"
     ]
 }

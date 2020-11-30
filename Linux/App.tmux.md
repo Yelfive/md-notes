@@ -2,7 +2,7 @@
 
 ![tmux](./images/tmux.jpg)
 
-## What is tmux?
+## What is tmux
 
 Tmux is a **terminal multiplexer**. It creates a host **server** on your computer and connects to it with a client window. If the client is disconnected, the server keeps running. When re-opened you terminal, you can reattach to the `tmux` session and the files you were working with will still be open, and the processes you had running will still be active.
 
@@ -18,7 +18,7 @@ On Debian or Ubuntu:
 
 ## Attach and Detach from a tmux Session
 
-1.  When tmux is started it creates a new session with one window and one pane. Start a session:
+1. When tmux is started it creates a new session with one window and one pane. Start a session:
 
         tmux
 
@@ -26,13 +26,13 @@ On Debian or Ubuntu:
 
     ![Tmux menu](./images/tmux_menu.png)
 
-2.  Detach from the session:
+2. Detach from the session:
 
         tmux detach
 
     This will return you to the basic terminal.
 
-3.  Once a session has been started, it will continue to run as long as the host computer is running, or until you stop the session. You can log out of your current session, and reattach to the previous session.
+3. Once a session has been started, it will continue to run as long as the host computer is running, or until you stop the session. You can log out of your current session, and reattach to the previous session.
 
         tmux attach
 
@@ -99,19 +99,16 @@ new-session
 
 ## Create a tmux Configuration File
 
-1.  As you get comfortable with tmux, you may want to change some of the defaults. Using a text editor, create a configuration file(`~/.tmux.conf`) in your user's home directory:
+1. As you get comfortable with tmux, you may want to change some of the defaults. Using a text editor, create a configuration file(`~/.tmux.conf`) in your user's home directory:
 
     ```conf
-    # Uncomment the lines with the options you want to activate (by deleting the preceding "#")
-
+    # Uncomment the lines with the options you want to activate (by deleting the    preceding "#")  
     # Allow mouse interaction
     # set-option -g mouse on
-
     # Change prefix key to CTRL+A. "C-" stands for CTRL, "M-" stands for ALT key
     # set-option -g prefix C-a
     # unbind-key C-b
-    # bind-key C-a send-prefix
-
+    # bind-key C-a send-prefix  
     # Display CPU load average for the last 1,5 and 15 minutes, in the status bar
     set -g status-right "#(cut -d ' ' -f -3 /proc/loadavg) %H:%M %d-%b-%y"
     ```
@@ -151,7 +148,6 @@ fi
     > If you're using `emacs` key bindings (the default), press <kbd>Ctrl-s</kbd> then type the string to search for and press <kbd>Enter</kbd>. Press n to search for the same string again. Press <kbd>Shift-n</kbd> for reverse search. Press <kbd>Escape</kbd> twice to exit copy mode. You can use <kbd>Ctrl-r</kbd> to search in the reverse direction. Note that since `tmux` is in control of the keyboard in copy mode, <kbd>Ctrl-s</kbd> works regardless of the `stty ixon` setting (which I like to have as `stty -ixon` to enable forward searches in Bash).
     >
     > If you're using `vi` key bindings (<kbd>Ctrl-b:</kbd>`set-window-option -g mode-keys vi`), press <kbd>/</kbd> then type the string to search for and press <kbd>Enter</kbd>. Press <kbd>N</kbd> to search for the same string again. Press <kbd>Shift-n</kbd> for reverse search as in emacs mode. Press <kbd>Q</kbd> twice to exit copy mode. You can use `?` to search in the reverse direction.
-    > 
 
 1. Copy in buffer
 
@@ -187,7 +183,7 @@ fi
   :move-pane -t <window number>:<split number>
   ```
 
-- change pane layouts(vertical/horizanal)
+- change pane layouts(vertical/horizontal)
   
   - <kbd>ctrl+b+space</kbd>
 
@@ -200,7 +196,7 @@ set-window-option -g mode-keys vi
 bind -n C-k send-keys -R \; clear-history
 set -g display-panes-time 4000
 
-# Allow to save by `prefx + ctrl + s`
+# Allow to save by `prefix + ctrl + s`
 # to restore by `prefix + ctrl +r`
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 # To save sessions in 15minutes, and restore on boot
@@ -214,7 +210,6 @@ Apply changes
 ```bash
 tmux  source-file ~/.tmux.conf
 ```
-
 
 ## See Also
 

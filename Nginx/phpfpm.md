@@ -1,12 +1,12 @@
 # Connecting to PHP-FPM
 
-```conf
+```nginx
 server {
     listen      80 default_server;
     server_name localhost;
 
-    #charset koi8-r;
-    #access_log  /var/log/nginx/log/host.access.log  main;
+    # charset koi8-r;
+    # access_log  /var/log/nginx/log/host.access.log  main;
 
     root   /var/www/html/public;
     index  index.html index.htm index.php;
@@ -33,3 +33,16 @@ server {
     }
 }
 ```
+
+> Notice that, when directive `try_files` specified at under `server`, while
+> there's a `location /`, this `try_files` will not working, unless put under `location /` :
+>
+> ```nginx
+> server {
+>    try_files $uri $uri/ index.php?$query_string; # this will not working
+>    location / {
+>      # other configs
+>      # you have to specify `try_files` here, instead of under `server
+>    }
+> }
+> ```

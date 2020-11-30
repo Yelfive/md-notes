@@ -61,6 +61,53 @@ Host github.com-sth
 git clone git@github.com-sth:username/xxx.git
 ```
 
+## Using `SSH` as tunnel
+
+```bash
+ssh -NL :33777:127.0.0.1:33306 username@remote_server -p 5122
+```
+
+This will login to `remote_server` with user `username`, on port `5122`, and this connection will be kept as a tunnel.
+Any data sent to port `33777` on local machine will be sent to host `127.0.0.1` and port `33306` like it's from `remote_server`.
+
+For example, when run command at local machine:
+
+```bash
+mysql -u root -P33777 -h local_server
+```
+
+The traffic will be sent through the tunnel and it's like calling on the remote server:
+
+```bash
+mysql -u root -p -h 127.0.0.1 -P 33306
+```
+
+where
+
+- `-N` means _No command_, meaning will not run command on this connection
+- `-L` means _Link_
+
+  `bind_address:local_port:remote_local_address:remote_local_port`
+
+  - if no `bind_address` is specified, it will be localhost
+  - `remote_local_address` is the service address to visit on remote server, can access this address on remote server
+  - `remote_local_port` is the port of service on remote server
+
+### Using `SSH` as `Socks5` proxy
+
+Example:
+
+```bash
+ssh -D 1080 -fCN -p 22 ssh-user@ssh-server-ip
+```
+
+where
+
+- `-D` Dynamic address binding, `-D [bind address:]port`, whats to forward
+- `-f` Run in background
+- `-N` No command
+- `ssh-user@ssh-server-ip` The server you use to forward traffics
+
 ## Others
 
 1. Calculate public key via private one
@@ -68,8 +115,6 @@ git clone git@github.com-sth:username/xxx.git
    ```bash
    ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
    ```
-
-   
 
 ### Appendix
 
