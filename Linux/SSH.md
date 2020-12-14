@@ -108,13 +108,72 @@ where
 - `-N` No command
 - `ssh-user@ssh-server-ip` The server you use to forward traffics
 
+### Forward remote traffic using local ssh
+
+```txt
++---------------+             +---------------+
+|   host1:2121  | -----X----- |   host2:21    |
++---------------+             +---------------+
+    ^       |                           ^
+    |       `-----X-----+               |
+    |                   |               |
+    |                   ↓               |
+    |           +---------------+       |
+    `---------- |    host3:22   | ------`
+                +---------------+
+```
+
+- `host1` and `host2` cannot visit each other
+- `host3` can visit `host1`, while host1 cannot visit `host3`
+- `host3` can visit `host2`
+
+On host3, using `ssh`:
+
+```bash
+ssh -R 2121:host2:21 host1
+```
+
+Tells `host1` to listen to its port `2121` and using local machine(`host3`) to forward all traffic to prot `21` on server `host2`.
+
+Through this way, `host3` can establish a connection between host1 and itself,
+which will forward all traffics to `host2`.
+
+> This approach requires `host1` to have **ssh server installed**.
+
+See also:
+
+- [SSH原理与运用（一）：远程登录 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)
+- [SSH原理与运用（二）：远程操作与端口转发 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html)
+
 ## Others
 
-1. Calculate public key via private one
+### 1. Calculate public key via private one
 
    ```bash
    ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
    ```
+
+### 2. Specify local/source port
+
+```bash
+ssh -o 'ProxyCommand nc -p 2345 %h %p' user@server.com
+```
+
+in which `2345` is the local port to use to connect to port `default:22` on the `server.com`.
+
+### 3. Pass password without interaction
+
+```bash
+sshpass -p password ssh user@server
+```
+
+### 4. Automatically restart SSH sessions and tunnels: autossh
+
+```bash
+autossh -M 20000 -f -N your_public_server -R 1234:localhost:22 -C
+```
+
+see [autossh](https://www.harding.motd.ca/autossh/)
 
 ### Appendix
 

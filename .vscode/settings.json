@@ -1,6 +1,12 @@
 {
     "cSpell.words": [
+        "Proxying",
+        "aspectj",
         "autoload",
+        "autoproxy",
+        "autossh",
+        "classpath",
+        "convolutional",
         "datasource",
         "deque",
         "instanceof",
@@ -8,16 +14,22 @@
         "joinpoint",
         "kbd",
         "laravel",
+        "mvvm",
         "mysqldump",
         "packagist",
         "pointcut",
         "printf",
         "println",
+        "proxied",
+        "rsyslog",
+        "sendmail",
         "serializable",
         "springframework",
+        "sshpass",
         "strictfp",
         "symlink",
         "vuex",
+        "webp",
         "yelfive"
     ]
 }

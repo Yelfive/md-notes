@@ -6,7 +6,7 @@ Spring uses dynamic proxy to implement AOP, it adds some extra actions to method
 
 By default, when a bean implements an interface, JDK will be used, otherwise `cglib` is used. There are some issues when using `cglib` ([8.6 Proxying mechanisms](https://docs.spring.io/spring/docs/3.0.0.M3/reference/html/ch08s06.html)) :
 
-> - final methods cannot be advised, as they cannot be overriden.
+> - final methods cannot be advised, as they cannot be overridden.
 > - You will need the CGLIB 2 binaries on your classpath, whereas dynamic proxies are available with the JDK. Spring will automatically warn you when it needs CGLIB and the CGLIB library classes are not found on the classpath.
 > - The constructor of your proxied object will be called twice. This is a natural consequence of the CGLIB proxy model whereby a subclass is generated for each proxied object. For each proxied instance, two objects are created: the actual proxied object and an instance of the subclass that implements the advice. This behavior is not exhibited when using JDK proxies. Usually, calling the constructor of the proxied type twice, is not an issue, as there are usually only assignments taking place and no real logic is implemented in the constructor.
 
@@ -55,7 +55,7 @@ try {
 Schema:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
@@ -103,14 +103,14 @@ To define a reusable pointcut.
 
 Defines an aspect, a proxy class.
 
-##### properties
+##### aop:aspect properties
 
 - `id` id of the aspect.
 - `ref` id referenced to a bean.
 
 #### Advices `<aop:xxx>`
 
-##### properties
+##### aop:xxx properties
 
 - `method`
 
@@ -162,6 +162,8 @@ public class ApplicationConfig {
 #### Example of annotation aspect
 
 ```java
+import org.aspectj.lang.annotation.*;
+
 @Aspect
 @Component
 public class Logging {
@@ -175,6 +177,7 @@ public class Logging {
     @AfterReturning
     public void afterReturning(JoinPoint jp) {}
 
+    @AfterThrowing
     public void afterThrowing(JoinPoint jp) {}
 
     @After
@@ -189,9 +192,13 @@ public class Logging {
 ```
 
 #### `@Before`
+
 #### `@AfterReturning`
+
 #### `@AfterThrowing`
+
 #### `@After`
+
 #### `@Around`
 
 ## Pointcut expression
@@ -223,6 +230,17 @@ void full.package.path.ClassName.MethodName(argList);
     Any child packages of current package, or argument list. Similar to `.*` of regular expression.
 
     > **This wildcard does not refer to classes and methods**. For example, to represent all methods of all packages, the expression should be `*..*.*()`, in which the '`*`s' mean respectively `all top packages`, `all classes`, `all methods`.
+
+### Multiple `JoinPoint`s
+
+_AspectJ_ supports multiple join points, separated by `||` operator.
+
+```java
+import org.aspectj.lang.annotation.Pointcut;
+
+@Pointcut("@annotation(A) || @annotation(B)")
+public void joinPoint() {/* Empty Body */}
+```
 
 ### More examples
 

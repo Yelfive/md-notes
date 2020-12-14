@@ -34,14 +34,20 @@ Individually it means
 
 ### Linux
 
-
 ```bash
 # CentOS
 less +G /var/log/cron
 
 # Ubuntu
 less +G /var/log/syslog
+## This is not enabled by default on Ubuntu
+less +G /var/log/cron
 ```
+
+By default, Ubuntu does not log `/var/log/cron`, for this to be logged,
+
+1. Uncomment `#cron.*` in `/etc/rsyslog.d/50-default.conf`
+2. Restart syslog `sudo systemctl restart rsyslog`
 
 ## Examples
 
@@ -74,7 +80,6 @@ sudo crontab -e
 ```crontab
 @reboot /path/to/executable
 ```
-
 
 ## See Also
 
