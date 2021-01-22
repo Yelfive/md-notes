@@ -63,7 +63,7 @@ final String name = "Felix";
 | --------- | ---- |
 | char      | 2B   |
 
-> Unicode char: `\uxxxxxx`, of which `xxxxxx` stands for hexadecimals.
+> Unicode char: `\ufoobar`, of which `foobar` stands for hexadecimals.
 
 #### Automatically type conversion
 
@@ -519,7 +519,7 @@ class Dog extends Animal {
 
 class Cat extends Animal {
     public void shout() {
-        System.out.println("Cat says: miao miao");
+        System.out.println("Cat says: meow meow");
     }
 }
 ```

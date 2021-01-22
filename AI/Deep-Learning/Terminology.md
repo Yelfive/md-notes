@@ -128,7 +128,7 @@ I want a class of orange juice to go along with my cereal.
 
 ## GLoVe: GLobal Vectors for word representation
 
-Used to learn word matrix.
+Used to learn word matrix(embedding matrix).
 
 ### GloVe References
 
