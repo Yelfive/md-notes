@@ -22,7 +22,7 @@
 
 | name               | code         | display      |
 | ------------------ | ------------ | ------------ |
-| width of font size | `a \quad b`  | $a \quad b$  |
+| Width of font size | `a \quad b`  | $a \quad b$  |
 | 2 of `\quad`       | `a \qquad b` | $a \qquad b$ |
 | 1/3 of `\quad`     | `a\ b`       | $a\ b$       |
 | 5/18 of `\quad`    | `a\;b`       | $a\;b$       |
@@ -31,6 +31,14 @@
 | -1/6 of `\quad`    | `a\!b`       | $a\!b$       |
 
 > [Spacing in math mode - Overleaf, Online LaTeX Editor](https://www.overleaf.com/learn/latex/Spacing_in_math_mode#Spaces)
+
+## Arrows
+
+| name        | code          | display       |
+| ----------- | ------------- | ------------- |
+| Right arrow | `\rightarrow` | $\rightarrow$ |
+
+> [LaTeX arrows](https://www.sascha-frank.com/Arrow/latex-arrows.html)
 
 ---
 

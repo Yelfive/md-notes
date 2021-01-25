@@ -2,7 +2,6 @@
 
 ## 二叉查找树(Binary Search Tree)
 
-<!-- 对于一个严格递增有序数集合 $S=\left\{k_1, k_2, ..., k_n\right\}$，构建一个二叉树，使得左子节点小于父节点，右子节点大于等于父节点。 -->
 对于一颗二叉树，其所有左子树所有节点均小于父节点，右子树所有节点均大于父节点。
 
 如：
@@ -106,7 +105,7 @@ $$
 E[i,j] = \left\{
 \begin{aligned}
   q_{i-1}, &&j=i-1\\
-  w[i, j] + \min_{i \leq r \leq j} \left\{{E[i, r-1] + E[r+1,j]} \right\},
+  w[i, j] + \min_{i \leq r \leq j} \{ E[i, r-1] + E[r+1,j] \},
     && others\\
 \end{aligned}
     \right.

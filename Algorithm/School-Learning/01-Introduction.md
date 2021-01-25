@@ -1,19 +1,19 @@
 # Introduction
 
-## Terminology
+## 术语（Terminology）
 
-### Complicity measurement
+### 复杂度的度量（Complicity measurement）
 
-To judge an algorithm by the time/memory it consumes.
+复杂度用于判断算法使用的时间、空间的使用情况；当问题的规模足够大时，时间、空间使用的增长情况，描述算法的好坏。
 
-- $O$ Upper time/memory limit
-- $\Omega$ Lower time/memory limit
+- $O$：复杂度上限
+- $\Omega$：复杂度下限
 
-## Algorithms Mentioned
+## 算法
 
 ### 1. Recursion (递归)
 
-Function call itself within its body
+方法体内部调用自身的编程技巧。
 
 ```c
 void recursion() {
@@ -29,20 +29,23 @@ void recursion() {
 
 ### 2. Divide and Conquer (分治)
 
-Divide a large problem and conquer each smaller problem
-then combine/merge into the solution of the large problem.
+分治将解决问题分为三个步骤：
 
-With this algorithm, the large problem should be divided into smaller problems with about the same scale.
+- Divide: 将一个大问题分解为较小的独立子问题。
+- Conquer： 独立的解决子问题。
+- Merge: 将子问题的解合并成原问题的解。
 
-The algorithm is typically accomplished by [recursion](#1-recursion-递归).
+> 大问题应该分解为大小（几乎）相等的子问题。
 
-**Problems:**
+通常使用[递归](#1-recursion-递归)来实现分治算法.
 
-1. Binary search
+**常见使用分治解决的问题:**
+
+1. 二分查找（Binary search
 2. 大数乘法：减少乘法次数
 
     $$
-    ac\cdot2^n + (ad+bc)\cdot2^{n/2} + bd     \tag{1}
+    XY = ac\cdot2^n + (ad+bc)\cdot2^{n/2} + bd     \tag{1}
     $$
 
     转化为
@@ -135,13 +138,31 @@ The algorithm is typically accomplished by [recursion](#1-recursion-递归).
 
 问题|时间复杂度|空间复杂度|描述
 -- |--|--|--
-活动安排问题|$O(n)$| 通过结束时间非递减排序进行安排，具有最优子结构
-背包问题|||
-最优装载问题|||
-单源最短路径|||
-多机调度|||
+活动安排问题    |已排序：$O(n)$<br>未排序：$O(n \log n)$| $O(n)$ |通过结束时间非递减排序进行安排，具有最优子结构。先结束时间排序。
+背包问题        |$O(n \log n)$|$O(1)$| 物品可以分割，在背包容量 $C$ 条件下，求最大价值。先价值质量比排序。
+最优装载问题    |$O(n \log n)$|$O(n)$| 忽略体积，在装载容量 $C$ 限制下，求装载集装箱数目最多。先价值小$\rightarrow$大排序。
+单源最短路径(Dijkstra)|$O(n^2)$|$O(n)$| 有向图中，某顶点到其他顶点的最短距离。
+多机调度(MultiProcessor Scheduling)|$O(n \log n)$| $O(1)$ | 多处理机，多个作业，求最小耗时。属于 NPC 问题，所有问题都可以约化到它。**贪心算法为近似算法**，最长处理时间作业优先。先排序。
 
 ### 5. Backtracking Algorithm (回溯 sù)
+
+**核心概念**：子集树、排列树
+
+深度优先
+
+搜索求解：穷举、深度优先（回溯）、广度优先
+
+问题|时间复杂度|空间复杂度|描述
+-- | -- | -- | --
+0/1背包问题|||
+旅行商问题（TSP）|||
+最优装载问题|||
+批处理作业调度|||
+连续邮资问题|||
+圆排列问题|||
+N-皇后问题|||
+最大团问题|||
+图的m着色问题|||
 
 ### 6. Branch and Bound Method (分支限界法)
 
