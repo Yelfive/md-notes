@@ -24,10 +24,16 @@
 - **约束函数**：资源限定，如 [0-1 背包问题](DP/0-1-Knapsack-Problem.md)，所有 $x_i$ 满足 $x_i \in [0, 1]$
 - **限界函数**：避免不可能产生最优解的状态，如 [0-1 背包问题](DP/0-1-Knapsack-Problem.md)，已知当前可以取到的最大价值为 $m$，则最大价值小于 $m$ 的节点可以剪去。
 
+> 约束函数和界限函数统称为剪枝函数（Pruning Function）
+
 ### 4th：子集树 vs. 排列树
 
-- **子集树**：问题的解满足某种**组合**的性质，解空间大小 $2^n$
-- **排列树**：问题的解满足**排列**的性质，解空间大小 $n!$
+- **子集树（Subset Trees）**：问题的解满足某种**组合**的性质，解空间大小 $2^n$
+- **排列树（Permutation Trees）**：问题的解满足**排列**的性质，解空间大小 $n!$
+
+### 5th：解空间
+
+所有可能解的集合称为*解空间*，其中满足约束条件的解，称为*可行解*。
 
 ## 回溯方法
 
@@ -37,7 +43,12 @@
 
 根据解空间是子集树还是排列树，有两种回溯框架。
 
-设，约束函数：`constraint(resource)`，限界函数：`bound(resource)`。
+设，
+
+- 约束函数：$constraint(resource)$，
+- 限界函数：$bound(resource)$。
+- $f(n, t)$ 表示节点编号的下限，是 $n$ 与 $t$ 的函数
+- $g(n, t)$ 表示节点编号的上限
 
 #### 对于子集树
 
@@ -45,13 +56,45 @@
 
 ```java
 public class Solution {
+    /**
+     * @param t Depth of solution space/tree
+     */
     public void backtrack(int t) {
+        // `n` is the maximum depth allowed, to determine the end of search
         if (t > n) {
-            output(t);
+            output(x);
         } else {
             for (int i = f(n, t); i <= g(n, t); i++) {
                 if (constraint(t) && bound(t)) {
                     backtrack(t + 1);
+                }
+            }
+        }
+    }
+}
+```
+
+#### 对于排列树
+
+设
+
+- $swap(a, b)$ 为交换 $a,b$ 两个节点。
+
+```java
+public class Solution {
+    /**
+     * @param t Depth of solution space/tree
+     */
+    public void backtrack(int t) {
+        // `n` is the maximum depth allowed, to determine the end of search
+        if (t > n) {
+            output(x);
+        } else {
+            for (int i = f(n, t); i <= g(n, t); i++) {
+                if (constraint(t) && bound(t)) {
+                    swap(x[i], x[t]);
+                    backtrack(t + 1);
+                    swap(x[i], x[t]);
                 }
             }
         }
