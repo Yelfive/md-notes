@@ -16,7 +16,7 @@ int main (int argc, char ** args) {
     backtrack(1);
 
     //output();
-	return 0;
+    return 0;
 }
 
 /**
