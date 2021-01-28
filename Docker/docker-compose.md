@@ -25,3 +25,16 @@ All configurations are:
 - `consistency` default
 - `cached` Host is authoritative, changes made on host will be synced to container with delay.
 - `delegated` **Best performance.** Container is authoritative, changes inside container will be synced to host with delay.
+
+## Frequently used configure
+
+### Chinese supporting in `docker logs`
+
+```yaml
+services:
+  java:
+    environment:
+      LANG: en_US.UTF-8
+      LANGUAGE: en_US:en
+      LC_ALL: en_US.UTF-8
+```

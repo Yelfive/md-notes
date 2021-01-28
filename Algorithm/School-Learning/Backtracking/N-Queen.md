@@ -32,23 +32,21 @@ int bound(int row) {
 }
 
 void output() {
-    printf("Row\tColumn\t\n");
     for (int i = 0; i < N; i++) {
         printf("%d\t%d\n", i, x[i]);
     }
 }
 
-void backtrack(int depth) {
-    printf("depth: %d\n", depth);
-    if (depth >= N) {
+void backtrack(int row) {
+    if (row >= N) {
         // output
         output();
         exit(0);
     } else {
         for (int i = 0; i < N; i++) {
-             // x[depth] will always update until it reaches the correct {column}
-            x[depth] = i;
-            if (bound(i)) backtrack(depth + 1);
+             // `x[row]` will always update until it reaches the correct {column}
+            x[row] = i;
+            if (bound(row)) backtrack(depth + 1);
         }
     }
 }
