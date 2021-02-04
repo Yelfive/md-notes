@@ -44,7 +44,7 @@ void backtrack(int row) {
         exit(0);
     } else {
         for (int i = 0; i < N; i++) {
-             // `x[row]` will always update until it reaches the correct {column}
+            // `x[row]` will always update until it reaches the correct {column}
             x[row] = i;
             if (bound(row)) backtrack(depth + 1);
         }
