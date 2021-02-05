@@ -1,4 +1,4 @@
-# Introduction
+# Algorithm Introduction
 
 ## 术语（Terminology）
 
