@@ -7,7 +7,7 @@
 ```nginx
 
 upstream upstream_name {
-    server domain.com weight max_fails  ;
+    server domain.com weight max_fails=10;
     server 127.0.0.1;
 }
 
@@ -78,21 +78,21 @@ upstream hello {
 
 ## proxy_next_upstream
 
-### syntax
+**syntax:**
 
 ```nginx
 proxy_next_upstream parameters;
 ```
 
-### context
+**context:**
 
 > http, server, location
 
-### default
+**default:**
 
 > proxy_next_upstream error timeout
 
-### parameters
+**parameters**:
 
 - non_idempotent
 

@@ -227,3 +227,17 @@ N-皇后问题|$O(n!)$|$O(n)$|排列树|
 - 拉斯维加斯算法，Las Vegas Algorithm
 - Pollard Rho 因子分解法
 - 蒙特卡罗算法，Monte Carlo Algorithm，又称*统计模拟方法*
+
+#### 随机数生成
+
+$$
+\left\{
+\begin{aligned}
+    a_0 &= d \\
+    a_i &= (b \cdot a_{i-1} + c ) \mod m, \qquad i= 1, 2, ...
+\end{aligned}
+\right.
+$$
+
+其中 $d$ 为**种子**，$b \ge 0$，$c \ge 0$， $m \ge d$ 为常数。
+通常 $m$ 的选取要足够大，且有 $\gcd(b,m) = 1$。

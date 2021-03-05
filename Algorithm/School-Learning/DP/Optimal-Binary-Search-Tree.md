@@ -108,7 +108,7 @@ E[i,j] = \left\{
   w[i, j] + \min_{i \leq r \leq j} \{ E[i, r-1] + E[r+1,j] \},
     && others\\
 \end{aligned}
-    \right.
+\right.
 $$
 
 $$
