@@ -1,6 +1,6 @@
 # CMD vs Entrypoint
 
-> The main purpose of a `CMD` is to provide defaults for an executing container. 
+> The main purpose of a `CMD` is to provide defaults for an executing container.
 >
 > When used in the shell or exec formats, the CMD instruction sets the command to be executed when running the image.
 

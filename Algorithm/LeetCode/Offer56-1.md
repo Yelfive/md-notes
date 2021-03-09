@@ -28,7 +28,7 @@
 
 ## Solution
 
-```java
+```java{9}
 class Solution {
     public int[] singleNumbers(int[] nums) {
         int xor = 0;
@@ -56,7 +56,7 @@ class Solution {
 
 ::: tip
 
-`k & (-k)` 可以得到最低位不为 `0` 的二进制对应的值，其证明如下
+`k & (-k)` 可以得到最低位不为 `0` 的二进制对应的值，故第9行等价于 `breakpoint = xor & (-xor)`，其证明如下
 
 :::
 
