@@ -1,8 +1,10 @@
 # 剑指 Offer 56 - I. 数组中数字出现的次数
 
-> 来源：[力扣（LeetCode）](链接：https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof)
+> 来源：[力扣（LeetCode）](https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof)
 >
 > 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+## Problem
 
 一个整型数组 `nums` 里除两个数字之外，其他数字都出现了两次。请写程序找出这两个只出现一次的数字。要求时间复杂度是$O(n)$，空间复杂度是$O(1)$。
 
@@ -81,6 +83,8 @@ $$x_{j-1} = ... = x_0 = 0$$
 
 又由于 $\-k$ 的补码正好是 $k$ 反码 + 1
 
-所以 $\-k$ 的补码只有第 $j$ 位不等于 $0$（`i<j`的所有位都因为进位而变成了`0`）
+导致所有 $i<j$ 的位都因为进位而变成了$0$
+
+所以 $\-k$ 的补码只有第 $j$ 位不等于 $0$
 
 所以此时 `k & (-k)` 正好是 `1 << j`, 即最小位等于1的数
