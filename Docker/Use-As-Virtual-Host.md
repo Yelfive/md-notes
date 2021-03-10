@@ -1,6 +1,6 @@
 # Use Docker Container as Virtual Host
 
-This passage describes a way to use Docker container as virtual host.
+This article describes a way to use Docker container as virtual host.
 Through this way, the server `host` can be divided as a collection of containers.
 
 ![1615275697937](./images/Use-As-Virtual-Host/1615275697937.png)
@@ -62,7 +62,7 @@ services:
     volumes:
       # Mount the user directory in case we want to
       # transfer files from local to created virtual host
-      - /home/felix/projects:/home/felix/projects
+      - /home/felix/projects:/home/felix
 
 ```
 
