@@ -38,9 +38,9 @@ which takes advantage of parallel computing([SIMD](#simd)).
 
 ## SIMD
 
-Single Instruction, Multiple Data (SIMD) units refer to hardware components that perform the same operation on multiple data operands concurrently.
+*Single Instruction, Multiple Data* (SIMD) units refer to hardware components that perform the same operation on multiple data operands concurrently.
 
- ![img](images/Terminology/3-s2.0-B9780128041895000028-f02-10-9780128041895.jpg)
+ ![img](./images/Terminology/3-s2.0-B9780128041895000028-f02-10-9780128041895.jpg)
 
 See [Single Instruction Multiple Data - an overview | ScienceDirect Topics](https://www.sciencedirect.com/topics/computer-science/single-instruction-multiple-data)
 

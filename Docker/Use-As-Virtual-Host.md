@@ -31,7 +31,7 @@ Before writing a `Dockerfile`, we should declare the directory structure, which 
 
 Now we can write the `Dockerfile`:
 
-```dockerfile
+```dockerfile {9,10,12}
 FROM ubuntu:18.04
 
 COPY sources.list /etc/apt/sources.list
@@ -49,9 +49,13 @@ RUN usermod -aG sudo felix
 ENTRYPOINT tail -f /dev/null
 ```
 
+:::warning
+Replace `felix` with the user you want to create, and `id` if necessary.
+:::
+
 ## Write `docker-compose.yml` file
 
-```yml
+```yaml {11}
 version: "3.7"
 services:
   ubuntu:
@@ -65,6 +69,10 @@ services:
       - /home/felix/projects:/home/felix
 
 ```
+
+:::warning
+Replace `felix` with your username.
+:::
 
 ## Build & Start container
 
