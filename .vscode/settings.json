@@ -5,6 +5,7 @@
         "Proxying",
         "alammar",
         "aspectj",
+        "autoboxing",
         "autoload",
         "autoproxy",
         "autossh",
