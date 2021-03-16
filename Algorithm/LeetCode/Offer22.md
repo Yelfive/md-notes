@@ -25,6 +25,8 @@
 3. 同时移动 `former` 和 `later`
 4. 当 `former` 指针为 `null` 时，表示已经遍历到了链表末尾，此时的 `later` 正好是倒数第 `k` 个节点。
 
+### Java
+
 ```java
 /**
  * Definition for singly-linked list.
