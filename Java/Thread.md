@@ -209,6 +209,14 @@ reentrantLock.unlock();
 
 Executor 是一个线程管理器，当不需要线程之间通信时，可以使用它来执行线程，代替 `new Thread(); thread.start()`;
 
+## 线程池类型
+
+- `newCachedThreadPool()`：按需创建线程
+- `newFixedThreadPool()`：创建固定线程数的线程池
+- `newSingleThreadExecutor()`: 相当于 $size = 1$ 的 `newFixedThreadPool()`
+
+**Example：**
+
 ```java {8,9}
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
