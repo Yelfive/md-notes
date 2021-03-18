@@ -252,3 +252,20 @@ public class ExecutorTest {
 - `showdown()` ： 标记关闭线程池，不再接受新的线程加入。
 - `showdownNow()` 同时向所有线程发送中断（interrupt）信号。
 - `awaitTermination(long timeout, TimeUnit unit)` 阻塞线程，直到其一发生：阻塞时间超过 timeout, 所有线程都结束，当前线程收到中断信号。
+
+## 线程通信
+
+线程通信根据资源锁不同，主要有两种方式
+
+1. `synchronized` 锁，使用 `wait()`, `notify()`, `notifyAll()`
+2. `ReentrantLock` 锁，使用 `await()`, `signal()`, `signalAll()`
+
+CountDownLatch：基于 *AQS*
+CyclicBarrier： 基于 `ReentrantLock`，可以通过 reset 方法重启计数，所以称 “循环（cyclic）屏障”
+Semaphore：
+
+- `FutureTask`：获取 `Callable` 的返回值
+- `BlockingQueue`，接口，阻塞队列，用 `put()` 入队，`take()` 出队，可以模拟*生产者-消费者*模式。
+- `ForkJoin`：并行计算，类似 *MapReduce*，利用 `fork()/join()` 方法，进行任务拆分、重组。并实现了 *工作窃取算法* （当前线程任务执行完毕，获取其他线程队列末尾的任务执行）。
+
+AQS: `AbstractQueuedSynchronizer`，基于 `volatile`（synchronized variables）
