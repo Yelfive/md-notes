@@ -2,7 +2,7 @@
 
 ## Preface
 
-When we're developing, we always enjoy the test evironment Linux brings us,
+When we're developing, we always enjoy the test environment Linux brings us,
 and the tools(IDE, DBMS, Axure, IM etc) that windows provides,
 but we cannot have them both.
 And what if there is a way, allows us to develop with awesome tools on Windows
