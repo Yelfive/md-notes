@@ -209,6 +209,14 @@ reentrantLock.unlock();
 
 Executor 是一个线程管理器，当不需要线程之间通信时，可以使用它来执行线程，代替 `new Thread(); thread.start()`;
 
+## 线程池类型
+
+- `newCachedThreadPool()`：按需创建线程
+- `newFixedThreadPool()`：创建固定线程数的线程池
+- `newSingleThreadExecutor()`: 相当于 $size = 1$ 的 `newFixedThreadPool()`
+
+**Example：**
+
 ```java {8,9}
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -252,3 +260,70 @@ public class ExecutorTest {
 - `showdown()` ： 标记关闭线程池，不再接受新的线程加入。
 - `showdownNow()` 同时向所有线程发送中断（interrupt）信号。
 - `awaitTermination(long timeout, TimeUnit unit)` 阻塞线程，直到其一发生：阻塞时间超过 timeout, 所有线程都结束，当前线程收到中断信号。
+
+## 线程通信
+
+线程通信根据资源锁不同，主要有两种方式
+
+1. `synchronized` 锁，使用 `wait()`, `notify()`, `notifyAll()`
+2. `ReentrantLock` 锁，使用 `await()`, `signal()`, `signalAll()`
+
+CountDownLatch：基于 *AQS*
+CyclicBarrier： 基于 `ReentrantLock`，可以通过 reset 方法重启计数，所以称 “循环（cyclic）屏障”
+Semaphore：
+
+- `FutureTask`：获取 `Callable` 的返回值
+- `BlockingQueue`，接口，阻塞队列，用 `put()` 入队，`take()` 出队，可以模拟*生产者-消费者*模式。
+- `ForkJoin`：并行计算，类似 *MapReduce*，利用 `fork()/join()` 方法，进行任务拆分、重组。并实现了 *工作窃取算法* （当前线程任务执行完毕，获取其他线程队列末尾的任务执行）。
+
+AQS: `AbstractQueuedSynchronizer`，基于 `volatile`（synchronized variables）
+
+## 内存模型
+
+### 三大特性
+
+1. 原子性
+2. 可见性
+3. 有序性
+
+### 先行发生原则
+
+1. 单一线程原则
+2. 管程锁定规则
+3. `volatile` 变量规则
+4. 线程启动规则
+5. 线程加入规则
+6. 线程中断规则
+7. 线程终结规则
+8. 传递性
+
+## 锁类型
+
+synchronized & ReentrantLock 是互斥同步，也成阻塞同步，悲观锁。
+
+- 悲观锁：总认为资源会被抢占。
+- 乐观锁：尝试操作，成功则退出，失败则再次尝试
+
+## 非阻塞同步
+
+1. CAS
+2. AtomicInteger
+3. ABA
+
+### 1. CAS
+
+> Compare-and-Swap
+
+乐观锁需要操作和冲突检测这两个步骤具备原子性，这里就不能再使用互斥同步来保证了，只能靠硬件来完成。硬件支持的原子性操作最典型的是：比较并交换（Compare-and-Swap，CAS）。CAS 指令需要有 3 个操作数，分别是内存地址 V、旧的预期值 A 和新值 B。当执行操作时，只有当 V 的值等于 A，才将 V 的值更新为 B。
+
+### 2. AtomicInteger
+
+### 3. ABA
+
+## JVM 对 synchronized 的优化
+
+1. 自旋锁
+2. 锁消除
+3. 锁粗化
+4. 轻量级锁
+5. 偏向锁
