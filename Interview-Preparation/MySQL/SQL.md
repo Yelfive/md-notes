@@ -284,7 +284,7 @@ SAVEPOINT
 1. 创建账户
 
     ```sql
-    create user username identified by 'my_password';
+    CREATE USER username IDENTIFIED BY 'my_password';
     ```
 
 2. 修改用户名
