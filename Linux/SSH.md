@@ -103,7 +103,7 @@ ssh -D 1080 -fCN -p 22 ssh-user@ssh-server-ip
 
 where
 
-- `-D` Dynamic address binding, `-D [bind address:]port`, whats to forward
+- `-D` Dynamic address binding, `-D [bind address:]port`, listens at local side, supports SOCKS4/SOCKS5 protocol.
 - `-f` Run in background
 - `-N` No command
 - `ssh-user@ssh-server-ip` The server you use to forward traffics

@@ -6,7 +6,7 @@ Java&trade; 线程有三种创建方式
 2. `implements Callable`
 3. `extends Thread`
 
-## Runable and Callable
+## Runnable and Callable
 
 `Runnable` 与 `Callable` 类似，需要实现 `run` 方法，然后通过 `Thread::start` 启动。
 `Callable` 支持返回值，通过 `FutureTask` 获取，`Runnable` 不支持返回值。
@@ -327,3 +327,63 @@ synchronized & ReentrantLock 是互斥同步，也成阻塞同步，悲观锁。
 3. 锁粗化
 4. 轻量级锁
 5. 偏向锁
+
+## volatile
+
+与 `synchronized` 类似，但只能用于修饰属性。
+
+**Example：**
+
+```java {2}
+public class VolatileTest {
+    private volatile boolean flag = false;
+
+    public static void main(String[] args) {
+
+        VolatileTest test = new VolatileTest();
+        new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+                test.flag = true;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        
+        while(true) {
+            if (test.flag) {
+                System.out.println("Main out");
+                break;
+            }
+        }
+    }
+}
+```
+
+上例中，如果没有 `volatile` 修饰，**可能（？）** 永远无法看到 'Main out' 输出。
+
+JVM 内存模型：拷贝共享内存到线程内存。**如果不干预，何时同步？**
+
+![image-20210321121339142](./images/Thread/image-20210321121339142.png "Fig. Java虚拟机直接内存")
+
+其中*直接内存*存放在用户空间，不属于堆，不受堆内存限制。
+
+**总结：**
+
+1. `volatile` 修饰符适用于以下场景：某个属性被多个线程共享，**其中有一个线程修改了此属性，其他线程可以立即得到修改后的值**；或者作为状态变量，如 `flag = true`，实现轻量级同步。
+2. 不具备原子性，只具备可见性
+
+    ```java
+    volatile int cnt =  1;
+    // 以下操作不具备原子性
+    cnt++;
+    cnt += 1;
+    ```
+
+    `volatile` 的原子性只对<u>简单赋值</u>、<u>读取</u>有效。
+
+## 线程间通信
+
+synchronized 中的 wait, notify
+
+ReentrantLock J.U.C.Condition 的通信 await, signal, signalAll
