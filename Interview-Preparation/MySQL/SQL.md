@@ -315,7 +315,7 @@ SAVEPOINT
     - `ALL PRIVILEGES` 代表所有权限，可以使用具体 `SELECT, INSERT` 表示 ++查、增++ 权限
     - `db_name.*` 表示可以访问数据库 `db_name` 下所有表（`*`）
     - `username@host` 表示在主机 host 使用 username 进行访问
-    - `IDENTIFIED BY` 表示用户需要使用的密码
+    - `IDENTIFIED BY` $Optional$，表示用户需要使用的密码
 
 6. 删除权限
 
