@@ -232,6 +232,17 @@ SET pos = pos + 1;
 
 See also: [Cursors](https://dev.mysql.com/doc/refman/8.0/en/cursors.html).
 
+## 函数（Function）
+
+- [CREATE FUNCTION - MariaDB Knowledge Base](https://mariadb.com/kb/en/create-function/)
+- [CREATE FUNCTION UDF - MariaDB Knowledge Base](https://mariadb.com/kb/en/create-function-udf/)
+
+```sql
+CREATE FUNCTION func() {
+
+}
+```
+
 ## 触发器
 
 见 [Trigger](./../../MySQL/Trigger.md)
@@ -321,8 +332,8 @@ SAVEPOINT
 :::tip
 `GRANT` 和 `REVOKE` 都可以细化权限：
 
-- 特定列
-- 特定存储过程
+- 特定列：`GRANT SELECT(a, b)...`
+- 特定存储过程、函数：`GRANT ... ON my_func|my_proc`
 :::
 
 [^cs-note-transaction]: [CS Note](http://cyc2018.gitee.io/cs-notes/#/notes/SQL%20%E8%AF%AD%E6%B3%95?id=%e4%ba%8c%e5%8d%81%e4%b8%80%e3%80%81%e4%ba%8b%e5%8a%a1%e7%ae%a1%e7%90%86)
