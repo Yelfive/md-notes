@@ -54,7 +54,7 @@ DELIMITER ;
 Add `FOLLOWS` or `PRECEDS` after `FOR EACH ROW` statement
 to indicates proceeding after or before the `existed_trigger_name` respectively
 
-```sql
+```sql {6,7}
 CREATE TRIGGER trigger_name
 BEFORE|AFTER
 INSERT
