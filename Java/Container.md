@@ -26,7 +26,15 @@ Java 容器包含 `Collection` 和 `Map` 两种
 ### Queue
 
 - `LinkedList`
-- `PriorityQueue`：利用最小堆+数组完成的队列
+- `PriorityQueue`：利用最小堆+数组完成的优先队列[^priority-queue]
+
+    方法：
+
+    1. `offer/add`： 添加一个元素
+    2. `peek`：查看、不弹出堆顶元素
+    3. `poll`：弹出堆顶元素
+
+[^priority-queue]: [PriorityQueue](./Source-Code/PriorityQueue.md)
 
 ## Map
 

@@ -198,7 +198,6 @@ Duplicated footnote reference[^second].
 
 [^second]: Footnote text.
 
-
 ### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
 
 Term 1
