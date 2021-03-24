@@ -26,7 +26,7 @@ Java 容器包含 `Collection` 和 `Map` 两种
 ### Queue
 
 - `LinkedList`
-- `PriorityQueue`：利用最小堆+数组完成的优先队列
+- `PriorityQueue`：利用最小堆+数组完成的优先队列[^priority-queue]
 
     方法：
 
@@ -34,22 +34,7 @@ Java 容器包含 `Collection` 和 `Map` 两种
     2. `peek`：查看、不弹出堆顶元素
     3. `poll`：弹出堆顶元素
 
-    当 `offer` 一个值时，根据二分查找法
-
-    ```java
-    // k = size
-    private void siftUpUsingComparator(int k, E x) {
-        while (k > 0) {
-            int parent = (k - 1) >>> 1;
-            Object e = queue[parent];
-            if (comparator.compare(x, (E) e) >= 0)
-                break;
-            queue[k] = e;
-            k = parent;
-        }
-        queue[k] = x;
-    }
-    ```
+[^priority-queue]: [PriorityQueue](./Source-Code/PriorityQueue.md)
 
 ## Map
 
