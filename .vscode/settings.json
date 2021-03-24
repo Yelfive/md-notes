@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "BLEU",
+        "Geospatial",
         "Papineni",
         "Proxying",
         "alammar",
@@ -23,6 +24,7 @@
         "digram",
         "dport",
         "entrypoint",
+        "epoll",
         "fastjson",
         "gson",
         "icmp",
