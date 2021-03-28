@@ -83,3 +83,19 @@ select -> poll -> epoll
   - 线程安全
 
 See also: [IO 多路复用是什么意思？ - 知乎](https://www.zhihu.com/question/32163005)
+
+## Sentinel
+
+哨兵，监听集群中的服务器，在主服务器下线之后选举新的主服务器
+
+## 分片
+
+类似横向分表，把数据拆分到不同服务器存储。
+
+分片方式：
+
+1. 客户端拆分：客户端根据 一致性 Hash 算法 决定当前键应该存储到哪个节点。
+2. 代理分片：客户端将请求发送给代理，代理再进行数据转发
+3. 服务器分片：Redis Cluster
+
+*[一致性 Hash 算法]: 一致性 Hash 算法是分布式 Hash 算法（Distributed Hash Table, DHT）的实现。
