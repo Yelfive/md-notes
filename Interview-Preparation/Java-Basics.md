@@ -470,3 +470,11 @@ public class Test {
 :::tip
 数据依赖：如果两个操作访问同一个变量，且这两个操作中有一个为“写”操作，则这两个操作存在数据依赖。
 :::
+
+## J.U.C
+
+`java.util.concurrent`
+
+- `FutureTask`
+- `BlockingQueue`
+- **ForkJoin**: `RecursiveTask`, `ForkJoinPool`
