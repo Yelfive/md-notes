@@ -6,6 +6,8 @@
 git log --stat
 ```
 
+## Others
+
 ```bash
 git log --name-status
 git log --name-only
