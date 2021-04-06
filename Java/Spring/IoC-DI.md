@@ -142,7 +142,7 @@ Annotation can be categorized into 4 categories:
         2.1.2. Find more than one instances that match the type, return the bean with exact id as the declared property name.
         2.1.3. No instance found, or more than one instances found and the property name is not same as any of the bean ids, throw an exception.
 
-        ![image-20200629105524117](images/IoC-DI/image-20200629105524117.png)
+        ![image-20200629105524117](./images/IoC-DI/image-20200629105524117.png)
 
     2. `@Qualifier`
 

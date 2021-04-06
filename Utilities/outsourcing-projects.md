@@ -14,7 +14,7 @@
 
 开源协议：MIT
 
-![img](images/outsourcing-projects/d2admin.png)
+![img](./images/outsourcing-projects/d2admin.png)
 
 ## **2、vue-element-admin**
 
@@ -26,7 +26,7 @@
 
 开源协议：MIT
 
-![img](images/outsourcing-projects/vue-element-admin.png)
+![img](./images/outsourcing-projects/vue-element-admin.png)
 
 ## **3、JEECG-BOOT**
 
@@ -38,7 +38,7 @@
 
 开源协议：Apache-2.0 License
 
-![img](images/outsourcing-projects/JEECG-BOOT.png)
+![img](./images/outsourcing-projects/JEECG-BOOT.png)
 
 ## **4、GIN-VUE-ADMIN**
 
@@ -50,7 +50,7 @@
 
 开源协议：Apache-2.0 License
 
-![img](images/outsourcing-projects/GIN-VUE-ADMIN.png)
+![img](./images/outsourcing-projects/GIN-VUE-ADMIN.png)
 
 ## **5、vue-admin-beautiful**
 
@@ -62,7 +62,7 @@
 
 开源协议：MPL-2.0 License
 
-![img](images/outsourcing-projects/vue-admin-beautiful.png)
+![img](./images/outsourcing-projects/vue-admin-beautiful.png)
 
 ## **6.Dcat-admin**
 
@@ -74,7 +74,7 @@
 
 开源协议：MIT License
 
-![img](images/outsourcing-projects/Dcat-admin.png)
+![img](./images/outsourcing-projects/Dcat-admin.png)
 
 ## **7、RuoYi**
 
@@ -86,7 +86,7 @@
 
 开源协议：MIT License
 
-![img](images/outsourcing-projects/RuoYi.png)
+![img](./images/outsourcing-projects/RuoYi.png)
 
 ## **8、renren-fast-vue**
 
@@ -98,7 +98,7 @@
 
 开源协议：MIT License
 
-![img](images/outsourcing-projects/renren-fast-vue.png)
+![img](./images/outsourcing-projects/renren-fast-vue.png)
 
 ## **9、ant-design-pro**
 
@@ -120,7 +120,7 @@
 
 开源协议：MIT License
 
-![img](images/outsourcing-projects/iview-admin.png)
+![img](./images/outsourcing-projects/iview-admin.png)
 
 ## **11、material-dashboard**
 
@@ -132,7 +132,7 @@
 
 开源协议：MIT License
 
-![img](images/outsourcing-projects/material-dashboard.png)
+![img](./images/outsourcing-projects/material-dashboard.png)
 
 ## **12、EAdmin**
 
@@ -144,4 +144,4 @@
 
 开源协议：无
 
-![img](images/outsourcing-projects/eadmin.png)
+![img](./images/outsourcing-projects/eadmin.png)

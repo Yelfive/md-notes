@@ -4,11 +4,11 @@
 
 ### Traditional MVC
 
- ![img](images/MVC-MVP-MVVM/640.png)
+ ![img](./images/MVC-MVP-MVVM/640.png)
 
 ### One We Currently Use
 
-![img](images/MVC-MVP-MVVM/640-1607049343579.png)
+![img](./images/MVC-MVP-MVVM/640-1607049343579.png)
 
 ## MVP
 
@@ -18,13 +18,13 @@ Model-View-Presenter
 
 `Presenter` differs from `Controller` in that it is lighter, the former contains only schedule logic, without view logic(such as its lifecycle), while `Controller` does.
 
-![img](images/MVC-MVP-MVVM/640.webp)
+![img](./images/MVC-MVP-MVVM/640.webp)
 
 ## MVVM
 
 VM for `ViewModel`, which is the model for view, containing the **states/operations** for  views. And `MVVM` introduced _data binding_.
 
-![img](images/MVC-MVP-MVVM/640-1607049479581.png)
+![img](./images/MVC-MVP-MVVM/640-1607049479581.png)
 
 ## See Also
 

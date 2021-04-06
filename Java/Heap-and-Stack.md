@@ -30,8 +30,8 @@ Java虚拟机的内存可以分为三个区域：栈stack、堆heap、方法区m
 
 　　3. 用来存放程序中永远是不变或唯一的内容。(类信息【Class对象】、静态变量、字符串常量等)
 
-![1.png](images/Heap-and-Stack/1494925174358420.png)
+![1.png](./images/Heap-and-Stack/1494925174358420.png)
 
-![neicunfenxi.png](images/Heap-and-Stack/1509008324820095.png)
+![neicunfenxi.png](./images/Heap-and-Stack/1509008324820095.png)
 
 <center>图4-4 示例4-3内存分配图</center>

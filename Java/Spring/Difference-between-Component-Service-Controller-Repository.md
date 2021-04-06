@@ -14,7 +14,7 @@ For example, DispatcherServlet will look for @RequestMapping on classes that are
 
 This means @Component and @Controller are the same with respect to bean creation and dependency injection but later is a specialized form of former. Even if you replace @Controller annotation with @Compoenent, Spring can automatically detect and register the controller class but it may not work as you expect with respect to request mapping. You can further see, [**Spring Master Class**](https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=323058.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fspring-tutorial-for-beginners%2F) course on Udemy for more details about these annotations.
 
-![@Component vs  @Service vs  @Controller, and @Repository annotation in Spring](images/Difference-between-Component-Service-Controller-Repository/1.png)
+![@Component vs  @Service vs  @Controller, and @Repository annotation in Spring](./images/Difference-between-Component-Service-Controller-Repository/1.png)
 
 The same is true for @Service and @Repository annotation, they are a specialization of @Component in service and persistence layer. A Spring bean in the service layer should be annotated using @Service instead of @Component annotation and a spring bean in the persistence layer should be annotated with @Repository annotation.
 
@@ -61,7 +61,7 @@ They are scanned because they themselves are annotated with `@Component` annotat
 
 If you want to learn more about dependency injection, auto-wiring, and different types of configuration in Spring e.g. XML based, annotation-based, and Java configuration in Spring, I suggest you take the [**Spring Fundamentals course**](https://pluralsight.pxf.io/c/1193463/424552/7490?u=https%3A%2F%2Fwww.pluralsight.com%2Fcourses%2Fspring-fundamentals) on Pluralsight. A free trial is also available.
 
-![Difference between @Component, @Service, @Controller, and @Repository in Spring](images/Difference-between-Component-Service-Controller-Repository/2.png)
+![Difference between @Component, @Service, @Controller, and @Repository in Spring](./images/Difference-between-Component-Service-Controller-Repository/2.png)
 
 ### Differences between @Component, @Service, @Controller, and @Repository in Spring
 
@@ -74,7 +74,7 @@ Here is a nice summary of what does `@Component`, `@Service`, `@Controller`, and
 
 And here is the nice diagram to explain the hierarchy of all these annotations in Spring Framework:
 
-![Difference between @Component, @Service, @Controller, and @Repository in Spring](images/Difference-between-Component-Service-Controller-Repository/3.jpg)
+![Difference between @Component, @Service, @Controller, and @Repository in Spring](./images/Difference-between-Component-Service-Controller-Repository/3.jpg)
 
 That's all about the **difference between `@Component`, `@Controller`, `@Service`, and `@Repository` in Spring Framework**. As I said, all of them are used to auto-detect Spring beans when context scanning is enabled and essentially provide the same functionality with respect to dependency injection.
 

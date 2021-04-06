@@ -1,6 +1,6 @@
 # Vue Lifecycle
 
-![img](images/Lifecycle/lifecycle.png)
+![img](./images/Lifecycle/lifecycle.png)
 
 ## See also
 
