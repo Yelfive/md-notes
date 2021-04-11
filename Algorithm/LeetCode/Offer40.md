@@ -68,7 +68,7 @@ class Solution {
 }
 ```
 
-其中 *第3行* 为异常处理，*第 7-12 行* 可以使用箭头函数简化
+其中 *第3行* 为边界处理，*第 7-12 行* 可以使用箭头函数简化
 
 ```java
 PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> o2 - o1);

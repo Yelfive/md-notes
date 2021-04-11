@@ -33,7 +33,13 @@
 >
 > &emsp;- From: [FAQ – Redis](https://redis.io/topics/faq)
 
-- [为什么说Redis是单线程的以及Redis为什么这么快！_徐刘根的博客-CSDN博客_redis为什么快](https://blog.csdn.net/xlgen157387/article/details/79470556)
+事实上，Redis 6.0 开始，支持多线程，不过此时仍然是单线程处理命令，只是在网络 I/O 使用了多线程，目的是为了利用多核，提高 I/O 效率。[^redis-6.0]
+
+**See Also:**
+
+- [为什么说Redis是单线程的以及Redis为什么这么快！](https://blog.csdn.net/xlgen157387/article/details/79470556)
+
+[^redis-6.0]: [Redis 6.0 多线程重磅发布！](https://www.cnblogs.com/gz666666/p/12901507.html)
 
 ## 持久化
 
@@ -94,8 +100,10 @@ See also: [IO 多路复用是什么意思？ - 知乎](https://www.zhihu.com/que
 
 分片方式：
 
-1. 客户端拆分：客户端根据 一致性 Hash 算法 决定当前键应该存储到哪个节点。
+1. 客户端拆分：客户端根据 一致性 Hash 算法[^dht] 决定当前键应该存储到哪个节点。
 2. 代理分片：客户端将请求发送给代理，代理再进行数据转发
 3. 服务器分片：Redis Cluster
 
 *[一致性 Hash 算法]: 一致性 Hash 算法是分布式 Hash 算法（Distributed Hash Table, DHT）的实现。
+
+[^dht]: [一致性哈希算法原理 - lpfuture - 博客园](https://www.cnblogs.com/lpfuture/p/5796398.html)

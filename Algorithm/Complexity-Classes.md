@@ -1,6 +1,6 @@
 # 复杂度分类（Complexity Classes）
 
- ![File:P np np-complete np-hard.svg](images/Comlexity-classes/800px-P_np_np-complete_np-hard.svg.png)
+ ![File:P np np-complete np-hard.svg](./images/Comlexity-classes/800px-P_np_np-complete_np-hard.svg.png)
 
 <center> <em>From wikipedia</em></center>
 

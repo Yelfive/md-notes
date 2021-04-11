@@ -4,7 +4,7 @@
 
 ## 节点
 
-![image-20210303112427821](images/Deployment-Diagram/image-20210303112427821.png)
+![image-20210303112427821](./images/Deployment-Diagram/image-20210303112427821.png)
 
 - `<<Type>>`： 节点的类型
 - `节点2`：的名称
@@ -13,13 +13,13 @@
 
  物件是软件开发过程中的产物，包括过程模型（比如用例图、设计图等等）、源代码、可执行程序、设计文档、测试报告、需求原型、用户手册、**jar包**等等。物件表示如下，带有关键字`<<artifact>>`和文档图标
 
-![image-20210303144944178](images/Deployment-Diagram/image-20210303144944178.png)
+![image-20210303144944178](./images/Deployment-Diagram/image-20210303144944178.png)
 
 ## 组件（Component）
 
 组件是一组接口定义明确的抽象模块。其中可以包含物件或者组件。
 
-![image-20210303150707322](images/Deployment-Diagram/image-20210303150707322.png)
+![image-20210303150707322](./images/Deployment-Diagram/image-20210303150707322.png)
 
 ## 参考
 

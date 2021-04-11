@@ -2,7 +2,7 @@
 
 ## Diagram
 
-![1605518220464](images/Queue-Deque-Stack/1605518220464.png)
+![1605518220464](./images/Queue-Deque-Stack/1605518220464.png "Fig. Class Diagram")
 
 ## API List
 
@@ -16,9 +16,9 @@
 
 ### Deque
 
-Pronounced `[dek]`, means _Double End Queue_, which also has APIs for **queue**, **stack**.
+Pronounced `[dek]`, meaning _Double End Queue_, which also has APIs for **queue**, **stack**.
 
-| **`Queue` Method**     | **Equivalent `Deque` Method**  | Exception |
+| `Queue` Methods        | Equivalent `Deque` Method      | Exception |
 | ---------------------- | ------------------------------ | --------- |
 | [`add(e)`][add]        | [`addLast(e)`][addLast]        | Y         |
 | [`offer(e)`][offer]    | [`offerLast(e)`][offerLast]    |
@@ -38,7 +38,7 @@ Pronounced `[dek]`, means _Double End Queue_, which also has APIs for **queue**,
 > Deque<Integer> stack = new ArrayDeque<Integer>();
 > ```
 >
-> -- [Stack (Java Platform SE 7 )](https://docs.oracle.com/javase/7/docs/api/java/util/Stack.html)
+> -- From [Stack (Java Platform SE 7 )](https://docs.oracle.com/javase/7/docs/api/java/util/Stack.html)
 
 Which means this class is seldom used.
 
