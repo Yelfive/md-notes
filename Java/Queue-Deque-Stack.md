@@ -42,6 +42,12 @@ Pronounced `[dek]`, meaning _Double End Queue_, which also has APIs for **queue*
 
 Which means this class is seldom used.
 
+Method| Description
+-- |--
+empty() | Check if stack is empty, while queue uses signature `isEmpty()`
+
+
+
 [add]: https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html#add(E)
 [offer]: https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html#offer(E)
 [remove]: https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html#remove()

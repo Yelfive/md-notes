@@ -393,7 +393,7 @@ If no names are supplied, the line read is assigned to the variable `REPLY`.  Th
     A timeout for the read operation, after the given timeout, exit code greater than 0 will be returned.
 
 - `n`  Number of characters
-    
+
     Read returns after reading `n` characters rather than waiting for a complete line of input, but honor a delimiter if fewer than `n` characters are read before the delimiter.
 
     ```bash
@@ -461,7 +461,7 @@ If no names are supplied, the line read is assigned to the variable `REPLY`.  Th
     done
     ```
 
-**See Also** http://blog.csdn.net/flowingflying/article/details/5326696
+**See Also:** [Linux Bash Shell学习（十九）：String I/O——read_愷风（Wei）的专栏](https://blog.csdn.net/flowingflying/article/details/5326696)
 
 ### kill
 
@@ -477,9 +477,15 @@ To send signal to process or to list available signal.
 ```bash
 # list process with port 80
 lsof -i :80
+
 # list all process with ports
-lsof -i -P 
+lsof -i -P
+
+# List opened files by pid
+lsof -p <pid>
 ```
+
+See more: [lsof 查看进程打开那些文件](https://www.cnblogs.com/bonelee/p/7735479.html)
 
 ### sed
 

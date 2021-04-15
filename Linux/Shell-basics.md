@@ -1,6 +1,6 @@
-# shell basics
+# Shell Basics
 
-> bash: Bourne Again SHell
+**bash**: <acr>Bourne Again SHell</acr>
 
 ## wildcard
 
@@ -33,24 +33,26 @@ Presentation| Description
 `$@`        | Same as above
 `$!`        | Last process id of the script run at background
 `$$`        | Current process id
-`$-`        | Show options passed to `sh/bash`, same as command `set`
-`$?`        | Return exit code of the last command: `echo command ; echo $?`
+`$-`        | Show the set of options passed to shell
+`$?`        | Return exit code of the last command: `command ; echo $?`
 
-**$-** 
+**More about `$-`:**
 
-    ```sh
-    #test.sh
-    echo $-
-    ```
+```sh
+> echo $-
 
-    ```sh
-    sh -i test.sh
-    # himB
-    # -h for file
-    # -i for interactive
-    # -m for monitor mode, which is default to be on when -i set
-    # -B for Brace Expansion, `a{b,c}d` for `abd acd`
-    ```
+himBH
+```
+
+And the `himBH` stands for the options: `h`, `i`, `m`, `B`, `H`.
+
+- `-h` for `hashall`
+- `-i` for `interactive`
+- `-m` for `monitor`, which is default to be on when `-i` is set
+- `-B` for `braceexpand`, expand `a{b,c}d` as `abd acd`
+- `-H` for `histexpand`
+
+For more information, hit `help set` in your shell.
 
 ## Expression
 
@@ -69,8 +71,6 @@ same as the following, notice the space between `[` and `expression` and `]`
 [ expression ]
 ```
 
-
-
 ## if
 
 It takes a command as condition, and depends on its exit code to consider as true or false:
@@ -86,8 +86,7 @@ fi
 
 ## read
 
-> read input from terminal, interactively.
-> And then stores the value in `var`
+Read input from `stdin` interactively and then stores the value in `var`.
 
 ```bash
 read var
@@ -187,3 +186,7 @@ Similar to PHP as:
 $string = fgets(STDIN);
 var_dump($string);
 ```
+
+## Redirect
+
+Shell provides the ability to redirect content to a file(Linux takes all file, directories, devices etc. as files). Refer to [Redirect](./Redirect.md) for more information.

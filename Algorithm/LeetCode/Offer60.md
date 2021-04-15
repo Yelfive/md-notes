@@ -39,11 +39,56 @@
 由此可以得到动态规划函数：
 
 $$
-dp(n,k) = \sum_{i=1}^6{dp(n-1, k-i)} \tag{60-1}
+dp(n,k) = \sum_{i=1}^{\min{\{6,\ k\}}}{dp(n-1, k-i)} \tag{60-1}
 $$
+
+---
+
+**复杂度分析：**
+
+- 时间复杂度：$O(n^2)$
+- 空间复杂度：$O(n^2)$
+
+---
 
 **Code In Java:**
 
 ```java
+class Solution {
+    public double[] dicesProbability(int n) {
+        if (n == 0) return new double[0];
 
+        int[][] dp = new int[n][6 * n];
+        double[] prob = new double[5 * n + 1];
+
+        for (int i = 0; i < 6; i++) dp[0][i] = 1; // when there's only one dice
+
+        for (int i = 2; i <= n; i ++) { // when there are `i` dices
+            int max = 6 * i;
+            for (int k = i; k <= max; k++) {
+                for (int j = 1; j <= 6 && j < k; j++) { // `j` stands of the decrement
+                    dp[i - 1][k - 1] += dp[i - 2][k - j - 1];
+                }
+            }
+        }
+
+        double dividend = Math.pow(6, n);
+
+        for (int i = 0; i < prob.length; i++) {
+            prob[i] = dp[n - 1][n + i - 1] / dividend;
+        }
+        return prob;
+    }
+}
 ```
+
+**空间优化：**<todo/>
+
+由于上面的算法使用了一个二维数组来保存 `dp`。实际上二维数组中，$\forall\ i < j\ or\ i > j + 6,\ dp[i][j] = 0$。
+也就是说，有超过一半的空间都浪费了。再者，由状态方程$(60-1)$，
+
+$$
+dp(n,k) = \sum_{i=1} ^{\min{\{6,\ k\}}} {dp(n-1, k-i)}
+$$
+
+我们可以看到，对于每个 $k$， ~~当前状态 $dp(n)$ 只与上一个状态 $dp(n-1)$ 中的 6 个值有关，于是可以使用一个长度为12的一维数组来保存上一个状态~~。
