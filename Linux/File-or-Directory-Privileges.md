@@ -38,7 +38,7 @@ And as to set the privileges, there are three operators:
 2. `-` Minus the given privilege (of specified role)
 3. `+` Plus the given privilege (of specified role)
 
-For example 
+For example
 
 ```bash
 # change mode bits,
@@ -47,20 +47,23 @@ For example
 # plus execute privilege to others
 chmod u+w,g+r,o+x filename
 ```
-   
+
 > Note there should not be space after comma(`,`), otherwise the privilege parts after the space will be taken by `chmod` as file names
 
-### Privilege of Directory
+### Privileges of Directory
 
 The privileges `rwx` for directories differs from that of files
 
 - `r` Readable, allows to list the files inside, e.g. with `ls` command
 - `w` Writable, allows to create, modify, delete files inside.
-- `x` Executable, allows to use `cd` to this directory
+- `x` Executable, allows operations such as to use `cd` to get into the directory
+
+    > When set for a directory, the execute permission is interpreted as the search permission: it grants the ability to access file contents and meta-information if its name is known, but not list files inside the directory, unless read is set also.[^wikipedia]
+
 - `-` No privilege at all
-- `s`
-    + 
-- `t`
+- `s` <todo/>
+- `t` <todo/>
+
     ```
     s:
           文件(set uid)：4，任何人访问，都以拥有者角色访问
@@ -71,6 +74,8 @@ The privileges `rwx` for directories differs from that of files
     的权限设置为任何人都可以读写
         chmod 666 /test/*
     ```
+
+Hit `man ls` for more information.
 
 ## umask
 
@@ -98,14 +103,14 @@ umask -pS
 # umask -S u=rwx,g=rx,o=rx
 ```
 
-Generally speaking, the default privilege when creating: 
+Generally speaking, the default privilege when creating:
 
-- a file it's `0666` 
+- a file it's `0666`
 - a directory it's `0777`
 
 and when you create a file or a directory, it will have the privilege with `file's default` minus the corresponding `mask`.
 
-**For example**
+**For example:**
 
 If the `umask` returns `0022`.
 
@@ -122,3 +127,5 @@ If the `umask` returns `0022`.
     # drwxr-xr-x
     0777 - 0022 = 0755
     ```
+
+[^wikipedia]: [File-system permissions - Wikipedia](https://en.wikipedia.org/wiki/File-system_permissions)

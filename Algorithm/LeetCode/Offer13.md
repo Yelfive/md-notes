@@ -26,7 +26,7 @@
 
 ## Solution
 
-> [作者：jyd](https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/solution/mian-shi-ti-13-ji-qi-ren-de-yun-dong-fan-wei-dfs-b/)
+### 回溯[^jyd]
 
 - `si`: sum of `i`
 - `sj`: sum of `j`
@@ -50,7 +50,9 @@ class Solution {
 
 :::tip
 
-1. 当 $(x + 1) \odot 10 = 0$  时： $s_{x+1} = s_x - 8$，例如 $19$ -> $20$ 的数位和分别为 $10$ -> $2$；
-2. 当 $(x + 1) \odot 10 \neq 0$ 时： $s_{x+1} = s_x + 1$，例如 $1$ -> $2$ 的数位和分别为 $1$ -> $2$。
+1. 当 $(x + 1) \mod 10 = 0$  时： $s_{x+1} = s_x - 8$，例如 $19$ -> $20$ 的数位和分别为 $10$ -> $2$；
+2. 当 $(x + 1) \mod 10 \neq 0$ 时： $s_{x+1} = s_x + 1$，例如 $1$ -> $2$ 的数位和分别为 $1$ -> $2$。
 
 :::
+
+[^jyd]: [作者：jyd](https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/solution/mian-shi-ti-13-ji-qi-ren-de-yun-dong-fan-wei-dfs-b/)
