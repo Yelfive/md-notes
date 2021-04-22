@@ -6,19 +6,22 @@
 
 [![Join the chat at https://gitter.im/jlevy/the-art-of-command-line](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jlevy/the-art-of-command-line?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-
-- [Meta](#meta)
-- [Basics](#basics)
-- [Everyday use](#everyday-use)
-- [Processing files and data](#processing-files-and-data)
-- [System debugging](#system-debugging)
-- [One-liners](#one-liners)
-- [Obscure but useful](#obscure-but-useful)
-- [macOS only](#macos-only)
-- [Windows only](#windows-only)
-- [More resources](#more-resources)
-- [Disclaimer](#disclaimer)
-
+- [The Art of Command Line](#the-art-of-command-line)
+  - [Meta](#meta)
+  - [Basics](#basics)
+  - [Everyday use](#everyday-use)
+  - [Processing files and data](#processing-files-and-data)
+  - [System debugging](#system-debugging)
+  - [One-liners](#one-liners)
+  - [Obscure but useful](#obscure-but-useful)
+  - [macOS only](#macos-only)
+  - [Windows only](#windows-only)
+    - [Ways to obtain Unix tools under Windows](#ways-to-obtain-unix-tools-under-windows)
+    - [Useful Windows command-line tools](#useful-windows-command-line-tools)
+    - [Cygwin tips and tricks](#cygwin-tips-and-tricks)
+  - [More resources](#more-resources)
+  - [Disclaimer](#disclaimer)
+  - [License](#license)
 
 ![curl -s 'https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README.md' | egrep -o '`\w+`' | tr -d '`' | cowsay -W50](cowsay.png)
 
