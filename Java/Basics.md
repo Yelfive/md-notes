@@ -1002,6 +1002,27 @@ thread.setPriority(priority);
     }
     ```
 
+3. synchronized static block
+
+    ```java
+    public class Account {
+        public static synchronized void withdraw() {
+            // Multiple calls to Account::withdraw will be exclusive
+        }
+    }
+    ```
+
+    It's the same as the following
+
+    ```java
+    public class Account{
+        public static void withdraw() {
+            synchronized(Account.class) {
+            }
+        }
+    }
+    ```
+
 ## Access Modifiers
 
 |      Modifier       | Class | Package | Subclass | World |

@@ -64,8 +64,8 @@ ls -l 1>file.txt 2>&1
 
 It redirects standard output to `file.txt`, and redirects standard error to standard output, which is also redirected to `file.txt` .
 
-The `2>&1` should be behind standard output redirection(`1>file.txt`).
-Otherwise, when error occurs from the command(`ls -l` in this example), it will have redirect to `stdout`
+**NOTICE** that the `2>&1` should be behind standard output redirection(`1>file.txt`).
+Otherwise, when error occurs from the command(`ls -l` in this example), it will have redirect to `stdout`:
 
 ```sh
 command 2>&1 1>/dev/null
@@ -73,7 +73,13 @@ command 2>&1 1>/dev/null
 
 The `stderr` will be redirected to standard error, and the output to descriptor `1` will redirect to `/dev/null`.
 
-![picture 1](./images/Redirect/_20210413163805_88.png "Fig. stderr redirect before stdout")
+<image-player>
+
+![picture 3](./images/Redirect/redirect_normal_20210423161606_33.png "Fig. 1-1  Before I/O redirect")
+![picture 5](./images/Redirect/pic_1619166152258_20210423162234_63.png "Fig. 1-2  Redirect `stdout` to `/dev/null`")
+![picture 4](./images/Redirect/pic_1619166068218_20210423162111_81.png "Fig. 1-3  Redirect `stderr` to `stdout`, which is actually pointed to `/dev/null`")
+
+</image-player>
 
 :::tip
 
@@ -141,9 +147,32 @@ Pipe(`|`) can be used to redirect `stdout` from former command(*commandA*) to `s
 commandA | commandB
 ```
 
-## A bit more about how shell works with files
+Typically, when we use pipe, commands are executed in separated processes.
 
-When shell performs I/O redirect, it firstly parses the command given, if there are files(descriptors), the file(descriptors) will be opened first. For instance,
+For example:
+
+```sh
+A | B | C
+```
+
+The processes are spawned(via `fork` and `exec` system call) like this:
+
+```mermaid
+graph LR
+    shell((Shell)) --spawns--> A((A)) --spawns--> B((B)) --spawns--> C((C))
+    p((parent)) ----> |spawns| c((child))
+```
+
+As illustrated above, `shell` will be the first parent,
+which spawns *proc A* which spawns *proc B* which spawns *proc C*.
+
+Parent processes and children are then executed simultaneously.
+However, a child process will typically sleep on *'waiting for data from `stdin`'* until its parent process sends data to `stdout`.
+After being waked up because of have some `stdin`, the child process goes on running.
+
+That will explain the following example.
+
+Say you run the following command,
 
 ```sh
 ls -la | tee result.txt
@@ -157,3 +186,41 @@ and you will see the `result.txt` listed(result.txt is list below), which means,
 result.txt
 others
 ```
+
+## A Bit More About How Redirects Works with Files
+
+Suppose you run the following command,
+
+```sh
+cat file.txt > file.txt
+```
+
+This will end up clearing the `file.txt`, no matter whether there was something in it before.
+
+Because in order to redirect `cat file.txt` to file `file.txt`, shell will have to first open `file.txt` before `dup` file descriptors,
+and `>` indicates the shell to open the file with `O_CREAT` flag,which empty the file and then write from the beginning.
+
+The following flow chart depict the algorithm.
+
+```mermaid
+flowchart TD
+    append["open(file.txt, O_APPEND)"]
+    create["open(file.txt, O_CREAT)"]
+    e(["Finish system call open"])
+    rest[Rest of Algorithm]
+
+    start([Start])  --> redirect{"Append? (> or >>)"}
+
+    redirect --> |"&emsp;>"| create
+    redirect --> |">>"| append
+
+    create  --> clear["Clear File"]
+    clear   --> rest
+    append  --> rest
+
+    rest --> e
+```
+
+## Appendix
+
+1. [尴尬，一不小心把 Linux 管道给整漏了](https://mp.weixin.qq.com/s/p3rwjoCWN2WnH4xxtwDiyQ)

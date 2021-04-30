@@ -113,3 +113,7 @@ public class Offer60Test {
 ```
 
 - `@MethodSource` specifies the test cases come from **method**, and the default method name of data source is the same as the method name it is used on.
+
+**See Also:**
+
+- [JUnit5学习之七：参数化测试(Parameterized Tests)进阶_程序员欣宸的博客-CSDN博客](https://xinchen.blog.csdn.net/article/details/108942301)

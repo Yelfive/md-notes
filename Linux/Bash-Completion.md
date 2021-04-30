@@ -1,20 +1,24 @@
-Bash Completion
-===
+# Bash Completion
 
 1. Install bash completion
 
     **CentOS**
 
-    > yum install -y bash-completion
+    ```shell
+    yum install -y bash-completion
+    ```
 
     **Ubuntu**
 
-    
-    > apt-get install -y bash-completion
-    
+    ```shell
+    apt-get install -y bash-completion
+    ```
+
     **Mac**
 
-    > brew install bash-completion
+    ```shell
+    brew install bash-completion
+    ```
 
 2. Place the completion in `/etc/bash_completion.d/`
 
@@ -22,11 +26,15 @@ Bash Completion
 
     **Linux**
 
-    > . /usr/share/bash-completion/bash_completion
+    ```bash
+    . /usr/share/bash-completion/bash_completion
+    ```
 
     **Mac**
 
-    > . /usr/local/etc/bash_completion
+    ```bash
+    . /usr/local/etc/bash_completion
+    ```
 
     ```bash
     # add to ~/.bash_profile
@@ -38,11 +46,10 @@ Bash Completion
 
 4. Enjoy!
 
-### Notice
+## Notice
 
 1. How to custom a completion
 
 ## Appendix
 
 docker: https://docs.docker.com/machine/completion/
-

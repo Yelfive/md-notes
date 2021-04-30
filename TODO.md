@@ -1,15 +1,17 @@
 # TODO
 
+## Important
+
 <font color="#ff8181">
 
-## Important
+- [ ] Command `ps`
+
+</font>
 
 - [ ] encapsulate the `PHPUnit` like Laravel, except mine should be based on **`curl`** not the framework
 - [ ] bash `expect`
 - [ ] 区块链
 - [ ] IoC (Inversion of Control), DI (Dependency Injection), DL (Dependency Lookup)
-
-</font>
 
 - [ ] PHP iterators: http://php.net/manual/en/class.iteratoriterator.php
 - [ ] Behavior Driven Developing
@@ -38,8 +40,8 @@
 - [ ] Linux `sed` stream edit?
 - [ ] strace, ptrace, dtrace, ltrace
 - [ ] human-machine verification like [reCaptcha](https://www.google.com/recaptcha/intro/android.html)
-    - https://www.zhihu.com/question/37572783
-    - recaptcha.net/recaptcha/api.js
+  - https://www.zhihu.com/question/37572783
+  - recaptcha.net/recaptcha/api.js
 
 - [ ] C, force type changing, struct stuff
 - [ ] PHP Opcode

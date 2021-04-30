@@ -50,9 +50,7 @@ $\{0, 1, ···, n-1\}$ 这 $n$ 个数字排成一个圆圈，从数字 $0$ 开�
 
 ![picture 4](./images/Offer62/josephus_reverse_20210331102402_78.png "Fig.2 Reverse Josephus Problem")
 
-:::tip
-图片来源：aspenstarss[^leet-code-solution]
-:::
+> 图片来源：aspenstarss[^leet-code-solution]
 
 **代码：**
 

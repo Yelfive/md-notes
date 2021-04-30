@@ -1,16 +1,16 @@
-System Call
-===========
+# System Call
 
-一、进程控制：
----------------------
+系统调用是操作系统提供的底层算法集合，通常由 **汇编** 或 **C 语言** 编写。C 语言函数库提供了调用系统调用的入口。
 
-| System Call    | Description    
-| ---            | ---            
+## 一、进程控制
+
+| System Call    | Description
+| ---            | ---
 | fork           | 创建一个新进程
 | clone          | 按指定条件创建子进程
 | execve         | 运行可执行文件
-| exit           | 中止进程   
-| _exit          | 立即中止当前进程
+| exit           | 进程退出并发出状态码
+| _exit          | 立即中止当前进程。与 `exit` 的区别在于，使用 `_exit` 不是清楚父进程的 I/O 数据结构，当子进程没有使用 `exec` 时，必须使用 `_exit`
 | getdtablesize  | 进程所能打开的最大文件数
 | getpgid        | 获取指定进程组标识号
 | setpgid        | 设置指定进程组标志号
@@ -26,7 +26,7 @@ System Call
 | pause          | 挂起进程，等待信号
 | personality    | 设置进程运行域
 | prctl          | 对进程进行特定操作
-| ptrace         | 进程跟踪   
+| ptrace         | 进程跟踪
 | sched_get_priority_max| 取得静态优先级的上限
 | sched_get_priority_min| 取得静态优先级的下限
 | sched_getparam | 取得进程的调度参数
@@ -37,27 +37,26 @@ System Call
 | sched_yield    | 进程主动让出处理器,并将自己等候调度队列队尾
 | vfork          | 创建一个子进程，以供执行新程序，常与execve等同时使用
 | wait           | 等待子进程终止
-| wait3          | 参见wait     
+| wait3          | 参见wait
 | waitpid        | 等待指定子进程终止
-| wait4          | 参见waitpid  
+| wait4          | 参见waitpid
 | capget         | 获取进程权限
 | capset         | 设置进程权限
 | getsid         | 获取会晤标识号
 | setsid         | 设置会晤标识号
 
-二、文件系统控制
-------------------------
+## 二、文件系统控制
 
-##### 1、文件读写操作
+### 1、文件读写操作
 
-| System Call    | Description    
-| ---            | ---            
-| fcntl          | 文件控制   
-| open           | 打开文件   
+| System Call    | Description
+| ---            | ---
+| fcntl          | 文件控制
+| open           | 打开文件
 | creat          | 创建新文件
 | close          | 关闭文件描述字
-| read           | 读文件      
-| write          | 写文件      
+| read           | 读文件
+| write          | 写文件
 | readv          | 从文件读入数据到缓冲数组中
 | writev         | 将缓冲数组里的数据写入文件
 | pread          | 对文件随机读
@@ -68,51 +67,50 @@ System Call
 | dup2           | 按指定条件复制文件描述字
 | flock          | 文件加/解锁
 | poll           | I/O多路转换
-| truncate       | 截断文件   
-| ftruncate      | 参见truncate 
+| truncate       | 截断文件
+| ftruncate      | 参见truncate
 | umask          | 设置文件权限掩码
 | fsync          | 把文件在内存中的部分写回磁盘
 
-##### 2、文件系统操作
+### 2、文件系统操作
 
-| System Call    | Description    
-| ---            | ---            
+| System Call    | Description
+| ---            | ---
 | access         | 确定文件的可存取性
 | chdir          | 改变当前工作目录
-| fchdir         | 参见chdir    
+| fchdir         | 参见chdir
 | chmod          | 改变文件方式
-| fchmod         | 参见chmod    
+| fchmod         | 参见chmod
 | chown          | 改变文件的属主或用户组
-| fchown         | 参见chown    
-| lchown         | 参见chown    
+| fchown         | 参见chown
+| lchown         | 参见chown
 | chroot         | 改变根目录
 | stat           | 取文件状态信息
-| lstat          | 参见stat     
-| fstat          | 参见stat     
+| lstat          | 参见stat
+| fstat          | 参见stat
 | statfs         | 取文件系统信息
-| fstatfs        | 参见statfs   
+| fstatfs        | 参见statfs
 | readdir        | 读取目录项
 | getdents       | 读取目录项
-| mkdir          | 创建目录   
+| mkdir          | 创建目录
 | mknod          | 创建索引节点
-| rmdir          | 删除目录   
-| rename         | 文件改名   
-| link           | 创建链接   
+| rmdir          | 删除目录
+| rename         | 文件改名
+| link           | 创建链接
 | symlink        | 创建符号链接
-| unlink         | 删除链接   
+| unlink         | 删除链接
 | readlink       | 读符号链接的值
 | mount          | 安装文件系统
 | umount         | 卸下文件系统
 | ustat          | 取文件系统信息
 | utime          | 改变文件的访问修改时间
-| utimes         | 参见utime    
+| utimes         | 参见utime
 | quotactl       | 控制磁盘配额
 
-三、系统控制
-------------------
+## 三、系统控制
 
-| System Call    | Description    
-| ---            | ---            
+| System Call    | Description
+| ---            | ---
 | ioctl          | I/O总控制函数
 | _sysctl        | 读/写系统参数
 | acct           | 启用或禁止进程记账
@@ -123,7 +121,7 @@ System Call
 | ioperm         | 设置端口I/O权限
 | iopl           | 改变进程I/O权限级别
 | outb           | 低级端口操作
-| reboot         | 重新启动   
+| reboot         | 重新启动
 | swapon         | 打开交换文件和设备
 | swapoff        | 关闭交换文件和设备
 | bdflush        | 控制bdflush守护进程
@@ -148,13 +146,12 @@ System Call
 | query_module   | 查询模块信息
 | *get_kernel_syms| 取得核心符号,已被query_module代替
 
-四、内存管理
-------------------
+## 四、内存管理
 
-| System Call    | Description    
-| ---            | ---            
+| System Call    | Description
+| ---            | ---
 | brk            | 改变数据段空间的分配
-| sbrk           | 参见brk      
+| sbrk           | 参见brk
 | mlock          | 内存页面加锁
 | munlock        | 内存页面解锁
 | mlockall       | 调用进程所有内存页面加锁
@@ -168,34 +165,32 @@ System Call
 | sync           | 将内存缓冲区数据写回硬盘
 | cacheflush     | 将指定缓冲区中的内容写回磁盘
 
-五、网络管理
-------------------
+## 五、网络管理
 
-| System Call    | Description    
-| ---            | ---            
-| getdomainname  | 取域名      
-| setdomainname  | 设置域名   
+| System Call    | Description
+| ---            | ---
+| getdomainname  | 取域名
+| setdomainname  | 设置域名
 | gethostid      | 获取主机标识号
 | sethostid      | 设置主机标识号
 | gethostname    | 获取本主机名称
 | sethostname    | 设置主机名称
 
-六、socket控制
-------------------
+## 六、socket控制
 
-| System Call    | Description    
-| ---            | ---            
+| System Call    | Description
+| ---            | ---
 | socketcall     | socket系统调用
-| socket         | 建立socket   
+| socket         | 建立socket
 | bind           | 绑定socket到端口
 | connect        | 连接远程主机
 | accept         | 响应socket连接请求
 | send           | 通过socket发送信息
 | sendto         | 发送UDP信息
-| sendmsg        | 参见send     
+| sendmsg        | 参见send
 | recv           | 通过socket接收信息
 | recvfrom       | 接收UDP信息
-| recvmsg        | 参见recv     
+| recvmsg        | 参见recv
 | listen         | 监听socket端口
 | select         | 对多路同步I/O进行轮询
 | shutdown       | 关闭socket上的连接
@@ -206,11 +201,10 @@ System Call
 | sendfile       | 在文件或端口间传输数据
 | socketpair     | 创建一对已联接的无名socket
 
-七、用户管理
-------------------
+## 七、用户管理
 
-| System Call    | Description    
-| ---            | ---            
+| System Call    | Description
+| ---            | ---
 | getuid         | 获取用户标识号
 | setuid         | 设置用户标志号
 | getgid         | 获取组标识号
@@ -230,22 +224,21 @@ System Call
 | getgroups      | 获取后补组标志清单
 | setgroups      | 设置后补组标志清单
 
-八、进程间通信
----------------------
+## 八、进程间通信
 
-| System Call    | Description    
-| ---            | ---            
+| System Call    | Description
+| ---            | ---
 | ipc            | 进程间通信总控制调用
 
-##### 1、信号
+### 1、信号
 
-| System Call    | Description    
-| ---            | ---            
+| System Call    | Description
+| ---            | ---
 | sigaction      | 设置对指定信号的处理方法
 | sigprocmask    | 根据参数对信号集中的信号执行阻塞/解除阻塞等操作
 | sigpending     | 为指定的被阻塞信号设置队列
 | sigsuspend     | 挂起进程等待特定信号
-| signal         | 参见signal   
+| signal         | 参见signal
 | kill           | 向进程或进程组发信号
 | *sigblock      | 向被阻塞信号掩码中添加信号,已被sigprocmask代替
 | *siggetmask    | 取得现有阻塞信号掩码,已被sigprocmask代替
@@ -255,35 +248,34 @@ System Call
 | sigvec         | 为兼容BSD而设的信号处理函数,作用类似sigaction
 | ssetmask       | ANSI C的信号处理函数,作用类似sigaction
 
-##### 2、消息
+### 2、消息
 
-| System Call    | Description    
-| ---            | ---            
+| System Call    | Description
+| ---            | ---
 | msgctl         | 消息控制操作
 | msgget         | 获取消息队列
-| msgsnd         | 发消息      
-| msgrcv         | 取消息      
+| msgsnd         | 发消息
+| msgrcv         | 取消息
 
-##### 3、管道
+### 3、管道
 
-| System Call    | Description    
-| ---            | ---            
-| pipe           | 创建管道   
+| System Call    | Description
+| ---            | ---
+| pipe           | 创建管道
 
-##### 4、信号量
+### 4、信号量
 
-| System Call    | Description    
-| ---            | ---            
+| System Call    | Description
+| ---            | ---
 | semctl         | 信号量控制
 | semget         | 获取一组信号量
 | semop          | 信号量操作
 
-##### 5、共享内存
+### 5、共享内存
 
-| System Call    | Description    
-| ---            | ---            
+| System Call    | Description
+| ---            | ---
 | shmctl         | 控制共享内存
 | shmget         | 获取共享内存
 | shmat          | 连接共享内存
 | shmdt          | 拆卸共享内存
-

@@ -106,7 +106,7 @@ $$
 
 并设 $local\_max(i)$ 表示 $\left\{a_1, ..., a_i\right\}$ 包含 $a_i$ 的局部最大值。
 
-:::tip
+:::tip <todo/>
 **为什么要设 $local\_max(i)$ 包含 $a_i$？**
 
 这样可以利用 $local\_max(i)$ 递推出 $local\_max(i + 1)$，满足连续字段和要求。

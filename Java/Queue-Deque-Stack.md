@@ -27,6 +27,12 @@ Pronounced `[dek]`, meaning _Double End Queue_, which also has APIs for **queue*
 | [`element()`][element] | [`getFirst()`][getFirst]       | Y         |
 | [`peek()`][peek]       | [`peekFirst()`][peekFirst]     |
 
+:::tip
+
+For the purpose of compatibility, `Deque` also provides methods behave the same in `Queue`, such as `Deque::add`, which means `addLast` with a returned value - `true`.
+
+:::
+
 ### LinkedList
 
 ### Stack

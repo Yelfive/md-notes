@@ -161,7 +161,7 @@ DP 寻找的是最优解。
 
 深度优先
 
-搜索求解：穷举、深度优先（回溯）、广度优先
+搜索求解：穷举、深度优先（回溯）、广度优先(BFS, Breadth First Search)
 
 问题|时间复杂度|空间复杂度|解空间|描述
 -- | -- | -- | -- | --
@@ -178,11 +178,41 @@ N-皇后问题|$O(n!)$|$O(n)$|排列树|
 最优装载问题时，等价于将 $c_1$ 尽量装满，其余的装载在 $c_2$，从而转化为 0-1 背包问题。
 其中的“价值”为此处集装箱的“重量”
 
+1. 广度优先时，可以使用队列进行搜索
+
+    ```java
+    while (!queue.isEmpty()) {
+        Node node = queue.remove();
+        queue.add(node.left);
+        queue.add(node.right);
+
+        // Do sth with `node.val` or the whole `node`
+    }
+    ```
+
+2. 深度优先时，可以使用递归进行搜索，或者使用 **栈** 进行模拟
+
+    ```java
+    while (!stack.empty()) {
+        Node node = stack.pop();
+
+        /* pre order */
+        stack.push(node.left);
+        /* in order */
+        stack.push(node.right);
+        /* post order */
+    }
+    ```
+
+    :::tip
+    通过在 `pre order`, `in order`, `post order` 处理当前节点，可以分别实现对应的根序遍历。
+    :::
+
 ### 6. Branch and Bound Method (分支限界法)
 
 类似[回溯法](#5-backtracking-algorithm-回溯-sù)，在解空间中搜索，他们主要区别在于，
 
-|| 回溯法 | 分支限界法 |
+|    | 回溯法 | 分支限界法 |
 | -- | -- | -- |
 |**求解目标**|搜索全部解|搜索最优解/任意解|
 |**搜索方式**|深度优先（DFS）|广度优先（Breadth First Search BFS） 或 *最小耗费优先*|
