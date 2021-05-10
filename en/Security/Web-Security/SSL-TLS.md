@@ -1,11 +1,9 @@
-# 传输层安全: SSL 与 TLS
-
-SSL 与 TLS 都是为了加强 TCP 协议的安全性，分别为以下缩写：
+# Transport Layer Security: SSL and TLS
 
 - TLS: <acr>Transport Layer Security</acr>
 - SSL: <acr>Secure Socket Layer</acr>
 
-## 什么是 SSL/TLS
+## History: What are They
 
 SSL 由 Netscape 设计并发布，而后交给 ISO，并更名为 TLS。由于这样的历史原因， SSL 与 TLS 两个术语有时会互换使用。
 
@@ -22,7 +20,7 @@ SSL 由 Netscape 设计并发布，而后交给 ISO，并更名为 TLS。由于�
 - 2011年，发布了 TLS 1.2 的修订版。
 - 2018年，发布了 TLS 1.3。
 
-## SSL/TLS 工作原理
+## How They Works
 
 在 TCP 建立连接之后，经过 4 次握手，完成了 TLS 连接。
 
@@ -38,12 +36,12 @@ sequenceDiagram
     Server  ->> Client: MAC of all message during handshaking
 ```
 
-::: tip 相关术语
+::: tip Terminology
 
-- MAC: Message Authentication Code，报文鉴别码
-- PMS: Pre-Master Secret，前主密钥
-- MS: Master Secret，主密钥
-- Nonce: 不重数
+- MAC: Message Authentication Code
+- PMS: Pre-Master Secret
+- MS: Master Secret
+- Nonce: Unique random number
 
 :::
 

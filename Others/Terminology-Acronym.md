@@ -14,6 +14,7 @@
 4. SR: Selective Repeat
 5. NIC: Network Interface Card
 6. MAC: Medium Access Control
+7. ISO: Internet Standard Organization
 
 ## Network Layer
 
