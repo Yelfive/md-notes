@@ -2,7 +2,7 @@
 
 通过 `java.util.Comparator` 接口创建大根堆、小根堆。
 
-PriorityQueue 把堆顶放在下标为 `0` 的位子，当 `offer` 插入一个值时，将折半判断是否放在 $\frac{k}{2}$ 元素前面，只保证最小（大）的元素一定放在 `0` 的位子。
+PriorityQueue 把堆顶放在下标为 `0` 的位置，当 `offer` 插入一个值时，将折半判断是否放在 $\frac{k}{2}$ 元素前面，只保证最小（大）的元素一定放在 `0` 的位置。
 
 ```java
 public class PriorityQueue {
@@ -46,7 +46,7 @@ public class PriorityQueue {
 }
 ```
 
-在获取（`poll`）堆顶元素时，返回位子为 0 的元素，同时调用 `siftDown` 方法对堆进行排序，保证堆顶元素为最小元素。
+在获取（`poll`）堆顶元素时，返回位置为 0 的元素，同时调用 `siftDown` 方法对堆进行排序，保证堆顶元素为最小元素。
 
 ```java
 public E poll() {
