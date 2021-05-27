@@ -1,11 +1,11 @@
-# 传输层安全: SSL 与 TLS
+# Transport Layer Security: SSL and TLS
 
-SSL and TLS are both used to reinforce the security of TCP, which stand for,
+SSL 与 TLS 都是为了加强 TCP 协议的安全性，分别为以下缩写：
 
 - TLS: <acr>Transport Layer Security</acr>
 - SSL: <acr>Secure Socket Layer</acr>
 
-## What are SSL/TLS
+## History: What are They
 
 SSL 由 Netscape 设计并发布，而后交给 ISO，并更名为 TLS。由于这样的历史原因， SSL 与 TLS 两个术语有时会互换使用。
 
@@ -22,7 +22,7 @@ SSL 由 Netscape 设计并发布，而后交给 ISO，并更名为 TLS。由于�
 - 2011年，发布了 TLS 1.2 的修订版。
 - 2018年，发布了 TLS 1.3。
 
-## How SSL/TLS works
+## How They Works
 
 在 TCP 建立连接之后，经过 4 次握手，完成了 TLS 连接。
 
