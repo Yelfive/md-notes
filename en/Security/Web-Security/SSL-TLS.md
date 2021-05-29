@@ -2,7 +2,7 @@
 recommend: true
 ---
 
-# Transport Layer Security: SSL 与 TLS
+# Transport Layer Security: SSL and TLS
 
 SSL and TLS are both used to reinforce the security of TCP, which stand for,
 
