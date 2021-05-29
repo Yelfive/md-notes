@@ -1,3 +1,5 @@
-# Hello notes
+# YELFIVE Notes
 
-This is a note page
+This repo records things I learning during work and life.
+
+Sometimes it may be a memo.
