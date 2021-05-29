@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # How to Require from Local Path
 
 Composer allows you to load from local filesystem for packages. This is achieved through `composer.json` under root of your project.

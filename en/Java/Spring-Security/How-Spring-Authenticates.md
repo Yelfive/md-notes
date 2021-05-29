@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # How Spring Authenticates
 
 ![image-20200721154059038](./images/How-Spring-Authenticates/image-20200721154059038.png)

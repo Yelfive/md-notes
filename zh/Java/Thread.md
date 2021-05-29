@@ -1,6 +1,10 @@
+---
+recommend: true
+---
+
 # Java 线程
 
-Java&trade; 线程有三种创建方式
+Java(tm) 线程有三种创建方式
 
 1. `implements Runnable`
 2. `implements Callable`

@@ -125,7 +125,8 @@ There may be another setting overwrites your setting bellow:
 felix   ALL=(ALL:ALL) NOPASSWD: /usr/bin/docker
 %sudo   ALL=(ALL:ALL) ALL
 ```
-if the `felix` is also in group `sudo`, then the previous setting will not take effects.
+
+If the `felix` is also in group `sudo`, then the previous setting will not take effects.
 
 ### 2. If you happen to lock yourself out of `sudo`, worry not
 

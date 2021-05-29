@@ -1,5 +1,6 @@
 ---
 keywords: quick sort
+recommend: true
 ---
 
 # 快速排序 <todo/>

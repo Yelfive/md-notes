@@ -1,4 +1,8 @@
-# 传输层安全: SSL 与 TLS
+---
+recommend: true
+---
+
+# Transport Layer Security: SSL 与 TLS
 
 SSL and TLS are both used to reinforce the security of TCP, which stand for,
 
@@ -7,24 +11,26 @@ SSL and TLS are both used to reinforce the security of TCP, which stand for,
 
 ## What are SSL/TLS
 
-SSL 由 Netscape 设计并发布，而后交给 ISO，并更名为 TLS。由于这样的历史原因， SSL 与 TLS 两个术语有时会互换使用。
+SSL was first designed and published by Netscape, then handed over to ISO who later renamed it to TLS. For such historical reasons, the terms SSL and TLS are sometimes used interchangeably.
 
-- 1994年，Netscape 公司设计了 SSL 协议（Secure Sockets Layer）的 1.0 版，但是未发布。
+- In 1994, Netscape designed the 1.0 version of the SSL protocol (Secure Sockets Layer), but it has not been released.
 
-- 1995年，Netscape 公司发布 SSL 2.0 版，很快发现有严重漏洞。
+- In 1995, Netscape released version 2.0 of SSL, which was soon discovered to have serious vulnerabilities.
 
-- 1996年，SSL 3.0 版问世，得到大规模应用。
+- In 1996, SSL 3.0 version came out and was used on a large scale for the first time.
 
-- 1999年，互联网标准化组织 ISO 接替 Netscape 公司，发布了 SSL 的升级版，为了表明与 Netscape 不再有关联，更名为 TLS 1.0 版。
+- In 1999, the Internet Standards Organization (ISO) took over from Netscape and released an upgraded version of SSL. In order to show that it is no longer associated with Netscape, it was renamed TLS 1.0.
 
-- 2006年，发布了 TLS 1.1。
-- 2008年，发布了 TLS 1.2。
-- 2011年，发布了 TLS 1.2 的修订版。
-- 2018年，发布了 TLS 1.3。
+- In 2006, TLS 1.1 released.
+- In 2008, TLS 1.2 released.
+- In 2011, TLS 1.2 released.
+- In 2018, TLS 1.3 released.
 
 ## How SSL/TLS works
 
-在 TCP 建立连接之后，经过 4 次握手，完成了 TLS 连接。
+> We will use the term TLS to represent both SSL and TLS.
+
+A TLS connection is created through 4 handshakes, on top of the TCP connection.
 
 ```mermaid
 sequenceDiagram
@@ -59,7 +65,7 @@ sequenceDiagram
 3. Client generates a Pre-Master Secret(PMS), which can later be used to calculate Master Secret(MS) and is later divided into
    1. A MAC secret(notated as $s$),
    2. A symmetric key, used to encrypt messages to the server.
-4. Client sends the PMS and MAC of all the messages sent without encryption during handshaking.
+4. Client sends the PMS and MAC of all the messages sent and received without encryption during handshaking.
    1. PMS, server uses to generate same MS, key, secret
    2. MAC, server can verify match of the MAC of received messages to ensure its integrity.
         $$

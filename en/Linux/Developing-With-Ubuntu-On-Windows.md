@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # Developing With Ubuntu on Windows
 
 ## Preface

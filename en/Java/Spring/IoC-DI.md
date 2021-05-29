@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # IoC and DI of Spring
 
 - IoC: <acr :offsets="[0, 8, 11]">Inverse of Control</acr>.

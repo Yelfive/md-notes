@@ -1,4 +1,6 @@
-# SQL Modes <span style="width: 50px;display:inline-block;" > ![](https://labs.mysql.com/common/logos/mysql-logo.svg?v2#100) </span>
+# SQL Modes
+
+<span style="width: 50px;display:inline-block;" > ![](https://labs.mysql.com/common/logos/mysql-logo.svg?v2#100) </span>
 
 ## my.cnf
 

@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # I/O Redirect
 
 > Redirect includes input, output and pipe

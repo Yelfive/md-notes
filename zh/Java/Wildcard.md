@@ -1,3 +1,7 @@
+---
+editLink: true
+---
+
 # 泛型-通配符（Wildcard in generic）
 
 通配符可以分为三种类型

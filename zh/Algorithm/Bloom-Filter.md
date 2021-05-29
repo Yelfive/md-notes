@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # 通俗易懂讲布隆过滤器
 
 > Origin: [通俗易懂讲布隆过滤器](https://www.cnblogs.com/jajian/articles/12749928.html)

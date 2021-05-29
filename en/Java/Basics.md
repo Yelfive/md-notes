@@ -1,3 +1,6 @@
+---
+recommend: true
+---
 # Java Basics
 
 ## Variable scope

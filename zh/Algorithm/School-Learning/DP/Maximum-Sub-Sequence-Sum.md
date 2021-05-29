@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # 最大子段和问题(Maximum Sub-Sequence Sum)
 
 ## 问题

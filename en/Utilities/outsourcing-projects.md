@@ -1,10 +1,6 @@
 # Outsourcing Projects
 
-
-
-## **1、D2admin**
-
-
+## 1、D2admin
 
 开源地址：https://github.com/d2-projects/d2-admin
 
@@ -134,7 +130,7 @@
 
 ![img](./images/outsourcing-projects/material-dashboard.png)
 
-## **12、EAdmin**
+## 12、EAdmin
 
 开源地址：https://github.com/suruibuas/eadmin
 

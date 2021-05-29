@@ -1,8 +1,12 @@
-# Source Code: PriorityQueue
+---
+recommend: true
+---
+
+# Java 源码: PriorityQueue
 
 通过 `java.util.Comparator` 接口创建大根堆、小根堆。
 
-PriorityQueue 把堆顶放在下标为 `0` 的位置，当 `offer` 插入一个值时，将折半判断是否放在 $\frac{k}{2}$ 元素前面，只保证最小（大）的元素一定放在 `0` 的位置。
+PriorityQueue 把堆顶放在下标为 `0` 的位置，当 `offer` 插入一个值时，将折半判断是否放在 1/2 元素前面，只保证最小（大）的元素一定放在 `0` 的位置。
 
 ```java
 public class PriorityQueue {

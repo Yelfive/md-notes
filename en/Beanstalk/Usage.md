@@ -1,13 +1,15 @@
-# Usage
+---
+recommend: true
+---
 
-= Beanstalk Protocol =
+# Beanstalk Usage
 
 ## Protocol
 
 The beanstalk protocol runs over **TCP** using **ASCII** encoding. Clients connect,send commands and data, wait for responses, and close the connection. For each connection, __the server processes commands serially in the order in which they were received and sends responses in the same order__. All integers in the protocol are formatted in decimal and (unless otherwise indicated)
-nonnegative. 
+nonnegative.
 
-Names, in this protocol, are ASCII strings. They may contain 
+Names, in this protocol, are ASCII strings. They may contain
 
 - letters (`A-Z` and `a-z`)
 - numerals (`0-9`)
@@ -50,7 +52,6 @@ Here is a picture of the typical job lifecycle:
    put            reserve               delete
   -----> [READY] ---------> [RESERVED] --------> *poof*
 ```
-
 
 Here is a picture with more possibilities:
 
@@ -530,7 +531,7 @@ The response is:
 ```beanstalk
 USING <tube>\r\n
 ```
- 
+
 - `<tube>` is the name of the tube being used.
 
 ### list-tubes-watched

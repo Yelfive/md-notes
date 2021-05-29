@@ -1,5 +1,8 @@
-Curl error
-==========
+---
+recommend: true
+---
+
+# Curl error
 
 Overview Tutorial Errors Examples Symbols Index Easy Interface Multi Interface Share Interface
 curl / libcurl / API / Error Codes
@@ -13,8 +16,7 @@ DESCRIPTION
 
 This man page includes most, if not all, available error codes in libcurl. Why they occur and possibly what you can do to fix the problem are also included.
 
-CURLcode
---------
+## CURLcode
 
 Almost all "easy" interface functions return a CURLcode error code. No matter what, using the curl_easy_setopt option CURLOPT_ERRORBUFFER is a good idea as it will give you a human readable error string that may offer more details about the cause of the error than just the error code. curl_easy_strerror can be called to get an error string from a given CURLcode number.
 

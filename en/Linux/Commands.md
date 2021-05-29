@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # Commands
 
 ## Overview
@@ -30,7 +34,11 @@
 
 > grep [option] pattern [files]
 
-![](./images/grep.jpeg)
+![grep](./images/grep.jpeg "Fig. From Julia Evans")
+
+**Additionally**:
+
+- `-L` File that does not match, corresponding to `-l` (lower case)
 
 ### find
 
@@ -79,7 +87,10 @@
 
     The tailing `\;` is to escape the semicolon for `-exec`, not for the `find` command.
 
-#### examples
+- `-not` Reverse match
+- `-regex` Use regular expression to search
+
+#### find examples
 
 ```bash
 # find in current directory with options:
@@ -99,19 +110,19 @@ find . -d 1 -not -regex './\(.git\)' -not -regex './mylord' -exec mv {} mylord '
 
 ### updatedb
 
-> Update the database for command `locate` 
+> Update the database for command `locate`
 
-**mac**
+**mac**:
 
 > Command locates at `/usr/libexec/locate.updatedb`
 
-**storage**
+**storage**:
 
-> Database file at /var/db/locate.database
+> Database file at `/var/db/locate.database`
 
-### terminating `&`
+### Terminating `&`
 
-> It hangs a command and run it as a daemon
+> Runs a command as daemon, the terminal will not `wait` for its return.
 
 ```shell
 # runs  firefox as daemon
@@ -176,8 +187,7 @@ whatis command
 apropos description
 ```
 
-
-# File System
+## File System
 
 ### touch
 
@@ -210,7 +220,7 @@ chown [options] [owner][:group] /path/to/files
 > chmod dest_group=src_group file
 ```
 
-**chmod usergoup+/-privilege**
+**chmod usergoup+/-privilege**:
 
 - group
     + `u` user, owner
@@ -266,7 +276,6 @@ chown [options] [owner][:group] /path/to/files
 - `-t` With -l: sort by mtime
 - `-u` With -l: sort by atime
 
-
 ### apt-get
 
 - install
@@ -302,14 +311,14 @@ PORT    STATE    SERVICE     VERSION
 
 ```
 
-###### STATE
+#### STATE
 
 - open
 
     > 应用程序正在该端口接收TCP 连接或者UDP报文。发现这一点常常是端口扫描 的主要目标。安全意识强的人们知道每个开放的端口 都是攻击的入口。攻击者或者入侵测试者想要发现开放的端口。 而管理员则试图关闭它们或者用防火墙保护它们以免妨碍了合法用户。 非安全扫描可能对开放的端口也感兴趣，因为它们显示了网络上那些服务可供使用。
 
 - closed
-    
+
     > 关闭的端口对于Nmap也是可访问的(它接受Nmap的探测报文并作出响应)， 但没有应用程序在其上监听。 它们可以显示该IP地址上(主机发现，或者ping扫描)的主机正在运行up 也对部分操作系统探测有所帮助。 因为关闭的关口是可访问的，也许过会儿值得再扫描一下，可能一些又开放了。 系统管理员可能会考虑用防火墙封锁这样的端口。 那样他们就会被显示为被过滤的状态，下面讨论。
 
 - filtered
@@ -335,7 +344,6 @@ PORT    STATE    SERVICE     VERSION
 ```bash
 iconv -f from_encoding -t to_encoding [-o output_file] source_file
 ```
-
 
 ### read
 
@@ -490,7 +498,7 @@ See more: [lsof 查看进程打开那些文件](https://www.cnblogs.com/bonelee/
 ### sed
 
 - sed 's/search/replace' file
-    
+
     Perform a **s**ubstitution
 
     ```bash

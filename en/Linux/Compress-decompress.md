@@ -36,8 +36,6 @@ tar -zxf file.tar
 tar xf file.tar.xz
 ```
 
-
-
 ## xz-utils
 
 ```bash
@@ -47,4 +45,3 @@ sudo apt install -y xz-utils
 unxz file.xz
 xz --decompress file.xz
 ```
-

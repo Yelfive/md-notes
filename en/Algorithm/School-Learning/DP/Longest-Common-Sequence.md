@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # Longest Common SubSequence
 
 Given two character sequences, find the longest common sub sequence.

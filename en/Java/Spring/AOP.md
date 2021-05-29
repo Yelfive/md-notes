@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # AOP in Spring
 
 AOP stands for <acr>Aspect Oriented Programming</acr>

@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # Circular Dependencies in Spring
 
 > From [Circular Dependencies in Spring | Baeldung](https://www.baeldung.com/circular-dependencies-in-spring)

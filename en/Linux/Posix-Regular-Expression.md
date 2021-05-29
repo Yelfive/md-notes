@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # POSIX Regular Expression
 
 Regular expressions follow two standards: **Perl** and **POSIX**
@@ -58,7 +62,7 @@ Matches what the nth marked subexpression matched, where n is a digit from 1 to 
 
 ### `*`
 
-Matches the preceding element zero or more times. For example, 
+Matches the preceding element zero or more times. For example,
 
 ```bash
 # matches "ac", "abc", "abbbc", etc.
@@ -92,6 +96,7 @@ ab+c    # (in ERE)
 ### BRE: `\?` or ERE: `?`
 
 Matches the preceding element one or zero times. For example,
+
 ```bash
 # matches either "ac" or "abc"
 ab\?c   # (in BRE) or 
@@ -159,7 +164,7 @@ POSIX Class | Similar to        | Meaning that
 [:graph:]   | [^ \t\n\r\f\v]    | printed characters
 [:print:]   | [^\t\n\r\f\v]     | printed characters and space
 
-**example**
+**Example:**
 
 ```bash
 grep [[:digit:]] path/to/file
