@@ -2,7 +2,7 @@
 recommend: true
 ---
 
-# Tcl: Tool Command Language
+# TCL: Tool Command Language
 
 ## 1. Everything is a string
 
@@ -118,7 +118,7 @@ for {set a 10} {$a>0} {set a [expr $a - 1]} {puts "current value"; puts $a}
 if test command ?elseif test command? ?else test command?
 ```
 
-**example**
+**Example:**
 
 ```tcl
 if $a<1 {
@@ -154,7 +154,7 @@ switch -- $count 1 {
 proc name args body
 ```
 
-**example**
+**Example:**
 
 ```tcl
 proc fib {one two n} {
@@ -203,7 +203,7 @@ global variableName ?variableName?
 
 Similar to `source` of shell, and recognize the `~` as user's home directory.
 
-**Syntax**
+**Syntax:**
 
 ```tcl
 source file.tcl
@@ -235,7 +235,7 @@ llength $a
 All list manipulation commands start with a `l`
 
 - `list` create a list
-    
+
     ```tcl
     list a b c
     # a b c
@@ -292,12 +292,11 @@ All list manipulation commands start with a `l`
     ```
 
 - `format`
-    
+
     Similar to `printf` of C and PHP
 
-
 - `scan`
-    
+
     Scan a string into variables
 
     ```tcl
@@ -361,8 +360,11 @@ string index $string index
 #### string range
 
 #### string tolower
+
 #### string toupper
+
 #### string trimleft
+
 #### string trimright
 
 ### append
@@ -375,7 +377,6 @@ append string $string_list
 append paragraph This is a paragraph
 Thisisaparagraph
 ```
-
 
 ## Arrays
 
@@ -474,12 +475,11 @@ Current script name, like `__FILE__` of PHP
 1. Take its first argument and executes it, if error occurs, 1 will be returned, otherwise 0.
 2. The `resultVaraibleName` contains either script's result or error message
 
-
 ```tcl
 catch script ?resultVariableName? ?optionVarName?
 ```
 
-**example**
+**Example:**
 
 ```tcl
 catch {cmd some arguments} returned_value
@@ -524,7 +524,7 @@ upvar ?level? otherVar localVar ?otherVar localVar ...?
 
     Variable name used locally
 
-**example**
+**Example:**
 
 ```tcl
 proc test {a} {
@@ -582,9 +582,9 @@ glob ?switches? name ?name ...?
 - `[]` A range of character(s)
 - `{}` A choice of strings
 - `\` Literally a character
-- `/path/to/pattern` Matches from the root directory 
+- `/path/to/pattern` Matches from the root directory
 
-**example**
+**Example:**
 
 ```tcl
 # returns a list of all files ends with `.php`
@@ -637,11 +637,11 @@ Opposite to `file extension`, returns everything but file extension.
     ```tcl
     file stat filename varName
     ```
-    
+
     **contains**
 
     > Only `type` returns string same as `file type`, the rest return integers.
-    > 
+    >
     > If the file is a symbolic link, `file stat` returns the information of the file it points to.
 
     - `atime`
@@ -657,5 +657,3 @@ Opposite to `file extension`, returns everything but file extension.
     - `size`
 
 - `file lstat` Returns information about symbolic link itself.
-
-

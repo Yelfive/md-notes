@@ -1,7 +1,3 @@
----
-recommend: true
----
-
 # Curl error
 
 Overview Tutorial Errors Examples Symbols Index Easy Interface Multi Interface Share Interface
