@@ -506,6 +506,7 @@ ExecutorService executorService = Executors.newSingleThreadExecutor();
 通过 `ThreadPoolExecutor` 可以设置线程池的线程数、队列大小，而 `Executors` 没有拒绝策略，可能导致 OOM 问题。故 `ThreadPoolExecutor` 使用上更加灵活。
 
 通过 `submit` 和 `execute` 提交任务。其中
+
 - `submit` 接收 `Runnable` 和 `Callable` 任务，返回一个 `FutureTask` 实例
 - `execute` 只接收 `Runnable` 实例，无返回值。
 

@@ -1,3 +1,7 @@
+---
+recommend: true
+---
+
 # Java Lambda
 
 Lambda provides a concise way to make an instance from a **`interface`**.

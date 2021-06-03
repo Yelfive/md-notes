@@ -171,7 +171,7 @@ PowerShell - powershell
 Processing - processing
 Prolog - prolog
 PromQL - promql
-.properties - properties
+properties - properties
 Protocol Buffers - protobuf
 Pug - pug
 Puppet - puppet

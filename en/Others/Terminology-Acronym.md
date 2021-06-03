@@ -19,6 +19,9 @@
 ## Network Layer
 
 1. CIDR: Classless Inter-Domain Routing, 无类别域间路由选择
+2. MSL: Maximum Segment Lifetime, is the time a TCP segment can exist in the inter-network system. It is arbitrarily defined to be 2 minutes long.
+
+   During the closing process, client will wait for 2-MSL to close the connection.
 
 ## Link layer protocol
 
@@ -45,3 +48,5 @@
         Stores don’t have to be write-consistent, nor do different replicas have to be mutually consistent all the time.
     - Eventual consistency
         Stores exhibit consistency at some later point (e.g., lazily at read time).
+
+1. POJO: Plain Old Java Object, initially denoted a Java object which does not follow any of the major Java object models, conventions, or frameworks.^[[POJO wikipedia](https://en.wikipedia.org/wiki/Plain_old_Java_object)]

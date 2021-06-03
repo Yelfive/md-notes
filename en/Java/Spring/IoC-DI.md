@@ -223,7 +223,7 @@ Annotation can be categorized into 4 categories:
 
            @Autowired
            @Qualifier("b1") // use bean id
-           private B b;	 // gets instance of class B1
+           private B b;     // gets instance of class B1
 
            @Resource(name = "b1")
            private B b;
@@ -233,7 +233,9 @@ Annotation can be categorized into 4 categories:
        }
        ```
 
-   > **Collections cannot be injected by annotation, only by XML-based**
+    :::danger
+    **Collections cannot be injected by annotation, only by XML definition**
+    :::
 
 3. To manipulate the scope
 

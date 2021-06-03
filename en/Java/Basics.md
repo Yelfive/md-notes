@@ -1,7 +1,33 @@
 ---
 recommend: true
 ---
+
 # Java Basics
+
+## Variables
+
+```mermaid
+graph TD
+
+    t[Java data type]
+
+    t --> boolean
+    t --> byte
+    t --> short
+    t --> char
+    t --> int
+    t --> long
+    t --> float
+    t --> double
+    t --> reference
+```
+
+:::tip About Reference
+
+The type `reference` is like a cup, which can be used to hold ++something++ to refer to an object. So what's in the cup? A memory address? Only the JVM knows.
+
+The book *Head First Java* calls the ++something++ a remote, which can be used to control an object, such as a TV or a Dog. Before the remote is referred to a specific TV, it is a remote without initialization, not pointing to anything, which means it cannot be used at all until given a TV.
+:::
 
 ## Variable scope
 
@@ -235,13 +261,9 @@ for () {
 > **label** in which can be any string token to represent the cut point,
 > it can even be the same as defined variable name.
 
----
+## Object Oriented
 
-## **Object Oriented**
-
----
-
-A class has typically composited by `field/property`, `method`.
+A class is typically composited by `field/property`, `method`.
 
 ## Overload
 
@@ -536,16 +558,20 @@ int[] i = null; // Recommended
 int j[] = null; // c-style
 ```
 
-By declaring a variable of array, `i` for example, means that the variable `i` can be used to reference the starting address of an array.
+By declaring a variable of array, `i` for example, means that the variable `i` can be used to refer to an array object (array is an object).
 
-```text
-        +--+--+--+--+--+--+--+--+
-        +--+--+--+--+--+--+--+--+
-        ^
-    variable i
+```mermaid
+graph LR
+    i((i)) --> arr((array object))
+    subgraph stack
+        i
+    end
+    subgraph heap
+        arr
+    end
 ```
 
-and then this variable can reference array of any length,
+and then this variable can refer to an array of any length,
 
 ```java
 i = new int[5];
@@ -720,6 +746,10 @@ int j = i.intValue();
 
 ## File path
 
+==The relative path in java always means the path relative to **user directory**.==
+
+When a IDE, [IDEA](https://www.jetbrains.com/idea/) for example, runs a Java(tm) project, the user directory is the project root. Especially when there's sub-modules, the user directory is always the root of the project. On the contrary, when you run an executive JAR from a terminal, the user directory is where you run the command `java`.
+
 ```java
 /*
  * Relative path, to
@@ -730,6 +760,9 @@ File f1 = new File("user.log");
 
 // Absolute path
 File f2 = new File("/var/www/html/user.log");
+
+// To test where current user directory is
+System.out.println(new File('.').getAbsolutePath());
 ```
 
 ## Enumerate
