@@ -748,7 +748,9 @@ int j = i.intValue();
 
 ==The relative path in java always means the path relative to **user directory**.==
 
-When a IDE, [IDEA](https://www.jetbrains.com/idea/) for example, runs a Java(tm) project, the user directory is the project root. Especially when there's sub-modules, the user directory is always the root of the project. On the contrary, when you run an executive JAR from a terminal, the user directory is where you run the command `java`.
+When a IDE, [IDEA](https://www.jetbrains.com/idea/) for example, runs a Java(tm) project, the user directory is the project root. Especially when there's sub-modules (run as `main`), the user directory is always the root of the project.
+On the contrary, when you run an executive JAR from a terminal, the user directory is where you run the command `java`.
+Finally, when you use Junit to run a test case, it relative path is to the module directory, that's different from project root when there are submodules.
 
 ```java
 /*

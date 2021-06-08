@@ -1,5 +1,11 @@
 # SSH
 
+## Install Server
+
+```bash
+sudo apt-get install openssh-server
+```
+
 ## Run a command remotely and then use a pseudo TTY
 
 ```bash

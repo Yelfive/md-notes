@@ -61,7 +61,7 @@ They represents two entirely different classes, even if they have everything els
 
 So when **server A** passes a serialized object from class `Passport`, and it cannot be deserialized on **server B**, because the `Passport` classes have different `serialVersionUID`, and instead, a `java.io.InvalidClassException` will be thrown.
 
-## Custom Serialization
+## Custom Serialization Process
 
 Sometimes you don't want to default serializing behavior, instead, you want to implements your own serialization. For example, for `ArrayList` it enlarges capacity when needed, and thus leads to empty slots which should not be written to the disk, and that's when the _custom serialization_ comes in.
 
@@ -128,6 +128,63 @@ for (int i=0; i<size; i++) {
     a[i] = s.readObject();
 }
 ```
+
+## Serialization Filtering
+
+Java, starts from JDK8 up, supports black/white list for de-serialization, in order to screen untrusted data, which means you can specify which classes can be deserialized and which ones can not. This is called _serialization filtering_.
+
+> An application that accepts untrusted data and deserializes it is vulnerable to attacks.^[[Serialization Filtering](https://docs.oracle.com/javase/10/core/serialization-filtering1.htm)]
+
+Simply put, you can use _patterns_ to specify allow and forbidden class list, for either one application or all applications using this JRE. Here are some examples to help.
+
+**For One Application:**
+
+```bash
+java -Djdk.serialFilter='cn.example.dao.User;!*' cn.example.MainApplication
+```
+
+**For All Applications:**
+
+There are three steps to follow.
+
+1. Edit the java.security properties file.
+    - **JDK 9 and later**: `$JAVA_HOME/conf/security/java.security`
+    - **JDK 8,7,6**: `$JAVA_HOME/lib/security/java.security`
+
+    > `$JAVA_HOME` means home of JRE here.
+
+2. Add the pattern to the `jdk.serialFilter` Security Property.
+
+3. Run the application
+
+    ```java
+    java cn.example.MainApplication
+    ```
+
+**Exception:**
+
+If the class is on the black list, the following exception will raise when deserializing.
+
+```
+### Error querying database.
+    Cause: org.example.SomeClass: Error deserializing object.  
+    Cause: java.io.InvalidClassException: filter status: REJECTED
+```
+
+:::tip
+
+The default behavior of filtering is to allow. So for any missing class to the pattern, its instance is allowed, and the rejection happens only when it is configured to be so.
+
+```properties
+# Allow Role, as well as User.
+# This actually means allow all
+jkd.serialFilter=cn.example.pojo.Role
+
+# Reject any class other than Role
+jkd.serialFilter=cn.example.pojo.Role;!*
+```
+
+:::
 
 ## Appendix
 

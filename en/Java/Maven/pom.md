@@ -52,9 +52,11 @@ eg. maven, commons-math
 
 Maven follows the principle: ==convention over configuration.==
 
-So by default, Maven will package only (and all) resource files under `${basedir}/src/main/resources`.^[[Maven POM Reference](https://maven.apache.org/pom.html#resources)]
+So by default, Maven will package only (and all) resource files under `${basedir}/src/main/resources` ^[[Maven POM Reference](https://maven.apache.org/pom.html#resources)].
 
-Here's an example of build resources,
+But you can custom which files should be copied. The files are called resources.
+
+Here's an example.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -115,6 +117,82 @@ Here's an example of build resources,
 
 The above example means to copy, during building, every `.xml` and `.properties` under `src/main/resources` and `src/main/java`.
 
+:::tip
+The `<includes>` are copied to destinations with same directory structure append to last part of `<directory>`. Here's a concrete example.
+
+Consider the following directory structure
+
+```
+src
+└── main
+    └── resources
+        ├── mappers
+        │    ├── UserMapper.xml
+        │    ├── RoleMapper.xml
+        │    ├── ProductMapper.xml
+        │    └── OrderMapper.xml
+        │
+        ├── mybatis-config.xml
+        └── application.properties
+```
+
+With the following config
+
+```xml
+<directory>src/main/resources</directory>
+<includes>
+    <include>**/*.xml</include>
+    <include>**/*.properties</include>
+</includes>
+```
+
+will get result
+
+``` {2}
+jar
+└── resources
+    ├── mappers
+    │    ├── UserMapper.xml
+    │    ├── RoleMapper.xml
+    │    ├── ProductMapper.xml
+    │    └── OrderMapper.xml
+    │
+    ├── mybatis-config.xml
+    └── application.properties
+```
+
+> Copied and appended to `resources`
+
+While with config
+
+```xml {1}
+<directory>src/main</directory>
+<includes>
+    <include>**/*.xml</include>
+    <include>**/*.properties</include>
+</includes>
+```
+
+will get
+
+``` {2}
+jar
+└── main
+    └── resources
+        ├── mappers
+        │    ├── UserMapper.xml
+        │    ├── RoleMapper.xml
+        │    ├── ProductMapper.xml
+        │    └── OrderMapper.xml
+        │
+        ├── mybatis-config.xml
+        └── application.properties
+```
+
+> Copied and appended to `main`
+
+:::
+
 ### See More
 
 - [Maven – POM Reference](https://maven.apache.org/pom.html)
@@ -162,3 +240,5 @@ Package it.
 ```bash
 mvn package assembly:single
 ```
+
+See more: [Maven 生成可以直接运行的 jar 包的多种方式](https://blog.csdn.net/xiao__gui/article/details/47341385)
