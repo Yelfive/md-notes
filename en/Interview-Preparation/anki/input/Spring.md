@@ -115,7 +115,7 @@ class User implements BeanNameAware {...}
 
 ## Spring 事务回滚
 
-@Transaction(rollbackFor = ), 默认只会滚未检查异常、RuntimeException
+`@Transaction(rollbackFor = )`, 默认只会滚未检查异常：Error, RuntimeException
 
 ## 事务传播机制
 

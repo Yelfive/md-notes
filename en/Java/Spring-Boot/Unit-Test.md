@@ -114,6 +114,54 @@ public class Offer60Test {
 
 - `@MethodSource` specifies the test cases come from **method**, and the default method name of data source is the same as the method name it is used on.
 
+## Example without jupiter
+
+This is an example to calculate $a \times b$ without actually using multiplying.
+
+```java
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+@RunWith(Parameterized.class)
+public class TestMultiple {
+    int a;
+    int b;
+    int expected;
+
+    public TestMultiple(int a, int b, int expected) {
+        this.a = a;
+        this.b = b;
+        this.expected = expected;
+    }
+
+    @Parameterized.Parameters()
+    public static Object[][] data() {
+        return new Object[][]{
+                {-4, -8, 32},
+                {4, -8, -32},
+                {4, -5, -20},
+                {4, 5, 20},
+                {4, 8, 32},
+        };
+    }
+
+    @Test
+    public void testMultipleWithoutMultiple() {
+        int ans = new MultipleWithoutMultiple().solve(a, b);
+        Assert.assertEquals(expected, ans);
+    }
+}
+```
+
+The key points for the example are:
+
+1. `@RunWith(Parameterized.class)` to specify this is a parameterized test
+2. `@Parameterized.Parameters()` indicates the methods returns test cases
+3. Constructor to receive the parameters
+4. The tests are run with individual new `TestMultiple` instances
+
 **See Also:**
 
 - [JUnit5学习之七：参数化测试(Parameterized Tests)进阶_程序员欣宸的博客-CSDN博客](https://xinchen.blog.csdn.net/article/details/108942301)

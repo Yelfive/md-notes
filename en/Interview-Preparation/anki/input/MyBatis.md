@@ -73,7 +73,7 @@ css: z_custom.css
 </resultMap>
 ```
 
-## 动态SQL
+## 动态 SQL 是什么原理，怎么使用
 
 根据不同的条件生成不同的 SQL 语句。通过 OGNL 计算出表达式的值，并动态的拼接成SQL语句。
 
@@ -246,8 +246,8 @@ int batchInsert(List<User> users);
 
 ### 列名与 POJO 字段对应
 
-1. 使用 `<resultMap>`, `<association>`, `<collection>` 标签
-2. 使用 `@Results`, `@Result`, `@One`, `@Many` 注解
+1. 使用 XML: `<resultMap>`, `<association>`, `<collection>` 标签
+2. 使用注解: `@Results`, `@Result`, `@One`, `@Many` 注解
 3. 使用 SQL `alias`, MyBatis 会忽略大小写，通过 `_` 寻找对应的驼峰字段
 
 ### 赋值
@@ -328,11 +328,15 @@ long createUser(@Param("id") long myId, @Param("name") String myName);
 
 ## MyBatis Mapper @Insert 返回值
 
-- `@Insert` 只能返回修改行数，如果要获取修改的记录，需要使用 `@SelectKey` 再次查询后修改 POJO 对象
+`@Insert` 只能返回修改行数，如果要获取修改的记录，需要使用 `@SelectKey` 再次查询后修改 POJO 对象
+
+## SelectKey
+
+### Annotation
 
 ```java
 @Inert("INSERT INTO user VALUES(#{id}, #{name})");
-@SelectKey("SELECT * FROM user WHERE id=LAST_INSERT_ID()")
+@SelectKey("SELECT * FROM user WHERE id=LAST_INSERT_ID()", before = false)
 int createUser(User user);
 ```
 
@@ -345,3 +349,139 @@ int createUser(User user);
   select something from some_table
 </selectKey>
 ```
+
+## Executor 有哪些，怎么使用？
+
+`Executor` 用于执行真正的 CRUD 操作。除了 `CachingExecutor`，其他的作用域均为 `SqlSession`
+
+![picture 2](z_pic_1623251556767_20210609231245_26.png)  
+
+- `SimpleExecutor`: 每次都生成一个 `PreparedStatement` 执行
+- `BatchExecutor`: 执行批量更新。执行器会收集一定量的 CUD 操作，然后批量发送给数据库，减少数据库交互的次数。在 **查询** 或者显示调用 `flushStatements()` 时，会将 SQL 发送给数据库。可以解决 SQL 语句太长，超过 `max_allowed_packet` 的异常。
+- `ReuseExecutor`: 生成并重用 `PreparedStatement`。内部使用 SQL 作为 key 在数据结构 `Map<String, PreparedStatement>` 中查找。
+- `CachingExecutor`: 二级缓存，作为其他 `Executor` 的包装类
+
+默认为 `SimpleExecutor`。在一下方法中可以指定执行器
+
+### openSession 时指定
+
+```java
+SqlSessionFactory.openSession(ExecutorType.SIMPLE)
+```
+
+### XML 配置
+
+```xml
+<!-- SIMPLE REUSE BATCH -->
+<setting name="defaultExecutorType" value="SIMPLE">
+```
+
+创建 Executor 方法
+
+```java
+package org.apache.ibatis.session;
+
+class Configuration {
+  public Executor newExecutor(Transaction transaction, ExecutorType executorType) {
+    // ... other statements
+    if (ExecutorType.BATCH == executorType) {
+      executor = new BatchExecutor(this, transaction);
+    } else if (ExecutorType.REUSE == executorType) {
+      executor = new ReuseExecutor(this, transaction);
+    } else {
+      executor = new SimpleExecutor(this, transaction);
+    }
+    if (cacheEnabled) {
+      executor = new CachingExecutor(executor);
+    }
+    /// ... other statements
+  }
+}
+```
+
+**See more**: [mybatis – MyBatis 3 | Java API](https://mybatis.org/mybatis-3/java-api.html)
+
+## MyBatis 中如何自定义数据类型映射？
+
+通过继承 `BaseTypeHandler` 或实现 `TypeHandler` 可以定义 parameter 和 result。MyBatis 提供了常见类型的 type handler。借此可以生成如枚举类型的映射关系。
+
+其中
+
+- `setParameter` 表示设置 SQL 中的参数
+- `getResult` 为定义 Java 中的数据类型
+
+### 自定义 TypeHandler
+
+```java
+@MappedJdbcTypes(JdbcType.VARCHAR)
+public class ExampleTypeHandler extends BaseTypeHandler<String> {
+}
+```
+
+> 其中 `JdbcType.VARCHAR` 代表数据库中的数据类型
+
+### 配置生效
+
+```xml
+<!-- mybatis-config.xml -->
+<typeHandlers>
+  <typeHandler handler="org.mybatis.example.ExampleTypeHandler"/>
+</typeHandlers>
+```
+
+**See more**: [mybatis – MyBatis 3 | Configuration](https://mybatis.org/mybatis-3/configuration.html#typeHandlers)
+
+## &lt;sql> 与 &lt;include> 有顺序依赖吗？
+
+`<sql>` 与 `include` 没有顺序依赖，两者位置可以是任意的。以下声明也是合法的
+
+```xml
+<sql id="a">
+  <include refid="b"/>
+</sql>
+
+<sql id="b">
+  ...
+</sql>
+```
+
+## MyBatis 的配置是怎么存储的？
+
+MyBatis 会在创建 `SqlSessionFactory` 时解析配置文件，之后将所有配置都存起来放入 `Configuration` 的实例中。如
+
+Tag | Configuration Property
+--- | ---
+resultMap | resultMaps
+select/insert/...| mappedStatements
+parameterMap | parameterMaps
+
+## 为什么 MyBatis 被称为半自动，什么是全自动？
+
+相对于 Hibernate，MyBatis 需要手动编写 SQL 语句，而 Hibernate 可以自动生成语句，自动获取关联数据等。
+
+## MyBatis 开启日志
+
+```xml
+<!-- mybatis-config.xml -->
+<settings>
+  <setting name="logImpl" value="STDOUT_LOGGING"/>
+</settings>
+```
+
+### value
+
+- STDOUT_LOGGING: Standard output
+- LOG4J
+- SLF4J
+- LOG4J2
+- JDK_LOGGING
+- COMMONS_LOGGING
+- NO_LOGGING
+
+> 常用选项为 `STDOUT_LOGGING`, `LOG4J`。其中后者需要导入相关依赖
+
+## MyBatis/Hibernate/JPA 之间的关系
+
+JPA (Java Persistence API) 是一套持久化规范，Hibernate 是其实现。
+
+Hibernate 封装程度比 MyBatis 高，省去了大多数 SQL 的编写，但灵活性不如 MyBatis。

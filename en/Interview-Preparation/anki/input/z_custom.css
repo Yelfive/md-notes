@@ -13,6 +13,7 @@ pre.codehilite code {
 .codehilite {
     padding: 0.25rem;
     border: 1px solid;
+    font-size: 0.85rem;
 }
 
 :not(pre) > code {

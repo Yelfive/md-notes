@@ -93,7 +93,10 @@ select -> poll -> epoll
 - epoll
   - 线程安全
 
-See also: [IO 多路复用是什么意思？ - 知乎](https://www.zhihu.com/question/32163005)
+**See also**:
+
+- [IO 多路复用是什么意思？ - 知乎](https://www.zhihu.com/question/32163005)
+- [IO多路复用之select、poll、epoll详解 - 简书](https://www.jianshu.com/p/fc1d53e7e470)
 
 ## Sentinel
 

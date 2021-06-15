@@ -44,6 +44,8 @@ MVCC 只在 REPEATABLE READ 和 READ COMMITTED 隔离级别起作用
 4. Set: sadd, spop, scard(获取长度)
 5. Sorted Set：score 字段存储排序值, zadd, zrange, zrem
 
+> `incr`, `decr` 等返回修改后的值
+
 ### 其他类型
 
 1. Bit map: based on strings
@@ -88,7 +90,7 @@ Redis 事务不满足原子性。
 ### MySQL 应用场景
 
 1. 固定的数据结构
-2. 事务
+2. ACID（NoSQL也支持事务，但是不满足ACID）
 3. 数据量相对较小
 4. 索引优化
 
@@ -97,3 +99,29 @@ Redis 事务不满足原子性。
 1. 写频繁
 2. 无固定数据结构
 3. 大数据
+
+## 为什么防超卖用 Redis 不用 Java 锁
+
+Redis 可以持久化、可以做分布式，这都是 Java 锁机制不具备的。我们可以用多个 Redis 节点去存储库存，Java 的话每个节点的数据不能同步，而且如果遇到宕机，无法恢复。而 Redis 可以通过主备，即使一个节点宕机，也可以保证其他节点可用。
+
+## 秒杀怎么防止超卖？
+
+### Redis 方案
+
+<ins>利用 Redis 执行命令时的单线程操作。</ins>
+
+将库存放入 Redis。每次用户抢购都执行 `decr` 命令, `decr` 将返回减少后的值，当返回值小于等于 0 时，认为库存为空。
+
+### SQL 方案
+
+<ins>利用 SQL 的更新条件。</ins>
+
+建立秒杀库存表，每次抢购时，先进行
+
+```sql
+UPDATE sec_kill_goods SET stock = stock - 1
+    WHERE goods_id = ?
+    AND stock > 0
+```
+
+数据库对以上语句进行加锁操作，同时只有一个线程能进行更新操作，当库存为 0 时，返回影响条数为 0，从而判断更新失败，即为卖光。
