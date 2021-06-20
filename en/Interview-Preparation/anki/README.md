@@ -46,3 +46,32 @@ This directory contains markdown files to be converted using[markdown-anki-decks
     convert, sync, and delete the old card in anki
 
 The _.apkg_ file will appear under output and be synced to anki app.
+
+## Troubleshooting
+
+### 1. package `markdown-anki-decks` does not support SVG as images
+
+Here is a workaround, to edit the source to support it.
+
+1. find where the package is
+
+    ```bash
+    pip show markdown-anki-decks
+    ```
+
+2. edit `cli.py`, add svg
+
+    ```py
+    237 # get all the image files in a directory
+    238 def image_files(source: Path):
+    239     return list(
+    240         str(p)
+    241         for p in itertools.chain(
+    242             source.rglob("*.jpg"),
+    243             source.rglob("*.jpeg"),
+    244             source.rglob("*.png"),
+    245             source.rglob("*.gif"),
+    246             source.rglob("*.svg"),
+    247         )
+    248     )
+    ```

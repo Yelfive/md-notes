@@ -22,7 +22,7 @@
 
 - `volatile`
 
-    To indicate that two or more variables should be changed synchronously.
+    Variable value should be seen immediately after change by another thread, by flushing the variable from local memory to main memory.
 
 - assert
 

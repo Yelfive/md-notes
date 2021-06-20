@@ -189,3 +189,55 @@ jdbcTemplate.query("SELECT * FROM users LIMIT 1", (resultSet) -> {
 2. 软引用：内存不足时回收
 3. 弱引用：当对象只有弱引用时，GC时会直接回收
 4. 虚引用：`PhantomReference`, 类似弱引用，但必须与 `ReferenceQueue` 配合使用，回收时触发一个队列push，作为debug使用. `get`总是返回 `null`。
+
+## Spring 依赖注入的注解有哪些？
+
+1. `@Autowired`:  依次根据 类型、id 注入。
+2. `@Qualifier(value)`:  与 `@Autowired` 一起使用，指定 id。
+3. `@Resource(name)`:  根据 id 注入
+
+---
+
+`@Autowired` 会根据已有 bean 的类型、id 进行自动判断。如果某类型有多个，而 id 都不满足，则抛出异常。此外可以通过 `@Qualifier` 指定 id。
+
+`@Resource` 是根据 id 注入。
+
+## Spring 依赖注入有哪些方式？
+
+1. Field
+2. Setter 
+3. Constructor
+
+```java
+class Example {
+    @Autowired
+    private Bean field;
+    
+    @Autowired
+    Example(Bean field) {
+        this.field = field;
+    }
+    
+    @Autowired
+    setField(Bean field) {
+        this.field = field;
+    }
+}
+```
+
+> Spring 4.3 及以后的版本中，constructor 的 `@Autowired` 可以省略。
+
+## 为什么 Spring 不建议使用 @Autowired 注入字段？
+
+**使用注入字段的问题：**
+
+1. 容易过多注入，破坏单一职责原则。
+2. **不利于单元测试**：单元测试只能通过容器才能运行，类与容器强耦合
+
+**官方建议：**
+
+1. 使用 constructor 注入必须的依赖。
+2. 使用 setter 注入可选依赖。
+
+constructor 注入具有强制性，可以 `final`，太多的参数表明了设计的不合理。
+

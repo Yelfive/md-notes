@@ -380,7 +380,48 @@ public class VolatileTest {
 }
 ```
 
-上例中，如果没有 `volatile` 修饰，**可能（？）** 永远无法看到 'Main out' 输出。
+上例中，如果没有 `volatile` 修饰，永远无法看到 'Main out' 输出。
+
+:::detail Thread.sleep
+
+`Thread.sleep` 可以得到类似 `volatile` 屏障的作用，但是没有任何文档可以支撑。甚至官方文档表示 `Thread.sleep` 没有任何同步的语义。^[[Chapter 17. Threads and Locks](https://docs.oracle.com/javase/specs/jls/se8/html/jls-17.html#jls-17.3)]
+
+例如以下代码可以正确看到其他线程的修改。
+
+```java
+public class VolatileTest {
+    private boolean flag = false;
+
+    public static void main(String[] args) {
+
+        VolatileTest test = new VolatileTest();
+        new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+                test.flag = true;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        
+        while(true) {
+            try {
+                Thread.sleep(0);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (test.flag) {
+                System.out.println("Main out");
+                break;
+            }
+        }
+    }
+}
+```
+
+> 是因为由于线程从运行到睡眠再到运行之间的上下文切换？
+
+:::
 
 JVM 内存模型：拷贝共享内存到线程内存。**如果不干预，何时同步？**
 

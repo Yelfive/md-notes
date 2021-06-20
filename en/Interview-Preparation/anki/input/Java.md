@@ -21,7 +21,7 @@ Throwable 但是 非 Error 或 RuntimeException 的，都被认为是 checked �
 1. 保证内存可见：少量线程、非频繁写，多数线程读的情况
 2. 禁止指令重排
 
-`volatile` 在 JVM 会生成一条 `lock` 指令，该指令会引起处理器缓存会写到内存，这个会写会导致其他处理器的该缓存无效。
+`volatile` 在 JVM 会生成一条 `lock` 指令，该指令会引起处理器缓存会写到内存，当其他线程读时，会将本地内存置为无效，然后只接读主存。
 
 ## IO: File
 
@@ -509,6 +509,8 @@ CONSTRUCTOR(Collection<? extends E> c) {
 List<String> list = new ArrayList<>(set);
 ```
 
+
+
 ### collection -> array
 
 所有集合都实现了 `Colelction.toArray(T[] arr)` 方法，该方法将集合转为数组并放入 `arr` 中， 然后返回剩余集合元素
@@ -670,7 +672,7 @@ Canlendar.getInstance();
 
 ## try...catch...finally 中的 return 规则
 
-无论 `try...catch` 是否 `return`，都会执行 `finally`，如果 `finally` 同样执行了 `return`， 则以后者为准。
+无论 `try...catch` 是否 `return`，都会执行 `finally`，如果 `finally` 同样执行了 `return`， 则以后则为准。
 
 ## 怎么理解类与对象的锁？
 
@@ -696,7 +698,7 @@ ArrayList<Dog> dogs = new ArrayList<>();
 takeAnimal(dogs);
 ```
 
- ## 线程的状态及转移条件？
+## 线程的状态及转移条件？
 
 Java 中线程可以分为 6 中状态
 
@@ -727,3 +729,67 @@ c4 = int.class
 ```
 
 > 特别注意：基本数据类型也对应 `Class` 实例。
+
+## 术语：参数
+
+- Local Variables
+- Formal Method Parameters
+- Exception Handler Parameters
+
+## 常量会触发类加载吗？
+
+不会。
+
+常量在编译时通过 *传播优化*，将常量值存储到调用类的常量池中，所以在运行时，调用类与被调用的类已经没有关系了。
+
+例如
+
+```java
+class ConstClass {
+  public final static int TYPE = 1;
+}
+
+class Caller {
+  public void go() {
+    int type = ConstClass.TYPE;
+  }
+}
+
+// After being compiled
+class Class {
+  public void go() {
+    int type = 1;
+	}
+}
+```
+
+## 描述一下类的加载过程 todo
+
+![](anki-Thread-class-lifecycle.svg)
+
+1. Loading：加载
+2. Verification：验证
+3. Preparation: 准备
+4. Resolution: 解析
+5. Initialization: 初始化
+6. Using: 使用
+7. Unloading: 卸载
+
+### 1. 加载
+
+1. 获取定义类的字节码字节流
+2. 将字节流表示的静态存储结构转化为方法区的 runtime 数据结构：静态变量、静态代码块、常量池
+3. 在堆中生成对应的 Class 对象
+
+### 2. 验证
+
+确保 Class 文件的字节流中包含的信息符合 JVM 要求，并且安全。
+
+### 3. 准备
+
+## 数组是对象，那它属于哪个类，父类是谁？
+
+数组是由字节码指令 `anewarray` 直接创建，父类为 `Object`，类名为 `[Lxxx`，是一个非法的用户代码名称。
+
+## 对象创建的过程
+
