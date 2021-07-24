@@ -57,16 +57,20 @@ if (flag == true) {
 ## 指令重排的分类有哪些？
 
 1. 编译器重排
-2. 处理器重排: 通过插入 *内存屏障（Memory Barriers, Memory Fence）* 来禁止处理器的重排。通常处理器会提供相关指定。
+2. 处理器重排: 通过插入 *内存屏障（Memory Barriers, Memory Fence）* 来禁止处理器的重排。通常处理器会提供相关指令。
 
-**处理器重排分为**：
+### 处理器重排分为
 
-1. 指令级并行重排
-2. 内存重排
+1. 指令级并行重排：指令并行技术
+2. 内存重排：由于处理器使用了缓存进行“读/写”，A 来不及写主内存就被其他线程B读，看似 A 写 B 读之间发生了重排（逻辑上发生了重排）。
 
 排序示意图：
 
 ![aaa](anki-Reorder-classes.svg)
+
+**See more:**
+
+- [曹大谈内存重排 - 知乎](https://zhuanlan.zhihu.com/p/69414216)
 
 ## 指令重排的约束是什么？
 
@@ -162,15 +166,16 @@ JMM 不保证 64 位的数据（long, double）写的原子性。因为在 32 �
 
 > 某线程 **读某个非 `volatile` 变量（或类的字段）时**，会访问主内存，然后将值缓存在本地内存，随后的访问将不再访问主内存。
 
-## volatile 为禁止处理器中排插入的内存屏障规则
+## volatile 为禁止处理器重排插入的内存屏障规则
 
-为了使 `volatile` 能够达到 JMM 规定的语义，编译器可以禁止自己重排，而 **处理器重排就需要插入内存屏障来禁止**。
+为了使 `volatile` 能够达到 JMM 规定的语义，编译器可以禁止自己重排，而 **处理器内存重排就需要插入内存屏障来禁止**。
 
 ![](anki-Reorder-volatile-barriers.svg)
 
 ## 怎么理解 "volatile 写-读" 与 "锁的释放-获取" 有相同的语义？
 
-两者都保证前者（volatile 写、锁的释放）一定 happens before 在后者（volatile 读、锁获取）。
+1. **happens-before:** 两者都保证前者（volatile 写、锁的释放）一定 happens before 在后者（volatile 读、锁获取）。
+2. **内存可见性**：两者有相同的可见性。
 
 ## 为什么要增强 volatile 的语义？
 
@@ -200,11 +205,23 @@ JMM 不保证 64 位的数据（long, double）写的原子性。因为在 32 �
 1. 在构造函数内对一个 `final` 域的 **写入**，与随后把这个被构造对象的引用赋值给一个引用变量，这两个操作之间不能重排。
 2. 初次读一个包含 `final` 域的对象的引用，与随后初次 **读** 这个 `final` 域，这两个操作之间不能重排。
 
+> 如果 `final` 域是一个方法调用，则 **传播优化**，参考下面的例子，`go` 方法编译后结果相同。
+
+```java
+class ConstClass {
+  public final static B = Some.getB();
+}
+
+void go () {
+  System.out.println(ConstClass.B);
+}
+```
+
 ## final 域的重排规则前提是什么？
 
-**不能有 `this` 溢出。**
+**不能有 `this` 逃逸。**
 
-如果有 `this` 溢出，则可能在重排后导致构造器还没有结束，就对 `final` 字段进行了引用，破坏了 `final` 的语义。
+如果有 `this` 逃逸，则可能在重排后导致构造器还没有结束，就对 `final` 字段进行了引用，破坏了 `final` 的语义。
 
 ```java
 class FinalEscape {
@@ -266,7 +283,7 @@ vmstat interval count
 ```
 
 - interval: 采集间隔，单位 s。e.g 2s 采集一次
-- count： 采集多少次。默认无限采集，知道 <kbd>ctrl-c</kbd>
+- count： 采集多少次。默认无限采集，直到 <kbd>ctrl-c</kbd>
 
 **结果如下**
 
@@ -311,18 +328,12 @@ vmstat interval count
 
 ## CAS 是什么？
 
-Compare And Swap。乐观锁，读-改-写。利用 3 个操作数：内存地址 V, 旧的预期值 A，新的目标值 B。当设置 B 时，检查 V 对应的值是否与 A 相等，如果相等，则设置为 B，否则循环 CAS 算法（称自旋）。CAS 的原子性，由 CPU 指令（e.g. lock 前缀）保证。Java 中通过包 `java.util.concurrent.atomic` 提供的 `compareAndSet` 方法来实现，如
+Compare And Swap。乐观锁，读-改-写。利用 3 个操作数：内存地址 V, 旧的预期值 A，新的目标值 B。当设置 B 时，检查 V 对应的值是否与 A 相等，如果相等，则设置为 B。CAS 的原子性，由 CPU 指令（e.g. `lock` 前缀）保证。Java 中通过包 `java.util.concurrent.atomic` 提供的 `compareAndSet` 方法来实现，如
 
 ```java
 AtomicInteger at = new AtomicInteger(0);
 int prev = at.getAndIncrement();
 ```
-
-**缺点：**
-
-1. 不能检测到 ABA 问题。可以通过 `AtomicStampedReference` 加版本号解决。
-2. 只能保证一个共享变量的原子性。Java 1.5 以后，可以通过 `AtomicReference` 将多个变量放入对象中，保证原子性
-3. 循环的开销可能很大（自旋），如果修改频繁，会导致一直循环。（因为 CAS 是乐观锁，认为竞争的情况很少）
 
 > 上例中，利用类自带的方法将整数+1并返回原来的值，这个过程也可以通过 `synchronized` 实现。
 
@@ -336,9 +347,15 @@ while (true) {
   // do something with old and get newVal
   int newVal = doSthWith(old);
   boolean success = at.compareAndSet(old, newVal);
-	if (success) break;
+  if (success) break;
 }
 ```
+
+##  CAS 的缺点
+
+1. 不能检测到 ABA 问题。可以通过 `AtomicStampedReference` 加版本号解决。
+2. 只能保证一个共享变量的原子性。Java 1.5 以后，可以通过 `AtomicReference` 将多个变量放入对象中，保证原子性
+3. 循环的开销可能很大（自旋），如果修改频繁，会导致一直循环。（因为 CAS 是乐观锁，认为竞争的情况很少）
 
 ## 处理器是如何实现原子操作的？
 
@@ -380,7 +397,10 @@ while (true) {
 
 ### 撤销
 
-**偏向锁是等到出现竞争，才释放锁**。当另一个线程访问偏向锁的对象是，会先尝试 CAS 获取偏向锁。如果获取失败，则检查偏向的线程是否 *终止（terminated）*。若终止，则设置为当前线程（或置空，当对象不适合偏向锁时）；若未终止，则等待线程执行。
+**偏向锁是等到出现竞争，才释放锁**。当另一个 **线程 B** 访问偏向锁的对象时，会先尝试 CAS 获取偏向锁。如果获取失败，则检查偏向的 **线程 A** 是否 *终止（terminated）*。
+
+1. 若终止，则设置为当前 **线程 B**（或置空，当对象不适合偏向锁时）；
+2. 若未终止，则遍历该线程栈帧，看能否找到关联的锁记录。如果找到，则说明锁正在被持有，升级为轻量级锁；若没有找到，说明没有持有锁，竞争 **线程 B** 可以持有锁。
 
 ### 偏向锁设置
 
@@ -420,7 +440,7 @@ java -XX:BiasedLockingStartupDelay=0 -XX:UseBaisedLocking=false ClassName
 
 ## 什么是重量级锁？
 
-基于操作系统的 *排他锁*（Mutex Lock），线程会进入阻塞状态，等待释放资源锁唤醒。此时会有用户态到核心态的转换、运行到睡眠的上下文切换，开销大。
+基于操作系统的 *排他锁*（Mutex Lock），线程会进入阻塞状态而睡眠，等待释放资源锁唤醒。此时会有运行到睡眠的上下文切换，开销大。
 
 ## intro-thread semantics 是什么？
 
@@ -428,15 +448,11 @@ java -XX:BiasedLockingStartupDelay=0 -XX:UseBaisedLocking=false ClassName
 
 > 由 《 The Java Language Specification, Java SE 7 Edition 》提出的重排规则。
 
-## synchronized 优化机制 todo
-
-
-
 ## 什么是内存屏障？
 
-内存屏障是 JMM 利用处理器相关指令，限制处理器指令重排的方法，从而保证了执行顺序以及内存的可见性。
+内存屏障是 JMM 利用处理器相关指令，限制处理器 **内存** 重排的机制，从而保证了操作的内存可见性。
 
-## 为什么单例模式需要用到 volatile ? 
+## 为什么单例模式需要用到 volatile ?
 
 ![](anki-Reorder-singleton-volatile.svg)
 
@@ -487,7 +503,7 @@ instance = memory;
 
 **而 `volatile` 可以保证变量 `instance` 写，不与任何之前的指令重排，从而保证了 `instance` 的赋值操作一定在初始化之后，** 保证了 *线程 A*  的顺序执行。
 
-## happens-before 是什么，有哪些规则？todo
+## happens-before 是什么，有哪些规则？
 
 A happens-before B，则 A 的结果对 B 可见（e.g. 刷新内存）。指令序列执行后的结果与顺序结果相同即为合法。
 
@@ -520,43 +536,19 @@ A happens-before B，A 并不一定在 B 之前执行，只要程序产生的结
 
 **通信**：是指线程交换信息的机制。
 
-> 同步是通过通信实现，是通信交换的信息的一种。
+> 同步是通过 *通信机制* 来交换信息。
 
 ## 内存可见性：写、读主存发生在什么时候？
 
 1. 释放锁时、`volatile` 写之后，会将共享变量写入主存。
-2. 获取锁是、`volatile` 读时，会将线程本地内存的共享变量置为无效，然后再去主内存读取变量。
+2. 获取锁时、`volatile` 读时，会将线程本地内存的共享变量置为无效，然后再去主内存读取变量。
 
-> 1. `volatile` 的读，总是绕过 L1，直接读主内存。然而在无竞争的读的情况下，`volatile` 变量的读的效率接近本地变量。
+> 1. `volatile` 的读，总是绕过 L1，直接读主内存。但是在无竞争的读的情况下，`volatile` 变量的读的效率接近本地变量。
 > 2. 锁的释放、获取，实际上也可以看做通过主存进行 **消息传递** 的过程。
+> 3. 由于内存屏障的作用，`volatile` 读会把 **所有需要的变量** 都从主存中读一遍，而不仅仅是 `volatile` 字段。
 
 - [Myths Programmers Believe about CPU Caches – Software the Hard way](https://software.rajivprab.com/2018/04/29/myths-programmers-believe-about-cpu-caches/)
 - [java - Is volatile expensive? - Stack Overflow](https://stackoverflow.com/questions/4633866/is-volatile-expensive)
-
-## 类或接口在什么时候会初始化？todo
-
-在 **首次** 发生系列任意一种情况时，一个 **类** 或 **接口** 类型 `T` 将被立即初始化（区分初始化之前的加锁操作）。
-
-1. T 是一个类，T 的实例被创建。
-2. T 是一个类，T 的静态变量被调用。
-3. T 的静态字段被赋值。
-4. T 的静态字段被使用，且该字段非常量。
-5. T 是 *顶级类（Top Level Class）*，而且一个断言语句嵌套在 T 内部被执行。
-
-> *A top level* class is a class that is not a nested class.
->
-> *A nested class* is any class whose declaration occurs within the body of another class or interface.
->
-> -- [Chapter 8. Classes](https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html)
-
-也就是说对于嵌套类，即使外部类被加载，嵌套内部类也可能处于没有初始化的状态，直到他达到上面的初始化条件。
-
-常量是在类加载时就放入常量池，与类初始化过程无关。
-
-## 类的初始化需要做些什么？
-
-1. 执行静态代码块
-2. 初始化静态字段
 
 ## 描述一下类或接口的初始化过程
 
@@ -567,12 +559,13 @@ A happens-before B，A 并不一定在 B 之前执行，只要程序产生的结
 下面是具体过程：
 
 1. 通过在 Class 对象上同步（即获取 Class 对象的初始化锁），来控制类或接口的初始化。这个获取锁的线程会一直等待，直到当前线程能够获取到这个初始化锁。
-2. 线程 A 执行初始化，同时线程 B 在初始化锁对应的条件上等待。
-3. 线程 A 设置 `state=initialized`，然后唤醒等待初始化锁的所有线程。
-4. 线程 B 获取到锁，检查状态为 `initialized`，释放锁并结束初始化。
-5. 线程 C 需要执行初始化，与 *第 4 步* 相同。
+2. 线程 A 获取锁，修改 `state=initializing` 释放锁，进行初始化。
+3. 线程 B 获取锁，检查 state 为 initializing，睡眠等待。
+4. 线程 A 初始化完成，设置 `state=initialized`，唤醒所有睡眠在 “等待初始化完成” 的线程。
+5. 线程 B 获取到锁，检查状态为 `initialized`，释放锁并结束初始化。
+6. 后续线程需要执行初始化时，与 *第 4 步* 相同。
 
-> 1、2、3 为多线程竞争时创建实例的过程；4、5 的过程相同，为初始化完成后，其他线程请求初始化时的过程。
+> 2-5 为多线程竞争时创建实例的过程；5、6 的过程相同，为初始化完成后，其他线程请求初始化时的过程。
 
 ## 单例模式的两种实现方式
 
@@ -615,15 +608,21 @@ public class Singleton {
 
 ## Java 锁是怎么实现的？
 
-在对象头里面有一个叫做 Mark Word  的数据结构，存放了包括 HashCode、分代年龄、<ins>锁标记</ins> 字段。其中锁标志占 2 位，标识着锁的状态、类型。
+在对象头里面有一个叫做 Mark Word  的数据结构，存放了包括 HashCode、分代年龄、<ins>锁标志</ins> 字段。其中锁标志占 2 位，标识着锁的状态、类型。
 
-Java 使用偏向锁、轻量级锁、重量级锁来进行优化。只有重量级锁使用了监视器，此时线程会进入阻塞（睡眠）状态。
+Java 使用偏向锁、轻量级锁来进行优化。只有重量级锁使用了监视器，此时线程会进入阻塞（睡眠）状态。
 
 ## 什么是监视器（monitor）
 
 监视器（monitor, AKA. intrinsic lock）用于管理一组互斥资源（临界资源），保证同时只要一个线程可以访问到这些资源。
 
-Java 中每个对象（类与一个 Class 对象关联，一个 Class 对象也关联一个监视器）都有一个与一个监视器关联（因为每个类都可能有许多分离的临界资源组，由 `synchronized` 包裹）。保证了同时只能有一个线程能访问某组资源。
+Java 中每个对象都有一个监视器与之关联。保证了同时只能有一个线程能访问某个对象的一组资源。
+
+> 类与一个 Class 对象关联，一个 Class 对象也关联一个监视器。
+>
+> 因为每个类都可能有许多分离的临界资源组，由 `synchronized` 包裹。
+
+> **Each object has a monitor associated with it**. The thread that executes *`monitorenter`* gains ownership of the monitor associated with *`objectref`*. If another thread already owns the monitor associated with *`objectref`*, the current thread waits until the object is unlocked, then tries again to gain ownership. If the current thread already owns the monitor associated with *`objectref`*, it increments a counter in the monitor indicating the number of times this thread has entered the monitor. If the monitor associated with *`objectref`* is not owned by any thread, the current thread becomes the owner of the monitor, setting the entry count of this monitor to 1.
 
 为监视器的同步，Java 提供 `wait` （暂停执行）， `notify` （恢复执行） 两个方法，同时提供他们的 3 个重载方法
 
@@ -635,9 +634,10 @@ notifyAll()
 
 > 事实上只有一个程序只有一个监视器，但在逻辑上，像是每个对象都有一个监视器。
 
-- [Monitors](https://www.programcreek.com/2011/12/monitors-java-synchronization-mechanism/)
+- [Monitors analogy](https://www.programcreek.com/2011/12/monitors-java-synchronization-mechanism/)
 - [Intrinsic Locks and Synchronization](https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html)
 - [锁原理 - 信号量 vs 管程：JDK 为什么选择管程](https://www.cnblogs.com/binarylei/p/12544002.html)
+- [VM Spec](https://docs.oracle.com/javase/specs/jvms/se6/html/Instructions2.doc9.html)
 
 ## synchronized 代码段的方法调用，会不会阻塞非同步方法的调用？
 
@@ -664,6 +664,8 @@ JVM 在执行 `synchronized` 代码块时，会使用 *监视器（Monitor）* �
 JDK 1.4.2 引入了自旋，默认是自旋 10 次，可以使用 `-XX:PreBlockSpin` 进行修改。
 
 JDK 6 对自旋进行了优化，引入了 *自适应自旋（Adaptive Spinning）* 。对同一个锁，根据上一次获取锁的情况，动态调整自旋次数。如果上一次获取锁成功，那这一次获取成功的几率比较大，允许自旋等待持续相对更长时间（如 100 次）；如果上一次获取锁失败，那这一次获取锁的概率也较低，可能直接跳过自旋。
+
+> 不适合线程长时间占用资源的场景，会造成 CPU 大量空转。
 
 ## 什么是即时编译
 
@@ -710,7 +712,7 @@ public String concatStr(String s1, String s2) {
 }
 ```
 
-## 锁粗化
+## 锁粗化（Lock Coarsening）
 
 如果一些列连续的操作都是对同一个对象进行加锁、解锁操作，甚至有些加、解锁出现在循环体之内。这个时候频繁的加解锁会造成性能损耗。此时将锁的范围扩展到整个操作，会减少不必要的性能消耗。
 
@@ -724,10 +726,6 @@ sb.append(s3);
 ```
 
 这里的每个 `sb.append` 操作都会导致导致一次加锁加锁，可以扩展到第一个 `append()` 之前 到 最后一个 `append()` 结束，这样就只需一次加解锁。
-
-## 重量级锁
-
-使用操作系统互斥量实现的锁，会导致线程进入睡眠。
 
 ## 一个类中，需要对不同字段分别进行加锁，应该怎样实现
 
@@ -746,4 +744,15 @@ public class Example {
   // same to lock b
 }
 ```
+
+## 自旋锁与轻量级锁有什么关系？
+
+自旋锁是锁竞争机制，轻量级锁是锁的一种状态。其中轻量级锁在获取锁时会用到自旋，以修改 Mark Word 指向线程栈帧的数据结构。自旋失败时，锁升级为重量级锁，阻塞当前线程。
+
+锁的其他状态：
+
+1. 无锁
+2. 偏向锁
+3. 轻量级锁
+4. 重量级锁
 

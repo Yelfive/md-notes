@@ -14,7 +14,7 @@
 
 1. Bitmap：基于 String
 2. HyperLogLogs：基于 String，集合的概率
-3. Geospatial index：基于 sorted map，空间位置索引，提供基于经纬度的查询功能
+3. Geospatial index：基于 sorted set，空间位置索引，提供基于经纬度的查询功能
 4. Stream：类似日志，提供阻塞式的“生产者-消费者”模式的能力
 
 ## 数据淘汰策略

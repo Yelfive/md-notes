@@ -81,6 +81,23 @@ public class TestDiagnosis {
 
 ### Without Spring Boot
 
+**Dependencies**:
+
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-params</artifactId>
+    <version>5.7.0</version>
+    <scope>test</scope>
+</dependency>
+```
+
+:::tip
+The dependency should be imported individually, not included in `jupiter.engine`.
+:::
+
+**Example**:
+
 ```java
 package test;
 

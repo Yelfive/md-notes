@@ -84,6 +84,74 @@ css: z_custom.css
 - script: 带注解的映射器中使用动态 SQL 必须使用该标签
 - bind: 允许你在 OGNL 表达式以外创建一个变量，并将其绑定到当前的上下文
 
+### if
+
+```xml
+<if test="title != null">
+  AND title like #{title}
+</if>
+```
+
+### choose
+
+```xml
+<choose>
+  <when test="title != null">
+    AND title like #{title}
+  </when>
+  <otherwise>
+    AND featured = 1
+  </otherwise>
+</choose>
+```
+
+### where
+
+```xml
+<where>
+  <if test="state != null">
+    state = #{state}
+  </if>
+  <if test="title != null">
+    AND title like #{title}
+  </if>
+  <if test="author != null">
+    AND author_name like #{author.name}
+  </if>
+</where>
+```
+
+### set
+
+```
+<update id="updateAuthorIfNecessary">
+  update Author
+    <set>
+      <if test="username != null">username=#{username},</if>
+    </set>
+  where id=#{id}
+</update>
+```
+
+### trim
+
+```xml
+<trim prefix="WHERE" prefixOverrides="AND |OR ">
+  ...
+</trim>
+```
+
+### foreach
+
+```
+<foreach item="item" index="index" collection="list"
+    open="(" separator="," close=")">
+      #{item}
+</foreach>
+```
+
+### bind
+
 ```xml
 <select id="selectBlogsLike" resultType="Blog">
   <bind name="pattern" value="'%' + _parameter.getTitle() + '%'" />
@@ -98,14 +166,18 @@ css: z_custom.css
 
 在内存中缓存 select 语句结果(对象)，`update, delete, insert` 会刷新缓存
 
-1. 一级缓存（local cache）：`SqlSession` open 与 close 之间有效，返回同一个 POJO 对象。`sqlSession.clearCache` 可手动刷新。默认开启，不能关闭
-2. 二级缓存（global second level）：`<cache/>` 开启
+1. **一级缓存（local cache）**：`SqlSession` open 与 close 之间有效，返回同一个 POJO 对象。`sqlSession.clearCache` 可手动刷新。默认开启，不能关闭
+2. **二级缓存（global second level）**：`<cache/>` 开启
     1. 作用域为一个 `namespace`
     2. 查询数据首先放入一级缓存
     3. 一级缓存 `close` 或 `commit` 时，放入二级缓存
     4. 新会话时，先检查二级缓存，再检查一级缓存
     5. 不同的 mapper 查出的数据放在各自的缓存中
-    6. `readOnly` 默认 `false`，此时通过 `Serializable` 返回拷贝对象。相反，`true` 时返回同一对象
+    6. `readOnly` 默认 `false`，此时通过 `Serializable` 返回拷贝对象。相反，`true` 时返回同一对象。
+
+### Configure 2nd-level cache
+
+#### By XML
 
 ```xml
 <mapper namespace="cn.yelfive.dao.UserMapper">
@@ -114,24 +186,27 @@ css: z_custom.css
 </mapper>
 ```
 
-查询过程
+#### By annotation
 
-1. 二级
-2. 一级
-3. db
-4. 缓存一级
-5. 缓存二级
+```java
+@CacheNamespace(readWrite = true)
+public interface UserMapper {}
+```
 
-对同一个 mapper 方法进行匹配。如，获取了列表、与列表中某一元素的查询两种情况，是没有缓存的。
+### 查询过程
+
+![cache](anki-MyBatis-cache-direction.svg)
+
+> 对同一个 mapper 方法进行匹配。如，获取了列表、与列表中某一元素的查询两种情况，是没有缓存的。
 
 ## Mapper xml 中有哪些标签
 
-1. select, update, delete, insert
-2. resultMap
-3. parameterMap
-4. sql
-5. include
-6. selectKey: 将id填充进传入@Insert, @InsertProvider, @Update, or @UpdateProvider 的对象中，若是 `before` 则先修改对象的id，在 insert，如果是 `after`，则先insert，再获取id传给对象，相当于获取最近的id。
+1. `select`, `update`, `delete`, `insert`
+2. `resultMap`
+3. `parameterMap`
+4. `sql`
+5. `include`
+6. `selectKey`: 将id填充进传入`@Insert`, `@InsertProvider`, `@Update`, or `@UpdateProvider` 的对象中，若是 `before` 则先修改对象的 id，在 `insert`，如果是 `after`，则先 `insert`，再获取 id 传给对象，相当于获取最近的 id。
 
 ## sql 与 include 标签
 
@@ -350,6 +425,16 @@ int createUser(User user);
 </selectKey>
 ```
 
+### Example
+
+在插入前（`before=true`）获取整型数据（`resultType=int.class`）作为 `nameId`，传递给 `insert` 语句。
+
+```java
+@Insert("insert into table3 (id, name) values(#{nameId}, #{name})")
+@SelectKey(statement="call next value for TestSequence", keyProperty="nameId", before=true, resultType=int.class)
+int insertTable3(Name name);
+```
+
 ## Executor 有哪些，怎么使用？
 
 `Executor` 用于执行真正的 CRUD 操作。除了 `CachingExecutor`，其他的作用域均为 `SqlSession`
@@ -361,20 +446,22 @@ int createUser(User user);
 - `ReuseExecutor`: 生成并重用 `PreparedStatement`。内部使用 SQL 作为 key 在数据结构 `Map<String, PreparedStatement>` 中查找。
 - `CachingExecutor`: 二级缓存，作为其他 `Executor` 的包装类
 
-默认为 `SimpleExecutor`。在一下方法中可以指定执行器
+默认为 `SimpleExecutor`。通过以下方式可以指定执行器
 
-### openSession 时指定
+### 1. openSession 时指定
 
 ```java
 SqlSessionFactory.openSession(ExecutorType.SIMPLE)
 ```
 
-### XML 配置
+### 2. XML 配置
 
 ```xml
 <!-- SIMPLE REUSE BATCH -->
 <setting name="defaultExecutorType" value="SIMPLE">
 ```
+
+---
 
 创建 Executor 方法
 

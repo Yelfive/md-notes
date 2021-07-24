@@ -10,6 +10,11 @@ pre.codehilite code {
     border-radius   : 0;
 }
 
+img {
+    display: block;
+    margin: auto;
+}
+
 .codehilite {
     padding: 0.25rem;
     border: 1px solid;
@@ -41,5 +46,9 @@ blockquote {
     border-left : 3px solid #3eaf7c;
     margin-left : 0;
     padding-left: 1rem;
-    color       : 999;
+    color       : #666;
+}
+
+u, ins {
+  text-underline-position: under;
 }

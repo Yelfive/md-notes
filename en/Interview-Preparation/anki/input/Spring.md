@@ -12,18 +12,16 @@ css: z_custom.css
 
 在 IoC 的基础上，将解耦的依赖统一管理
 
-## AOP
+## AOP Terminology
 
-### AOP Terminology
-
-1. advice 增强、通知
-2. joinpoint 连接点，可以用于增强的方法
-3. pointcut 实际上使用了增强的方法
-4. introduction 动态添加的字段或方法
-5. target
-6. proxy
-7. weaving 织入，增强（advice）的过程
-8. aspect
+1. **Advice**, 增强、通知
+2. **Joinpoint**, 连接点：可以用于增强的方法
+3. **Pointcut**, 切入点：实际上使用了增强的方法
+4. **Introduction**, 引介： 动态添加的字段或方法
+5. **Target**
+6. **Proxy**
+7. **Weaving**, 织入：增强（advice）的过程
+8. **Aspect**, 切面: 包含 pointcut 和 advice。Spring 中是一个 `@Aspect` 类 
 
 ## Spring Bean Scope
 
@@ -98,10 +96,19 @@ class User implements BeanNameAware {...}
 1. 编程式
 2. 声明式：通过配置
 
-   1. XML
-   2. Annotation
+其中声明式支持的方法为
 
-`@Transaction` 注解，只能作用于 `public` 方法，默认只回滚未检查异常。
+1. XML
+2. Annotation：`@Transactional` 注解，只能作用于 `public` 方法，默认只回滚未检查异常。
+
+```java
+import org.springframework.transaction.annotation.Transactional;
+
+@Transactional
+public void createUser() {
+  // save user to db
+}
+```
 
 ## Spring 事务隔离级别
 
@@ -229,7 +236,7 @@ class Example {
 
 ## 为什么 Spring 不建议使用 @Autowired 注入字段？
 
-**使用注入字段的问题：**
+**使用字段注入的问题：**
 
 1. 容易过多注入，破坏单一职责原则。
 2. **不利于单元测试**：单元测试只能通过容器才能运行，类与容器强耦合

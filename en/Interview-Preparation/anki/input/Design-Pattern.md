@@ -1,3 +1,6 @@
+---
+css: z_custom.css
+---
 # Design Pattern
 
 ## SOLID

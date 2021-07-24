@@ -11,7 +11,7 @@ SSL and TLS are both used to reinforce the security of TCP, which stand for,
 
 ## What are SSL/TLS
 
-SSL was first designed and published by Netscape, then handed over to ISO who later renamed it to TLS. For such historical reasons, the terms SSL and TLS are sometimes used interchangeably.
+SSL was first designed and published by Netscape, then handed over to *ISO (International Standard Organization)* who later renamed it to TLS. For such historical reasons, the terms SSL and TLS are sometimes used interchangeably.
 
 - In 1994, Netscape designed the 1.0 version of the SSL protocol (Secure Sockets Layer), but it has not been released.
 

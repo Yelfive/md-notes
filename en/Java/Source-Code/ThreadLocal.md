@@ -70,7 +70,7 @@ private void set(ThreadLocal<?> key, Object value) {
 ```
 
 ::: tip
-17 行中，若 e 指向的变量被回收，则 `k = e.get()` 的值将等于 `null`，此时，再对“过期”的坑替换为当前对象。
+17 行中，若 `e` 指向的变量被回收，则 `k = e.get()` 的值将等于 `null`，此时，再将“过期”的 `key` 替换为当前对象。
 :::
 
 `get` 是先根据 `hash` 值获取（在 `getEntry` 中调用），由于采用的是 **开放地址法** 解决冲突，获取为 `null` 时，表示 $miss$，此时调用 `getEntryAfterMiss`，尝试获取 key。
